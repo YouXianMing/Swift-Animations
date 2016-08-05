@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57007F31D5330B2003BFB5E /* AppDelegate.swift */; };
-		C57007F61D5330B2003BFB5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57007F51D5330B2003BFB5E /* ViewController.swift */; };
 		C57007F91D5330B2003BFB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57007F71D5330B2003BFB5E /* Main.storyboard */; };
 		C57007FB1D5330B2003BFB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57007FA1D5330B2003BFB5E /* Assets.xcassets */; };
-		C57007FE1D5330B2003BFB5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57007FC1D5330B2003BFB5E /* LaunchScreen.storyboard */; };
 		C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008051D5330CC003BFB5E /* UIView+SetRect.swift */; };
 		C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */; };
+		C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */; };
+		C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */; };
+		C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */; };
+		C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */; };
+		C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */; };
+		C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC51D543A1C00E24AC0 /* GCDGroup.swift */; };
+		C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */; };
+		C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */; };
+		C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C57007F01D5330B2003BFB5E /* Swift-Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57007F31D5330B2003BFB5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C57007F51D5330B2003BFB5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C57007F81D5330B2003BFB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C57007FA1D5330B2003BFB5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C57007FD1D5330B2003BFB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C57007FF1D5330B2003BFB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C57008051D5330CC003BFB5E /* UIView+SetRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SetRect.swift"; sourceTree = "<group>"; };
 		C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimationProperty.swift"; sourceTree = "<group>"; };
+		C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNormalContentViewController.swift; sourceTree = "<group>"; };
+		C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFullContentViewController.swift; sourceTree = "<group>"; };
+		C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsListViewController.swift; sourceTree = "<group>"; };
+		C5B15BC51D543A1C00E24AC0 /* GCDGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDGroup.swift; sourceTree = "<group>"; };
+		C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
+		C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDSemaphore.swift; sourceTree = "<group>"; };
+		C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,11 +73,12 @@
 			isa = PBXGroup;
 			children = (
 				C57007F31D5330B2003BFB5E /* AppDelegate.swift */,
-				C57007F51D5330B2003BFB5E /* ViewController.swift */,
+				C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */,
+				C5B15BCD1D543A2100E24AC0 /* GCD */,
+				C5B15BBC1D5426C300E24AC0 /* CustomViewControllers */,
 				C57008091D534927003BFB5E /* UIView+extension */,
 				C57007F71D5330B2003BFB5E /* Main.storyboard */,
 				C57007FA1D5330B2003BFB5E /* Assets.xcassets */,
-				C57007FC1D5330B2003BFB5E /* LaunchScreen.storyboard */,
 				C57007FF1D5330B2003BFB5E /* Info.plist */,
 			);
 			path = "Swift-Animations";
@@ -76,6 +91,28 @@
 				C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */,
 			);
 			name = "UIView+extension";
+			sourceTree = "<group>";
+		};
+		C5B15BBC1D5426C300E24AC0 /* CustomViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */,
+				C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */,
+				C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */,
+				C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */,
+			);
+			name = CustomViewControllers;
+			sourceTree = "<group>";
+		};
+		C5B15BCD1D543A2100E24AC0 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				C5B15BC51D543A1C00E24AC0 /* GCDGroup.swift */,
+				C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */,
+				C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */,
+				C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */,
+			);
+			name = GCD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +173,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C57007FE1D5330B2003BFB5E /* LaunchScreen.storyboard in Resources */,
 				C57007FB1D5330B2003BFB5E /* Assets.xcassets in Resources */,
 				C57007F91D5330B2003BFB5E /* Main.storyboard in Resources */,
 			);
@@ -149,8 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
+				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
+				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
+				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
+				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
-				C57007F61D5330B2003BFB5E /* ViewController.swift in Sources */,
+				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
+				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
+				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
+				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
 			);
@@ -165,14 +209,6 @@
 				C57007F81D5330B2003BFB5E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C57007FC1D5330B2003BFB5E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C57007FD1D5330B2003BFB5E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -265,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "Swift-Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";
@@ -276,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "Swift-Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";
@@ -302,6 +340,7 @@
 				C57008041D5330B2003BFB5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
