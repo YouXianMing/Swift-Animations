@@ -12,12 +12,14 @@ class ListItemCell: CustomCell {
 
     override func setupCell() {
         
+        super.setupCell()
         layer.borderWidth = 0.5
     }
     
     override func loadContent() {
         
         print(dataAdapter?.data)
+        textLabel?.text = String(indexPath?.row)
     }
     
     override func buildSubview() {

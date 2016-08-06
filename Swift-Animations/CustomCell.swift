@@ -85,7 +85,10 @@ class CustomCell: UITableViewCell {
     /**
      Setup cell, override by subclass.
      */
-    func setupCell() {}
+    func setupCell() {
+        
+        self.selectionStyle = .None
+    }
     
     /**
      Build subview, override by subclass.

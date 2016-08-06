@@ -28,9 +28,9 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         
         // Data source.
         adapters = NSMutableArray()
-        adapters.addObject(ListItemCell.dataAdapterWithCellHeight(20))
-        adapters.addObject(ListItemCell.dataAdapterWithCellHeight(20))
-        adapters.addObject(ListItemCell.dataAdapterWithData("String", cellHeight: 0))
+        adapters.addObject(ListItemCell.dataAdapterWithCellHeight(40))
+        adapters.addObject(ListItemCell.dataAdapterWithCellHeight(40))
+        adapters.addObject(ListItemCell.dataAdapterWithData("String", cellHeight: 80))
     }
     
     // MARK: UITableView's delegate & dataSource.
@@ -42,13 +42,17 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let dataAdapter = adapters[indexPath.row] as! CellDataAdapter
-        return tableView.dequeueAndLoadContentReusableCellFromAdapter(dataAdapter, indexPath: indexPath)
+        return tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row] as! CellDataAdapter, indexPath: indexPath)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.selectedEventWithIndexPath(indexPath)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return (adapters[indexPath.row] as! CellDataAdapter).cellHeight!
     }
     
     // MARK: Overwrite system methods.
