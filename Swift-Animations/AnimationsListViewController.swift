@@ -8,16 +8,47 @@
 
 import UIKit
 
-class AnimationsListViewController: CustomNormalContentViewController {
+class AnimationsListViewController: CustomNormalContentViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var tableView : UITableView?
+    var adapters  : NSMutableArray!
+    var tableView : UITableView!
     
     override func setup() {
         
         super.setup()
         
-        tableView = UITableView(frame: (contentView?.bounds)!)
+        // TableView.
+        tableView            = UITableView(frame: (contentView?.bounds)!)
+        tableView.dataSource = self
+        tableView.delegate   = self
         contentView?.addSubview(tableView!)
+        
+        // Register cell.
+        ListItemCell.registerToTableView(tableView, cellReuseIdentifier: nil)
+        
+        // Data source.
+        adapters = NSMutableArray()
+        adapters.addObject(ListItemCell.dataAdapterWithCellHeight(20))
+        adapters.addObject(ListItemCell.dataAdapterWithCellHeight(20))
+        adapters.addObject(ListItemCell.dataAdapterWithData("String", cellHeight: 0))
+    }
+    
+    // MARK: UITableView's delegate & dataSource.
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return adapters.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let dataAdapter = adapters[indexPath.row] as! CellDataAdapter
+        return tableView.dequeueAndLoadContentReusableCellFromAdapter(dataAdapter, indexPath: indexPath)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.selectedEventWithIndexPath(indexPath)
     }
     
     // MARK: Overwrite system methods.

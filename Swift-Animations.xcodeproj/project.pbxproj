@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
+		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
+		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
 		C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57007F31D5330B2003BFB5E /* AppDelegate.swift */; };
 		C57007F91D5330B2003BFB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57007F71D5330B2003BFB5E /* Main.storyboard */; };
 		C57007FB1D5330B2003BFB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57007FA1D5330B2003BFB5E /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
 		C57007F01D5330B2003BFB5E /* Swift-Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57007F31D5330B2003BFB5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C57007F81D5330B2003BFB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C52315CF1D55786100B3D86E /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5693C3D1D54448600070B92 /* CellDataAdapter.swift */,
+				C52315CB1D55617100B3D86E /* CustomCell.swift */,
+			);
+			name = CustomCell;
+			sourceTree = "<group>";
+		};
 		C57007E71D5330B2003BFB5E = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +89,8 @@
 			children = (
 				C57007F31D5330B2003BFB5E /* AppDelegate.swift */,
 				C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */,
+				C52315D01D55787000B3D86E /* ListItemCell.swift */,
+				C52315CF1D55786100B3D86E /* CustomCell */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
 				C5B15BBC1D5426C300E24AC0 /* CustomViewControllers */,
 				C57008091D534927003BFB5E /* UIView+extension */,
@@ -190,13 +207,16 @@
 				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
 				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
 				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
+				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
+				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
+				C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
