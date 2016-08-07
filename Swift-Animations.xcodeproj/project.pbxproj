@@ -18,6 +18,7 @@
 		C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB451D56CAFF003BBF11 /* UIView+CreateFrame.swift */; };
 		C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB471D56CD7B003BBF11 /* TapAnimationModel.swift */; };
 		C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB4D1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift */; };
+		C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB521D5700FF003BBF11 /* UIView+Glow.swift */; };
 		C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57007F31D5330B2003BFB5E /* AppDelegate.swift */; };
 		C57007FB1D5330B2003BFB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57007FA1D5330B2003BFB5E /* Assets.xcassets */; };
 		C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008051D5330CC003BFB5E /* UIView+SetRect.swift */; };
@@ -45,6 +46,7 @@
 		C56BEB451D56CAFF003BBF11 /* UIView+CreateFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CreateFrame.swift"; sourceTree = "<group>"; };
 		C56BEB471D56CD7B003BBF11 /* TapAnimationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapAnimationModel.swift; sourceTree = "<group>"; };
 		C56BEB4D1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewTapAnimationCell.swift; sourceTree = "<group>"; };
+		C56BEB521D5700FF003BBF11 /* UIView+Glow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Glow.swift"; sourceTree = "<group>"; };
 		C57007F01D5330B2003BFB5E /* Swift-Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57007F31D5330B2003BFB5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C57007FA1D5330B2003BFB5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,8 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				C57008051D5330CC003BFB5E /* UIView+SetRect.swift */,
-				C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */,
 				C56BEB451D56CAFF003BBF11 /* UIView+CreateFrame.swift */,
+				C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */,
+				C56BEB521D5700FF003BBF11 /* UIView+Glow.swift */,
 			);
 			name = "UIView+extension";
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
+				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
 				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,

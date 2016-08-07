@@ -15,12 +15,14 @@ enum TableViewTapAnimationCellState : Int {
 
 class TableViewTapAnimationCell: CustomCell {
     
-    var titleLabel : UILabel!
-    var iconView   : UIImageView!
-    var lineView   : UIView!
-    var rectView   : UIView!
+    // MARK: Private var.
     
-    // MARK: override CustomCell funcs.
+    private var titleLabel : UILabel!
+    private var iconView   : UIImageView!
+    private var lineView   : UIView!
+    private var rectView   : UIView!
+    
+    // MARK: Override CustomCell func.
     
     override func buildSubview() {
         
@@ -78,9 +80,9 @@ class TableViewTapAnimationCell: CustomCell {
         }
     }
     
-    // MARK: other method.
+    // MARK: Private func.
     
-    func changeToState(state : TableViewTapAnimationCellState, animated : Bool) {
+    private func changeToState(state : TableViewTapAnimationCellState, animated : Bool) {
         
         switch state {
             
@@ -131,7 +133,7 @@ class TableViewTapAnimationCell: CustomCell {
         }
     }
     
-    func showSelectedAnimation() {
+    private func showSelectedAnimation() {
         
         let tempView             = UIView(frame: CGRectMake(0, 0, Width(), 80))
         tempView.backgroundColor = UIColor.cyanColor().colorWithAlphaComponent(0.2)

@@ -10,8 +10,12 @@ import UIKit
 
 class ListItemCell: CustomCell {
 
-    var titlelabel    : UILabel!
-    var subTitleLabel : UILabel!
+    // MARK: Private var.
+    
+    private var titlelabel    : UILabel!
+    private var subTitleLabel : UILabel!
+    
+    // MARK: Override CustomCell func.
     
     override func setupCell() {
         

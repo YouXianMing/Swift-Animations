@@ -10,8 +10,8 @@ import UIKit
 
 class AnimationsListViewController: CustomNormalContentViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var adapters  : NSMutableArray!
-    var tableView : UITableView!
+    private var adapters  : NSMutableArray!
+    private var tableView : UITableView!
     
     override func setup() {
         
@@ -46,6 +46,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         label.sizeToFit()
         label.center = (titleView?.middlePoint)!
         titleView?.addSubview(label)
+        label.startGlowWithGlowRadius(2, glowOpacity: 0.8, glowColor: UIColor.cyanColor(), glowDuration: 1, hideDuration: 3, glowAnimationDuration: 2)
         
         // Line.
         titleView?.addSubview(UIView.CreateLine(CGRectMake(0, titleView!.height - 0.5, Width(), 0.5), lineColor: UIColor.grayColor().colorWithAlphaComponent(0.2)))

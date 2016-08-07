@@ -25,7 +25,7 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         contentView?.addSubview(tableView!)
         
         // Register cell.
-        TableViewTapAnimationCell.registerToTableView(tableView, cellReuseIdentifier: nil)
+        TableViewTapAnimationCell.registerToTableView(tableView)
         
         // Data source.
         adapters = NSMutableArray()
