@@ -10,8 +10,15 @@
 		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
 		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
 		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
+		C56BEB381D56B660003BBF11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56BEB371D56B660003BBF11 /* Main.storyboard */; };
+		C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB3A1D56B87E003BBF11 /* UIFont+extension.swift */; };
+		C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB3C1D56BE2F003BBF11 /* ControllerItem.swift */; };
+		C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB3E1D56C1FA003BBF11 /* NormalTitleViewController.swift */; };
+		C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB401D56C406003BBF11 /* TableViewTapAnimationController.swift */; };
+		C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB451D56CAFF003BBF11 /* UIView+CreateFrame.swift */; };
+		C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB471D56CD7B003BBF11 /* TapAnimationModel.swift */; };
+		C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB4D1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift */; };
 		C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57007F31D5330B2003BFB5E /* AppDelegate.swift */; };
-		C57007F91D5330B2003BFB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57007F71D5330B2003BFB5E /* Main.storyboard */; };
 		C57007FB1D5330B2003BFB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57007FA1D5330B2003BFB5E /* Assets.xcassets */; };
 		C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008051D5330CC003BFB5E /* UIView+SetRect.swift */; };
 		C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */; };
@@ -30,9 +37,16 @@
 		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
+		C56BEB371D56B660003BBF11 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C56BEB3A1D56B87E003BBF11 /* UIFont+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
+		C56BEB3C1D56BE2F003BBF11 /* ControllerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerItem.swift; sourceTree = "<group>"; };
+		C56BEB3E1D56C1FA003BBF11 /* NormalTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalTitleViewController.swift; sourceTree = "<group>"; };
+		C56BEB401D56C406003BBF11 /* TableViewTapAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewTapAnimationController.swift; sourceTree = "<group>"; };
+		C56BEB451D56CAFF003BBF11 /* UIView+CreateFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CreateFrame.swift"; sourceTree = "<group>"; };
+		C56BEB471D56CD7B003BBF11 /* TapAnimationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapAnimationModel.swift; sourceTree = "<group>"; };
+		C56BEB4D1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewTapAnimationCell.swift; sourceTree = "<group>"; };
 		C57007F01D5330B2003BFB5E /* Swift-Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Animations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57007F31D5330B2003BFB5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C57007F81D5330B2003BFB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C57007FA1D5330B2003BFB5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C57007FF1D5330B2003BFB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C57008051D5330CC003BFB5E /* UIView+SetRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SetRect.swift"; sourceTree = "<group>"; };
@@ -68,6 +82,50 @@
 			name = CustomCell;
 			sourceTree = "<group>";
 		};
+		C56BEB391D56B823003BBF11 /* UIFont+extension */ = {
+			isa = PBXGroup;
+			children = (
+				C56BEB3A1D56B87E003BBF11 /* UIFont+extension.swift */,
+			);
+			name = "UIFont+extension";
+			sourceTree = "<group>";
+		};
+		C56BEB421D56C813003BBF11 /* CustomViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C56BEB3E1D56C1FA003BBF11 /* NormalTitleViewController.swift */,
+			);
+			name = CustomViewControllers;
+			sourceTree = "<group>";
+		};
+		C56BEB431D56C82D003BBF11 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C56BEB4F1D56CE98003BBF11 /* TableViewTapAnimationController */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C56BEB441D56C83F003BBF11 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */,
+				C56BEB3C1D56BE2F003BBF11 /* ControllerItem.swift */,
+				C52315D01D55787000B3D86E /* ListItemCell.swift */,
+			);
+			name = RootViewController;
+			sourceTree = "<group>";
+		};
+		C56BEB4F1D56CE98003BBF11 /* TableViewTapAnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				C56BEB401D56C406003BBF11 /* TableViewTapAnimationController.swift */,
+				C56BEB471D56CD7B003BBF11 /* TapAnimationModel.swift */,
+				C56BEB4D1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift */,
+			);
+			name = TableViewTapAnimationController;
+			sourceTree = "<group>";
+		};
 		C57007E71D5330B2003BFB5E = {
 			isa = PBXGroup;
 			children = (
@@ -88,14 +146,16 @@
 			isa = PBXGroup;
 			children = (
 				C57007F31D5330B2003BFB5E /* AppDelegate.swift */,
-				C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */,
-				C52315D01D55787000B3D86E /* ListItemCell.swift */,
+				C56BEB441D56C83F003BBF11 /* RootViewController */,
+				C56BEB431D56C82D003BBF11 /* Controllers */,
 				C52315CF1D55786100B3D86E /* CustomCell */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
-				C5B15BBC1D5426C300E24AC0 /* CustomViewControllers */,
+				C5B15BBC1D5426C300E24AC0 /* AbstractCustomViewControllers */,
+				C56BEB421D56C813003BBF11 /* CustomViewControllers */,
 				C57008091D534927003BFB5E /* UIView+extension */,
-				C57007F71D5330B2003BFB5E /* Main.storyboard */,
+				C56BEB391D56B823003BBF11 /* UIFont+extension */,
 				C57007FA1D5330B2003BFB5E /* Assets.xcassets */,
+				C56BEB371D56B660003BBF11 /* Main.storyboard */,
 				C57007FF1D5330B2003BFB5E /* Info.plist */,
 			);
 			path = "Swift-Animations";
@@ -106,11 +166,12 @@
 			children = (
 				C57008051D5330CC003BFB5E /* UIView+SetRect.swift */,
 				C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */,
+				C56BEB451D56CAFF003BBF11 /* UIView+CreateFrame.swift */,
 			);
 			name = "UIView+extension";
 			sourceTree = "<group>";
 		};
-		C5B15BBC1D5426C300E24AC0 /* CustomViewControllers */ = {
+		C5B15BBC1D5426C300E24AC0 /* AbstractCustomViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */,
@@ -118,7 +179,7 @@
 				C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */,
 				C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */,
 			);
-			name = CustomViewControllers;
+			name = AbstractCustomViewControllers;
 			sourceTree = "<group>";
 		};
 		C5B15BCD1D543A2100E24AC0 /* GCD */ = {
@@ -191,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C57007FB1D5330B2003BFB5E /* Assets.xcassets in Resources */,
-				C57007F91D5330B2003BFB5E /* Main.storyboard in Resources */,
+				C56BEB381D56B660003BBF11 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,34 +265,30 @@
 			files = (
 				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
 				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
+				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
 				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
 				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
+				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
+				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
 				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
+				C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
 				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
+				C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */,
+				C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
+				C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */,
 				C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C57007F71D5330B2003BFB5E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C57007F81D5330B2003BFB5E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C57008001D5330B2003BFB5E /* Debug */ = {

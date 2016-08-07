@@ -10,25 +10,39 @@ import UIKit
 
 class ListItemCell: CustomCell {
 
+    var titlelabel    : UILabel!
+    var subTitleLabel : UILabel!
+    
     override func setupCell() {
         
         super.setupCell()
-        layer.borderWidth = 0.5
-    }
-    
-    override func loadContent() {
-        
-        print(dataAdapter?.data)
-        textLabel?.text = String(indexPath?.row)
+        self.accessoryType = .DisclosureIndicator
     }
     
     override func buildSubview() {
         
+        titlelabel      = UILabel(frame: CGRectMake(10, 8, 290, 25))
+        titlelabel.font = UIFont.HeitiSC(16)
+        self.addSubview(titlelabel)
         
+        subTitleLabel           = UILabel(frame: CGRectMake(10, 35, 290, 10))
+        subTitleLabel.font      = UIFont.AvenirLight(8)
+        subTitleLabel.textColor = UIColor.grayColor()
+        self.addSubview(subTitleLabel)
     }
-
+    
+    override func loadContent() {
+        
+        let item           = data as! ControllerItem
+        titlelabel.text    = item.name
+        subTitleLabel.text = NSStringFromClass(item.controllerClass).componentsSeparatedByString(".").last
+    }
+    
     override func selectedEvent() {
         
-        print(indexPath)
+        let item         = data as! ControllerItem
+        let controller   = (item.controllerClass as! CustomViewController.Type).init()
+        controller.title = item.name
+        self.controller?.navigationController?.pushViewController(controller, animated: true)
     }
 }

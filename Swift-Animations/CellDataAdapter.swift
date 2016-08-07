@@ -26,7 +26,7 @@ class CellDataAdapter: NSObject {
     
     // MARK: convenience init
     
-    convenience init(cellReuseIdentifier : String?, data : AnyObject?, cellHeight : CGFloat?, cellType : Int?) {
+    convenience init(cellReuseIdentifier: String?, data: AnyObject?, cellHeight: CGFloat?, cellType: Int?) {
         
         self.init()
         self.cellReuseIdentifier = cellReuseIdentifier
@@ -47,7 +47,7 @@ class CellDataAdapter: NSObject {
      
      - returns: CellDataAdapter's object.
      */
-    class func createTableViewType(cellReuseIdentifier : String?, data : AnyObject?, cellHeight : CGFloat?, cellType : Int?) -> CellDataAdapter {
+    class func createTableViewType(cellReuseIdentifier: String?, data: AnyObject?, cellHeight: CGFloat?, cellType: Int?) -> CellDataAdapter {
         
         return CellDataAdapter.init(cellReuseIdentifier: cellReuseIdentifier, data: data, cellHeight: cellHeight, cellType: cellType)
     }
@@ -61,7 +61,7 @@ class CellDataAdapter: NSObject {
      
      - returns: CellDataAdapter's object.
      */
-    class func createCollectionViewType(cellReuseIdentifier : String?, data : AnyObject?, cellType : Int?) -> CellDataAdapter {
+    class func createCollectionViewType(cellReuseIdentifier: String?, data: AnyObject?, cellType: Int?) -> CellDataAdapter {
         
         return CellDataAdapter.init(cellReuseIdentifier: cellReuseIdentifier, data: data, cellHeight: nil, cellType: cellType)
     }

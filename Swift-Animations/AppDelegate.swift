@@ -11,17 +11,20 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window : UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        self.window                     = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let controller                  = AnimationsListViewController()
-        let navigationController        = CustomNavigationController(rootViewController: controller, hideTabBar: true)
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        self.window?.rootViewController = navigationController
-        self.window?.backgroundColor = UIColor.whiteColor()
-        self.window?.makeKeyWindow()
+        if let window = window {
+            
+            window.backgroundColor    = UIColor.whiteColor()
+            let controller            = AnimationsListViewController()
+            let rootViewController    = CustomNavigationController(rootViewController: controller, hideTabBar: true)
+            window.rootViewController = rootViewController
+            window.makeKeyWindow()
+        }
         
         return true
     }
