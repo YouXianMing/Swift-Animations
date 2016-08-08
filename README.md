@@ -1,6 +1,6 @@
 # Swift-Animations
 
-> Project [YoCelsius](https://github.com/YouXianMing/YoCelsius)  in [AppStore](https://itunes.apple.com/us/app/yocelsius/id967721892?l=zh&ls=1&mt=8), Project 
+> Project [YoCelsius](https://github.com/YouXianMing/YoCelsius)  in [AppStore](https://itunes.apple.com/us/app/yocelsius/id967721892?l=zh&ls=1&mt=8) 
 
 ![oneAnimations.gif](http://images.cnitblog.com/blog2015/607542/201504/211608037347783.gif) ![twoAnimations.gif](http://images.cnitblog.com/blog2015/607542/201504/211608153124546.gif) 
 
