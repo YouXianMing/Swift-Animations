@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewTapAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var adapters  : NSMutableArray!
+    var adapters  : [CellDataAdapter]!
     var tableView : UITableView!
     
     override func setup() {
@@ -28,14 +28,14 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         TableViewTapAnimationCell.registerToTableView(tableView)
         
         // Data source.
-        adapters = NSMutableArray()
-        adapters.addObject(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "YouXianMing", selected: false), cellHeight: 80))
-        adapters.addObject(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Animations", selected: false), cellHeight: 80))
-        adapters.addObject(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "YoCelsius", selected: false), cellHeight: 80))
-        adapters.addObject(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "iOS-Progrommer", selected: false), cellHeight: 80))
-        adapters.addObject(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Design-Patterns", selected: false), cellHeight: 80))
-        adapters.addObject(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Arabia-Terra", selected: false), cellHeight: 80))
-        adapters.addObject(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Swift", selected: false), cellHeight: 80))
+        adapters = [CellDataAdapter]()
+        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "YouXianMing", selected: false), cellHeight: 80))
+        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Animations", selected: false), cellHeight: 80))
+        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "YoCelsius", selected: false), cellHeight: 80))
+        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "iOS-Progrommer", selected: false), cellHeight: 80))
+        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Design-Patterns", selected: false), cellHeight: 80))
+        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Arabia-Terra", selected: false), cellHeight: 80))
+        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Swift", selected: false), cellHeight: 80))
     }
     
     // MARK: UITableView's delegate & dataSource.
@@ -47,7 +47,7 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row] as! CellDataAdapter, indexPath: indexPath)
+        return tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row], indexPath: indexPath)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -57,6 +57,6 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return (adapters[indexPath.row] as! CellDataAdapter).cellHeight!
+        return adapters[indexPath.row].cellHeight!
     }
 }

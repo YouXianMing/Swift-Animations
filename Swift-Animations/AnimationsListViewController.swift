@@ -10,7 +10,7 @@ import UIKit
 
 class AnimationsListViewController: CustomNormalContentViewController, UITableViewDataSource, UITableViewDelegate {
     
-    private var adapters  : NSMutableArray!
+    private var adapters  : [CellDataAdapter]!
     private var tableView : UITableView!
     
     override func setup() {
@@ -29,8 +29,8 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         ListItemCell.registerToTableView(tableView, cellReuseIdentifier: nil)
         
         // Data source.
-        adapters = NSMutableArray()
-        adapters.addObject(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: TableViewTapAnimationController.classForCoder(), name : "UITableView状态切换效果")))
+        adapters = [CellDataAdapter]()
+        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: TableViewTapAnimationController.classForCoder(), name : "UITableView状态切换效果")))
     }
     
     // MARK: Config TitleView.
@@ -61,7 +61,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row] as! CellDataAdapter, indexPath: indexPath, controller: self)
+        return tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row], indexPath: indexPath, controller: self)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
