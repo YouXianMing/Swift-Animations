@@ -13,3 +13,7 @@
 > TableViewTapAnimationController
 
 ![demo.gif](http://images2015.cnblogs.com/blog/607542/201608/607542-20160807105426965-81586755.gif)
+
+> HeaderViewTapAnimationController
+
+![demo.gif](http://images2015.cnblogs.com/blog/607542/201608/607542-20160809234008496-1397243204.gif)
