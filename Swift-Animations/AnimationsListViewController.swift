@@ -31,6 +31,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         // Data source.
         adapters = [CellDataAdapter]()
         adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: TableViewTapAnimationController.classForCoder(), name : "UITableView状态切换效果")))
+        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: HeaderViewTapAnimationController.classForCoder(), name : "UITableView展开缩放动画")))
     }
     
     // MARK: Config TitleView.

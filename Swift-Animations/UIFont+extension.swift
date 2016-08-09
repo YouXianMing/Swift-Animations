@@ -10,6 +10,11 @@ import UIKit
 
 extension UIFont {
 
+    class func AppleSDGothicNeoThin(value : CGFloat) -> UIFont! {
+        
+        return self.init(name : "AppleSDGothicNeo-Thin", size: value)
+    }
+    
     class func Avenir(value : CGFloat) -> UIFont! {
         
         return self.init(name : "Avenir", size: value)

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */; };
+		1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9531D5A0D4700F00B40 /* CustomHeaderFooterView.swift */; };
+		1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9551D5A12AF00F00B40 /* ClassHeaderView.swift */; };
+		1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9571D5A12CA00F00B40 /* ClassModel.swift */; };
+		1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9591D5A12D100F00B40 /* StudentModel.swift */; };
+		1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */; };
 		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
 		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
 		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
@@ -35,6 +41,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewTapAnimationController.swift; sourceTree = "<group>"; };
+		1050B9531D5A0D4700F00B40 /* CustomHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderFooterView.swift; sourceTree = "<group>"; };
+		1050B9551D5A12AF00F00B40 /* ClassHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassHeaderView.swift; sourceTree = "<group>"; };
+		1050B9571D5A12CA00F00B40 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
+		1050B9591D5A12D100F00B40 /* StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
 		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
@@ -75,6 +87,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1050B94D1D5A0C0A00F00B40 /* HeaderViewTapAnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */,
+				1050B9551D5A12AF00F00B40 /* ClassHeaderView.swift */,
+				1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */,
+				1050B9571D5A12CA00F00B40 /* ClassModel.swift */,
+				1050B9591D5A12D100F00B40 /* StudentModel.swift */,
+			);
+			name = HeaderViewTapAnimationController;
+			sourceTree = "<group>";
+		};
+		1050B9501D5A0D2500F00B40 /* CustomHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				1050B9531D5A0D4700F00B40 /* CustomHeaderFooterView.swift */,
+			);
+			name = CustomHeaderView;
+			sourceTree = "<group>";
+		};
 		C52315CF1D55786100B3D86E /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				C56BEB4F1D56CE98003BBF11 /* TableViewTapAnimationController */,
+				1050B94D1D5A0C0A00F00B40 /* HeaderViewTapAnimationController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -150,6 +183,7 @@
 				C57007F31D5330B2003BFB5E /* AppDelegate.swift */,
 				C56BEB441D56C83F003BBF11 /* RootViewController */,
 				C56BEB431D56C82D003BBF11 /* Controllers */,
+				1050B9501D5A0D2500F00B40 /* CustomHeaderView */,
 				C52315CF1D55786100B3D86E /* CustomCell */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
 				C5B15BBC1D5426C300E24AC0 /* AbstractCustomViewControllers */,
@@ -269,8 +303,10 @@
 				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
 				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
+				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
 				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
 				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
+				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
 				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
@@ -279,12 +315,16 @@
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
+				1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */,
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
+				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,
 				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
 				C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
+				1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */,
 				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
 				C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */,
+				1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */,
 				C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
 				C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */,
