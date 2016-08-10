@@ -39,15 +39,49 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
     override func buildTitleView() {
         
         super.buildTitleView()
+
+        func createBackgroundStringLabel() {
+
+            let string    = "Animations"
+            let richText  = NSMutableAttributedString(string: string)
+            let length    = string.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+            let allColor  = UIColor(hexString: "#545454")!
+            let partColor = UIColor.clearColor()
+            richText.addAttributes([NSForegroundColorAttributeName : allColor], range: NSMakeRange(0, length))
+            richText.addAttributes([NSForegroundColorAttributeName : partColor], range: NSMakeRange(1, 1))
+            richText.addAttributes([NSFontAttributeName : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
+            
+            // Title.
+            let label            = UILabel()
+            label.attributedText = richText
+            label.sizeToFit()
+            titleView?.addSubview(label)
+            label.center = (titleView?.middlePoint)!
+        }
+
+        func createForegroundStringLabel() {
+            
+            let string    = "Animations"
+            let richText  = NSMutableAttributedString(string: string)
+            let length    = string.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+            let allColor  = UIColor.clearColor()
+            let partColor = UIColor(hexString: "#4699D9")!
+            richText.addAttributes([NSForegroundColorAttributeName : allColor], range: NSMakeRange(0, length))
+            richText.addAttributes([NSForegroundColorAttributeName : partColor], range: NSMakeRange(1, 1))
+            richText.addAttributes([NSFontAttributeName : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
+            
+            // Title.
+            let label            = UILabel()
+            label.attributedText = richText
+            label.sizeToFit()
+            titleView?.addSubview(label)
+            label.center = (titleView?.middlePoint)!
+            label.startGlowWithGlowRadius(2, glowOpacity: 0.8, glowColor: partColor,
+                                          glowDuration: 1, hideDuration: 3, glowAnimationDuration: 2)
+        }
         
-        // Title.
-        let label    = UILabel()
-        label.text   = "Animations"
-        label.font   = UIFont.AvenirLight(28)
-        label.sizeToFit()
-        label.center = (titleView?.middlePoint)!
-        titleView?.addSubview(label)
-        label.startGlowWithGlowRadius(2, glowOpacity: 0.8, glowColor: UIColor.cyanColor(), glowDuration: 1, hideDuration: 3, glowAnimationDuration: 2)
+        createBackgroundStringLabel()
+        createForegroundStringLabel()
         
         // Line.
         titleView?.addSubview(UIView.CreateLine(CGRectMake(0, titleView!.height - 0.5, Width(), 0.5), lineColor: UIColor.grayColor().colorWithAlphaComponent(0.2)))
@@ -84,3 +118,4 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         enableInteractivePopGestureRecognizer = true
     }
 }
+

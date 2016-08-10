@@ -13,6 +13,7 @@
 		1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9571D5A12CA00F00B40 /* ClassModel.swift */; };
 		1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9591D5A12D100F00B40 /* StudentModel.swift */; };
 		1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */; };
+		C51B502E1D5B5E4E006AA00A /* SwiftHEXColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51B502D1D5B5E4E006AA00A /* SwiftHEXColors.swift */; };
 		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
 		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
 		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
@@ -47,6 +48,7 @@
 		1050B9571D5A12CA00F00B40 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
 		1050B9591D5A12D100F00B40 /* StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
+		C51B502D1D5B5E4E006AA00A /* SwiftHEXColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHEXColors.swift; sourceTree = "<group>"; };
 		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
@@ -105,6 +107,35 @@
 				1050B9531D5A0D4700F00B40 /* CustomHeaderFooterView.swift */,
 			);
 			name = CustomHeaderView;
+			sourceTree = "<group>";
+		};
+		C51B502F1D5B5E76006AA00A /* UI-Component */ = {
+			isa = PBXGroup;
+			children = (
+				C57008091D534927003BFB5E /* UIView+extension */,
+			);
+			name = "UI-Component";
+			sourceTree = "<group>";
+		};
+		C51B50301D5B5E94006AA00A /* General-Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C51B502D1D5B5E4E006AA00A /* SwiftHEXColors.swift */,
+				C56BEB391D56B823003BBF11 /* UIFont+extension */,
+				C5B15BCD1D543A2100E24AC0 /* GCD */,
+			);
+			name = "General-Tools";
+			sourceTree = "<group>";
+		};
+		C51B50311D5B5EB7006AA00A /* AbsClass */ = {
+			isa = PBXGroup;
+			children = (
+				1050B9501D5A0D2500F00B40 /* CustomHeaderView */,
+				C52315CF1D55786100B3D86E /* CustomCell */,
+				C5B15BBC1D5426C300E24AC0 /* AbstractCustomViewControllers */,
+				C56BEB421D56C813003BBF11 /* CustomViewControllers */,
+			);
+			name = AbsClass;
 			sourceTree = "<group>";
 		};
 		C52315CF1D55786100B3D86E /* CustomCell */ = {
@@ -183,13 +214,9 @@
 				C57007F31D5330B2003BFB5E /* AppDelegate.swift */,
 				C56BEB441D56C83F003BBF11 /* RootViewController */,
 				C56BEB431D56C82D003BBF11 /* Controllers */,
-				1050B9501D5A0D2500F00B40 /* CustomHeaderView */,
-				C52315CF1D55786100B3D86E /* CustomCell */,
-				C5B15BCD1D543A2100E24AC0 /* GCD */,
-				C5B15BBC1D5426C300E24AC0 /* AbstractCustomViewControllers */,
-				C56BEB421D56C813003BBF11 /* CustomViewControllers */,
-				C57008091D534927003BFB5E /* UIView+extension */,
-				C56BEB391D56B823003BBF11 /* UIFont+extension */,
+				C51B50311D5B5EB7006AA00A /* AbsClass */,
+				C51B502F1D5B5E76006AA00A /* UI-Component */,
+				C51B50301D5B5E94006AA00A /* General-Tools */,
 				C57007FA1D5330B2003BFB5E /* Assets.xcassets */,
 				C56BEB371D56B660003BBF11 /* Main.storyboard */,
 				C57007FF1D5330B2003BFB5E /* Info.plist */,
@@ -321,6 +348,7 @@
 				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
 				C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
+				C51B502E1D5B5E4E006AA00A /* SwiftHEXColors.swift in Sources */,
 				1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */,
 				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
 				C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */,
