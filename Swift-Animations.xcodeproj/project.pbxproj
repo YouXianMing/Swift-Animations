@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */; };
+		1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036493C1D5CC35E00FDB05E /* RootNavigationViewController.swift */; };
 		1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */; };
 		1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9531D5A0D4700F00B40 /* CustomHeaderFooterView.swift */; };
 		1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9551D5A12AF00F00B40 /* ClassHeaderView.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSystemService.swift; sourceTree = "<group>"; };
+		1036493C1D5CC35E00FDB05E /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewTapAnimationController.swift; sourceTree = "<group>"; };
 		1050B9531D5A0D4700F00B40 /* CustomHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeaderFooterView.swift; sourceTree = "<group>"; };
 		1050B9551D5A12AF00F00B40 /* ClassHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassHeaderView.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C51B502D1D5B5E4E006AA00A /* SwiftHEXColors.swift */,
+				1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */,
 				C56BEB391D56B823003BBF11 /* UIFont+extension */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
 			);
@@ -175,6 +180,7 @@
 		C56BEB441D56C83F003BBF11 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1036493C1D5CC35E00FDB05E /* RootNavigationViewController.swift */,
 				C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */,
 				C56BEB3C1D56BE2F003BBF11 /* ControllerItem.swift */,
 				C52315D01D55787000B3D86E /* ListItemCell.swift */,
@@ -328,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
+				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
 				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
@@ -342,6 +349,7 @@
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
+				1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */,
 				1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */,
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
 				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,

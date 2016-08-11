@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window.backgroundColor    = UIColor.whiteColor()
             let controller            = AnimationsListViewController()
-            let rootViewController    = CustomNavigationController(rootViewController: controller, hideTabBar: true)
+            let rootViewController    = RootNavigationViewController(rootViewController: controller, hideTabBar: true)
             window.rootViewController = rootViewController
             window.makeKeyWindow()
         }
