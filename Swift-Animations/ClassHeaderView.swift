@@ -12,6 +12,7 @@ class ClassHeaderView: CustomHeaderFooterView {
     
     private var normalClassNameLabel : UILabel!
     private var highClassNameLabel   : UILabel!
+    private var rotateView           : RotateView!
     
     override func setupHeaderFooterView() {
         
@@ -37,6 +38,14 @@ class ClassHeaderView: CustomHeaderFooterView {
         highClassNameLabel.font      = normalClassNameLabel.font
         highClassNameLabel.textColor = UIColor.redColor()
         contentView.addSubview(highClassNameLabel)
+
+        rotateView = RotateView(frame: CGRectMake(Width() - 25, 5, 20, 20))
+        self.addSubview(rotateView)
+        
+        let arrowImageView    = UIImageView(frame: CGRectMake(0, 0, 20 / 3.0, 36 / 3.0))
+        arrowImageView.image  = UIImage(named: "arrows_next")
+        arrowImageView.center = rotateView.middlePoint
+        rotateView.addSubview(arrowImageView)
     }
     
     override func loadContent() {
@@ -99,7 +108,7 @@ class ClassHeaderView: CustomHeaderFooterView {
             
             }, completion: nil)
         
-        
+        rotateView.changeToUpAnimated(animated)
     }
     
     func extendStateAnimated(animated : Bool) {
@@ -112,5 +121,7 @@ class ClassHeaderView: CustomHeaderFooterView {
             self.highClassNameLabel.frame   = CGRectMake(10 + 10, 0, 100, 26);
             
             }, completion: nil)
+        
+        rotateView.changeToRightAnimated(animated)
     }
 }
