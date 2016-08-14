@@ -45,7 +45,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
             let string    = "Animations"
             let richText  = NSMutableAttributedString(string: string)
             let length    = string.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
-            let allColor  = UIColor(hexString: "#545454")!
+            let allColor  = UIColor.Hex(0x545454)
             let partColor = UIColor.clearColor()
             richText.addAttributes([NSForegroundColorAttributeName : allColor], range: NSMakeRange(0, length))
             richText.addAttributes([NSForegroundColorAttributeName : partColor], range: NSMakeRange(1, 1))
@@ -65,7 +65,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
             let richText  = NSMutableAttributedString(string: string)
             let length    = string.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
             let allColor  = UIColor.clearColor()
-            let partColor = UIColor(hexString: "#4699D9")!
+            let partColor = UIColor.Hex(0x4699D9)
             richText.addAttributes([NSForegroundColorAttributeName : allColor], range: NSMakeRange(0, length))
             richText.addAttributes([NSForegroundColorAttributeName : partColor], range: NSMakeRange(1, 1))
             richText.addAttributes([NSFontAttributeName : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
@@ -80,6 +80,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
                                           glowDuration: 1, hideDuration: 3, glowAnimationDuration: 2)
         }
         
+        titleView?.addSubview(BackgroundLineView(frame: titleView!.bounds, lineWidth: 4, lineGap: 4, lineColor: UIColor.blackColor().colorWithAlphaComponent(0.015), rotate: CGFloat(M_PI_4)))
         createBackgroundStringLabel()
         createForegroundStringLabel()
         

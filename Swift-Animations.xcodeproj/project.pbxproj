@@ -15,7 +15,6 @@
 		1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9571D5A12CA00F00B40 /* ClassModel.swift */; };
 		1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9591D5A12D100F00B40 /* StudentModel.swift */; };
 		1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */; };
-		C51B502E1D5B5E4E006AA00A /* SwiftHEXColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51B502D1D5B5E4E006AA00A /* SwiftHEXColors.swift */; };
 		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
 		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
 		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
@@ -41,6 +40,8 @@
 		C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */; };
 		C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */; };
 		C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */; };
+		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
+		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +53,6 @@
 		1050B9571D5A12CA00F00B40 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
 		1050B9591D5A12D100F00B40 /* StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
-		C51B502D1D5B5E4E006AA00A /* SwiftHEXColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHEXColors.swift; sourceTree = "<group>"; };
 		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
@@ -80,6 +80,8 @@
 		C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
 		C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDSemaphore.swift; sourceTree = "<group>"; };
 		C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
+		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
+		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				C57008091D534927003BFB5E /* UIView+extension */,
+				C5D6ED6A1D5FFB57009BB400 /* UIColor+extension */,
+				C5D6ED8F1D6023CD009BB400 /* BackgroundLineView */,
 			);
 			name = "UI-Component";
 			sourceTree = "<group>";
@@ -124,7 +128,6 @@
 		C51B50301D5B5E94006AA00A /* General-Tools */ = {
 			isa = PBXGroup;
 			children = (
-				C51B502D1D5B5E4E006AA00A /* SwiftHEXColors.swift */,
 				1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */,
 				C56BEB391D56B823003BBF11 /* UIFont+extension */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
@@ -263,6 +266,22 @@
 			name = GCD;
 			sourceTree = "<group>";
 		};
+		C5D6ED6A1D5FFB57009BB400 /* UIColor+extension */ = {
+			isa = PBXGroup;
+			children = (
+				C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */,
+			);
+			name = "UIColor+extension";
+			sourceTree = "<group>";
+		};
+		C5D6ED8F1D6023CD009BB400 /* BackgroundLineView */ = {
+			isa = PBXGroup;
+			children = (
+				C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */,
+			);
+			name = BackgroundLineView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,10 +362,12 @@
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
 				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
+				C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
+				C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */,
@@ -356,7 +377,6 @@
 				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
 				C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
-				C51B502E1D5B5E4E006AA00A /* SwiftHEXColors.swift in Sources */,
 				1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */,
 				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
 				C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */,

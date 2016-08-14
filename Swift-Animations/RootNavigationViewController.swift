@@ -18,9 +18,9 @@ class RootNavigationViewController: CustomNavigationController {
         lauchImageView.image = AppleSystemService.launchImage()
         view.addSubview(lauchImageView)
         
-        UIView.animateWithDuration(1, delay: 2, options: .CurveEaseInOut, animations: {
+        UIView.animateWithDuration(1, delay: 1, options: .CurveEaseInOut, animations: {
             
-            lauchImageView.scale = 1.2
+            lauchImageView.scale = 1.3
             lauchImageView.alpha = 0
             
         }) { (finished) in
