@@ -59,11 +59,11 @@ class CircleAnimationViewController: NormalTitleViewController {
             let smallPercent   = (percent < anotherPercent ? percent : anotherPercent)
             let largePercent   = (percent < anotherPercent ? anotherPercent : percent)
             
-            weakSelf?.circleView1.strokeEnd(largePercent, easingFunction: .ElasticEaseInOut, animated: true, duration: 1.0)
-            weakSelf?.circleView2.strokeEnd(largePercent, easingFunction: .ExponentialEaseInOut, animated: true, duration: 1.0)
+            weakSelf?.circleView1.strokeEnd(largePercent,   easingFunction: .ElasticEaseInOut, animated: true, duration: 1.0)
+            weakSelf?.circleView2.strokeEnd(largePercent,   easingFunction: .ExponentialEaseInOut, animated: true, duration: 1.0)
             weakSelf?.circleView3.strokeStart(smallPercent, easingFunction: .ExponentialEaseInOut, animated: true, duration: 1.0)
             weakSelf?.circleView3.strokeEnd(largePercent,   easingFunction: .ExponentialEaseInOut, animated: true, duration: 1.0)
-            weakSelf?.circleView4.strokeEnd(largePercent, easingFunction: .ExponentialEaseOut, animated: true, duration: 1.0)
+            weakSelf?.circleView4.strokeEnd(largePercent,   easingFunction: .ExponentialEaseOut, animated: true, duration: 1.0)
             
             }, timeIntervalWithSeconds: 1.5)
         timer.start()
