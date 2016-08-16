@@ -43,6 +43,11 @@
 		C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */; };
 		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
 		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
+		C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1A1D630B9200A71D51 /* Easing.swift */; };
+		C5E2DD1E1D630B9200A71D51 /* EasingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1B1D630B9200A71D51 /* EasingValue.swift */; };
+		C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1C1D630B9200A71D51 /* ComplexEasingValue.swift */; };
+		C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD201D6310DE00A71D51 /* CircleView.swift */; };
+		C5E2DD231D632BE600A71D51 /* CircleAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD221D632BE600A71D51 /* CircleAnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +89,11 @@
 		C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
 		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
+		C5E2DD1A1D630B9200A71D51 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
+		C5E2DD1B1D630B9200A71D51 /* EasingValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasingValue.swift; sourceTree = "<group>"; };
+		C5E2DD1C1D630B9200A71D51 /* ComplexEasingValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexEasingValue.swift; sourceTree = "<group>"; };
+		C5E2DD201D6310DE00A71D51 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		C5E2DD221D632BE600A71D51 /* CircleAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleAnimationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 				C5D6ED6A1D5FFB57009BB400 /* UIColor+extension */,
 				C5D6ED8F1D6023CD009BB400 /* BackgroundLineView */,
 				C5B094F61D60995600EDF810 /* RotateView */,
+				C5E2DD261D63354000A71D51 /* CircleView */,
 			);
 			name = "UI-Component";
 			sourceTree = "<group>";
@@ -131,8 +142,9 @@
 		C51B50301D5B5E94006AA00A /* General-Tools */ = {
 			isa = PBXGroup;
 			children = (
-				1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */,
 				C56BEB391D56B823003BBF11 /* UIFont+extension */,
+				C5E2DD181D630B7700A71D51 /* AppleSystemService */,
+				C5E2DD191D630B8A00A71D51 /* Easing */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
 			);
 			name = "General-Tools";
@@ -179,6 +191,7 @@
 			children = (
 				C56BEB4F1D56CE98003BBF11 /* TableViewTapAnimationController */,
 				1050B94D1D5A0C0A00F00B40 /* HeaderViewTapAnimationController */,
+				C5E2DD251D632BFE00A71D51 /* CircleAnimationViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +306,40 @@
 			name = BackgroundLineView;
 			sourceTree = "<group>";
 		};
+		C5E2DD181D630B7700A71D51 /* AppleSystemService */ = {
+			isa = PBXGroup;
+			children = (
+				1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */,
+			);
+			name = AppleSystemService;
+			sourceTree = "<group>";
+		};
+		C5E2DD191D630B8A00A71D51 /* Easing */ = {
+			isa = PBXGroup;
+			children = (
+				C5E2DD1A1D630B9200A71D51 /* Easing.swift */,
+				C5E2DD1B1D630B9200A71D51 /* EasingValue.swift */,
+				C5E2DD1C1D630B9200A71D51 /* ComplexEasingValue.swift */,
+			);
+			name = Easing;
+			sourceTree = "<group>";
+		};
+		C5E2DD251D632BFE00A71D51 /* CircleAnimationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5E2DD221D632BE600A71D51 /* CircleAnimationViewController.swift */,
+			);
+			name = CircleAnimationViewController;
+			sourceTree = "<group>";
+		};
+		C5E2DD261D63354000A71D51 /* CircleView */ = {
+			isa = PBXGroup;
+			children = (
+				C5E2DD201D6310DE00A71D51 /* CircleView.swift */,
+			);
+			name = CircleView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,13 +410,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */,
+				C5E2DD231D632BE600A71D51 /* CircleAnimationViewController.swift in Sources */,
 				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
+				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
 				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
 				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
 				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
 				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
+				C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */,
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
 				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
@@ -382,6 +433,7 @@
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */,
+				C5E2DD1E1D630B9200A71D51 /* EasingValue.swift in Sources */,
 				1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */,
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
 				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,
