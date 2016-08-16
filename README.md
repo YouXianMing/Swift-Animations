@@ -8,7 +8,7 @@
 
 ![demo.gif](http://images2015.cnblogs.com/blog/607542/201604/607542-20160419090223820-1448725903.gif)
 
-## The Swift Animation Collection. (Long-term Updates)
+## The Swift Animation Collection (Long-term Updates) . 
 
 > TableViewTapAnimationController
 
