@@ -17,3 +17,7 @@
 > HeaderViewTapAnimationController
 
 ![demo.gif](http://images2015.cnblogs.com/blog/607542/201608/607542-20160809234008496-1397243204.gif)
+
+> CircleAnimationViewController
+
+![demo.gif](http://images2015.cnblogs.com/blog/607542/201608/607542-20160816221026062-1763963823.gif)
