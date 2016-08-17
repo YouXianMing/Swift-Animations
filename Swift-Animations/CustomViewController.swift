@@ -20,11 +20,7 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
     var enableInteractivePopGestureRecognizer : Bool? {
         
         get { return (self.navigationController?.interactivePopGestureRecognizer?.enabled)}
-        
-        set(newVal) {
-            
-            self.navigationController?.interactivePopGestureRecognizer?.enabled = newVal!
-        }
+        set(newVal) { self.navigationController?.interactivePopGestureRecognizer?.enabled = newVal!}
     }
     
     /**
@@ -64,12 +60,29 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.popToRootViewControllerAnimated(animated)
     }
     
-    // MARK: System method.
+    // MARK: System method && Debug message.
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         setup()
+    }
+    
+    deinit {
+    
+        print("[❌] '" + String(self.classForCoder) + "' is released.")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        print("[➡️] enter to   '" + String(self.classForCoder) + "'.")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        print("[⛔️] leave from '" + String(self.classForCoder) + "'.")
     }
 }
 
