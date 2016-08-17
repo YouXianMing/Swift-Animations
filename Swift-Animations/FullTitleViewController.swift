@@ -1,14 +1,14 @@
 //
-//  NormalTitleViewController.swift
+//  FullTitleViewController.swift
 //  Swift-Animations
 //
-//  Created by YouXianMing on 16/8/7.
+//  Created by YouXianMing on 16/8/17.
 //  Copyright © 2016年 YouXianMing. All rights reserved.
 //
 
 import UIKit
 
-class NormalTitleViewController: CustomNormalContentViewController {
+class FullTitleViewController: CustomFullContentViewController {
 
     override func buildTitleView() {
         

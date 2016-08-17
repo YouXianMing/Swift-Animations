@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566F91D649A33008B46DE /* FullTitleViewController.swift */; };
+		100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FB1D649AB4008B46DE /* LiveImageViewController.swift */; };
+		100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FE1D649B09008B46DE /* LiveImageView.swift */; };
 		1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */; };
 		1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036493C1D5CC35E00FDB05E /* RootNavigationViewController.swift */; };
 		1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */; };
@@ -51,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		100566F91D649A33008B46DE /* FullTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTitleViewController.swift; sourceTree = "<group>"; };
+		100566FB1D649AB4008B46DE /* LiveImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
+		100566FE1D649B09008B46DE /* LiveImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageView.swift; sourceTree = "<group>"; };
 		1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSystemService.swift; sourceTree = "<group>"; };
 		1036493C1D5CC35E00FDB05E /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewTapAnimationController.swift; sourceTree = "<group>"; };
@@ -107,6 +113,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100566FD1D649AB8008B46DE /* LiveImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				100566FB1D649AB4008B46DE /* LiveImageViewController.swift */,
+			);
+			name = LiveImageViewController;
+			sourceTree = "<group>";
+		};
+		100567001D64A642008B46DE /* LiveImageView */ = {
+			isa = PBXGroup;
+			children = (
+				100566FE1D649B09008B46DE /* LiveImageView.swift */,
+			);
+			name = LiveImageView;
+			sourceTree = "<group>";
+		};
 		1050B94D1D5A0C0A00F00B40 /* HeaderViewTapAnimationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +157,7 @@
 				C5D6ED8F1D6023CD009BB400 /* BackgroundLineView */,
 				C5B094F61D60995600EDF810 /* RotateView */,
 				C5E2DD261D63354000A71D51 /* CircleView */,
+				100567001D64A642008B46DE /* LiveImageView */,
 			);
 			name = "UI-Component";
 			sourceTree = "<group>";
@@ -182,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				C56BEB3E1D56C1FA003BBF11 /* NormalTitleViewController.swift */,
+				100566F91D649A33008B46DE /* FullTitleViewController.swift */,
 			);
 			name = CustomViewControllers;
 			sourceTree = "<group>";
@@ -192,6 +216,7 @@
 				C56BEB4F1D56CE98003BBF11 /* TableViewTapAnimationController */,
 				1050B94D1D5A0C0A00F00B40 /* HeaderViewTapAnimationController */,
 				C5E2DD251D632BFE00A71D51 /* CircleAnimationViewController */,
+				100566FD1D649AB8008B46DE /* LiveImageViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -412,6 +437,7 @@
 			files = (
 				C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */,
 				C5E2DD231D632BE600A71D51 /* CircleAnimationViewController.swift in Sources */,
+				100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */,
 				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
 				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
 				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
@@ -426,10 +452,12 @@
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
 				C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
+				100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */,
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */,
+				100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */,
