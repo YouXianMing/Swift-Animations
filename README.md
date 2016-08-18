@@ -21,3 +21,7 @@
 > CircleAnimationViewController
 
 ![demo.gif](http://images2015.cnblogs.com/blog/607542/201608/607542-20160816221026062-1763963823.gif)
+
+> LiveImageViewController
+
+![demo.gif](http://images2015.cnblogs.com/blog/607542/201608/607542-20160817221622078-423278683.gif)
