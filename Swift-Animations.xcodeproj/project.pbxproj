@@ -18,6 +18,10 @@
 		1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9571D5A12CA00F00B40 /* ClassModel.swift */; };
 		1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B9591D5A12D100F00B40 /* StudentModel.swift */; };
 		1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */; };
+		10628F451D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F441D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift */; };
+		10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */; };
+		10628F4A1D65F3D800DEDE55 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F491D65F3D800DEDE55 /* Math.swift */; };
+		10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */; };
 		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
 		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
 		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
@@ -65,6 +69,10 @@
 		1050B9571D5A12CA00F00B40 /* ClassModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
 		1050B9591D5A12D100F00B40 /* StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		1050B95B1D5A17F700F00B40 /* StudentInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInfoCell.swift; sourceTree = "<group>"; };
+		10628F441D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTitleVisualEffectViewController.swift; sourceTree = "<group>"; };
+		10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollImageViewController.swift; sourceTree = "<group>"; };
+		10628F491D65F3D800DEDE55 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInfoView.swift; sourceTree = "<group>"; };
 		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
@@ -149,6 +157,15 @@
 			name = CustomHeaderView;
 			sourceTree = "<group>";
 		};
+		10628F481D65F38F00DEDE55 /* ScrollImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */,
+				10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */,
+			);
+			name = ScrollImageViewController;
+			sourceTree = "<group>";
+		};
 		C51B502F1D5B5E76006AA00A /* UI-Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +186,7 @@
 				C5E2DD181D630B7700A71D51 /* AppleSystemService */,
 				C5E2DD191D630B8A00A71D51 /* Easing */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
+				10628F491D65F3D800DEDE55 /* Math.swift */,
 			);
 			name = "General-Tools";
 			sourceTree = "<group>";
@@ -206,6 +224,7 @@
 			children = (
 				C56BEB3E1D56C1FA003BBF11 /* NormalTitleViewController.swift */,
 				100566F91D649A33008B46DE /* FullTitleViewController.swift */,
+				10628F441D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift */,
 			);
 			name = CustomViewControllers;
 			sourceTree = "<group>";
@@ -217,6 +236,7 @@
 				1050B94D1D5A0C0A00F00B40 /* HeaderViewTapAnimationController */,
 				C5E2DD251D632BFE00A71D51 /* CircleAnimationViewController */,
 				100566FD1D649AB8008B46DE /* LiveImageViewController */,
+				10628F481D65F38F00DEDE55 /* ScrollImageViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -450,18 +470,22 @@
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
 				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
+				10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */,
 				C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
 				100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */,
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
+				10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */,
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */,
 				100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
+				10628F451D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */,
 				C5E2DD1E1D630B9200A71D51 /* EasingValue.swift in Sources */,
+				10628F4A1D65F3D800DEDE55 /* Math.swift in Sources */,
 				1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */,
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
 				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,

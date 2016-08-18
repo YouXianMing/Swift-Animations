@@ -31,7 +31,7 @@ class FullTitleViewController: CustomFullContentViewController {
         button.setImage(UIImage(named: "backIcon"),     forState: .Normal)
         button.setImage(UIImage(named: "backIcon_pre"), forState: .Highlighted)
         self.titleView?.addSubview(button)
-        button.addTarget(self, action: #selector(NormalTitleViewController.popSelf), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(FullTitleViewController.popSelf), forControlEvents: .TouchUpInside)
         
         // Line view.
         titleView?.addSubview(UIView.CreateLine(CGRectMake(0, titleView!.height - 0.5, Width(), 0.5), lineColor: UIColor.grayColor().colorWithAlphaComponent(0.2)))

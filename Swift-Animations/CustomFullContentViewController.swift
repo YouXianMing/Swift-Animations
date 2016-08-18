@@ -68,7 +68,7 @@ class CustomFullContentViewController: CustomViewController {
      */
     func buildContentView() {
         
-        contentView = UIView(frame : CGRectMake(0, 64, width, height))
+        contentView = UIView(frame : CGRectMake(0, 0, width, height))
         view.addSubview(contentView!)
     }
     
