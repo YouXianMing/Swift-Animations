@@ -40,6 +40,8 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
             name : "图片切换效果")))
         adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: ScrollImageViewController.classForCoder(),
             name : "UIScrollView视差效果动画")))
+        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: CATransform3DM34Controller.classForCoder(),
+            name : "CATransform3D m34")))
     }
     
     // MARK: Config TitleView.
