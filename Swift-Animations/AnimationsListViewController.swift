@@ -8,14 +8,18 @@
 
 import UIKit
 
-class AnimationsListViewController: CustomNormalContentViewController, UITableViewDataSource, UITableViewDelegate {
+class AnimationsListViewController: CustomNormalContentViewController, UITableViewDataSource, UITableViewDelegate, DefaultNotificationCenterDelegate {
     
-    private var adapters  : [CellDataAdapter]!
-    private var tableView : UITableView!
+    private var adapters     : [CellDataAdapter]!
+    private var tableView    : UITableView!
+    private var notification : DefaultNotificationCenter! = DefaultNotificationCenter()
     
     override func setup() {
         
         super.setup()
+        
+        notification.delegate = self
+        notification.addNotificationName(NotificationEvent.AnimationsListViewControllerFirstTimeLoadData.Message())
         
         // TableView.
         tableView                = UITableView(frame: (contentView?.bounds)!)
@@ -30,18 +34,34 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         
         // Data source.
         adapters = [CellDataAdapter]()
-        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: TableViewTapAnimationController.classForCoder(),
-            name : "UITableView状态切换效果")))
-        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: HeaderViewTapAnimationController.classForCoder(),
-            name : "UITableView展开缩放动画")))
-        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: CircleAnimationViewController.classForCoder(),
-            name : "Easing-圆环动画")))
-        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: LiveImageViewController.classForCoder(),
-            name : "图片切换效果")))
-        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: ScrollImageViewController.classForCoder(),
-            name : "UIScrollView视差效果动画")))
-        adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: CATransform3DM34Controller.classForCoder(),
-            name : "CATransform3D m34")))
+    }
+    
+    // MARK: DefaultNotificationCenterDelegate
+    
+    func defaultNotificationCenter(notificationName: String, object: AnyObject?) {
+        
+        func add(controllerClass : AnyClass!, name : String!) {
+            
+            adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: controllerClass, name: name)))
+        }
+        
+        GCDQueue.executeInMainQueue {
+            
+            add(TableViewTapAnimationController.classForCoder(),  name: "UITableView状态切换效果")
+            add(HeaderViewTapAnimationController.classForCoder(), name: "UITableView展开缩放动画")
+            add(CircleAnimationViewController.classForCoder(),    name: "Easing-圆环动画")
+            add(LiveImageViewController.classForCoder(),          name: "图片切换效果")
+            add(ScrollImageViewController.classForCoder(),        name: "UIScrollView视差效果动画")
+            add(CATransform3DM34Controller.classForCoder(),       name: "CATransform3D m34")
+            
+            var indexPaths = [NSIndexPath]()
+            for i in 0 ..< self.adapters.count {
+                
+                indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
+            }
+            
+            self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+        }
     }
     
     // MARK: Config TitleView.

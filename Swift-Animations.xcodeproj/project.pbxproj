@@ -39,6 +39,8 @@
 		C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008051D5330CC003BFB5E /* UIView+SetRect.swift */; };
 		C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */; };
 		C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */; };
+		C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */; };
+		C581C7011D66F92600CC552D /* NotificationStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C7001D66F92600CC552D /* NotificationStamp.swift */; };
 		C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B094F41D6093B400EDF810 /* RotateView.swift */; };
 		C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */; };
 		C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */; };
@@ -93,6 +95,8 @@
 		C57008051D5330CC003BFB5E /* UIView+SetRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SetRect.swift"; sourceTree = "<group>"; };
 		C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimationProperty.swift"; sourceTree = "<group>"; };
 		C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3DM34Controller.swift; sourceTree = "<group>"; };
+		C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationCenter.swift; sourceTree = "<group>"; };
+		C581C7001D66F92600CC552D /* NotificationStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationStamp.swift; sourceTree = "<group>"; };
 		C5B094F41D6093B400EDF810 /* RotateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateView.swift; sourceTree = "<group>"; };
 		C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -188,7 +192,8 @@
 				C5E2DD181D630B7700A71D51 /* AppleSystemService */,
 				C5E2DD191D630B8A00A71D51 /* Easing */,
 				C5B15BCD1D543A2100E24AC0 /* GCD */,
-				10628F491D65F3D800DEDE55 /* Math.swift */,
+				C581C6FC1D66E08C00CC552D /* Math */,
+				C581C6FD1D66E09500CC552D /* DefaultNotificationCenter */,
 			);
 			name = "General-Tools";
 			sourceTree = "<group>";
@@ -320,8 +325,25 @@
 				C57007FA1D5330B2003BFB5E /* Assets.xcassets */,
 				C56BEB371D56B660003BBF11 /* Main.storyboard */,
 				C57007FF1D5330B2003BFB5E /* Info.plist */,
+				C581C7001D66F92600CC552D /* NotificationStamp.swift */,
 			);
 			name = "System-Source";
+			sourceTree = "<group>";
+		};
+		C581C6FC1D66E08C00CC552D /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				10628F491D65F3D800DEDE55 /* Math.swift */,
+			);
+			name = Math;
+			sourceTree = "<group>";
+		};
+		C581C6FD1D66E09500CC552D /* DefaultNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */,
+			);
+			name = DefaultNotificationCenter;
 			sourceTree = "<group>";
 		};
 		C5B094F61D60995600EDF810 /* RotateView */ = {
@@ -482,6 +504,7 @@
 				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
 				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
 				C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */,
+				C581C7011D66F92600CC552D /* NotificationStamp.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
 				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
@@ -497,6 +520,7 @@
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */,
+				C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */,
 				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */,
 				100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */,
