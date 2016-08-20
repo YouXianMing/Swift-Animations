@@ -76,13 +76,13 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidAppear(animated: Bool) {
         
         super.viewDidAppear(animated)
-        print("[➡️] enter to   '" + String(self.classForCoder) + "'.")
+        print("[➡️] enter to --> '" + String(self.classForCoder) + "'.")
     }
     
     override func viewDidDisappear(animated: Bool) {
         
         super.viewDidDisappear(animated)
-        print("[⛔️] leave from '" + String(self.classForCoder) + "'.")
+        print("[🕒] leave from <-- '" + String(self.classForCoder) + "'.")
     }
 }
 

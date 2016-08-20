@@ -22,6 +22,9 @@
 		10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */; };
 		10628F4A1D65F3D800DEDE55 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F491D65F3D800DEDE55 /* Math.swift */; };
 		10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */; };
+		C51F853E1D67D1110013C49B /* TransformFadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F853D1D67D1110013C49B /* TransformFadeViewController.swift */; };
+		C51F85401D67D2350013C49B /* UIColor+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F853F1D67D2350013C49B /* UIColor+Convenience.swift */; };
+		C51F85431D67D3930013C49B /* TranformFadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F85421D67D3930013C49B /* TranformFadeView.swift */; };
 		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
 		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
 		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
@@ -76,6 +79,9 @@
 		10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollImageViewController.swift; sourceTree = "<group>"; };
 		10628F491D65F3D800DEDE55 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInfoView.swift; sourceTree = "<group>"; };
+		C51F853D1D67D1110013C49B /* TransformFadeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformFadeViewController.swift; sourceTree = "<group>"; };
+		C51F853F1D67D2350013C49B /* UIColor+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
+		C51F85421D67D3930013C49B /* TranformFadeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranformFadeView.swift; sourceTree = "<group>"; };
 		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
@@ -181,6 +187,7 @@
 				C5B094F61D60995600EDF810 /* RotateView */,
 				C5E2DD261D63354000A71D51 /* CircleView */,
 				100567001D64A642008B46DE /* LiveImageView */,
+				C51F85441D67E9D60013C49B /* TranformFadeView */,
 			);
 			name = "UI-Component";
 			sourceTree = "<group>";
@@ -207,6 +214,22 @@
 				C56BEB421D56C813003BBF11 /* CustomViewControllers */,
 			);
 			name = AbsClass;
+			sourceTree = "<group>";
+		};
+		C51F85411D67D36B0013C49B /* TransformFadeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C51F853D1D67D1110013C49B /* TransformFadeViewController.swift */,
+			);
+			name = TransformFadeViewController;
+			sourceTree = "<group>";
+		};
+		C51F85441D67E9D60013C49B /* TranformFadeView */ = {
+			isa = PBXGroup;
+			children = (
+				C51F85421D67D3930013C49B /* TranformFadeView.swift */,
+			);
+			name = TranformFadeView;
 			sourceTree = "<group>";
 		};
 		C52315CF1D55786100B3D86E /* CustomCell */ = {
@@ -245,6 +268,7 @@
 				100566FD1D649AB8008B46DE /* LiveImageViewController */,
 				10628F481D65F38F00DEDE55 /* ScrollImageViewController */,
 				C581C6FA1D66D3FF00CC552D /* CATransform3DM34Controller */,
+				C51F85411D67D36B0013C49B /* TransformFadeViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -380,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */,
+				C51F853F1D67D2350013C49B /* UIColor+Convenience.swift */,
 			);
 			name = "UIColor+extension";
 			sourceTree = "<group>";
@@ -510,6 +535,7 @@
 				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
 				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
 				C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */,
+				C51F85401D67D2350013C49B /* UIColor+Convenience.swift in Sources */,
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
 				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
@@ -532,6 +558,7 @@
 				10628F4A1D65F3D800DEDE55 /* Math.swift in Sources */,
 				1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */,
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
+				C51F85431D67D3930013C49B /* TranformFadeView.swift in Sources */,
 				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,
 				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
 				C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */,
@@ -545,6 +572,7 @@
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
 				C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */,
 				C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */,
+				C51F853E1D67D1110013C49B /* TransformFadeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

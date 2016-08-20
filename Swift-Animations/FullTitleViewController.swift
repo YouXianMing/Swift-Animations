@@ -34,7 +34,7 @@ class FullTitleViewController: CustomFullContentViewController {
         button.addTarget(self, action: #selector(FullTitleViewController.popSelf), forControlEvents: .TouchUpInside)
         
         // Line view.
-        titleView?.addSubview(UIView.CreateLine(CGRectMake(0, titleView!.height - 0.5, Width(), 0.5), lineColor: UIColor.grayColor().colorWithAlphaComponent(0.2)))
+        titleView?.addSubview(UIView.CreateLine(CGRectMake(0, titleView!.height - 0.5, Width(), 0.5), lineColor: UIColor.grayColor().alpha(0.2)))
     }
     
     func popSelf() {

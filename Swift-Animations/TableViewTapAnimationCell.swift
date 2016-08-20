@@ -136,7 +136,7 @@ class TableViewTapAnimationCell: CustomCell {
     private func showSelectedAnimation() {
         
         let tempView             = UIView(frame: CGRectMake(0, 0, Width(), 80))
-        tempView.backgroundColor = UIColor.cyanColor().colorWithAlphaComponent(0.2)
+        tempView.backgroundColor = UIColor.cyanColor().alpha(0.2)
         tempView.alpha           = 0
         self.addSubview(tempView)
         

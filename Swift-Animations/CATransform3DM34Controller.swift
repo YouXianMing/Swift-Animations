@@ -23,7 +23,7 @@ class CATransform3DM34Controller: NormalTitleViewController {
         timerEvent()
     }
     
-    func initLayer() {
+    private func initLayer() {
         
         let image         = UIImage(named: "1")
         layer             = CALayer()
@@ -35,7 +35,7 @@ class CATransform3DM34Controller: NormalTitleViewController {
         contentView?.layer.addSublayer(layer)
     }
     
-    func timerEvent() {
+    private func timerEvent() {
         
         weak var wself = self
         timer = GCDTimer(inQueue: GCDQueue.mainQueue)
@@ -56,7 +56,7 @@ class CATransform3DM34Controller: NormalTitleViewController {
         timer.start()
     }
 
-    func transformStateEvent() {
+    private func transformStateEvent() {
         
         var perspectiveTransform = CATransform3DIdentity
         perspectiveTransform.m34 = -(1.0 / 500.0)
@@ -69,7 +69,7 @@ class CATransform3DM34Controller: NormalTitleViewController {
         layer.speed                  = 0.5
     }
     
-    func normalStateEvent() {
+    private func normalStateEvent() {
         
         let perspectiveTransform = CATransform3DIdentity
         layer.transform          = perspectiveTransform

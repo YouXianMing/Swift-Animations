@@ -21,10 +21,10 @@ class ClassHeaderView: CustomHeaderFooterView {
     
     override func buildSubview() {
         
-        let contentView = UIView.CreateLine(CGRectMake(0, 2, Width(), 26), lineColor: UIColor.grayColor().colorWithAlphaComponent(0.05))
+        let contentView = UIView.CreateLine(CGRectMake(0, 2, Width(), 26), lineColor: UIColor.grayColor().alpha(0.05))
         self.addSubview(contentView)
-        contentView.addSubview(UIView.CreateLine(CGRectMake(0, 0, Width(), 0.5), lineColor: UIColor.grayColor().colorWithAlphaComponent(0.25)))
-        contentView.addSubview(UIView.CreateLine(CGRectMake(0, 25.5, Width(), 0.5), lineColor: UIColor.grayColor().colorWithAlphaComponent(0.25)))
+        contentView.addSubview(UIView.CreateLine(CGRectMake(0, 0, Width(), 0.5), lineColor: UIColor.grayColor().alpha(0.25)))
+        contentView.addSubview(UIView.CreateLine(CGRectMake(0, 25.5, Width(), 0.5), lineColor: UIColor.grayColor().alpha(0.25)))
         
         let button = UIButton(frame: CGRectMake(0, 0, Width(), 30))
         button.addTarget(self, action: #selector(ClassHeaderView.buttonEvent), forControlEvents: .TouchUpInside)

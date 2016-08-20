@@ -47,7 +47,7 @@ extension UITableView {
 
 // MARK: protocol CustomCellDelegate
 
-protocol CustomCellDelegate : class {
+@objc protocol CustomCellDelegate : class {
     
     /**
      CustomCell's event.
@@ -55,7 +55,7 @@ protocol CustomCellDelegate : class {
      - parameter cell:  CustomCell type class.
      - parameter event: Event data.
      */
-    func customCell(cell: CustomCell?, event: AnyObject?)
+    optional func customCell(cell: CustomCell?, event: AnyObject?)
 }
 
 // MARK: CustomCell
