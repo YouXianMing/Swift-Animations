@@ -29,4 +29,9 @@ extension UIFont {
         
         return self.init(name : "Heiti SC", size: value)
     }
+    
+    class func HelveticaNeueThin(value : CGFloat) -> UIFont! {
+        
+        return self.init(name : "HelveticaNeue-Thin", size: value)
+    }
 }

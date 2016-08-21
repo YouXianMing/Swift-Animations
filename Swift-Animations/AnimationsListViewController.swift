@@ -54,6 +54,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
             add(ScrollImageViewController.classForCoder(),        name: "UIScrollView视差效果动画")
             add(CATransform3DM34Controller.classForCoder(),       name: "CATransform3D m34")
             add(TransformFadeViewController.classForCoder(),      name: "图片碎片化mask动画")
+            add(MixedColorProgressViewController.classForCoder(), name: "UILabel混色显示")
             
             var indexPaths = [NSIndexPath]()
             for i in 0 ..< self.adapters.count {
