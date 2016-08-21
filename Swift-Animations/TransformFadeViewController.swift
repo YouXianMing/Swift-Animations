@@ -33,25 +33,17 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
         images.append(UIImage(named: "3")!)
         images.append(UIImage(named: "4")!)
         
-        tranformFadeViewOne                      = TranformFadeView(frame: contentView!.bounds)
+        tranformFadeViewOne                      = TranformFadeView(frame: contentView!.bounds, verticalCount: 3, horizontalCount: 12,
+                                                                    fadeDuradtion: 1, animationGapDuration: 0.075)
         tranformFadeViewOne.imageContentMode     = .ScaleAspectFill
         tranformFadeViewOne.image                = currentImage()
-        tranformFadeViewOne.verticalCount        = 3
-        tranformFadeViewOne.horizontalCount      = 12
-        tranformFadeViewOne.fadeDuradtion        = 1
-        tranformFadeViewOne.animationGapDuration = 0.075
-        tranformFadeViewOne.makeConfigEffective()
         tranformFadeViewOne.start(animated: false, transformTo: .Show)
         contentView!.addSubview(tranformFadeViewOne)
         
-        tranformFadeViewTwo                      = TranformFadeView(frame: contentView!.bounds)
+        tranformFadeViewTwo                      = TranformFadeView(frame: contentView!.bounds, verticalCount: 3, horizontalCount: 12,
+                                                                    fadeDuradtion: 1, animationGapDuration: 0.075)
         tranformFadeViewTwo.imageContentMode     = .ScaleAspectFill
         tranformFadeViewTwo.image                = currentImage()
-        tranformFadeViewTwo.verticalCount        = 3
-        tranformFadeViewTwo.horizontalCount      = 12
-        tranformFadeViewTwo.fadeDuradtion        = 1
-        tranformFadeViewTwo.animationGapDuration = 0.075
-        tranformFadeViewTwo.makeConfigEffective()
         tranformFadeViewTwo.start(animated: false, transformTo: .Fade)
         contentView!.addSubview(tranformFadeViewTwo)
         

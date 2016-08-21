@@ -13,23 +13,48 @@ enum TranformFadeViewAnimatedType : Int {
     case Fade, Show
 }
 
+// MARK: TranformFadeView
+
 class TranformFadeView: UIView {
     
+    // MARK: Convenience init.
+    
+    convenience init(frame: CGRect, verticalCount : Int, horizontalCount : Int, fadeDuradtion : NSTimeInterval, animationGapDuration : NSTimeInterval) {
+        
+        self.init(frame: frame)
+        self.verticalCount        = verticalCount
+        self.horizontalCount      = horizontalCount
+        self.fadeDuradtion        = fadeDuradtion
+        self.animationGapDuration = animationGapDuration
+        self.makeConfigEffective()
+    }
+    
+    // MARK: Properies & funcs.
+    
+    /// The content imageView's image.
     var image : UIImage? {
     
         get { return imageView.image}
         set(newVal) { imageView.image = newVal}
     }
     
+    /// The content imageView's contentMode.
     var imageContentMode: UIViewContentMode {
     
         get { return imageView.contentMode}
         set(newVal) { imageView.contentMode = newVal}
     }
     
+    /// Vertical direction view's count.
     var verticalCount        : Int!
+    
+    /// Horizontal direction view's count.
     var horizontalCount      : Int!
+    
+    /// One of the maskView's animation duration, default is 1.0
     var fadeDuradtion        : NSTimeInterval! = 1
+    
+    /// The animation duration two subViews from allMaskView, default is 0.2
     var animationGapDuration : NSTimeInterval! = 0.2
     
     /**
@@ -80,6 +105,12 @@ class TranformFadeView: UIView {
         }
     }
     
+    /**
+     Start transform to fade or show state.
+     
+     - parameter animated:    Animated or not.
+     - parameter transformTo: Show or fade.
+     */
     func start(animated animated : Bool, transformTo : TranformFadeViewAnimatedType) {
         
         if animated == true {
@@ -122,6 +153,8 @@ class TranformFadeView: UIView {
             }
         }
     }
+    
+    // MARK: System methods & Private properties
     
     private var imageView     : UIImageView!
     private var allMaskView   : UIView!
