@@ -28,6 +28,7 @@
 		C51F85431D67D3930013C49B /* TranformFadeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F85421D67D3930013C49B /* TranformFadeView.swift */; };
 		C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315CB1D55617100B3D86E /* CustomCell.swift */; };
 		C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52315D01D55787000B3D86E /* ListItemCell.swift */; };
+		C55DD6D61D6AA08E00F94F2B /* PageFlipEffectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55DD6D51D6AA08E00F94F2B /* PageFlipEffectController.swift */; };
 		C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5693C3D1D54448600070B92 /* CellDataAdapter.swift */; };
 		C56BEB381D56B660003BBF11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56BEB371D56B660003BBF11 /* Main.storyboard */; };
 		C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BEB3A1D56B87E003BBF11 /* UIFont+extension.swift */; };
@@ -86,6 +87,7 @@
 		C51F85421D67D3930013C49B /* TranformFadeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranformFadeView.swift; sourceTree = "<group>"; };
 		C52315CB1D55617100B3D86E /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52315D01D55787000B3D86E /* ListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
+		C55DD6D51D6AA08E00F94F2B /* PageFlipEffectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageFlipEffectController.swift; sourceTree = "<group>"; };
 		C5693C3D1D54448600070B92 /* CellDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellDataAdapter.swift; sourceTree = "<group>"; };
 		C56BEB371D56B660003BBF11 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C56BEB3A1D56B87E003BBF11 /* UIFont+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
@@ -251,6 +253,14 @@
 			name = CustomCell;
 			sourceTree = "<group>";
 		};
+		C55DD6D71D6AA0AC00F94F2B /* PageFlipEffectController */ = {
+			isa = PBXGroup;
+			children = (
+				C55DD6D51D6AA08E00F94F2B /* PageFlipEffectController.swift */,
+			);
+			name = PageFlipEffectController;
+			sourceTree = "<group>";
+		};
 		C56BEB391D56B823003BBF11 /* UIFont+extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +290,7 @@
 				C581C6FA1D66D3FF00CC552D /* CATransform3DM34Controller */,
 				C51F85411D67D36B0013C49B /* TransformFadeViewController */,
 				C51F76581D698F8B00DF04AE /* MixedColorProgressViewController */,
+				C55DD6D71D6AA0AC00F94F2B /* PageFlipEffectController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -534,6 +545,7 @@
 			files = (
 				C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */,
 				C5E2DD231D632BE600A71D51 /* CircleAnimationViewController.swift in Sources */,
+				C55DD6D61D6AA08E00F94F2B /* PageFlipEffectController.swift in Sources */,
 				100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */,
 				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
 				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
