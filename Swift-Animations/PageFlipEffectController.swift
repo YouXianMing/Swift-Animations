@@ -20,15 +20,16 @@ class PageFlipEffectController: NormalTitleViewController {
         let image = UIImage(named: "pic_1")
         let size  = Math.ResetFromSize((image?.size)!, withFixedWidth: Width() / 2.0)
         
-        layer               = CALayer()
-        layer.anchorPoint   = CGPointMake(1.0, 0.5)
-        layer.frame         = CGRectMake(0, 0, Width() / 2, size.height)
-        layer.position      = CGPointMake(Width() / 2, contentView!.middleY)
-        layer.contents      = image?.CGImage
-        layer.borderColor   = UIColor.blackColor().CGColor
-        layer.borderWidth   = 4.0
-        layer.masksToBounds = true
-        layer.transform     = CATransform3DMakeRotation(Math.RadianFromDegree(0), 0, 1, 1)
+        layer                        = CALayer()
+        layer.anchorPoint            = CGPointMake(1.0, 0.5)
+        layer.frame                  = CGRectMake(0, 0, Width() / 2, size.height)
+        layer.allowsEdgeAntialiasing = true
+        layer.position               = CGPointMake(Width() / 2, contentView!.middleY)
+        layer.contents               = image?.CGImage
+        layer.borderColor            = UIColor.blackColor().CGColor
+        layer.borderWidth            = 3.0
+        layer.masksToBounds          = true
+        layer.transform              = CATransform3DMakeRotation(Math.RadianFromDegree(0), 0, 1, 1)
         contentView?.layer.addSublayer(layer)
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(PageFlipEffectController.handlePan))
