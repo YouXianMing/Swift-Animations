@@ -62,9 +62,9 @@ class TranformFadeView: UIView {
      */
     func makeConfigEffective() {
         
-        if verticalCount < 1 || horizontalCount < 1 {
-            
-            return;
+        guard verticalCount >= 1 && horizontalCount >= 1 else {
+        
+            return
         }
         
         if allMaskView != nil {

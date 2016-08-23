@@ -133,9 +133,9 @@ private class LineBackground : UIView {
     override func drawRect(rect: CGRect) {
         
         super.drawRect(rect)
+                
+        guard self.bounds.size.width > 0 && self.bounds.size.height > 0 else {
         
-        if self.bounds.size.width <= 0 || self.bounds.size.height <= 0 {
-            
             return
         }
         

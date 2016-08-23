@@ -38,10 +38,14 @@ extension UITableView {
     func selectedEventWithIndexPath(indexPath : NSIndexPath) {
         
         let cell = self.cellForRowAtIndexPath(indexPath) as! CustomCell
-        if cell.isKindOfClass(CustomCell.classForCoder()) {
-            
-            cell.selectedEvent()
+        
+        // Make sure the cell is kind of CustomCell.
+        guard cell.isKindOfClass(CustomCell.classForCoder()) == true else {
+        
+            return
         }
+        
+        cell.selectedEvent()
     }
 }
 

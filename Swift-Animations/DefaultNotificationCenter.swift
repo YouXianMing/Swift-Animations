@@ -160,3 +160,5 @@ private class DefaultNotificationCenterModel : NSObject {
 
     var name : String!
 }
+
+

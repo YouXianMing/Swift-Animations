@@ -17,6 +17,16 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         
         super.setup()
         
+        func appendModel(model : TapAnimationModel) {
+            
+            guard (adapters != nil) else {
+                
+                return;
+            }
+            
+            adapters.append(TableViewTapAnimationCell.dataAdapterWithData(model, cellHeight: 80))
+        }
+        
         // TableView.
         tableView                = UITableView(frame: (contentView?.bounds)!)
         tableView.dataSource     = self
@@ -29,13 +39,13 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         
         // Data source.
         adapters = [CellDataAdapter]()
-        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "YouXianMing", selected: false), cellHeight: 80))
-        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Animations", selected: false), cellHeight: 80))
-        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "YoCelsius", selected: false), cellHeight: 80))
-        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "iOS-Progrommer", selected: false), cellHeight: 80))
-        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Design-Patterns", selected: false), cellHeight: 80))
-        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Arabia-Terra", selected: false), cellHeight: 80))
-        adapters.append(TableViewTapAnimationCell.dataAdapterWithData(TapAnimationModel(name: "Swift", selected: false), cellHeight: 80))
+        appendModel(TapAnimationModel(name: "YouXianMing",     selected: false))
+        appendModel(TapAnimationModel(name: "Animations",      selected: false))
+        appendModel(TapAnimationModel(name: "YoCelsius",       selected: false))
+        appendModel(TapAnimationModel(name: "iOS-Progrommer",  selected: false))
+        appendModel(TapAnimationModel(name: "Design-Patterns", selected: false))
+        appendModel(TapAnimationModel(name: "Arabia-Terra",    selected: false))
+        appendModel(TapAnimationModel(name: "Swift",           selected: false))
     }
     
     // MARK: UITableView's delegate & dataSource.
