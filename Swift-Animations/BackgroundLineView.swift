@@ -141,7 +141,7 @@ private class LineBackground : UIView {
         
         let context      = UIGraphicsGetCurrentContext()
         let width        = self.bounds.size.width
-        let height       = self.bounds.size.width
+        let height       = self.bounds.size.height
         let drawLength   = sqrt(width * width + height * height)
         let outerX       = (drawLength - width)  / 2.0
         let outerY       = (drawLength - height) / 2.0
