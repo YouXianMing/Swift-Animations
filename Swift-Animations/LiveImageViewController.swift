@@ -10,9 +10,9 @@ import UIKit
 
 class LiveImageViewController: NormalTitleViewController {
     
-    var timer  : GCDTimer!  = GCDTimer(inQueue: GCDQueue.mainQueue)
-    var count  : NSInteger! = 0
-    var images : [UIImage]! = [UIImage]()
+    var timer  : GCDTimer  = GCDTimer(inQueue: GCDQueue.mainQueue)
+    var count  : NSInteger = 0
+    var images : [UIImage] = [UIImage]()
     
     override func setup() {
         

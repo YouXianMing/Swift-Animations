@@ -75,7 +75,7 @@ class ClassHeaderView: CustomHeaderFooterView {
             normalStateAnimated(true)
             
             var indexPaths = [NSIndexPath]()
-            let index      = Int((model.students?.count)!)
+            let index      = model.students.count
             for i in 0 ..< index {
 
                 indexPaths.append(NSIndexPath(forItem: i, inSection: section!))
@@ -88,7 +88,7 @@ class ClassHeaderView: CustomHeaderFooterView {
             extendStateAnimated(true)
             
             var indexPaths = [NSIndexPath]()
-            let index      = Int((model.students?.count)!)
+            let index      = model.students.count
             for i in 0 ..< index {
                 
                 indexPaths.append(NSIndexPath(forItem: i, inSection: section!))

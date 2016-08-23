@@ -10,15 +10,9 @@ import UIKit
 
 class TapAnimationModel: NSObject {
 
-    var name     : String?
-    var selected : Bool!
+    var name     : String = ""
+    var selected : Bool   = false
     
-    required override init() {
-        
-        super.init()
-        self.selected = false
-    }
-
     convenience init(name : String, selected : Bool) {
         
         self.init()

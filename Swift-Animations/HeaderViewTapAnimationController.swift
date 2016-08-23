@@ -10,16 +10,15 @@ import UIKit
 
 class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private var classes           : [ClassModel]!
-    private var tableView         : UITableView!
-    private var sectionFirstLoad  : Bool!
-    private weak var tmpHeadView  : ClassHeaderView!
+    private var classes           : [ClassModel] = [ClassModel]()
+    private var sectionFirstLoad  : Bool         = false
+    
+    private var      tableView    : UITableView!
+    private weak var tmpHeadView  : ClassHeaderView?
     
     override func setup() {
         
         super.setup()
-        
-        sectionFirstLoad = false
         
         // TableView.
         tableView                     = UITableView(frame: (contentView?.bounds)!)
@@ -37,41 +36,40 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         // Data source.
         let Aitna    = ClassModel(className: "Aitna")
         Aitna.expend = false
-        Aitna.students?.append(StudentModel(name: "Y.X.M.",  age: 27))
-        Aitna.students?.append(StudentModel(name: "Leif",    age: 12))
-        Aitna.students?.append(StudentModel(name: "Lennon",  age: 23))
-        Aitna.students?.append(StudentModel(name: "Jerome",  age: 19))
-        Aitna.students?.append(StudentModel(name: "Isidore", age: 15))
+        Aitna.students.append(StudentModel(name: "Y.X.M.",  age: 27))
+        Aitna.students.append(StudentModel(name: "Leif",    age: 12))
+        Aitna.students.append(StudentModel(name: "Lennon",  age: 23))
+        Aitna.students.append(StudentModel(name: "Jerome",  age: 19))
+        Aitna.students.append(StudentModel(name: "Isidore", age: 15))
         
         let Melete    = ClassModel(className: "Melete")
         Melete.expend = false
-        Melete.students?.append(StudentModel(name: "Merle",  age: 17))
-        Melete.students?.append(StudentModel(name: "Paddy",  age: 31))
-        Melete.students?.append(StudentModel(name: "Perry",  age: 59))
-        Melete.students?.append(StudentModel(name: "Philip", age: 23))
+        Melete.students.append(StudentModel(name: "Merle",  age: 17))
+        Melete.students.append(StudentModel(name: "Paddy",  age: 31))
+        Melete.students.append(StudentModel(name: "Perry",  age: 59))
+        Melete.students.append(StudentModel(name: "Philip", age: 23))
         
         let Aoede    = ClassModel(className: "Aoede")
         Aoede.expend = false
-        Aoede.students?.append(StudentModel(name: "Verne",   age: 12))
-        Aoede.students?.append(StudentModel(name: "Vincent", age: 89))
-        Aoede.students?.append(StudentModel(name: "Walter",  age: 43))
-        Aoede.students?.append(StudentModel(name: "Zachary", age: 21))
+        Aoede.students.append(StudentModel(name: "Verne",   age: 12))
+        Aoede.students.append(StudentModel(name: "Vincent", age: 89))
+        Aoede.students.append(StudentModel(name: "Walter",  age: 43))
+        Aoede.students.append(StudentModel(name: "Zachary", age: 21))
 
         let Dione    = ClassModel(className: "Dione")
         Dione.expend = false
-        Dione.students?.append(StudentModel(name: "Timothy",  age: 72))
-        Dione.students?.append(StudentModel(name: "Roderick", age: 34))
-        Dione.students?.append(StudentModel(name: "Quentin",  age: 12))
-        Dione.students?.append(StudentModel(name: "Paddy",    age: 75))
+        Dione.students.append(StudentModel(name: "Timothy",  age: 72))
+        Dione.students.append(StudentModel(name: "Roderick", age: 34))
+        Dione.students.append(StudentModel(name: "Quentin",  age: 12))
+        Dione.students.append(StudentModel(name: "Paddy",    age: 75))
         
         let Adanos    = ClassModel(className: "Adanos")
         Adanos.expend = false
-        Adanos.students?.append(StudentModel(name: "Mortimer", age: 43))
-        Adanos.students?.append(StudentModel(name: "Michael",  age: 64))
-        Adanos.students?.append(StudentModel(name: "Kevin",    age: 23))
-        Adanos.students?.append(StudentModel(name: "Jeremy",   age: 21))
+        Adanos.students.append(StudentModel(name: "Mortimer", age: 43))
+        Adanos.students.append(StudentModel(name: "Michael",  age: 64))
+        Adanos.students.append(StudentModel(name: "Kevin",    age: 23))
+        Adanos.students.append(StudentModel(name: "Jeremy",   age: 21))
         
-        classes = [ClassModel]()
         classes.append(Aitna)
         classes.append(Melete)
         classes.append(Aoede)
@@ -86,7 +84,10 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
             
             GCDQueue.executeInMainQueue({
                 
-                self.tmpHeadView.buttonEvent()
+                if let headView = self.tmpHeadView {
+                
+                    headView.buttonEvent()
+                }
                 
                 }, afterDelaySeconds: 0.4)
             }, afterDelaySeconds: 0.3)
@@ -99,7 +100,7 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         let classModel = classes[section]
         if classModel.expend == true {
             
-            return (classModel.students?.count)!
+            return classModel.students.count
             
         } else {
         
@@ -123,7 +124,7 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         
         let classModel       = classes[indexPath.section]
         let customCell       = tableView.dequeueReusableCellWithIdentifier("StudentInfoCell") as! CustomCell
-        customCell.data      = classModel.students![indexPath.row]
+        customCell.data      = classModel.students[indexPath.row]
         customCell.indexPath = indexPath
         customCell.loadContent()
         

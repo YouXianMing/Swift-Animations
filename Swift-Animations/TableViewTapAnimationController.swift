@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewTapAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var adapters  : [CellDataAdapter]!
+    var adapters  : [CellDataAdapter] = [CellDataAdapter]()
     var tableView : UITableView!
     
     override func setup() {
@@ -18,11 +18,6 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         super.setup()
         
         func appendModel(model : TapAnimationModel) {
-            
-            guard (adapters != nil) else {
-                
-                return;
-            }
             
             adapters.append(TableViewTapAnimationCell.dataAdapterWithData(model, cellHeight: 80))
         }
@@ -38,7 +33,6 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         TableViewTapAnimationCell.registerToTableView(tableView)
         
         // Data source.
-        adapters = [CellDataAdapter]()
         appendModel(TapAnimationModel(name: "YouXianMing",     selected: false))
         appendModel(TapAnimationModel(name: "Animations",      selected: false))
         appendModel(TapAnimationModel(name: "YoCelsius",       selected: false))

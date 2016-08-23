@@ -10,8 +10,8 @@ import UIKit
 
 class ControllerItem: NSObject {
 
-    var controllerClass : AnyClass!
-    var name            : String!
+    var controllerClass : AnyClass?
+    var name            : String?
     
     convenience init(controllerClass : AnyClass, name : String) {
         

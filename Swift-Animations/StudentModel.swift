@@ -10,8 +10,8 @@ import UIKit
 
 class StudentModel: NSObject {
 
-    var name : String?
-    var age  : NSNumber?
+    var name : String   = ""
+    var age  : NSNumber = 0
     
     convenience init(name : String, age : NSNumber) {
         

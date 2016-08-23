@@ -39,7 +39,7 @@ class ListItemCell: CustomCell {
         
         let item           = data as! ControllerItem
         titlelabel.text    = item.name
-        subTitleLabel.text = NSStringFromClass(item.controllerClass).componentsSeparatedByString(".").last
+        subTitleLabel.text = NSStringFromClass(item.controllerClass!).componentsSeparatedByString(".").last
     }
     
     override func selectedEvent() {

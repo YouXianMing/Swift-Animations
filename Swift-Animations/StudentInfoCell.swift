@@ -37,7 +37,7 @@ class StudentInfoCell: CustomCell {
         let model = data as! StudentModel
         
         nameLabel.text = model.name
-        ageLabel.text  = model.age?.stringValue
+        ageLabel.text  = model.age.stringValue
     }
     
     override func selectedEvent() {

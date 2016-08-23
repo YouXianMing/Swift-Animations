@@ -10,9 +10,9 @@ import UIKit
 
 class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollViewDelegate {
 
-    let viewTag            : Int! = 1000
+    let viewTag            : Int       = 1000
+    var pictures           : [UIImage] = [UIImage]()
     var onceLinearEquation : Math!
-    var pictures           : [UIImage]!
     var scrollView         : UIScrollView!
     
     override func setup() {
@@ -20,7 +20,6 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         super.setup()
         
         onceLinearEquation = Math(pointA: CGPointMake(0, -50), pointB: CGPointMake(contentView!.width, 270 - 80))
-        pictures           = [UIImage]()
         pictures.append(UIImage(named: "1")!)
         pictures.append(UIImage(named: "2")!)
         pictures.append(UIImage(named: "3")!)

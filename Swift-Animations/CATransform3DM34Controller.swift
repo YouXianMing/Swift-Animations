@@ -11,8 +11,8 @@ import UIKit
 class CATransform3DM34Controller: NormalTitleViewController {
 
     var layer          : CALayer!
-    var timer          : GCDTimer!
-    var transformState : Bool! = false
+    var timer          : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
+    var transformState : Bool     = false
     
     override func setup() {
         
@@ -38,7 +38,6 @@ class CATransform3DM34Controller: NormalTitleViewController {
     private func timerEvent() {
         
         weak var wself = self
-        timer = GCDTimer(inQueue: GCDQueue.mainQueue)
         timer.event({
             
             if wself?.transformState == false {

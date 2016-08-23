@@ -10,15 +10,13 @@ import UIKit
 
 class ClassModel: NSObject {
 
-    var className : String?
-    var students  : [StudentModel]?
-    var expend    : Bool?
+    var className : String         = ""
+    var students  : [StudentModel] = [StudentModel]()
+    var expend    : Bool           = false
     
     convenience init(className : String) {
         
         self.init()
         self.className = className
-        self.students  = [StudentModel]();
-        self.expend    = false
     }
 }

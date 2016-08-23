@@ -45,17 +45,17 @@ class TranformFadeView: UIView {
         set(newVal) { imageView.contentMode = newVal}
     }
     
-    /// Vertical direction view's count.
-    var verticalCount        : Int!
+    /// Vertical direction view's count, default is 3.
+    var verticalCount        : Int = 3
     
-    /// Horizontal direction view's count.
-    var horizontalCount      : Int!
+    /// Horizontal direction view's count, default is 4.
+    var horizontalCount      : Int = 4
     
     /// One of the maskView's animation duration, default is 1.0
-    var fadeDuradtion        : NSTimeInterval! = 1
+    var fadeDuradtion        : NSTimeInterval = 1
     
     /// The animation duration two subViews from allMaskView, default is 0.2
-    var animationGapDuration : NSTimeInterval! = 0.2
+    var animationGapDuration : NSTimeInterval = 0.2
     
     /**
      Make the config effective.

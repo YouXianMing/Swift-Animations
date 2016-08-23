@@ -18,9 +18,9 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
     private var images              : [UIImage]!
     private var tranformFadeViewOne : TranformFadeView!
     private var tranformFadeViewTwo : TranformFadeView!
-    private var count               : Int!      = 0
-    private var timer               : GCDTimer! = GCDTimer(inQueue: GCDQueue.mainQueue)
-    private var type                : EType!    = .TypeOne
+    private var count               : Int       = 0
+    private var timer               : GCDTimer  = GCDTimer(inQueue: GCDQueue.mainQueue)
+    private var type                : EType     = .TypeOne
     
     override func setup() {
         

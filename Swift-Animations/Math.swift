@@ -111,6 +111,23 @@ class Math: NSObject {
     }
     
     /**
+     Get the point value when Y equal some number.
+     
+     - parameter yValue: Some number.
+     
+     - returns: The point value.
+     */
+    func whenYEqual(yValue : CGFloat) -> (x : CGFloat, y : CGFloat) {
+        
+        if k == 0 {
+            
+            return (0, yValue)
+        }
+        
+        return ((yValue - b) / k, yValue)
+    }
+    
+    /**
      Get Y value when X equal some number.
      
      - parameter xValue: Some number.
@@ -120,6 +137,18 @@ class Math: NSObject {
     func yValueWhenXEqual(xValue : CGFloat) -> CGFloat {
         
         return k * xValue + b
+    }
+    
+    /**
+     Get the point value when X equal some number.
+     
+     - parameter xValue: Some number.
+     
+     - returns: The point value.
+     */
+    func whenXEqual(xValue : CGFloat) -> (x : CGFloat, y : CGFloat) {
+        
+        return (xValue, k * xValue + b)
     }
     
     // MARK: Private func.

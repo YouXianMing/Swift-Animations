@@ -10,9 +10,9 @@ import UIKit
 
 class AnimationsListViewController: CustomNormalContentViewController, UITableViewDataSource, UITableViewDelegate, DefaultNotificationCenterDelegate {
     
-    private var adapters     : [CellDataAdapter]!
     private var tableView    : UITableView!
-    private var notification : DefaultNotificationCenter! = DefaultNotificationCenter()
+    private var notification : DefaultNotificationCenter = DefaultNotificationCenter()
+    private var adapters     : [CellDataAdapter]         = [CellDataAdapter]()
     
     override func setup() {
         
@@ -27,13 +27,10 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         tableView.delegate       = self
         tableView.separatorStyle = .None
         tableView.rowHeight      = 50
-        contentView?.addSubview(tableView!)
+        contentView?.addSubview(tableView)
         
         // Register cell.
         ListItemCell.registerToTableView(tableView, cellReuseIdentifier: nil)
-        
-        // Data source.
-        adapters = [CellDataAdapter]()
     }
     
     // MARK: DefaultNotificationCenterDelegate

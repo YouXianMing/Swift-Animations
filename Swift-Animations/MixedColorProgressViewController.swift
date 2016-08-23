@@ -14,7 +14,7 @@ class MixedColorProgressViewController: NormalTitleViewController {
     private var upLabel   : UILabel!
     private var downView  : UIView!
     private var downLabel : UILabel!
-    private var timer     : GCDTimer! = GCDTimer(inQueue: GCDQueue.mainQueue)
+    private var timer     : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
     
     override func setup() {
         
