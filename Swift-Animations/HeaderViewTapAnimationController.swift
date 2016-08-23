@@ -30,8 +30,8 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         contentView?.addSubview(tableView!)
         
         // Register.
-        ClassHeaderView.registerToTableView(tableView)
-        StudentInfoCell.registerToTableView(tableView)
+        ClassHeaderView.RegisterTo(tableView)
+        StudentInfoCell.RegisterTo(tableView)
         
         // Data source.
         let Aitna    = ClassModel(className: "Aitna")

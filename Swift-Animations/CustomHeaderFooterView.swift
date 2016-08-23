@@ -72,18 +72,8 @@ class CustomHeaderFooterView: UITableViewHeaderFooterView {
      - parameter tableView:           UITableView.
      - parameter cellReuseIdentifier: HeaderFooterView reuse identifier.
      */
-    class func registerToTableView(tableView: UITableView, reuseIdentifier: String?) {
+    class func RegisterTo(tableView: UITableView, reuseIdentifier: String? = nil) {
         
         tableView.registerClass(self.classForCoder(), forHeaderFooterViewReuseIdentifier: (reuseIdentifier != nil) ? reuseIdentifier! : String(self.classForCoder()))
-    }
-    
-    /**
-     Register headerFooterView to tableView, the cell reuse identifier is the Cell class string.
-     
-     - parameter tableView: UITableView.
-     */
-    class func registerToTableView(tableView: UITableView) {
-        
-        tableView.registerClass(self.classForCoder(), forHeaderFooterViewReuseIdentifier: String(self.classForCoder()))
     }
 }

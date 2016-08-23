@@ -78,6 +78,11 @@ class TableViewTapAnimationCell: CustomCell {
             model.selected = true
             changeToState(.kSelectedState, animated: true)
         }
+
+        if let delegate = delegate {
+        
+            delegate.customCell(self, event: model.name)
+        }
     }
     
     // MARK: Private func.

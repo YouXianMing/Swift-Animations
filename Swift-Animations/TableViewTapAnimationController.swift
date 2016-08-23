@@ -8,8 +8,8 @@
 
 import UIKit
 
-class TableViewTapAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
-
+class TableViewTapAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource, CustomCellDelegate {
+    
     var adapters  : [CellDataAdapter] = [CellDataAdapter]()
     var tableView : UITableView!
     
@@ -17,9 +17,9 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         
         super.setup()
         
-        func appendModel(model : TapAnimationModel) {
+        func appendModel(model : TapAnimationModel, cellHeight : CGFloat = 80) {
             
-            adapters.append(TableViewTapAnimationCell.dataAdapterWithData(model, cellHeight: 80))
+            adapters.append(TableViewTapAnimationCell.Adapter(data: model, cellHeight: cellHeight))
         }
         
         // TableView.
@@ -30,7 +30,7 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         contentView?.addSubview(tableView!)
         
         // Register cell.
-        TableViewTapAnimationCell.registerToTableView(tableView)
+        TableViewTapAnimationCell.RegisterTo(tableView)
         
         // Data source.
         appendModel(TapAnimationModel(name: "YouXianMing",     selected: false))
@@ -51,7 +51,10 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row], indexPath: indexPath)
+        let cell      = tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row], indexPath: indexPath)
+        cell.delegate = self
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -63,4 +66,13 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         
         return adapters[indexPath.row].cellHeight!
     }
+    
+    // MARK: CustomCellDelegate.
+    
+    func customCell(cell: CustomCell?, event: AnyObject?) {
+        
+        print("\(cell) + \(event)")
+    }
 }
+
+

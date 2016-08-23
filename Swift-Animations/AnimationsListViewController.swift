@@ -30,7 +30,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         contentView?.addSubview(tableView)
         
         // Register cell.
-        ListItemCell.registerToTableView(tableView, cellReuseIdentifier: nil)
+        ListItemCell.RegisterTo(tableView)
     }
     
     // MARK: DefaultNotificationCenterDelegate
@@ -39,7 +39,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         
         func add(controllerClass : AnyClass!, name : String!) {
             
-            adapters.append(ListItemCell.dataAdapterWithData(ControllerItem(controllerClass: controllerClass, name: name)))
+            adapters.append(ListItemCell.Adapter(data: ControllerItem(controllerClass: controllerClass, name: name)))
         }
         
         GCDQueue.executeInMainQueue {

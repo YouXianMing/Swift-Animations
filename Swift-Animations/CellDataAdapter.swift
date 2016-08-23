@@ -47,7 +47,7 @@ class CellDataAdapter: NSObject {
      
      - returns: CellDataAdapter's object.
      */
-    class func createTableViewType(cellReuseIdentifier: String?, data: AnyObject?, cellHeight: CGFloat?, cellType: Int?) -> CellDataAdapter {
+    class func CreateTableViewType(cellReuseIdentifier: String?, data: AnyObject?, cellHeight: CGFloat?, cellType: Int?) -> CellDataAdapter {
         
         return CellDataAdapter.init(cellReuseIdentifier: cellReuseIdentifier, data: data, cellHeight: cellHeight, cellType: cellType)
     }
@@ -61,7 +61,7 @@ class CellDataAdapter: NSObject {
      
      - returns: CellDataAdapter's object.
      */
-    class func createCollectionViewType(cellReuseIdentifier: String?, data: AnyObject?, cellType: Int?) -> CellDataAdapter {
+    class func CreateCollectionViewType(cellReuseIdentifier: String?, data: AnyObject?, cellType: Int?) -> CellDataAdapter {
         
         return CellDataAdapter.init(cellReuseIdentifier: cellReuseIdentifier, data: data, cellHeight: nil, cellType: cellType)
     }

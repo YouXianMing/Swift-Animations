@@ -51,7 +51,7 @@ extension UITableView {
 
 // MARK: protocol CustomCellDelegate
 
-@objc protocol CustomCellDelegate : class {
+protocol CustomCellDelegate : class {
     
     /**
      CustomCell's event.
@@ -59,7 +59,7 @@ extension UITableView {
      - parameter cell:  CustomCell type class.
      - parameter event: Event data.
      */
-    optional func customCell(cell: CustomCell?, event: AnyObject?)
+    func customCell(cell: CustomCell?, event: AnyObject?)
 }
 
 // MARK: CustomCell
@@ -109,56 +109,31 @@ class CustomCell: UITableViewCell {
      */
     func selectedEvent() {}
     
-    class func dataAdapter(reuseIdentifier: String?, data: AnyObject?, cellHeight: CGFloat, type: Int?) -> CellDataAdapter! {
+    /**
+     Create the CustomCell type data adapter.
+     
+     - parameter reuseIdentifier: The reuseIdentifier.
+     - parameter data:            The data.
+     - parameter cellHeight:      The cell's height.
+     - parameter type:            The cell's type.
+     
+     - returns: The cellDataAdapter.
+     */
+    class func Adapter(reuseIdentifier: String? = nil, data: AnyObject? = nil, cellHeight: CGFloat? = 0, type: Int? = nil) -> CellDataAdapter {
+    
+        let identifier = (reuseIdentifier == nil ? String(self.classForCoder()) : reuseIdentifier)
         
-        return CellDataAdapter.init(cellReuseIdentifier: (reuseIdentifier != nil) ? reuseIdentifier: String(self.classForCoder()),
-                                    data: data, cellHeight: cellHeight, cellType: type)
+        return CellDataAdapter.init(cellReuseIdentifier: identifier, data: data, cellHeight: cellHeight, cellType: type)
     }
     
-    class func dataAdapterWithData(data: AnyObject?, cellHeight: CGFloat, type: Int?) -> CellDataAdapter! {
-        
-        return CellDataAdapter.init(cellReuseIdentifier: String(self.classForCoder()), data: data, cellHeight: cellHeight, cellType: type)
-    }
-    
-    class func dataAdapterWithData(data: AnyObject?, cellHeight: CGFloat) -> CellDataAdapter! {
-        
-        return CellDataAdapter.init(cellReuseIdentifier: String(self.classForCoder()), data: data, cellHeight: cellHeight, cellType: nil)
-    }
-    
-    class func dataAdapterWithData(data: AnyObject) -> CellDataAdapter! {
-        
-        return CellDataAdapter.init(cellReuseIdentifier: String(self.classForCoder()), data: data, cellHeight: nil, cellType: nil)
-    }
-    
-    class func dataAdapterWithCellHeight(cellHeight: CGFloat) -> CellDataAdapter! {
-        
-        return CellDataAdapter.init(cellReuseIdentifier: String(self.classForCoder()), data: nil, cellHeight: cellHeight, cellType: nil)
-    }
-    
-    class func dataAdapterWithReuseIdentifier(reuseIdentifier: String?, data: AnyObject?, type: Int?) -> CellDataAdapter! {
-        
-        return CellDataAdapter.init(cellReuseIdentifier: (reuseIdentifier != nil) ? reuseIdentifier : String(self.classForCoder()),
-                                    data: data, cellHeight: nil, cellType: type)
-    }
-
     /**
      Register cell to tableView with cell reuse identifier.
      
      - parameter tableView:           UITableView.
      - parameter cellReuseIdentifier: Cell reuse identifier.
      */
-    class func registerToTableView(tableView: UITableView, cellReuseIdentifier: String?) {
+    class func RegisterTo(tableView: UITableView, cellReuseIdentifier: String? = nil) {
         
         tableView.registerClass(self.classForCoder(), forCellReuseIdentifier: (cellReuseIdentifier != nil) ? cellReuseIdentifier! : String(self.classForCoder()))
-    }
-    
-    /**
-     Register cell to tableView, the cell reuse identifier is the Cell class string.
-     
-     - parameter tableView: UITableView.
-     */
-    class func registerToTableView(tableView: UITableView) {
-        
-        tableView.registerClass(self.classForCoder(), forCellReuseIdentifier: String(self.classForCoder()))
     }
 }
