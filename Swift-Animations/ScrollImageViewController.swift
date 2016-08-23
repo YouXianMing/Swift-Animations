@@ -36,10 +36,10 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         scrollView.contentSize                    = CGSizeMake(CGFloat(pictures.count) * width, height)
         contentView?.addSubview(scrollView)
         
-        for i in 0 ..< pictures.count {
+        for (i, image) in pictures.enumerate() {
             
             let showView              = MoreInfoView(frame: CGRectMake(CGFloat(i) * width, 0, width, height))
-            showView.imageView.image = pictures[i]
+            showView.imageView.image = image
             showView.tag             = viewTag + i
             scrollView.addSubview(showView)
         }
