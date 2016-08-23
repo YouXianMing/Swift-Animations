@@ -57,7 +57,7 @@ class TableViewTapAnimationCell: CustomCell {
             changeToState(.kSelectedState, animated: false)
             
         } else {
-        
+            
             changeToState(.kNormalState, animated: false)
         }
     }
@@ -88,10 +88,10 @@ class TableViewTapAnimationCell: CustomCell {
             
         case .kNormalState:
             
-            UIView.animateWithDuration(animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: .CurveEaseInOut, animations: { 
+            UIView.animateWithDuration(animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: .CurveEaseInOut, animations: {
                 
                 if animated == true {
-                
+                    
                     self.iconView.transform = CGAffineTransformMake(0.5, 0, 0, 0.5, 0, 0)
                 }
                 
@@ -105,8 +105,6 @@ class TableViewTapAnimationCell: CustomCell {
                 self.rectView.layer.cornerRadius = 0
                 
                 }, completion: nil)
-            
-            break
             
         case .kSelectedState:
             
@@ -128,8 +126,6 @@ class TableViewTapAnimationCell: CustomCell {
                 self.rectView.layer.cornerRadius = 4
                 
                 }, completion: nil)
-            
-            break
         }
     }
     

@@ -33,14 +33,14 @@ class TranformFadeView: UIView {
     
     /// The content imageView's image.
     var image : UIImage? {
-    
+        
         get { return imageView.image}
         set(newVal) { imageView.image = newVal}
     }
     
     /// The content imageView's contentMode.
     var imageContentMode: UIViewContentMode {
-    
+        
         get { return imageView.contentMode}
         set(newVal) { imageView.contentMode = newVal}
     }
@@ -63,7 +63,7 @@ class TranformFadeView: UIView {
     func makeConfigEffective() {
         
         guard verticalCount >= 1 && horizontalCount >= 1 else {
-        
+            
             return
         }
         
@@ -137,19 +137,19 @@ class TranformFadeView: UIView {
             }
             
         } else {
-        
+            
             for i in 0 ..< maskViewCount {
                 
                 let tmpView = allMaskView.viewWithTag(maskViewTag + i)
                 
-                    switch transformTo {
-                        
-                    case .Fade :
-                        tmpView?.alpha = 0.0
-                        
-                    case .Show :
-                        tmpView?.alpha = 1.0
-                    }
+                switch transformTo {
+                    
+                case .Fade :
+                    tmpView?.alpha = 0.0
+                    
+                case .Show :
+                    tmpView?.alpha = 1.0
+                }
             }
         }
     }

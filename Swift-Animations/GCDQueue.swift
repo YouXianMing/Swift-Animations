@@ -38,17 +38,14 @@ class GCDQueue: NSObject {
         case .SerialQueue:
             
             dispatchQueue = dispatch_queue_create(nil, DISPATCH_QUEUE_SERIAL)
-            break
             
         case .ConcurrentQueue:
             
             dispatchQueue = dispatch_queue_create(nil, DISPATCH_QUEUE_CONCURRENT)
-            break
             
         case .None:
             
             dispatchQueue = nil
-            break
         }
     }
     
