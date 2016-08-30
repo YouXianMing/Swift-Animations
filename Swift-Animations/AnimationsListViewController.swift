@@ -53,6 +53,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
             add(TransformFadeViewController.classForCoder(),      name: "图片碎片化mask动画")
             add(MixedColorProgressViewController.classForCoder(), name: "UILabel混色显示")
             add(PageFlipEffectController.classForCoder(),         name: "翻页效果")
+            add(TapCellAnimationController.classForCoder(),       name: "Cell点击动画")
             
             var indexPaths = [NSIndexPath]()
             for i in 0 ..< self.adapters.count {

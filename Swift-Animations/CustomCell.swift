@@ -110,6 +110,15 @@ class CustomCell: UITableViewCell {
     func selectedEvent() {}
     
     /**
+     Calculate the cell's from data, override by subclass.
+     
+     - parameter data: Data.
+     
+     - returns: Cell's height.
+     */
+    class func HeightWithData(data : AnyObject) -> CGFloat { return 0}
+    
+    /**
      Create the CustomCell type data adapter.
      
      - parameter reuseIdentifier: The reuseIdentifier.

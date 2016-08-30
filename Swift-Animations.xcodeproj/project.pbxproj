@@ -10,6 +10,11 @@
 		100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566F91D649A33008B46DE /* FullTitleViewController.swift */; };
 		100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FB1D649AB4008B46DE /* LiveImageViewController.swift */; };
 		100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FE1D649B09008B46DE /* LiveImageView.swift */; };
+		1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030753C1D75C4250043A858 /* String+StringHeight.swift */; };
+		1030753F1D75C4870043A858 /* TapCellAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030753E1D75C4870043A858 /* TapCellAnimationController.swift */; };
+		103075421D75C50C0043A858 /* ShowTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103075411D75C50C0043A858 /* ShowTextCell.swift */; };
+		103075441D75C5370043A858 /* ShowTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103075431D75C5370043A858 /* ShowTextModel.swift */; };
+		103075471D75CFE70043A858 /* UILabel+SizeToFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103075461D75CFE70043A858 /* UILabel+SizeToFit.swift */; };
 		1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */; };
 		1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036493C1D5CC35E00FDB05E /* RootNavigationViewController.swift */; };
 		1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */; };
@@ -69,6 +74,11 @@
 		100566F91D649A33008B46DE /* FullTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTitleViewController.swift; sourceTree = "<group>"; };
 		100566FB1D649AB4008B46DE /* LiveImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
 		100566FE1D649B09008B46DE /* LiveImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageView.swift; sourceTree = "<group>"; };
+		1030753C1D75C4250043A858 /* String+StringHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+StringHeight.swift"; sourceTree = "<group>"; };
+		1030753E1D75C4870043A858 /* TapCellAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapCellAnimationController.swift; sourceTree = "<group>"; };
+		103075411D75C50C0043A858 /* ShowTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTextCell.swift; sourceTree = "<group>"; };
+		103075431D75C5370043A858 /* ShowTextModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTextModel.swift; sourceTree = "<group>"; };
+		103075461D75CFE70043A858 /* UILabel+SizeToFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+SizeToFit.swift"; sourceTree = "<group>"; };
 		1036493A1D5CBEFB00FDB05E /* AppleSystemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSystemService.swift; sourceTree = "<group>"; };
 		1036493C1D5CC35E00FDB05E /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigationViewController.swift; sourceTree = "<group>"; };
 		1050B94E1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewTapAnimationController.swift; sourceTree = "<group>"; };
@@ -153,6 +163,32 @@
 			name = LiveImageView;
 			sourceTree = "<group>";
 		};
+		1030753B1D75C4130043A858 /* String+extension */ = {
+			isa = PBXGroup;
+			children = (
+				1030753C1D75C4250043A858 /* String+StringHeight.swift */,
+			);
+			name = "String+extension";
+			sourceTree = "<group>";
+		};
+		103075401D75C48C0043A858 /* TapCellAnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				1030753E1D75C4870043A858 /* TapCellAnimationController.swift */,
+				103075411D75C50C0043A858 /* ShowTextCell.swift */,
+				103075431D75C5370043A858 /* ShowTextModel.swift */,
+			);
+			name = TapCellAnimationController;
+			sourceTree = "<group>";
+		};
+		103075451D75CFD30043A858 /* UILabel+extension */ = {
+			isa = PBXGroup;
+			children = (
+				103075461D75CFE70043A858 /* UILabel+SizeToFit.swift */,
+			);
+			name = "UILabel+extension";
+			sourceTree = "<group>";
+		};
 		1050B94D1D5A0C0A00F00B40 /* HeaderViewTapAnimationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +235,8 @@
 		C51B50301D5B5E94006AA00A /* General-Tools */ = {
 			isa = PBXGroup;
 			children = (
+				103075451D75CFD30043A858 /* UILabel+extension */,
+				1030753B1D75C4130043A858 /* String+extension */,
 				C56BEB391D56B823003BBF11 /* UIFont+extension */,
 				C5E2DD181D630B7700A71D51 /* AppleSystemService */,
 				C5E2DD191D630B8A00A71D51 /* Easing */,
@@ -291,6 +329,7 @@
 				C51F85411D67D36B0013C49B /* TransformFadeViewController */,
 				C51F76581D698F8B00DF04AE /* MixedColorProgressViewController */,
 				C55DD6D71D6AA0AC00F94F2B /* PageFlipEffectController */,
+				103075401D75C48C0043A858 /* TapCellAnimationController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -547,7 +586,9 @@
 				C5E2DD231D632BE600A71D51 /* CircleAnimationViewController.swift in Sources */,
 				C55DD6D61D6AA08E00F94F2B /* PageFlipEffectController.swift in Sources */,
 				100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */,
+				103075471D75CFE70043A858 /* UILabel+SizeToFit.swift in Sources */,
 				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
+				1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */,
 				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
 				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
 				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
@@ -590,10 +631,13 @@
 				1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */,
 				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
 				C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */,
+				1030753F1D75C4870043A858 /* TapCellAnimationController.swift in Sources */,
+				103075441D75C5370043A858 /* ShowTextModel.swift in Sources */,
 				C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */,
 				1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */,
 				C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
+				103075421D75C50C0043A858 /* ShowTextCell.swift in Sources */,
 				C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */,
 				C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */,
 				C51F853E1D67D1110013C49B /* TransformFadeViewController.swift in Sources */,
