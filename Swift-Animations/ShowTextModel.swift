@@ -12,6 +12,7 @@ class ShowTextModel: NSObject {
     
     var inputString        : String?
     var expendStringHeight : CGFloat?
+    var normalStringHeight : CGFloat?
     
     convenience init(_ inputString : String) {
         

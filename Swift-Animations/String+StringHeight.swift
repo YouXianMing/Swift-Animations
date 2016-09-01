@@ -55,6 +55,24 @@ extension String {
     }
     
     /**
+     Get the height with font.
+     
+     - parameter font:       The font.
+     - parameter fixedWidth: The fixed width.
+     
+     - returns: The height.
+     */
+    static func HeightWithFont(font : UIFont = UIFont.systemFontOfSize(18)) -> CGFloat {
+        
+        let string = "One"
+        let size   = CGSizeMake(200, CGFloat.max)
+        let text   = string as NSString
+        let rect   = text.boundingRectWithSize(size, options:.UsesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context:nil)
+        
+        return rect.size.height
+    }
+    
+    /**
      Get the width with the string.
      
      - parameter attributes: The string attributes.

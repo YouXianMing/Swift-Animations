@@ -12,12 +12,13 @@ import UIKit
 
 extension UITableView {
 
-    func dequeueAndLoadContentReusableCellFromAdapter(adapter: CellDataAdapter, indexPath: NSIndexPath) -> CustomCell {
+    func dequeueAndLoadContentReusableCellFromAdapter(adapter: CellDataAdapter, indexPath: NSIndexPath, tableView : UITableView? = nil) -> CustomCell {
         
         let cell         = self.dequeueReusableCellWithIdentifier(adapter.cellReuseIdentifier!) as! CustomCell
         cell.indexPath   = indexPath
         cell.dataAdapter = adapter
         cell.data        = adapter.data
+        cell.tableView   = tableView
         cell.loadContent()
         
         return cell
@@ -145,4 +146,31 @@ class CustomCell: UITableViewCell {
         
         tableView.registerClass(self.classForCoder(), forCellReuseIdentifier: (cellReuseIdentifier != nil) ? cellReuseIdentifier! : String(self.classForCoder()))
     }
+    
+    /**
+     Update the cell's height with animated or not, before you use this method, you should have the weak reference 'tableView' and 'dataAdapter', and this method will update the weak reference dataAdapter's property cellHeight.
+     
+     - parameter height:   The new cell height.
+     - parameter animated: Animated or not, default is true.
+     */
+    func updateWithNewCellHeight(height : CGFloat, animated : Bool = true) {
+        
+        guard tableView != nil && dataAdapter != nil else {
+        
+            return
+        }
+        
+        if animated {
+            
+            dataAdapter?.cellHeight = height
+            tableView?.beginUpdates()
+            tableView?.endUpdates()
+            
+        } else {
+        
+            dataAdapter?.cellHeight = height
+            tableView?.reloadData()
+        }
+    }
 }
+
