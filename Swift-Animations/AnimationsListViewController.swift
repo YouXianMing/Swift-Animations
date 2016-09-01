@@ -128,7 +128,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row], indexPath: indexPath, controller: self)
+        return tableView.dequeueCellAndLoadContentFromAdapter(adapters[indexPath.row], indexPath: indexPath, controller: self)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

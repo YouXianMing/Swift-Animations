@@ -51,7 +51,7 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell      = tableView.dequeueAndLoadContentReusableCellFromAdapter(adapters[indexPath.row], indexPath: indexPath)
+        let cell      = tableView.dequeueCellAndLoadContentFromAdapter(adapters[indexPath.row], indexPath: indexPath)
         cell.delegate = self
         
         return cell

@@ -65,7 +65,7 @@ class TapCellAnimationController: NormalTitleViewController, UITableViewDelegate
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        return tableView.dequeueAndLoadContentReusableCellFromAdapter(datas[indexPath.row], indexPath: indexPath, tableView: tableView)
+        return tableView.dequeueCellAndLoadContentFromAdapter(datas[indexPath.row], indexPath: indexPath, tableView: tableView)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

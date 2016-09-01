@@ -11,25 +11,25 @@ import UIKit
 // MARK: extension UITableView
 
 extension UITableView {
-
-    func dequeueAndLoadContentReusableCellFromAdapter(adapter: CellDataAdapter, indexPath: NSIndexPath, tableView : UITableView? = nil) -> CustomCell {
+    
+    /**
+     Dequeue and load content from adapter.
+     
+     - parameter adapter:    The CellDataAdapter.
+     - parameter indexPath:  The indexPath.
+     - parameter tableView:  The TableView.
+     - parameter controller: The controller.
+     
+     - returns: The CustomCell instance.
+     */
+    func dequeueCellAndLoadContentFromAdapter(adapter : CellDataAdapter, indexPath : NSIndexPath,
+                                              tableView : UITableView? = nil, controller : UIViewController? = nil) -> CustomCell {
         
         let cell         = self.dequeueReusableCellWithIdentifier(adapter.cellReuseIdentifier!) as! CustomCell
         cell.indexPath   = indexPath
         cell.dataAdapter = adapter
         cell.data        = adapter.data
         cell.tableView   = tableView
-        cell.loadContent()
-        
-        return cell
-    }
-    
-    func dequeueAndLoadContentReusableCellFromAdapter(adapter: CellDataAdapter, indexPath: NSIndexPath, controller: UIViewController) -> CustomCell {
-        
-        let cell         = self.dequeueReusableCellWithIdentifier(adapter.cellReuseIdentifier!) as! CustomCell
-        cell.indexPath   = indexPath
-        cell.dataAdapter = adapter
-        cell.data        = adapter.data
         cell.controller  = controller
         cell.loadContent()
         
@@ -42,7 +42,7 @@ extension UITableView {
         
         // Make sure the cell is kind of CustomCell.
         guard cell.isKindOfClass(CustomCell.classForCoder()) == true else {
-        
+            
             return
         }
         
@@ -130,7 +130,7 @@ class CustomCell: UITableViewCell {
      - returns: The cellDataAdapter.
      */
     class func Adapter(reuseIdentifier: String? = nil, data: AnyObject? = nil, cellHeight: CGFloat? = 0, type: Int? = nil) -> CellDataAdapter {
-    
+        
         let identifier = (reuseIdentifier == nil ? String(self.classForCoder()) : reuseIdentifier)
         
         return CellDataAdapter.init(cellReuseIdentifier: identifier, data: data, cellHeight: cellHeight, cellType: type)
@@ -156,7 +156,7 @@ class CustomCell: UITableViewCell {
     func updateWithNewCellHeight(height : CGFloat, animated : Bool = true) {
         
         guard tableView != nil && dataAdapter != nil else {
-        
+            
             return
         }
         
@@ -167,7 +167,7 @@ class CustomCell: UITableViewCell {
             tableView?.endUpdates()
             
         } else {
-        
+            
             dataAdapter?.cellHeight = height
             tableView?.reloadData()
         }
