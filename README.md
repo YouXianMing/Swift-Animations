@@ -46,3 +46,6 @@
 
 ![demo.gif](http://images2015.cnblogs.com/blog/607542/201608/607542-20160822142825151-534854387.gif)
 
+> TapCellAnimationController
+
+![demo.gif](http://images2015.cnblogs.com/blog/607542/201609/607542-20160901180633574-730564160.gif)
