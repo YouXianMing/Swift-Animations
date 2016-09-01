@@ -86,11 +86,11 @@ class Math: NSObject {
     var k : CGFloat!
     var b : CGFloat!
     
-    convenience init(pointA : CGPoint, pointB : CGPoint) {
+    convenience init(_ pointA : (CGFloat, CGFloat), _ pointB : (CGFloat, CGFloat)) {
         
         self.init()
-        k = calculateSlope(x1: pointA.x, y1: pointA.y, x2: pointB.x, y2: pointB.y)
-        b = calculateConstant(x1: pointA.x, y1: pointA.y, x2: pointB.x, y2: pointB.y)
+        k = calculateSlope(x1: pointA.0, y1: pointA.1, x2: pointB.0, y2: pointB.1)
+        b = calculateConstant(x1: pointA.0, y1: pointA.1, x2: pointB.0, y2: pointB.1)
     }
     
     /**

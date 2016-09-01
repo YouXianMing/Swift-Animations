@@ -19,7 +19,8 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         
         super.setup()
         
-        onceLinearEquation = Math(pointA: CGPointMake(0, -50), pointB: CGPointMake(contentView!.width, 270 - 80))
+        onceLinearEquation = Math((x : 0,                  imageViewX : -50),
+                                  (x : contentView!.width, imageViewX : 270 - 80))
         pictures.append(UIImage(named: "1")!)
         pictures.append(UIImage(named: "2")!)
         pictures.append(UIImage(named: "3")!)

@@ -10,7 +10,8 @@ import UIKit
 
 class PageFlipEffectController: NormalTitleViewController {
     
-    private var math  : Math = Math(pointA: CGPointMake(0, 0), pointB: CGPointMake(Width(), 180))
+    private var math  : Math = Math((x : 0,       degree : 0),
+                                    (x : Width(), degree : 180))
     private var layer : CALayer!
     
     override func setup() {
