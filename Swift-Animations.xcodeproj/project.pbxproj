@@ -48,6 +48,9 @@
 		C57007FB1D5330B2003BFB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57007FA1D5330B2003BFB5E /* Assets.xcassets */; };
 		C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008051D5330CC003BFB5E /* UIView+SetRect.swift */; };
 		C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */; };
+		C579139D1D7BBFF4003185AD /* CountDownTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C579139C1D7BBFF4003185AD /* CountDownTimerController.swift */; };
+		C579139F1D7BC09F003185AD /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C579139E1D7BC09F003185AD /* TimeModel.swift */; };
+		C57913A11D7BC2E5003185AD /* CountDownTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57913A01D7BC2E5003185AD /* CountDownTimeCell.swift */; };
 		C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */; };
 		C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */; };
 		C581C7011D66F92600CC552D /* NotificationStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C7001D66F92600CC552D /* NotificationStamp.swift */; };
@@ -114,6 +117,9 @@
 		C57007FF1D5330B2003BFB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C57008051D5330CC003BFB5E /* UIView+SetRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SetRect.swift"; sourceTree = "<group>"; };
 		C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimationProperty.swift"; sourceTree = "<group>"; };
+		C579139C1D7BBFF4003185AD /* CountDownTimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimerController.swift; sourceTree = "<group>"; };
+		C579139E1D7BC09F003185AD /* TimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
+		C57913A01D7BC2E5003185AD /* CountDownTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimeCell.swift; sourceTree = "<group>"; };
 		C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3DM34Controller.swift; sourceTree = "<group>"; };
 		C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationCenter.swift; sourceTree = "<group>"; };
 		C581C7001D66F92600CC552D /* NotificationStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationStamp.swift; sourceTree = "<group>"; };
@@ -330,6 +336,7 @@
 				C51F76581D698F8B00DF04AE /* MixedColorProgressViewController */,
 				C55DD6D71D6AA0AC00F94F2B /* PageFlipEffectController */,
 				103075401D75C48C0043A858 /* TapCellAnimationController */,
+				C579139B1D7BBFCF003185AD /* CountDownTimerController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -394,6 +401,16 @@
 				C56BEB521D5700FF003BBF11 /* UIView+Glow.swift */,
 			);
 			name = "UIView+extension";
+			sourceTree = "<group>";
+		};
+		C579139B1D7BBFCF003185AD /* CountDownTimerController */ = {
+			isa = PBXGroup;
+			children = (
+				C579139C1D7BBFF4003185AD /* CountDownTimerController.swift */,
+				C579139E1D7BC09F003185AD /* TimeModel.swift */,
+				C57913A01D7BC2E5003185AD /* CountDownTimeCell.swift */,
+			);
+			name = CountDownTimerController;
 			sourceTree = "<group>";
 		};
 		C581C6FA1D66D3FF00CC552D /* CATransform3DM34Controller */ = {
@@ -599,6 +616,7 @@
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
 				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
 				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
+				C579139F1D7BC09F003185AD /* TimeModel.swift in Sources */,
 				C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */,
 				C51F85401D67D2350013C49B /* UIColor+Convenience.swift in Sources */,
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
@@ -607,6 +625,7 @@
 				10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */,
 				C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
+				C57913A11D7BC2E5003185AD /* CountDownTimeCell.swift in Sources */,
 				100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */,
 				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
@@ -637,6 +656,7 @@
 				1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */,
 				C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
+				C579139D1D7BBFF4003185AD /* CountDownTimerController.swift in Sources */,
 				103075421D75C50C0043A858 /* ShowTextCell.swift in Sources */,
 				C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */,
 				C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */,

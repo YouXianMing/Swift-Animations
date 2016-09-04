@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: protocol DefaultNotificationCenterDelegate
 
-@objc protocol DefaultNotificationCenterDelegate : class {
+protocol DefaultNotificationCenterDelegate : class {
     
     /**
      DefaultNotificationCenter's event.
@@ -18,7 +18,7 @@ import UIKit
      - parameter notificationName: Event name.
      - parameter object:           Event object, maybe nil.
      */
-    optional func defaultNotificationCenter(notificationName : String, object : AnyObject?)
+    func defaultNotificationCenter(notificationName : String, object : AnyObject?)
 }
 
 // MARK: protocol DefaultNotificationCenter
@@ -36,7 +36,7 @@ class DefaultNotificationCenter: NSObject {
      - parameter name:   Notification name.
      - parameter object: Data.
      */
-    class func PostMessageTo(name : String, object : AnyObject?) {
+    class func PostMessageTo(name : String, object : AnyObject? = nil) {
     
         NSNotificationCenter.defaultCenter().postNotificationName(name, object: object)
     }
@@ -67,8 +67,7 @@ class DefaultNotificationCenter: NSObject {
             model.name      = name
             notificationModels.append(model)
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DefaultNotificationCenter.notificationEvent),
-                                                             name: model.name, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DefaultNotificationCenter.notificationEvent), name: model.name, object: nil)
         }
     }
     
@@ -132,21 +131,21 @@ class DefaultNotificationCenter: NSObject {
         return names
     }
     
-    // MARK: Private properties & func.
-    
-    /// Store the Notification's infomation.
-    private var notificationModels : [DefaultNotificationCenterModel] = [DefaultNotificationCenterModel]()
-    
     /**
      Notification's event.
      
      - parameter obj: The NSNotification object.
      */
-    @objc private func notificationEvent(obj : AnyObject?) {
+    func notificationEvent(obj : AnyObject?) {
         
         let notification = obj as! NSNotification
-        delegate?.defaultNotificationCenter?(notification.name, object: notification.object)
+        delegate?.defaultNotificationCenter(notification.name, object: notification.object)
     }
+    
+    // MARK: Private properties & func.
+    
+    /// Store the Notification's infomation.
+    private var notificationModels : [DefaultNotificationCenterModel] = [DefaultNotificationCenterModel]()
     
     deinit {
     

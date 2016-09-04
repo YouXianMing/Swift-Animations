@@ -26,7 +26,7 @@ class RootNavigationViewController: CustomNavigationController {
         }) { (finished) in
             
             lauchImageView.removeFromSuperview()
-            DefaultNotificationCenter.PostMessageTo(NotificationEvent.AnimationsListViewControllerFirstTimeLoadData.Message(), object: nil)
+            DefaultNotificationCenter.PostMessageTo(NotificationEvent.AnimationsListViewControllerFirstTimeLoadData.Message())
         }
     }
 }

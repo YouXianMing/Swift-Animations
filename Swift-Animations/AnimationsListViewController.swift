@@ -54,6 +54,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
             add(MixedColorProgressViewController.classForCoder(), name: "UILabel混色显示")
             add(PageFlipEffectController.classForCoder(),         name: "翻页效果")
             add(TapCellAnimationController.classForCoder(),       name: "Cell点击动画")
+            add(CountDownTimerController.classForCoder(),         name: "UITableView显示倒计时")
             
             var indexPaths = [NSIndexPath]()
             for i in 0 ..< self.adapters.count {

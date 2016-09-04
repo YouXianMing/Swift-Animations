@@ -12,12 +12,17 @@ enum NotificationEvent : Int {
     
     case AnimationsListViewControllerFirstTimeLoadData
     
+    case CountDownTimeCellCountDown
+    
     func Message() -> String {
         
         switch self {
             
         case .AnimationsListViewControllerFirstTimeLoadData:
             return "AnimationsListViewControllerFirstTimeLoadData"
+            
+        case CountDownTimeCellCountDown:
+            return "CountDownTimeCellCountDown"
         }
     }
 }
