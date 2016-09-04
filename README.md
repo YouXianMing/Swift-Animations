@@ -49,3 +49,7 @@
 > TapCellAnimationController
 
 ![demo.gif](http://images2015.cnblogs.com/blog/607542/201609/607542-20160901180633574-730564160.gif)
+
+> CountDownTimerController
+
+![demo.gif](http://images2015.cnblogs.com/blog/607542/201609/607542-20160904171759124-116858550.gif)
