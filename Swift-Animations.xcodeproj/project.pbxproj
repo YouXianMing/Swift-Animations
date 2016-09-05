@@ -54,7 +54,7 @@
 		C57913A11D7BC2E5003185AD /* CountDownTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57913A01D7BC2E5003185AD /* CountDownTimeCell.swift */; };
 		C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */; };
 		C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */; };
-		C581C7011D66F92600CC552D /* NotificationStamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C7001D66F92600CC552D /* NotificationStamp.swift */; };
+		C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C7001D66F92600CC552D /* NotificationEvent.swift */; };
 		C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B094F41D6093B400EDF810 /* RotateView.swift */; };
 		C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */; };
 		C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */; };
@@ -124,7 +124,7 @@
 		C57913A01D7BC2E5003185AD /* CountDownTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimeCell.swift; sourceTree = "<group>"; };
 		C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3DM34Controller.swift; sourceTree = "<group>"; };
 		C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationCenter.swift; sourceTree = "<group>"; };
-		C581C7001D66F92600CC552D /* NotificationStamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationStamp.swift; sourceTree = "<group>"; };
+		C581C7001D66F92600CC552D /* NotificationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
 		C5B094F41D6093B400EDF810 /* RotateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateView.swift; sourceTree = "<group>"; };
 		C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -430,7 +430,7 @@
 				C57007FA1D5330B2003BFB5E /* Assets.xcassets */,
 				C56BEB371D56B660003BBF11 /* Main.storyboard */,
 				C57007FF1D5330B2003BFB5E /* Info.plist */,
-				C581C7001D66F92600CC552D /* NotificationStamp.swift */,
+				C581C7001D66F92600CC552D /* NotificationEvent.swift */,
 			);
 			name = "System-Source";
 			sourceTree = "<group>";
@@ -613,7 +613,7 @@
 				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
 				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
 				C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */,
-				C581C7011D66F92600CC552D /* NotificationStamp.swift in Sources */,
+				C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */,
 				C51F76571D698F7300DF04AE /* MixedColorProgressViewController.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,

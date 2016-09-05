@@ -1,5 +1,5 @@
 //
-//  NotificationStamp.swift
+//  NotificationEvent.swift
 //  Swift-Animations
 //
 //  Created by YouXianMing on 16/8/19.
