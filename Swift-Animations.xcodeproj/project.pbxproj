@@ -10,6 +10,7 @@
 		100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566F91D649A33008B46DE /* FullTitleViewController.swift */; };
 		100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FB1D649AB4008B46DE /* LiveImageViewController.swift */; };
 		100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FE1D649B09008B46DE /* LiveImageView.swift */; };
+		1018415E1D7DB6940091EDFD /* UIView+ScreensShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018415D1D7DB6940091EDFD /* UIView+ScreensShot.swift */; };
 		1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030753C1D75C4250043A858 /* String+StringHeight.swift */; };
 		1030753F1D75C4870043A858 /* TapCellAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030753E1D75C4870043A858 /* TapCellAnimationController.swift */; };
 		103075421D75C50C0043A858 /* ShowTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103075411D75C50C0043A858 /* ShowTextCell.swift */; };
@@ -77,6 +78,7 @@
 		100566F91D649A33008B46DE /* FullTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTitleViewController.swift; sourceTree = "<group>"; };
 		100566FB1D649AB4008B46DE /* LiveImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
 		100566FE1D649B09008B46DE /* LiveImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageView.swift; sourceTree = "<group>"; };
+		1018415D1D7DB6940091EDFD /* UIView+ScreensShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ScreensShot.swift"; sourceTree = "<group>"; };
 		1030753C1D75C4250043A858 /* String+StringHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+StringHeight.swift"; sourceTree = "<group>"; };
 		1030753E1D75C4870043A858 /* TapCellAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapCellAnimationController.swift; sourceTree = "<group>"; };
 		103075411D75C50C0043A858 /* ShowTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTextCell.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				C56BEB451D56CAFF003BBF11 /* UIView+CreateFrame.swift */,
 				C57008071D533BAF003BFB5E /* UIView+AnimationProperty.swift */,
 				C56BEB521D5700FF003BBF11 /* UIView+Glow.swift */,
+				1018415D1D7DB6940091EDFD /* UIView+ScreensShot.swift */,
 			);
 			name = "UIView+extension";
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */,
 				100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
+				1018415E1D7DB6940091EDFD /* UIView+ScreensShot.swift in Sources */,
 				10628F451D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */,
