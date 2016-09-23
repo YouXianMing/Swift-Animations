@@ -31,7 +31,7 @@ extension UIView {
         set(newVal) {
             
             objc_setAssociatedObject(self, &scaleKey, newVal, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            transform = CGAffineTransformMakeScale(newVal!, newVal!)
+            transform = CGAffineTransform(scaleX: newVal!, y: newVal!)
         }
     }
     
@@ -53,7 +53,7 @@ extension UIView {
         set(newVal) {
             
             objc_setAssociatedObject(self, &angleKey, newVal, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            transform = CGAffineTransformMakeRotation(newVal!)
+            transform = CGAffineTransform(rotationAngle: newVal!)
         }
     }
 }

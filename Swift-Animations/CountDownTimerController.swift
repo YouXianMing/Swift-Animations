@@ -12,7 +12,7 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
 
     var timesArray : [CellDataAdapter]!
     var tableView  : UITableView!
-    var timer      : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
+//    var timer      : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
     
     override func setup() {
         
@@ -21,7 +21,7 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
         // Create data source.
         timesArray = [CellDataAdapter]()
         
-        func add(title title : String, countdownTime : Int) {
+        func add(title : String, countdownTime : Int) {
         
             timesArray.append(CountDownTimeCell.Adapter(data: TimeModel(title: title, countdownTime: countdownTime)))
         }
@@ -41,7 +41,7 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
         tableView                = UITableView(frame: (contentView?.bounds)!)
         tableView.delegate       = self
         tableView.dataSource     = self
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.rowHeight      = 60
         contentView?.addSubview(tableView)
 
@@ -50,9 +50,9 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
 
         // Timer event.
         weak var wself = self
-        timer.event({ 
-            
-            for (_, dataAdapter) in wself!.timesArray.enumerate() {
+//        timer.event({ 
+        
+            for (_, dataAdapter) in wself!.timesArray.enumerated() {
                 
                 if let model = dataAdapter.data as? TimeModel {
                 
@@ -60,28 +60,28 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
                 }
             }
             
-            DefaultNotificationCenter.PostMessageTo(NotificationEvent.CountDownTimeCellCountDown.Message())
+            DefaultNotificationCenter.PostMessageTo(NotificationEvent.countDownTimeCellCountDown.Message())
         
-            }, timeIntervalWithSeconds: 1.0)
-        timer.start()
+//            }, timeIntervalWithSeconds: 1.0)
+//        timer.start()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return timesArray.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueCellAndLoadContentFromAdapter(timesArray[indexPath.row], indexPath: indexPath)
+        return tableView.dequeueCellAndLoadContentFromAdapter(timesArray[(indexPath as NSIndexPath).row], indexPath: indexPath)
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         (cell as! CustomCell).display = true
     }
     
-    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         (cell as! CustomCell).display = false
     }

@@ -10,11 +10,11 @@ import UIKit
 
 class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private var classes           : [ClassModel] = [ClassModel]()
-    private var sectionFirstLoad  : Bool         = false
+    fileprivate var classes           : [ClassModel] = [ClassModel]()
+    fileprivate var sectionFirstLoad  : Bool         = false
     
-    private var      tableView    : UITableView!
-    private weak var tmpHeadView  : ClassHeaderView?
+    fileprivate var      tableView    : UITableView!
+    fileprivate weak var tmpHeadView  : ClassHeaderView?
     
     override func setup() {
         
@@ -26,7 +26,7 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         tableView.delegate            = self
         tableView.rowHeight           = 60
         tableView.sectionHeaderHeight = 30
-        tableView.separatorStyle      = .None
+        tableView.separatorStyle      = .none
         contentView?.addSubview(tableView!)
         
         // Register.
@@ -55,7 +55,7 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         Aoede.students.append(StudentModel(name: "Vincent", age: 89))
         Aoede.students.append(StudentModel(name: "Walter",  age: 43))
         Aoede.students.append(StudentModel(name: "Zachary", age: 21))
-
+        
         let Dione    = ClassModel(className: "Dione")
         Dione.expend = false
         Dione.students.append(StudentModel(name: "Timothy",  age: 72))
@@ -76,26 +76,25 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         classes.append(Dione)
         classes.append(Adanos)
         
-        // Expend animations.
-        GCDQueue.executeInMainQueue({ 
+        // DispatchQueue delay.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
             
             self.sectionFirstLoad = true
-            self.tableView.insertSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.classes.count)), withRowAnimation: .Fade)
+            self.tableView.insertSections(IndexSet(integersIn: NSMakeRange(0, self.classes.count).toRange()!), with: .fade)
             
-            GCDQueue.executeInMainQueue({
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                 
                 if let headView = self.tmpHeadView {
-                
+                    
                     headView.buttonEvent()
                 }
-                
-                }, afterDelaySeconds: 0.4)
-            }, afterDelaySeconds: 0.3)
+            })
+        })
     }
     
     // MARK: UITableView's delegate & dataSource.
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let classModel = classes[section]
         if classModel.expend == true {
@@ -103,42 +102,42 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
             return classModel.students.count
             
         } else {
-        
+            
             return 0
         }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         if sectionFirstLoad == false {
             
             return 0
             
         } else {
-        
+            
             return classes.count
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let classModel       = classes[indexPath.section]
-        let customCell       = tableView.dequeueReusableCellWithIdentifier("StudentInfoCell") as! CustomCell
-        customCell.data      = classModel.students[indexPath.row]
+        let classModel       = classes[(indexPath as NSIndexPath).section]
+        let customCell       = tableView.dequeueReusableCell(withIdentifier: "StudentInfoCell") as! CustomCell
+        customCell.data      = classModel.students[(indexPath as NSIndexPath).row]
         customCell.indexPath = indexPath
         customCell.loadContent()
         
         return customCell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.selectedEventWithIndexPath(indexPath)
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let headerView       = tableView.dequeueReusableHeaderFooterViewWithIdentifier("ClassHeaderView") as! ClassHeaderView
+        let headerView       = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ClassHeaderView") as! ClassHeaderView
         headerView.section   = section
         headerView.data      = classes[section]
         headerView.tableView = tableView

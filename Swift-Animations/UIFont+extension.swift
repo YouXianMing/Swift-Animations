@@ -10,27 +10,27 @@ import UIKit
 
 extension UIFont {
 
-    class func AppleSDGothicNeoThin(value : CGFloat) -> UIFont! {
+    class func AppleSDGothicNeoThin(_ value : CGFloat) -> UIFont! {
         
         return self.init(name : "AppleSDGothicNeo-Thin", size: value)
     }
     
-    class func Avenir(value : CGFloat) -> UIFont! {
+    class func Avenir(_ value : CGFloat) -> UIFont! {
         
         return self.init(name : "Avenir", size: value)
     }
     
-    class func AvenirLight(value : CGFloat) -> UIFont! {
+    class func AvenirLight(_ value : CGFloat) -> UIFont! {
         
         return self.init(name : "Avenir-Light", size: value)
     }
     
-    class func HeitiSC(value : CGFloat) -> UIFont! {
+    class func HeitiSC(_ value : CGFloat) -> UIFont! {
         
         return self.init(name : "Heiti SC", size: value)
     }
     
-    class func HelveticaNeueThin(value : CGFloat) -> UIFont! {
+    class func HelveticaNeueThin(_ value : CGFloat) -> UIFont! {
         
         return self.init(name : "HelveticaNeue-Thin", size: value)
     }

@@ -10,27 +10,27 @@ import UIKit
 
 class CountDownTimeCell: CustomCell, DefaultNotificationCenterDelegate {
 
-    private var titleLabel         : UILabel!
-    private var countdownLabel     : UILabel!
-    private var notificationCenter : DefaultNotificationCenter = DefaultNotificationCenter()
+    fileprivate var titleLabel         : UILabel!
+    fileprivate var countdownLabel     : UILabel!
+    fileprivate var notificationCenter : DefaultNotificationCenter = DefaultNotificationCenter()
 
     override func setupCell() {
         
-        notificationCenter.addNotificationName(NotificationEvent.CountDownTimeCellCountDown.Message())
+        notificationCenter.addNotificationName(NotificationEvent.countDownTimeCellCountDown.Message())
         notificationCenter.delegate = self
     }
     
     override func buildSubview() {
         
-        titleLabel           = UILabel(frame: CGRectMake(15, 10, Width() - 20, 40))
-        titleLabel.textColor = UIColor.grayColor()
+        titleLabel           = UILabel(frame: CGRect(x: 15, y: 10, width: Width() - 20, height: 40))
+        titleLabel.textColor = UIColor.gray
         titleLabel.font      = UIFont.AvenirLight(20.0)
         addSubview(titleLabel)
         
-        countdownLabel               = UILabel(frame: CGRectMake(10, 10, Width() - 20, 40))
-        countdownLabel.textColor     = UIColor.grayColor()
+        countdownLabel               = UILabel(frame: CGRect(x: 10, y: 10, width: Width() - 20, height: 40))
+        countdownLabel.textColor     = UIColor.gray
         countdownLabel.font          = UIFont.AvenirLight(15.0)
-        countdownLabel.textAlignment = .Right
+        countdownLabel.textAlignment = .right
         addSubview(countdownLabel)
     }
 
@@ -43,9 +43,9 @@ class CountDownTimeCell: CustomCell, DefaultNotificationCenterDelegate {
         }
     }
     
-    func defaultNotificationCenter(notificationName: String, object: AnyObject?) {
+    func defaultNotificationCenter(_ notificationName: String, object: AnyObject?) {
         
-        if display == true && notificationName == NotificationEvent.CountDownTimeCellCountDown.Message() {
+        if display == true && notificationName == NotificationEvent.countDownTimeCellCountDown.Message() {
             
             loadContent()
         }

@@ -10,14 +10,14 @@ import UIKit
 
 class TableViewTapAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource, CustomCellDelegate {
     
-    var adapters  : [CellDataAdapter] = [CellDataAdapter]()
-    var tableView : UITableView!
+    fileprivate var adapters  : [CellDataAdapter] = [CellDataAdapter]()
+    fileprivate var tableView : UITableView!
     
     override func setup() {
         
         super.setup()
         
-        func appendModel(model : TapAnimationModel, cellHeight : CGFloat = 80) {
+        func appendModel(_ model : TapAnimationModel, cellHeight : CGFloat = 80) {
             
             adapters.append(TableViewTapAnimationCell.Adapter(data: model, cellHeight: cellHeight))
         }
@@ -26,7 +26,7 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         tableView                = UITableView(frame: (contentView?.bounds)!)
         tableView.dataSource     = self
         tableView.delegate       = self
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         contentView?.addSubview(tableView!)
         
         // Register cell.
@@ -44,32 +44,32 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     
     // MARK: UITableView's delegate & dataSource.
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return adapters.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell      = tableView.dequeueCellAndLoadContentFromAdapter(adapters[indexPath.row], indexPath: indexPath)
+        let cell      = tableView.dequeueCellAndLoadContentFromAdapter(adapters[(indexPath as NSIndexPath).row], indexPath: indexPath)
         cell.delegate = self
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.selectedEventWithIndexPath(indexPath)
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return adapters[indexPath.row].cellHeight!
+        return adapters[(indexPath as NSIndexPath).row].cellHeight!
     }
     
     // MARK: CustomCellDelegate.
     
-    func customCell(cell: CustomCell?, event: AnyObject?) {
+    func customCell(_ cell: CustomCell?, event: AnyObject?) {
         
         print("\(cell) + \(event)")
     }

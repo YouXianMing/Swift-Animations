@@ -10,7 +10,7 @@ import UIKit
 
 enum TranformFadeViewAnimatedType : Int {
     
-    case Fade, Show
+    case fade, show
 }
 
 // MARK: TranformFadeView
@@ -19,7 +19,7 @@ class TranformFadeView: UIView {
     
     // MARK: Convenience init.
     
-    convenience init(frame: CGRect, verticalCount : Int, horizontalCount : Int, fadeDuradtion : NSTimeInterval, animationGapDuration : NSTimeInterval) {
+    convenience init(frame: CGRect, verticalCount : Int, horizontalCount : Int, fadeDuradtion : TimeInterval, animationGapDuration : TimeInterval) {
         
         self.init(frame: frame)
         self.verticalCount        = verticalCount
@@ -52,10 +52,10 @@ class TranformFadeView: UIView {
     var horizontalCount      : Int = 4
     
     /// One of the maskView's animation duration, default is 1.0
-    var fadeDuradtion        : NSTimeInterval = 1
+    var fadeDuradtion        : TimeInterval = 1
     
     /// The animation duration two subViews from allMaskView, default is 0.2
-    var animationGapDuration : NSTimeInterval = 0.2
+    var animationGapDuration : TimeInterval = 0.2
     
     /**
      Make the config effective.
@@ -75,7 +75,7 @@ class TranformFadeView: UIView {
         countNumArray.removeAll()
         
         allMaskView = UIView(frame: bounds)
-        maskView    = allMaskView
+        mask    = allMaskView
         
         let height         = bounds.size.height
         let width          = bounds.size.width
@@ -87,10 +87,10 @@ class TranformFadeView: UIView {
             
             for vertical in 0 ..< verticalCount {
                 
-                let frame                = CGRectMake(maskViewWidth * CGFloat(horizontal), maskViewHeight * CGFloat(vertical), maskViewWidth, maskViewHeight)
+                let frame                = CGRect(x: maskViewWidth * CGFloat(horizontal), y: maskViewHeight * CGFloat(vertical), width: maskViewWidth, height: maskViewHeight)
                 let maskView             = UIView(frame: frame)
                 maskView.tag             = maskViewTag + count
-                maskView.backgroundColor = UIColor.blackColor()
+                maskView.backgroundColor = UIColor.black
                 allMaskView.addSubview(maskView)
                 
                 count = count + 1;
@@ -111,7 +111,7 @@ class TranformFadeView: UIView {
      - parameter animated:    Animated or not.
      - parameter transformTo: Show or fade.
      */
-    func start(animated animated : Bool, transformTo : TranformFadeViewAnimatedType) {
+    func start(animated : Bool, transformTo : TranformFadeViewAnimatedType) {
         
         if animated == true {
             
@@ -122,14 +122,14 @@ class TranformFadeView: UIView {
                 
                 let tmpView = allMaskView.viewWithTag(maskViewTag + i)
                 
-                UIView.animateWithDuration(tmpFadeDuradtion, delay: NSTimeInterval(i) * tmpGapDuration, options: .CurveLinear, animations: {
+                UIView.animate(withDuration: tmpFadeDuradtion, delay: TimeInterval(i) * tmpGapDuration, options: .curveLinear, animations: {
                     
                     switch transformTo {
                         
-                    case .Fade :
+                    case .fade :
                         tmpView?.alpha = 0.0
                         
-                    case .Show :
+                    case .show :
                         tmpView?.alpha = 1.0
                     }
                     
@@ -144,10 +144,10 @@ class TranformFadeView: UIView {
                 
                 switch transformTo {
                     
-                case .Fade :
+                case .fade :
                     tmpView?.alpha = 0.0
                     
-                case .Show :
+                case .show :
                     tmpView?.alpha = 1.0
                 }
             }
@@ -156,11 +156,11 @@ class TranformFadeView: UIView {
     
     // MARK: System methods & Private properties
     
-    private var imageView     : UIImageView!
-    private var allMaskView   : UIView!
-    private var maskViewCount : Int!
-    private var countNumArray : [Int]!
-    private var maskViewTag   : Int = 1000
+    fileprivate var imageView     : UIImageView!
+    fileprivate var allMaskView   : UIView!
+    fileprivate var maskViewCount : Int!
+    fileprivate var countNumArray : [Int]!
+    fileprivate var maskViewTag   : Int = 1000
     
     override init(frame: CGRect) {
         

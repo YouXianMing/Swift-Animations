@@ -12,26 +12,26 @@ class ListItemCell: CustomCell {
 
     // MARK: Private var.
     
-    private var titlelabel    : UILabel!
-    private var subTitleLabel : UILabel!
+    fileprivate var titlelabel    : UILabel!
+    fileprivate var subTitleLabel : UILabel!
     
     // MARK: Override CustomCell func.
     
     override func setupCell() {
         
         super.setupCell()
-        self.accessoryType = .DisclosureIndicator
+        self.accessoryType = .disclosureIndicator
     }
     
     override func buildSubview() {
         
-        titlelabel      = UILabel(frame: CGRectMake(10, 8, 290, 25))
+        titlelabel      = UILabel(frame: CGRect(x: 10, y: 8, width: 290, height: 25))
         titlelabel.font = UIFont.HeitiSC(16)
         self.addSubview(titlelabel)
         
-        subTitleLabel           = UILabel(frame: CGRectMake(10, 35, 290, 10))
+        subTitleLabel           = UILabel(frame: CGRect(x: 10, y: 35, width: 290, height: 10))
         subTitleLabel.font      = UIFont.AvenirLight(8)
-        subTitleLabel.textColor = UIColor.grayColor()
+        subTitleLabel.textColor = UIColor.gray
         self.addSubview(subTitleLabel)
     }
     
@@ -39,7 +39,7 @@ class ListItemCell: CustomCell {
         
         let item           = data as! ControllerItem
         titlelabel.text    = item.name
-        subTitleLabel.text = NSStringFromClass(item.controllerClass!).componentsSeparatedByString(".").last
+        subTitleLabel.text = NSStringFromClass(item.controllerClass!).components(separatedBy: ".").last
     }
     
     override func selectedEvent() {

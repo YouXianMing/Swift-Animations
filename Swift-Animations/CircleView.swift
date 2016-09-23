@@ -7,6 +7,26 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 // MARK: Public class : CircleView
 
@@ -36,7 +56,7 @@ class CircleView: UIView {
     /// Line color, default is black color.
     var lineColor    : UIColor {
     
-        get { if pLineColor == nil { return UIColor.blackColor()} else {return pLineColor}}
+        get { if pLineColor == nil { return UIColor.black} else {return pLineColor}}
         set(newVal) { pLineColor = newVal}
     }
     
@@ -70,11 +90,11 @@ class CircleView: UIView {
             tmpEndAngle   = -radianFromDegrees(180 + startDegree)
         }
         
-        let circlePath           = UIBezierPath(arcCenter: CGPointMake(size.height / 2, size.width / 2),
+        let circlePath           = UIBezierPath(arcCenter: CGPoint(x: size.height / 2, y: size.width / 2),
                                                 radius: radius, startAngle: tmpStartAngle, endAngle: tmpEndAngle, clockwise: clockWise)
-        pCircleLayer.path        = circlePath.CGPath
-        pCircleLayer.fillColor   = UIColor.clearColor().CGColor
-        pCircleLayer.strokeColor = lineColor.CGColor
+        pCircleLayer.path        = circlePath.cgPath
+        pCircleLayer.fillColor   = UIColor.clear.cgColor
+        pCircleLayer.strokeColor = lineColor.cgColor
         pCircleLayer.lineWidth   = lineWidth
         pCircleLayer.strokeEnd   = 0
     }
@@ -87,7 +107,7 @@ class CircleView: UIView {
      - parameter animated:       Animated or not.
      - parameter duration:       The animation's duration.
      */
-    func strokeStart(value : Double, easingFunction : EasingFunction, animated : Bool, duration : NSTimeInterval) {
+    func strokeStart(_ value : Double, easingFunction : EasingFunction, animated : Bool, duration : TimeInterval) {
         
         var strokeStartValue = value
         
@@ -108,7 +128,7 @@ class CircleView: UIView {
             keyAnimation.values      = easingValue.frameValueWith(fromValue: Double(pCircleLayer.strokeStart), toValue: strokeStartValue)
             
             pCircleLayer.strokeStart = CGFloat(strokeStartValue)
-            pCircleLayer.addAnimation(keyAnimation, forKey: nil)
+            pCircleLayer.add(keyAnimation, forKey: nil)
             
         } else {
         
@@ -126,7 +146,7 @@ class CircleView: UIView {
      - parameter animated:       Animated or not.
      - parameter duration:       The animation's duration.
      */
-    func strokeEnd(value : Double, easingFunction : EasingFunction, animated : Bool, duration : NSTimeInterval) {
+    func strokeEnd(_ value : Double, easingFunction : EasingFunction, animated : Bool, duration : TimeInterval) {
         
         var strokeStartValue = value
         
@@ -147,7 +167,7 @@ class CircleView: UIView {
             keyAnimation.values    = easingValue.frameValueWith(fromValue: Double(pCircleLayer.strokeEnd), toValue: strokeStartValue)
             
             pCircleLayer.strokeEnd = CGFloat(strokeStartValue)
-            pCircleLayer.addAnimation(keyAnimation, forKey: nil)
+            pCircleLayer.add(keyAnimation, forKey: nil)
             
         } else {
             
@@ -172,11 +192,11 @@ class CircleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var pCircleLayer : CAShapeLayer!
-    private var pLineWidth   : CGFloat! = 1
-    private var pLineColor   : UIColor! = UIColor.blackColor()
+    fileprivate var pCircleLayer : CAShapeLayer!
+    fileprivate var pLineWidth   : CGFloat! = 1
+    fileprivate var pLineColor   : UIColor! = UIColor.black
     
-    private func radianFromDegrees(degrees : CGFloat) -> CGFloat {
+    fileprivate func radianFromDegrees(_ degrees : CGFloat) -> CGFloat {
     
         return (CGFloat(M_PI) * degrees) / 180.0
     }

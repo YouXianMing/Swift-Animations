@@ -13,153 +13,153 @@ import UIKit
 enum EasingFunction: Int {
     
     case
-    LinearInterpolation = 1,
+    linearInterpolation = 1,
     
     // Quadratic easing; p^2
-    QuadraticEaseIn,
-    QuadraticEaseOut,
-    QuadraticEaseInOut,
+    quadraticEaseIn,
+    quadraticEaseOut,
+    quadraticEaseInOut,
     
     // Cubic easing; p^3
-    CubicEaseIn,
-    CubicEaseOut,
-    CubicEaseInOut,
+    cubicEaseIn,
+    cubicEaseOut,
+    cubicEaseInOut,
     
     // Quartic easing; p^4
-    QuarticEaseIn,
-    QuarticEaseOut,
-    QuarticEaseInOut,
+    quarticEaseIn,
+    quarticEaseOut,
+    quarticEaseInOut,
     
     // Quintic easing; p^5
-    QuinticEaseIn,
-    QuinticEaseOut,
-    QuinticEaseInOut,
+    quinticEaseIn,
+    quinticEaseOut,
+    quinticEaseInOut,
     
     // Sine wave easing; sin(p * PI/2)
-    SineEaseIn,
-    SineEaseOut,
-    SineEaseInOut,
+    sineEaseIn,
+    sineEaseOut,
+    sineEaseInOut,
     
     // Circular easing; sqrt(1 - p^2)
-    CircularEaseIn,
-    CircularEaseOut,
-    CircularEaseInOut,
+    circularEaseIn,
+    circularEaseOut,
+    circularEaseInOut,
     
     // Exponential easing, base 2
-    ExponentialEaseIn,
-    ExponentialEaseOut,
-    ExponentialEaseInOut,
+    exponentialEaseIn,
+    exponentialEaseOut,
+    exponentialEaseInOut,
     
     // Exponentially-damped sine wave easing
-    ElasticEaseIn,
-    ElasticEaseOut,
-    ElasticEaseInOut,
+    elasticEaseIn,
+    elasticEaseOut,
+    elasticEaseInOut,
     
     // Overshooting cubic easing;
-    BackEaseIn,
-    BackEaseOut,
-    BackEaseInOut,
+    backEaseIn,
+    backEaseOut,
+    backEaseInOut,
     
     // Exponentially-decaying bounce easing
-    BounceEaseIn,
-    BounceEaseOut,
-    BounceEaseInOut
+    bounceEaseIn,
+    bounceEaseOut,
+    bounceEaseInOut
     
     func value() -> ((Double) -> Double) {
         
         switch self {
             
-        case .LinearInterpolation:
+        case .linearInterpolation:
             return Easing.LinearInterpolation
             
-        case .QuadraticEaseIn:
+        case .quadraticEaseIn:
             return Easing.QuadraticEaseIn
             
-        case .QuadraticEaseOut:
+        case .quadraticEaseOut:
             return Easing.QuadraticEaseOut
             
-        case .QuadraticEaseInOut:
+        case .quadraticEaseInOut:
             return Easing.QuadraticEaseInOut
             
-        case .CubicEaseIn:
+        case .cubicEaseIn:
             return Easing.CubicEaseIn
             
-        case .CubicEaseOut:
+        case .cubicEaseOut:
             return Easing.CubicEaseOut
             
-        case .CubicEaseInOut:
+        case .cubicEaseInOut:
             return Easing.CubicEaseInOut
             
-        case .QuarticEaseIn:
+        case .quarticEaseIn:
             return Easing.QuarticEaseIn
             
-        case .QuarticEaseOut:
+        case .quarticEaseOut:
             return Easing.QuarticEaseOut
             
-        case .QuarticEaseInOut:
+        case .quarticEaseInOut:
             return Easing.QuarticEaseInOut
             
-        case .QuinticEaseIn:
+        case .quinticEaseIn:
             return Easing.QuinticEaseIn
             
-        case .QuinticEaseOut:
+        case .quinticEaseOut:
             return Easing.QuinticEaseOut
             
-        case .QuinticEaseInOut:
+        case .quinticEaseInOut:
             return Easing.QuinticEaseInOut
             
-        case .SineEaseIn:
+        case .sineEaseIn:
             return Easing.SineEaseIn
             
-        case .SineEaseOut:
+        case .sineEaseOut:
             return Easing.SineEaseOut
             
-        case .SineEaseInOut:
+        case .sineEaseInOut:
             return Easing.SineEaseInOut
             
-        case .CircularEaseIn:
+        case .circularEaseIn:
             return Easing.CircularEaseIn
             
-        case .CircularEaseOut:
+        case .circularEaseOut:
             return Easing.CircularEaseOut
             
-        case .CircularEaseInOut:
+        case .circularEaseInOut:
             return Easing.CircularEaseInOut
             
-        case .ExponentialEaseIn:
+        case .exponentialEaseIn:
             return Easing.ExponentialEaseIn
             
-        case .ExponentialEaseOut:
+        case .exponentialEaseOut:
             return Easing.ExponentialEaseOut
             
-        case .ExponentialEaseInOut:
+        case .exponentialEaseInOut:
             return Easing.ExponentialEaseInOut
             
-        case .ElasticEaseIn:
+        case .elasticEaseIn:
             return Easing.ElasticEaseIn
             
-        case .ElasticEaseOut:
+        case .elasticEaseOut:
             return Easing.ElasticEaseOut
             
-        case .ElasticEaseInOut:
+        case .elasticEaseInOut:
             return Easing.ElasticEaseInOut
             
-        case .BackEaseIn:
+        case .backEaseIn:
             return Easing.BackEaseIn
             
-        case .BackEaseOut:
+        case .backEaseOut:
             return Easing.BackEaseOut
             
-        case .BackEaseInOut:
+        case .backEaseInOut:
             return Easing.BackEaseInOut
             
-        case .BounceEaseIn:
+        case .bounceEaseIn:
             return Easing.BounceEaseIn
             
-        case .BounceEaseOut:
+        case .bounceEaseOut:
             return Easing.BounceEaseOut
             
-        case .BounceEaseInOut:
+        case .bounceEaseInOut:
             return Easing.BounceEaseInOut
         }
     }
@@ -168,23 +168,23 @@ enum EasingFunction: Int {
 class Easing: NSObject {
     
     // MARK: Linear interpolation (no easing)
-    class func LinearInterpolation(p : Double) -> Double {
+    class func LinearInterpolation(_ p : Double) -> Double {
         
         return p
     }
     
     // MARK: Quadratic easing; p^2
-    class func QuadraticEaseIn(p : Double) -> Double {
+    class func QuadraticEaseIn(_ p : Double) -> Double {
         
         return p * p
     }
     
-    class func QuadraticEaseOut(p : Double) -> Double {
+    class func QuadraticEaseOut(_ p : Double) -> Double {
         
         return -(p * (p - 2))
     }
     
-    class func QuadraticEaseInOut(p : Double) -> Double {
+    class func QuadraticEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             
@@ -197,18 +197,18 @@ class Easing: NSObject {
     }
     
     // MARK: Cubic easing; p^3
-    class func CubicEaseIn(p : Double) -> Double {
+    class func CubicEaseIn(_ p : Double) -> Double {
         
         return p * p * p
     }
     
-    class func CubicEaseOut(p : Double) -> Double {
+    class func CubicEaseOut(_ p : Double) -> Double {
         
         let f : Double = (p - 1)
         return f * f * f + 1
     }
     
-    class func CubicEaseInOut(p : Double) -> Double {
+    class func CubicEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             
@@ -222,18 +222,18 @@ class Easing: NSObject {
     }
     
     // MARK: Quartic easing; p^4
-    class func QuarticEaseIn(p : Double) -> Double {
+    class func QuarticEaseIn(_ p : Double) -> Double {
         
         return p * p * p * p
     }
     
-    class func QuarticEaseOut(p : Double) -> Double {
+    class func QuarticEaseOut(_ p : Double) -> Double {
         
         let f : Double = (p - 1)
         return f * f * f * (1 - p) + 1
     }
     
-    class func QuarticEaseInOut(p : Double) -> Double {
+    class func QuarticEaseInOut(_ p : Double) -> Double {
         
         if(p < 0.5) {
             
@@ -247,18 +247,18 @@ class Easing: NSObject {
     }
     
     // MARK: Quintic easing; p^5
-    class func QuinticEaseIn(p : Double) -> Double {
+    class func QuinticEaseIn(_ p : Double) -> Double {
         
         return p * p * p * p * p
     }
     
-    class func QuinticEaseOut(p : Double) -> Double {
+    class func QuinticEaseOut(_ p : Double) -> Double {
         
         let f : Double = (p - 1)
         return f * f * f * f * f + 1
     }
     
-    class func QuinticEaseInOut(p : Double) -> Double {
+    class func QuinticEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             
@@ -272,33 +272,33 @@ class Easing: NSObject {
     }
     
     // MARK: Sine wave easing; sin(p * PI/2)
-    class func SineEaseIn(p : Double) -> Double {
+    class func SineEaseIn(_ p : Double) -> Double {
         
         return sin((p - 1) * M_PI_2) + 1
     }
     
-    class func SineEaseOut(p : Double) -> Double {
+    class func SineEaseOut(_ p : Double) -> Double {
         
         return sin(p * M_PI_2)
     }
     
-    class func SineEaseInOut(p : Double) -> Double {
+    class func SineEaseInOut(_ p : Double) -> Double {
         
         return 0.5 * (1 - cos(p * M_PI))
     }
     
     // MARK: Circular easing; sqrt(1 - p^2)
-    class func CircularEaseIn(p : Double) -> Double {
+    class func CircularEaseIn(_ p : Double) -> Double {
         
         return 1 - sqrt(1 - (p * p))
     }
     
-    class func CircularEaseOut(p : Double) -> Double {
+    class func CircularEaseOut(_ p : Double) -> Double {
         
         return sqrt((2 - p) * p)
     }
     
-    class func CircularEaseInOut(p : Double) -> Double {
+    class func CircularEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             
@@ -311,17 +311,17 @@ class Easing: NSObject {
     }
     
     // MARK: Exponential easing, base 2
-    class func ExponentialEaseIn(p : Double) -> Double {
+    class func ExponentialEaseIn(_ p : Double) -> Double {
         
         return (p == 0.0) ? p : pow(2, 10 * (p - 1))
     }
     
-    class func ExponentialEaseOut(p : Double) -> Double {
+    class func ExponentialEaseOut(_ p : Double) -> Double {
         
         return (p == 1.0) ? p : 1 - pow(2, -10 * p)
     }
     
-    class func ExponentialEaseInOut(p : Double) -> Double {
+    class func ExponentialEaseInOut(_ p : Double) -> Double {
         
         if (p == 0.0 || p == 1.0) {
             
@@ -339,17 +339,17 @@ class Easing: NSObject {
     }
     
     // MARK: Exponentially-damped sine wave easing
-    class func ElasticEaseIn(p : Double) -> Double {
+    class func ElasticEaseIn(_ p : Double) -> Double {
         
         return sin(13 * M_PI_2 * p) * pow(2, 10 * (p - 1))
     }
     
-    class func ElasticEaseOut(p : Double) -> Double {
+    class func ElasticEaseOut(_ p : Double) -> Double {
         
         return sin(-13 * M_PI_2 * (p + 1)) * pow(2, -10 * p) + 1
     }
     
-    class func ElasticEaseInOut(p : Double) -> Double {
+    class func ElasticEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             
@@ -362,18 +362,18 @@ class Easing: NSObject {
     }
     
     // MARK: Overshooting cubic easing
-    class func BackEaseIn(p : Double) -> Double {
+    class func BackEaseIn(_ p : Double) -> Double {
         
         return p * p * p - p * sin(p * M_PI)
     }
     
-    class func BackEaseOut(p : Double) -> Double {
+    class func BackEaseOut(_ p : Double) -> Double {
         
         let f : Double = (1 - p);
         return 1 - (f * f * f - f * sin(f * M_PI))
     }
     
-    class func BackEaseInOut(p : Double) -> Double {
+    class func BackEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             
@@ -389,12 +389,12 @@ class Easing: NSObject {
     }
     
     // MARK: Exponentially-decaying bounce easing
-    class func BounceEaseIn(p : Double) -> Double {
+    class func BounceEaseIn(_ p : Double) -> Double {
         
         return 1 - BounceEaseOut(1 - p)
     }
     
-    class func BounceEaseOut(p : Double) -> Double {
+    class func BounceEaseOut(_ p : Double) -> Double {
         
         if (p < 4/11.0) {
             
@@ -414,7 +414,7 @@ class Easing: NSObject {
         }
     }
     
-    class func BounceEaseInOut(p : Double) -> Double {
+    class func BounceEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             

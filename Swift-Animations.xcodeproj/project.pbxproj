@@ -61,10 +61,6 @@
 		C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */; };
 		C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */; };
 		C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */; };
-		C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC51D543A1C00E24AC0 /* GCDGroup.swift */; };
-		C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */; };
-		C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */; };
-		C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */; };
 		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
 		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
 		C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1A1D630B9200A71D51 /* Easing.swift */; };
@@ -131,10 +127,6 @@
 		C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNormalContentViewController.swift; sourceTree = "<group>"; };
 		C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFullContentViewController.swift; sourceTree = "<group>"; };
 		C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsListViewController.swift; sourceTree = "<group>"; };
-		C5B15BC51D543A1C00E24AC0 /* GCDGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDGroup.swift; sourceTree = "<group>"; };
-		C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
-		C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDSemaphore.swift; sourceTree = "<group>"; };
-		C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
 		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
 		C5E2DD1A1D630B9200A71D51 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
@@ -248,7 +240,6 @@
 				C56BEB391D56B823003BBF11 /* UIFont+extension */,
 				C5E2DD181D630B7700A71D51 /* AppleSystemService */,
 				C5E2DD191D630B8A00A71D51 /* Easing */,
-				C5B15BCD1D543A2100E24AC0 /* GCD */,
 				C581C6FC1D66E08C00CC552D /* Math */,
 				C581C6FD1D66E09500CC552D /* DefaultNotificationCenter */,
 			);
@@ -470,17 +461,6 @@
 			name = AbstractCustomViewControllers;
 			sourceTree = "<group>";
 		};
-		C5B15BCD1D543A2100E24AC0 /* GCD */ = {
-			isa = PBXGroup;
-			children = (
-				C5B15BC51D543A1C00E24AC0 /* GCDGroup.swift */,
-				C5B15BC61D543A1C00E24AC0 /* GCDQueue.swift */,
-				C5B15BC71D543A1C00E24AC0 /* GCDSemaphore.swift */,
-				C5B15BC81D543A1C00E24AC0 /* GCDTimer.swift */,
-			);
-			name = GCD;
-			sourceTree = "<group>";
-		};
 		C5D6ED6A1D5FFB57009BB400 /* UIColor+extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,11 +539,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = YouXianMing;
 				TargetAttributes = {
 					C57007EF1D5330B2003BFB5E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -607,7 +588,6 @@
 				C55DD6D61D6AA08E00F94F2B /* PageFlipEffectController.swift in Sources */,
 				100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */,
 				103075471D75CFE70043A858 /* UILabel+SizeToFit.swift in Sources */,
-				C5B15BCB1D543A1C00E24AC0 /* GCDSemaphore.swift in Sources */,
 				1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */,
 				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
 				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
@@ -617,20 +597,17 @@
 				C51F76571D698F7300DF04AE /* MixedColorProgressViewController.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
-				C5B15BC91D543A1C00E24AC0 /* GCDGroup.swift in Sources */,
 				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
 				C579139F1D7BC09F003185AD /* TimeModel.swift in Sources */,
 				C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */,
 				C51F85401D67D2350013C49B /* UIColor+Convenience.swift in Sources */,
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
-				C5B15BCC1D543A1C00E24AC0 /* GCDTimer.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
 				10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */,
 				C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */,
 				C57008061D5330CC003BFB5E /* UIView+SetRect.swift in Sources */,
 				C57913A11D7BC2E5003185AD /* CountDownTimeCell.swift in Sources */,
 				100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */,
-				C5B15BCA1D543A1C00E24AC0 /* GCDQueue.swift in Sources */,
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */,
 				C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */,
@@ -685,8 +662,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -730,8 +709,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -750,6 +731,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -763,6 +745,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -775,6 +758,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

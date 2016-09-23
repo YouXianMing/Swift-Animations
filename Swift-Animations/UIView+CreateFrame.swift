@@ -18,11 +18,11 @@ extension UIView {
      
      - returns: Line view.
      */
-    class func CreateLine(frame : CGRect, lineColor : UIColor) -> UIView {
+    class func CreateLine(_ frame : CGRect, lineColor : UIColor) -> UIView {
     
         let view                    = UIView(frame: frame)
         view.backgroundColor        = lineColor
-        view.userInteractionEnabled = false
+        view.isUserInteractionEnabled = false
         
         return view
     }

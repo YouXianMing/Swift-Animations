@@ -29,23 +29,23 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         
         scrollView                                = UIScrollView(frame: (contentView?.bounds)!)
         scrollView.delegate                       = self
-        scrollView.pagingEnabled                  = true
-        scrollView.backgroundColor                = UIColor.blackColor()
+        scrollView.isPagingEnabled                  = true
+        scrollView.backgroundColor                = UIColor.black
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.bounces                        = false
-        scrollView.contentSize                    = CGSizeMake(CGFloat(pictures.count) * width, height)
+        scrollView.contentSize                    = CGSize(width: CGFloat(pictures.count) * width, height: height)
         contentView?.addSubview(scrollView)
         
-        for (i, image) in pictures.enumerate() {
+        for (i, image) in pictures.enumerated() {
             
-            let showView              = MoreInfoView(frame: CGRectMake(CGFloat(i) * width, 0, width, height))
+            let showView              = MoreInfoView(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height))
             showView.imageView.image = image
             showView.tag             = viewTag + i
             scrollView.addSubview(showView)
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         let X = scrollView.contentOffset.x
         

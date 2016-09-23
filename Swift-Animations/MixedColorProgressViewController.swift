@@ -10,56 +10,56 @@ import UIKit
 
 class MixedColorProgressViewController: NormalTitleViewController {
     
-    private var upView    : UIView!
-    private var upLabel   : UILabel!
-    private var downView  : UIView!
-    private var downLabel : UILabel!
-    private var timer     : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
+    fileprivate var upView    : UIView!
+    fileprivate var upLabel   : UILabel!
+    fileprivate var downView  : UIView!
+    fileprivate var downLabel : UILabel!
+//    fileprivate var timer     : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
     
     override func setup() {
         
         super.setup()
         
-        downView                     = UIView(frame: CGRectMake(0, 0, 220, 17))
+        downView                     = UIView(frame: CGRect(x: 0, y: 0, width: 220, height: 17))
         downView.center              = (contentView?.middlePoint)!
         downView.layer.cornerRadius  = 2
-        downView.backgroundColor     = UIColor.whiteColor()
+        downView.backgroundColor     = UIColor.white
         downView.layer.masksToBounds = true
         contentView?.addSubview(downView)
         
         downLabel                  = UILabel(frame: downView.bounds)
         downLabel.font             = UIFont.HelveticaNeueThin(12.0)
         downLabel.text             = "YouXianMing - iOS Programmer"
-        downLabel.textColor        = UIColor.redColor()
-        downLabel.textAlignment    = .Center
+        downLabel.textColor        = UIColor.red
+        downLabel.textAlignment    = .center
         downView.layer.borderWidth = 0.5
-        downView.layer.borderColor = UIColor.redColor().CGColor
+        downView.layer.borderColor = UIColor.red.cgColor
         downView.addSubview(downLabel)
         
-        upView                     = UIView(frame: CGRectMake(0, 0, 220, 17))
+        upView                     = UIView(frame: CGRect(x: 0, y: 0, width: 220, height: 17))
         upView.center              = (contentView?.middlePoint)!
         upView.layer.cornerRadius  = 2
-        upView.backgroundColor     = UIColor.redColor()
+        upView.backgroundColor     = UIColor.red
         upView.layer.masksToBounds = true
         contentView?.addSubview(upView)
         
         upLabel               = UILabel(frame: upView.bounds)
         upLabel.font          = UIFont.HelveticaNeueThin(12.0)
         upLabel.text          = "YouXianMing - iOS Programmer"
-        upLabel.textColor     = UIColor.whiteColor()
-        upLabel.textAlignment = .Center
+        upLabel.textColor     = UIColor.white
+        upLabel.textAlignment = .center
         upView.addSubview(upLabel)
         
         weak var wself = self
-        timer.event({
-            
-            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
+//        timer.event({
+        
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
                 
                 wself?.upView.width = CGFloat(arc4random() % 220)
                 
                 }, completion: nil)
             
-            }, timeIntervalWithSeconds: 1, delayWithSeconds: 1)
-        timer.start()
+//            }, timeIntervalWithSeconds: 1, delayWithSeconds: 1)
+//        timer.start()
     }
 }

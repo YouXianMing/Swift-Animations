@@ -10,7 +10,7 @@ import UIKit
 
 extension UILabel {
 
-    public func sizeToFitWithWidth(width : CGFloat, numberOfLines : Int = 0) {
+    public func sizeToFitWithWidth(_ width : CGFloat, numberOfLines : Int = 0) {
         
         var frame          = self.frame
         frame.size.width   = width
@@ -19,7 +19,7 @@ extension UILabel {
         sizeToFit()
     }
     
-    public func sizeToFitWithString(string : String, width : CGFloat, numberOfLines : Int = 0) {
+    public func sizeToFitWithString(_ string : String, width : CGFloat, numberOfLines : Int = 0) {
         
         text                = string
         var newFrame        = self.frame

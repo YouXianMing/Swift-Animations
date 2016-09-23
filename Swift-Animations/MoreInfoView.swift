@@ -17,7 +17,7 @@ class MoreInfoView: UIView {
         super.init(frame : frame)
         
         layer.borderWidth   = 0.5
-        layer.borderColor   = UIColor.blackColor().CGColor
+        layer.borderColor   = UIColor.black.cgColor
         layer.masksToBounds = true
         
         /*
@@ -26,8 +26,8 @@ class MoreInfoView: UIView {
          *     --------------     *
          */
         let rect              = frame
-        imageView             = UIImageView(frame: CGRectMake(-50, 0, rect.size.width + 50 * 2, rect.size.height))
-        imageView.contentMode = .ScaleAspectFill
+        imageView             = UIImageView(frame: CGRect(x: -50, y: 0, width: rect.size.width + 50 * 2, height: rect.size.height))
+        imageView.contentMode = .scaleAspectFill
         self.addSubview(imageView)
     }
     

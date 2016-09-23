@@ -10,9 +10,9 @@ import UIKit
 
 class PageFlipEffectController: NormalTitleViewController {
     
-    private var math  : Math = Math((x : 0,       degree : 0),
-                                    (x : Width(), degree : 180))
-    private var layer : CALayer!
+    fileprivate var math  : Math = Math((x : 0,       degree : 0),
+                                        (x : Width(), degree : 180))
+    fileprivate var layer : CALayer!
     
     override func setup() {
         
@@ -22,12 +22,12 @@ class PageFlipEffectController: NormalTitleViewController {
         let size  = Math.ResetFromSize((image?.size)!, withFixedWidth: Width() / 2.0)
         
         layer                        = CALayer()
-        layer.anchorPoint            = CGPointMake(1.0, 0.5)
-        layer.frame                  = CGRectMake(0, 0, Width() / 2, size.height)
+        layer.anchorPoint            = CGPoint(x: 1.0, y: 0.5)
+        layer.frame                  = CGRect(x: 0, y: 0, width: Width() / 2, height: size.height)
         layer.allowsEdgeAntialiasing = true
-        layer.position               = CGPointMake(Width() / 2, contentView!.middleY)
-        layer.contents               = image?.CGImage
-        layer.borderColor            = UIColor.blackColor().CGColor
+        layer.position               = CGPoint(x: Width() / 2, y: contentView!.middleY)
+        layer.contents               = image?.cgImage
+        layer.borderColor            = UIColor.black.cgColor
         layer.borderWidth            = 3.0
         layer.masksToBounds          = true
         layer.transform              = CATransform3DMakeRotation(Math.RadianFromDegree(0), 0, 1, 1)
@@ -37,9 +37,9 @@ class PageFlipEffectController: NormalTitleViewController {
         view.addGestureRecognizer(panGesture)
     }
     
-    @objc private func handlePan(sender : UIPanGestureRecognizer) {
+    @objc fileprivate func handlePan(_ sender : UIPanGestureRecognizer) {
         
-        let curPoint = sender.locationInView(view)
+        let curPoint = sender.location(in: view)
         let x        = curPoint.x
         
         // 初始化3D变换,获取默认值
@@ -53,9 +53,9 @@ class PageFlipEffectController: NormalTitleViewController {
         CATransaction.setDisableActions(true)
         layer.transform = perspectiveTransform
         
-        layer.contents = UIImage(named: x >= Width() / 2.0 ? "pic_2" : "pic_1")?.CGImage
+        layer.contents = UIImage(named: x >= Width() / 2.0 ? "pic_2" : "pic_1")?.cgImage
         
-        if sender.state == .Ended {
+        if sender.state == .ended {
             
             // 初始化3D变换,获取默认值
             var perspectiveTransform = CATransform3DIdentity

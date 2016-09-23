@@ -10,7 +10,7 @@ import UIKit
 
 class LiveImageViewController: NormalTitleViewController {
     
-    var timer  : GCDTimer  = GCDTimer(inQueue: GCDQueue.mainQueue)
+//    var timer  : GCDTimer  = GCDTimer(inQueue: GCDQueue.mainQueue)
     var count  : NSInteger = 0
     var images : [UIImage] = [UIImage]()
     
@@ -25,22 +25,22 @@ class LiveImageViewController: NormalTitleViewController {
         images.append(UIImage(named: "pic_4")!)
         
         let image                       = images[0]
-        let liveImageView               = LiveImageView(frame: CGRectMake(0, 0, image.size.width, image.size.height))
+        let liveImageView               = LiveImageView(frame: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
         liveImageView.center            = (contentView?.middlePoint)!
         liveImageView.layer.borderWidth = 3
-        liveImageView.layer.borderColor = UIColor.blackColor().CGColor
+        liveImageView.layer.borderColor = UIColor.black.cgColor
         liveImageView.duration          = 0.5
         contentView?.addSubview(liveImageView)
         
         weak var wself = self
-        timer.event({
-            
+//        timer.event({
+        
             let currentIndex = (wself?.count)! % (wself?.images.count)!
             wself?.count     = (wself?.count)! + 1
             
             liveImageView.setImage(wself!.images[currentIndex], animated: true)
             
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 
                 var tmpRect          = liveImageView.bounds
                 tmpRect.size         = (liveImageView.image?.size)!
@@ -48,8 +48,8 @@ class LiveImageViewController: NormalTitleViewController {
                 liveImageView.center = (wself?.contentView?.middlePoint)!
             })
             
-            }, timeIntervalWithSeconds: 1.0)
-        
-        timer.start()
+//            }, timeIntervalWithSeconds: 1.0)
+//        
+//        timer.start()
     }
 }

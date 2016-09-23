@@ -41,8 +41,8 @@ class CustomNormalContentViewController: CustomViewController {
         buildLoadingView()
         buildWindowView()
         
-        loadingView?.userInteractionEnabled = false
-        windowView?.userInteractionEnabled  = false
+        loadingView?.isUserInteractionEnabled = false
+        windowView?.isUserInteractionEnabled  = false
     }
     
     /**
@@ -50,7 +50,7 @@ class CustomNormalContentViewController: CustomViewController {
      */
     func buildBackgroundView() {
         
-        backgroundView = UIView(frame : CGRectMake(0, 0, width, height))
+        backgroundView = UIView(frame : CGRect(x: 0, y: 0, width: width, height: height))
         view.addSubview(backgroundView!)
     }
     
@@ -59,7 +59,7 @@ class CustomNormalContentViewController: CustomViewController {
      */
     func buildTitleView() {
         
-        titleView = UIView(frame : CGRectMake(0, 0, width, 64))
+        titleView = UIView(frame : CGRect(x: 0, y: 0, width: width, height: 64))
         view.addSubview(titleView!)
     }
     
@@ -68,7 +68,7 @@ class CustomNormalContentViewController: CustomViewController {
      */
     func buildContentView() {
         
-        contentView = UIView(frame : CGRectMake(0, 64, width, height - 64))
+        contentView = UIView(frame : CGRect(x: 0, y: 64, width: width, height: height - 64))
         view.addSubview(contentView!)
     }
     
@@ -77,7 +77,7 @@ class CustomNormalContentViewController: CustomViewController {
      */
     func buildLoadingView() {
         
-        loadingView = UIView(frame : CGRectMake(0, 64, width, height - 64))
+        loadingView = UIView(frame : CGRect(x: 0, y: 64, width: width, height: height - 64))
         view.addSubview(loadingView!)
     }
     
@@ -86,7 +86,7 @@ class CustomNormalContentViewController: CustomViewController {
      */
     func buildWindowView() {
         
-        windowView = UIView(frame : CGRectMake(0, 0, width, height))
+        windowView = UIView(frame : CGRect(x: 0, y: 0, width: width, height: height))
         view.addSubview(windowView!)
     }
 }

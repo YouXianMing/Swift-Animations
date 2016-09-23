@@ -10,31 +10,31 @@ import UIKit
 
 class FullTitleVisualEffectViewController: CustomFullContentViewController {
 
-    private var effectView         : UIVisualEffectView!
-    private var vibrancyEffectView : UIVisualEffectView!
+    fileprivate var effectView         : UIVisualEffectView!
+    fileprivate var vibrancyEffectView : UIVisualEffectView!
     
     override func buildTitleView() {
         
         super.buildTitleView()
 
-        effectView                        = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-        effectView.userInteractionEnabled = true
+        effectView                        = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        effectView.isUserInteractionEnabled = true
         effectView.frame                  = (titleView?.bounds)!
         titleView?.addSubview(effectView)
         
-        vibrancyEffectView       = UIVisualEffectView(effect: UIVibrancyEffect(forBlurEffect: effectView.effect as! UIBlurEffect))
+        vibrancyEffectView       = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: effectView.effect as! UIBlurEffect))
         vibrancyEffectView.frame = effectView.bounds
         effectView.contentView.addSubview(vibrancyEffectView)
         
-        let backButton    = UIButton(frame: CGRectMake(0, 0, 100, 64))
-        backButton.center = CGPointMake(20, titleView!.middleY)
-        backButton.setImage(UIImage(named: "backIconTypeTwo"),     forState: .Normal)
-        backButton.setImage(UIImage(named: "backIconTypeTwo_pre"), forState: .Highlighted)
-        backButton.addTarget(self, action: #selector(FullTitleVisualEffectViewController.popSelf), forControlEvents: .TouchUpInside)
+        let backButton    = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 64))
+        backButton.center = CGPoint(x: 20, y: titleView!.middleY)
+        backButton.setImage(UIImage(named: "backIconTypeTwo"),     for: UIControlState())
+        backButton.setImage(UIImage(named: "backIconTypeTwo_pre"), for: .highlighted)
+        backButton.addTarget(self, action: #selector(FullTitleVisualEffectViewController.popSelf), for: .touchUpInside)
         
         let headlineLabel           = UILabel()
         headlineLabel.font          = UIFont.HeitiSC(20)
-        headlineLabel.textAlignment = .Center
+        headlineLabel.textAlignment = .center
         headlineLabel.textColor     = UIColor(red: 0.329, green: 0.329, blue: 0.329, alpha: 1)
         headlineLabel.text          = title
         headlineLabel.sizeToFit()

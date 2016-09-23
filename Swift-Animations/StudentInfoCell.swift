@@ -10,26 +10,26 @@ import UIKit
 
 class StudentInfoCell: CustomCell {
 
-    private var nameLabel : UILabel!
-    private var ageLabel  : UILabel!
+    fileprivate var nameLabel : UILabel!
+    fileprivate var ageLabel  : UILabel!
     
     override func setupCell() {
         
-        self.selectionStyle = .None
+        self.selectionStyle = .none
     }
     
     override func buildSubview() {
         
-        nameLabel      = UILabel(frame: CGRectMake(20, 0, 200, 60))
+        nameLabel      = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 60))
         nameLabel.font = UIFont.AppleSDGothicNeoThin(20)
         self.addSubview(nameLabel)
         
-        ageLabel               = UILabel(frame: CGRectMake(Width() - 220, 0, 200, 60))
-        ageLabel.textAlignment = .Right
+        ageLabel               = UILabel(frame: CGRect(x: Width() - 220, y: 0, width: 200, height: 60))
+        ageLabel.textAlignment = .right
         ageLabel.font          = UIFont.AppleSDGothicNeoThin(20)
         self.addSubview(ageLabel)
         
-        self.addSubview(UIView.CreateLine(CGRectMake(0, 59.5, Width(), 0.5), lineColor: UIColor.grayColor().alpha(0.1)))
+        self.addSubview(UIView.CreateLine(CGRect(x: 0, y: 59.5, width: Width(), height: 0.5), lineColor: UIColor.gray.alpha(0.1)))
     }
     
     override func loadContent() {
@@ -45,20 +45,20 @@ class StudentInfoCell: CustomCell {
         showSelectedAnimation()
     }
     
-    private func showSelectedAnimation() {
+    fileprivate func showSelectedAnimation() {
         
-        let tempView             = UIView(frame: CGRectMake(0, 0, Width(), 60))
-        tempView.backgroundColor = UIColor.cyanColor().alpha(0.2)
+        let tempView             = UIView(frame: CGRect(x: 0, y: 0, width: Width(), height: 60))
+        tempView.backgroundColor = UIColor.cyan.alpha(0.2)
         tempView.alpha           = 0
         self.addSubview(tempView)
         
-        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseIn, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
             
             tempView.alpha = 0.8
             
         }) { (finished) in
             
-            UIView.animateWithDuration(0.2, delay: 0.1, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseOut, animations: {
                 
                 tempView.alpha = 0
                 

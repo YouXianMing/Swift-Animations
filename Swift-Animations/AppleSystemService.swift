@@ -19,10 +19,10 @@ class AppleSystemService : NSObject {
         
         var lauchImage      : UIImage!
         var viewOrientation : String!
-        let viewSize        = UIScreen.mainScreen().bounds.size
-        let orientation     = UIApplication.sharedApplication().statusBarOrientation
+        let viewSize        = UIScreen.main.bounds.size
+        let orientation     = UIApplication.shared.statusBarOrientation
         
-        if orientation == .LandscapeLeft || orientation == .LandscapeRight {
+        if orientation == .landscapeLeft || orientation == .landscapeRight {
             
             viewOrientation = "Landscape"
             
@@ -31,11 +31,11 @@ class AppleSystemService : NSObject {
             viewOrientation = "Portrait"
         }
         
-        let imagesInfoArray = NSBundle.mainBundle().infoDictionary!["UILaunchImages"]
+        let imagesInfoArray = Bundle.main.infoDictionary!["UILaunchImages"]
         for dict : Dictionary <String, String> in imagesInfoArray as! Array {
             
             let imageSize = CGSizeFromString(dict["UILaunchImageSize"]!)
-            if CGSizeEqualToSize(imageSize, viewSize) && viewOrientation == dict["UILaunchImageOrientation"]! as String {
+            if imageSize.equalTo(viewSize) && viewOrientation == dict["UILaunchImageOrientation"]! as String {
                 
                 lauchImage = UIImage(named: dict["UILaunchImageName"]!)
             }

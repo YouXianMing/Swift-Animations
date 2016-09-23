@@ -17,8 +17,8 @@ extension UIColor {
      
      - returns: The new UIColor object.
      */
-    func alpha(alpha : CGFloat) -> UIColor {
+    func alpha(_ alpha : CGFloat) -> UIColor {
         
-        return self.colorWithAlphaComponent(alpha)
+        return self.withAlphaComponent(alpha)
     }
 }

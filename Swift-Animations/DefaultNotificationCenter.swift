@@ -18,7 +18,7 @@ protocol DefaultNotificationCenterDelegate : class {
      - parameter notificationName: Event name.
      - parameter object:           Event object, maybe nil.
      */
-    func defaultNotificationCenter(notificationName : String, object : AnyObject?)
+    func defaultNotificationCenter(_ notificationName : String, object : AnyObject?)
 }
 
 // MARK: protocol DefaultNotificationCenter
@@ -36,9 +36,9 @@ class DefaultNotificationCenter: NSObject {
      - parameter name:   Notification name.
      - parameter object: Data.
      */
-    class func PostMessageTo(name : String, object : AnyObject? = nil) {
+    class func PostMessageTo(_ name : String, object : AnyObject? = nil) {
     
-        NSNotificationCenter.defaultCenter().postNotificationName(name, object: object)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: object)
     }
     
     /**
@@ -46,7 +46,7 @@ class DefaultNotificationCenter: NSObject {
      
      - parameter name: Notification name.
      */
-    func addNotificationName(name : String) {
+    func addNotificationName(_ name : String) {
         
         var haveTheSameName = false
         
@@ -67,7 +67,7 @@ class DefaultNotificationCenter: NSObject {
             model.name      = name
             notificationModels.append(model)
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DefaultNotificationCenter.notificationEvent), name: model.name, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(DefaultNotificationCenter.notificationEvent), name: NSNotification.Name(rawValue: model.name), object: nil)
         }
     }
     
@@ -76,7 +76,7 @@ class DefaultNotificationCenter: NSObject {
      
      - parameter name: Notification name.
      */
-    func deleteNotificationName(name : String) {
+    func deleteNotificationName(_ name : String) {
 
         var haveTheSameName = false
         var index : Int     = 0
@@ -98,8 +98,8 @@ class DefaultNotificationCenter: NSObject {
         // Remove notification.
         if haveTheSameName == true {
             
-            NSNotificationCenter.defaultCenter().removeObserver(self, name: model.name, object: nil)
-            notificationModels.removeAtIndex(index)
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: model.name), object: nil)
+            notificationModels.remove(at: index)
         }
     }
     
@@ -110,7 +110,7 @@ class DefaultNotificationCenter: NSObject {
         
         for model in notificationModels {
             
-            NSNotificationCenter.defaultCenter().removeObserver(self, name: model.name, object: nil)
+            NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: model.name), object: nil)
         }
     }
     
@@ -136,16 +136,16 @@ class DefaultNotificationCenter: NSObject {
      
      - parameter obj: The NSNotification object.
      */
-    func notificationEvent(obj : AnyObject?) {
+    func notificationEvent(_ obj : AnyObject?) {
         
-        let notification = obj as! NSNotification
-        delegate?.defaultNotificationCenter(notification.name, object: notification.object)
+        let notification = obj as! Notification
+        delegate?.defaultNotificationCenter(notification.name.rawValue, object: notification.object as AnyObject?)
     }
     
     // MARK: Private properties & func.
     
     /// Store the Notification's infomation.
-    private var notificationModels : [DefaultNotificationCenterModel] = [DefaultNotificationCenterModel]()
+    fileprivate var notificationModels : [DefaultNotificationCenterModel] = [DefaultNotificationCenterModel]()
     
     deinit {
     

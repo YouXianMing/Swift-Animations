@@ -25,17 +25,17 @@ class LiveImageView: UIImageView {
      - parameter newVal:   The new image.
      - parameter animated: Animated or not.
      */
-    func setImage(newVal : UIImage, animated : Bool) {
+    func setImage(_ newVal : UIImage, animated : Bool) {
         
         if animated == true {
             
             let animation       = CABasicAnimation(keyPath: "contents")
-            animation.fromValue = image?.CGImage
-            animation.toValue   = newVal.CGImage
+            animation.fromValue = image?.cgImage
+            animation.toValue   = newVal.cgImage
             animation.duration  = duration
             
-            pLayer.contents = image?.CGImage
-            pLayer.addAnimation(animation, forKey: nil)
+            pLayer.contents = image?.cgImage
+            pLayer.add(animation, forKey: nil)
             
             image = newVal
             
@@ -47,7 +47,7 @@ class LiveImageView: UIImageView {
     
     // MARK: Private value & func.
     
-    private var pLayer : CALayer!
+    fileprivate var pLayer : CALayer!
     
     override init(frame: CGRect) {
         

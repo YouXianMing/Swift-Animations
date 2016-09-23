@@ -19,7 +19,7 @@ class Math: NSObject {
      
      - returns: Degree.
      */
-    class func DegreeFromRadian(radian : CGFloat) -> CGFloat {
+    class func DegreeFromRadian(_ radian : CGFloat) -> CGFloat {
         
         return ((radian) * (180.0 / CGFloat(M_PI)));
     }
@@ -31,7 +31,7 @@ class Math: NSObject {
      
      - returns: Radian.
      */
-    class func RadianFromDegree(degree : CGFloat) -> CGFloat {
+    class func RadianFromDegree(_ degree : CGFloat) -> CGFloat {
         
         return ((degree) * CGFloat(M_PI) / 180.0);
     }
@@ -46,7 +46,7 @@ class Math: NSObject {
      
      - returns: Radian value.
      */
-    class func RadianValueFromTanSideA(sideA sideA : CGFloat, sideB : CGFloat) -> CGFloat {
+    class func RadianValueFromTanSideA(sideA : CGFloat, sideB : CGFloat) -> CGFloat {
         
         return atan2(sideA, sideB)
     }
@@ -61,10 +61,10 @@ class Math: NSObject {
      
      - returns: New size.
      */
-    class func ResetFromSize(size : CGSize, withFixedWidth : CGFloat) -> CGSize {
+    class func ResetFromSize(_ size : CGSize, withFixedWidth : CGFloat) -> CGSize {
         
         let newHeight = size.height * (withFixedWidth / size.width)
-        return CGSizeMake(withFixedWidth, newHeight)
+        return CGSize(width: withFixedWidth, height: newHeight)
     }
 
     /**
@@ -75,10 +75,10 @@ class Math: NSObject {
      
      - returns: New size.
      */
-    class func ResetFromSize(size : CGSize, withFixedHeight : CGFloat) -> CGSize {
+    class func ResetFromSize(_ size : CGSize, withFixedHeight : CGFloat) -> CGSize {
 
         let newWidth = size.width * (withFixedHeight / size.height)
-        return CGSizeMake(newWidth, withFixedHeight)
+        return CGSize(width: newWidth, height: withFixedHeight)
     }
     
     // MARK: Calculate once linear equation (Y = kX + b).
@@ -100,7 +100,7 @@ class Math: NSObject {
      
      - returns: X number.
      */
-    func xValueWhenYEqual(yValue : CGFloat) -> CGFloat {
+    func xValueWhenYEqual(_ yValue : CGFloat) -> CGFloat {
         
         if k == 0 {
             
@@ -117,7 +117,7 @@ class Math: NSObject {
      
      - returns: The point value.
      */
-    func whenYEqual(yValue : CGFloat) -> (x : CGFloat, y : CGFloat) {
+    func whenYEqual(_ yValue : CGFloat) -> (x : CGFloat, y : CGFloat) {
         
         if k == 0 {
             
@@ -134,7 +134,7 @@ class Math: NSObject {
      
      - returns: Y number.
      */
-    func yValueWhenXEqual(xValue : CGFloat) -> CGFloat {
+    func yValueWhenXEqual(_ xValue : CGFloat) -> CGFloat {
         
         return k * xValue + b
     }
@@ -146,14 +146,14 @@ class Math: NSObject {
      
      - returns: The point value.
      */
-    func whenXEqual(xValue : CGFloat) -> (x : CGFloat, y : CGFloat) {
+    func whenXEqual(_ xValue : CGFloat) -> (x : CGFloat, y : CGFloat) {
         
         return (xValue, k * xValue + b)
     }
     
     // MARK: Private func.
     
-    private func calculateSlope(x1 x1 : CGFloat, y1 : CGFloat, x2 : CGFloat, y2 : CGFloat) -> CGFloat {
+    fileprivate func calculateSlope(x1 : CGFloat, y1 : CGFloat, x2 : CGFloat, y2 : CGFloat) -> CGFloat {
     
         if x1 == x2 {
             
@@ -165,7 +165,7 @@ class Math: NSObject {
         }
     }
     
-    private func calculateConstant(x1 x1 : CGFloat, y1 : CGFloat, x2 : CGFloat, y2 : CGFloat) -> CGFloat {
+    fileprivate func calculateConstant(x1 : CGFloat, y1 : CGFloat, x2 : CGFloat, y2 : CGFloat) -> CGFloat {
         
         if x1 == x2 {
             

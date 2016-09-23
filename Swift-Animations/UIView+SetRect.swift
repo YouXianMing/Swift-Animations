@@ -15,7 +15,7 @@ import UIKit
  */
 public func Width() -> CGFloat {
 
-    return UIScreen.mainScreen().bounds.size.width
+    return UIScreen.main.bounds.size.width
 }
 
 /**
@@ -25,7 +25,7 @@ public func Width() -> CGFloat {
  */
 public func Height() -> CGFloat {
 
-    return UIScreen.mainScreen().bounds.size.height
+    return UIScreen.main.bounds.size.height
 }
 
 /// Status bar height.
@@ -189,19 +189,19 @@ extension UIView {
     /// middleX
     var middleX : CGFloat {
         
-        get { return CGRectGetWidth(bounds) / 2}
+        get { return bounds.width / 2}
     }
     
     /// middleY
     var middleY : CGFloat {
         
-        get { return CGRectGetHeight(bounds) / 2}
+        get { return bounds.height / 2}
     }
     
     /// middlePoint
     var middlePoint : CGPoint {
         
-        get { return CGPoint(x: CGRectGetWidth(bounds) / 2, y: CGRectGetHeight(bounds) / 2)}
+        get { return CGPoint(x: bounds.width / 2, y: bounds.height / 2)}
     }
 }
 

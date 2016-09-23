@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window : UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         /*
          
@@ -34,15 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          
          */
         
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         
         if let window = window {
             
-            window.backgroundColor    = UIColor.whiteColor()
+            window.backgroundColor    = UIColor.white
             let controller            = AnimationsListViewController()
             let rootViewController    = RootNavigationViewController(rootViewController: controller, hideTabBar: true)
             window.rootViewController = rootViewController
-            window.makeKeyWindow()
+            window.makeKey()
         }
         
         return true

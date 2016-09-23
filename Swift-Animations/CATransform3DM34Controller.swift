@@ -11,7 +11,7 @@ import UIKit
 class CATransform3DM34Controller: NormalTitleViewController {
 
     var layer          : CALayer!
-    var timer          : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
+//    var timer          : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
     var transformState : Bool     = false
     
     override func setup() {
@@ -23,23 +23,23 @@ class CATransform3DM34Controller: NormalTitleViewController {
         timerEvent()
     }
     
-    private func initLayer() {
+    fileprivate func initLayer() {
         
         let image         = UIImage(named: "1")
         layer             = CALayer()
-        layer.frame       = CGRectMake(0, 0, image!.size.width / 2, image!.size.height / 2)
+        layer.frame       = CGRect(x: 0, y: 0, width: image!.size.width / 2, height: image!.size.height / 2)
         layer.position    = (contentView?.middlePoint)!
         layer.borderWidth = 4
-        layer.borderColor = UIColor.blackColor().CGColor
-        layer.contents    = image?.CGImage
+        layer.borderColor = UIColor.black.cgColor
+        layer.contents    = image?.cgImage
         contentView?.layer.addSublayer(layer)
     }
     
-    private func timerEvent() {
+    fileprivate func timerEvent() {
         
         weak var wself = self
-        timer.event({
-            
+//        timer.event({
+        
             if wself?.transformState == false {
             
                 wself?.transformState = true
@@ -51,11 +51,11 @@ class CATransform3DM34Controller: NormalTitleViewController {
                 wself?.normalStateEvent()
             }
             
-            }, timeIntervalWithSeconds: 2.0, delayWithSeconds: 1.0)
-        timer.start()
+//            }, timeIntervalWithSeconds: 2.0, delayWithSeconds: 1.0)
+//        timer.start()
     }
 
-    private func transformStateEvent() {
+    fileprivate func transformStateEvent() {
         
         var perspectiveTransform = CATransform3DIdentity
         perspectiveTransform.m34 = -(1.0 / 500.0)
@@ -68,7 +68,7 @@ class CATransform3DM34Controller: NormalTitleViewController {
         layer.speed                  = 0.5
     }
     
-    private func normalStateEvent() {
+    fileprivate func normalStateEvent() {
         
         let perspectiveTransform = CATransform3DIdentity
         layer.transform          = perspectiveTransform

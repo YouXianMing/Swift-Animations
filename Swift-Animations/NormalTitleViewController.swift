@@ -17,24 +17,24 @@ class NormalTitleViewController: CustomNormalContentViewController {
         // Title label.
         let headlinelabel           = UILabel()
         headlinelabel.font          = UIFont.HeitiSC(20)
-        headlinelabel.textAlignment = .Center
-        headlinelabel.textColor     = UIColor.grayColor()
+        headlinelabel.textAlignment = .center
+        headlinelabel.textColor     = UIColor.gray
         headlinelabel.text          = self.title
         headlinelabel.sizeToFit()
         headlinelabel.center        = (self.titleView?.middlePoint)!
         self.titleView?.addSubview(headlinelabel)
         
         // Back button.
-        let button                    = UIButton(frame : CGRectMake(0, 0, 100, 64))
-        button.center                 = CGPointMake(20, self.titleView!.middleY)
-        button.imageView?.contentMode = .Center
-        button.setImage(UIImage(named: "backIcon"),     forState: .Normal)
-        button.setImage(UIImage(named: "backIcon_pre"), forState: .Highlighted)
+        let button                    = UIButton(frame : CGRect(x: 0, y: 0, width: 100, height: 64))
+        button.center                 = CGPoint(x: 20, y: self.titleView!.middleY)
+        button.imageView?.contentMode = .center
+        button.setImage(UIImage(named: "backIcon"),     for: UIControlState())
+        button.setImage(UIImage(named: "backIcon_pre"), for: .highlighted)
         self.titleView?.addSubview(button)
-        button.addTarget(self, action: #selector(NormalTitleViewController.popSelf), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(NormalTitleViewController.popSelf), for: .touchUpInside)
         
         // Line view.
-        titleView?.addSubview(UIView.CreateLine(CGRectMake(0, titleView!.height - 0.5, Width(), 0.5), lineColor: UIColor.grayColor().alpha(0.2)))
+        titleView?.addSubview(UIView.CreateLine(CGRect(x: 0, y: titleView!.height - 0.5, width: Width(), height: 0.5), lineColor: UIColor.gray.alpha(0.2)))
     }
     
     func popSelf() {

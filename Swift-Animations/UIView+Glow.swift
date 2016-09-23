@@ -43,7 +43,7 @@ extension UIView {
                 
             } else {
                 
-                return UIColor.redColor()
+                return UIColor.red
             }
         }
         
@@ -110,11 +110,11 @@ extension UIView {
     }
     
     /// 一次完整的辉光周期(从显示到透明或者从透明到显示),默认1s
-    var glowAnimationDuration : NSTimeInterval? {
+    var glowAnimationDuration : TimeInterval? {
         
         get {
             
-            if let tmpValue = objc_getAssociatedObject(self, &glowAnimationDurationKey) as? NSTimeInterval {
+            if let tmpValue = objc_getAssociatedObject(self, &glowAnimationDurationKey) as? TimeInterval {
                 
                 if tmpValue <= 0 {
                     
@@ -195,7 +195,7 @@ extension UIView {
     
     // MARK: 不可设置的属性
     
-    private var glowLayer : CALayer? {
+    fileprivate var glowLayer : CALayer? {
         
         get {
             
@@ -215,11 +215,11 @@ extension UIView {
         }
     }
     
-    private var dispatchSource : dispatch_source_t? {
+    fileprivate var dispatchSource : DispatchSource? {
     
         get {
         
-            if let tmpValue = objc_getAssociatedObject(self, &dispatchSourceKey) as? dispatch_source_t {
+            if let tmpValue = objc_getAssociatedObject(self, &dispatchSourceKey) as? DispatchSource {
                 
                 return tmpValue
                 
@@ -242,17 +242,17 @@ extension UIView {
      */
     func createGlowLayer() {
     
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.mainScreen().scale)
-        self.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
         let path = UIBezierPath.init(rect: self.bounds)
         self.glowColor?.setFill()
-        path.fillWithBlendMode(.SourceAtop, alpha: 1)
+        path.fill(with: .sourceAtop, alpha: 1)
         
         self.glowLayer                = CALayer()
         self.glowLayer?.frame         = self.bounds
-        self.glowLayer?.contents      = UIGraphicsGetImageFromCurrentImageContext().CGImage
+        self.glowLayer?.contents      = UIGraphicsGetImageFromCurrentImageContext()?.cgImage
         self.glowLayer?.opacity       = 0
-        self.glowLayer?.shadowOffset  = CGSizeMake(0, 0)
+        self.glowLayer?.shadowOffset  = CGSize(width: 0, height: 0)
         self.glowLayer?.shadowOpacity = 1
         
         UIGraphicsEndImageContext()
@@ -286,9 +286,9 @@ extension UIView {
      
      - parameter animated: 是否执行动画
      */
-    func glowToshowAnimated(animated : Bool) {
+    func glowToshowAnimated(_ animated : Bool) {
 
-        self.glowLayer?.shadowColor  = self.glowColor?.CGColor
+        self.glowLayer?.shadowColor  = self.glowColor?.cgColor
         self.glowLayer?.shadowRadius = self.glowRadius!
         
         if animated == true {
@@ -298,11 +298,11 @@ extension UIView {
             animation.toValue       = self.glowOpacity
             self.glowLayer?.opacity = self.glowOpacity!
             animation.duration      = self.glowAnimationDuration!
-            self.glowLayer?.addAnimation(animation, forKey: "glowLayerOpacity")
+            self.glowLayer?.add(animation, forKey: "glowLayerOpacity")
             
         } else {
         
-            self.glowLayer?.removeAnimationForKey("glowLayerOpacity")
+            self.glowLayer?.removeAnimation(forKey: "glowLayerOpacity")
             self.glowLayer?.opacity = self.glowOpacity!
         }
     }
@@ -312,9 +312,9 @@ extension UIView {
      
      - parameter animated: 是否显示动画
      */
-    func glowToHideAnimated(animated : Bool) {
+    func glowToHideAnimated(_ animated : Bool) {
         
-        self.glowLayer?.shadowColor  = self.glowColor?.CGColor
+        self.glowLayer?.shadowColor  = self.glowColor?.cgColor
         self.glowLayer?.shadowRadius = self.glowRadius!
         
         if animated == true {
@@ -324,11 +324,11 @@ extension UIView {
             animation.toValue       = 0
             self.glowLayer?.opacity = 0
             animation.duration      = self.glowAnimationDuration!
-            self.glowLayer?.addAnimation(animation, forKey: "glowLayerOpacity")
+            self.glowLayer?.add(animation, forKey: "glowLayerOpacity")
             
         } else {
             
-            self.glowLayer?.removeAnimationForKey("glowLayerOpacity")
+            self.glowLayer?.removeAnimation(forKey: "glowLayerOpacity")
             self.glowLayer?.opacity = 0
         }
     }
@@ -338,31 +338,31 @@ extension UIView {
      */
     func startGlowLoop() {
         
-        if self.dispatchSource == nil {
-            
-            let seconds      = self.glowAnimationDuration! * 2 + NSTimeInterval(self.glowDuration!) + NSTimeInterval(self.hideDuration!)
-            let delaySeconds = self.glowAnimationDuration! + NSTimeInterval(self.glowDuration!)
-            
-            weak var weakSelf = self
-            self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue())
-            dispatch_source_set_timer(self.dispatchSource!, dispatch_time(DISPATCH_TIME_NOW, 0), UInt64(Double(NSEC_PER_SEC) * seconds), 0)
-            dispatch_source_set_event_handler(self.dispatchSource!, {
-                
-                weakSelf!.glowToshowAnimated(true)
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * delaySeconds)), dispatch_get_main_queue(), { 
-                    
-                    weakSelf!.glowToHideAnimated(true)
-                })
-            })
-            
-            dispatch_resume(self.dispatchSource!)
-        }
+//        if self.dispatchSource == nil {
+//            
+//            let seconds      = self.glowAnimationDuration! * 2 + TimeInterval(self.glowDuration!) + TimeInterval(self.hideDuration!)
+//            let delaySeconds = self.glowAnimationDuration! + TimeInterval(self.glowDuration!)
+//            
+//            weak var weakSelf = self
+//            self.dispatchSource = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(rawValue: UInt(0)), queue: DispatchQueue.main) /*Migrator FIXME: Use DispatchSourceTimer to avoid the cast*/ as! DispatchSource
+//            self.dispatchSource!.setTimer(start: DispatchTime.now() + Double(0) / Double(NSEC_PER_SEC), interval: UInt64(Double(NSEC_PER_SEC) * seconds), leeway: 0)
+//            self.dispatchSource!.setEventHandler(handler: {
+//                
+//                weakSelf!.glowToshowAnimated(true)
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(Double(NSEC_PER_SEC) * delaySeconds)) / Double(NSEC_PER_SEC), execute: { 
+//                    
+//                    weakSelf!.glowToHideAnimated(true)
+//                })
+//            })
+//            
+//            self.dispatchSource!.resume()
+//        }
     }
     
     // MARK: 便利操作
     
-    func startGlowWithGlowRadius(glowRadius : CGFloat?, glowOpacity : Float?, glowColor : UIColor?,
-                                 glowDuration : CGFloat, hideDuration : CGFloat, glowAnimationDuration : NSTimeInterval) {
+    func startGlowWithGlowRadius(_ glowRadius : CGFloat?, glowOpacity : Float?, glowColor : UIColor?,
+                                 glowDuration : CGFloat, hideDuration : CGFloat, glowAnimationDuration : TimeInterval) {
         
         self.glowRadius            = glowRadius
         self.glowOpacity           = glowOpacity

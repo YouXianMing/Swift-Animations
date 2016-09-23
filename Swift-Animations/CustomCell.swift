@@ -22,10 +22,10 @@ extension UITableView {
      
      - returns: The CustomCell instance.
      */
-    func dequeueCellAndLoadContentFromAdapter(adapter : CellDataAdapter, indexPath : NSIndexPath,
+    func dequeueCellAndLoadContentFromAdapter(_ adapter : CellDataAdapter, indexPath : IndexPath,
                                               tableView : UITableView? = nil, controller : UIViewController? = nil) -> CustomCell {
         
-        let cell         = self.dequeueReusableCellWithIdentifier(adapter.cellReuseIdentifier!) as! CustomCell
+        let cell         = self.dequeueReusableCell(withIdentifier: adapter.cellReuseIdentifier!) as! CustomCell
         cell.indexPath   = indexPath
         cell.dataAdapter = adapter
         cell.data        = adapter.data
@@ -36,12 +36,12 @@ extension UITableView {
         return cell
     }
     
-    func selectedEventWithIndexPath(indexPath : NSIndexPath) {
+    func selectedEventWithIndexPath(_ indexPath : IndexPath) {
         
-        let cell = self.cellForRowAtIndexPath(indexPath) as! CustomCell
+        let cell = self.cellForRow(at: indexPath) as! CustomCell
         
         // Make sure the cell is kind of CustomCell.
-        guard cell.isKindOfClass(CustomCell.classForCoder()) == true else {
+        guard cell.isKind(of: CustomCell.classForCoder()) == true else {
             
             return
         }
@@ -60,7 +60,7 @@ protocol CustomCellDelegate : class {
      - parameter cell:  CustomCell type class.
      - parameter event: Event data.
      */
-    func customCell(cell: CustomCell?, event: AnyObject?)
+    func customCell(_ cell: CustomCell?, event: AnyObject?)
 }
 
 // MARK: CustomCell
@@ -70,7 +70,7 @@ class CustomCell: UITableViewCell {
     weak var delegate    : CustomCellDelegate?
     weak var dataAdapter : CellDataAdapter?
     weak var data        : AnyObject?
-    weak var indexPath   : NSIndexPath?
+    var      indexPath   : IndexPath?
     weak var tableView   : UITableView?
     weak var controller  : UIViewController?
     var      display     : Bool?
@@ -92,7 +92,7 @@ class CustomCell: UITableViewCell {
      */
     func setupCell() {
         
-        self.selectionStyle = .None
+        self.selectionStyle = .none
     }
     
     /**
@@ -117,7 +117,7 @@ class CustomCell: UITableViewCell {
      
      - returns: Cell's height.
      */
-    class func HeightWithData(data : AnyObject) -> CGFloat { return 0}
+    class func HeightWithData(_ data : AnyObject) -> CGFloat { return 0}
     
     /**
      Create the CustomCell type data adapter.
@@ -129,9 +129,9 @@ class CustomCell: UITableViewCell {
      
      - returns: The cellDataAdapter.
      */
-    class func Adapter(reuseIdentifier: String? = nil, data: AnyObject? = nil, cellHeight: CGFloat? = 0, type: Int? = nil) -> CellDataAdapter {
+    class func Adapter(_ reuseIdentifier: String? = nil, data: AnyObject? = nil, cellHeight: CGFloat? = 0, type: Int? = nil) -> CellDataAdapter {
         
-        let identifier = (reuseIdentifier == nil ? String(self.classForCoder()) : reuseIdentifier)
+        let identifier = (reuseIdentifier == nil ? String(describing: self.classForCoder()) : reuseIdentifier)
         
         return CellDataAdapter.init(cellReuseIdentifier: identifier, data: data, cellHeight: cellHeight, cellType: type)
     }
@@ -142,9 +142,9 @@ class CustomCell: UITableViewCell {
      - parameter tableView:           UITableView.
      - parameter cellReuseIdentifier: Cell reuse identifier.
      */
-    class func RegisterTo(tableView: UITableView, cellReuseIdentifier: String? = nil) {
+    class func RegisterTo(_ tableView: UITableView, cellReuseIdentifier: String? = nil) {
         
-        tableView.registerClass(self.classForCoder(), forCellReuseIdentifier: (cellReuseIdentifier != nil) ? cellReuseIdentifier! : String(self.classForCoder()))
+        tableView.register(self.classForCoder(), forCellReuseIdentifier: (cellReuseIdentifier != nil) ? cellReuseIdentifier! : String(describing: self.classForCoder()))
     }
     
     /**
@@ -153,7 +153,7 @@ class CustomCell: UITableViewCell {
      - parameter height:   The new cell height.
      - parameter animated: Animated or not, default is true.
      */
-    func updateWithNewCellHeight(height : CGFloat, animated : Bool = true) {
+    func updateWithNewCellHeight(_ height : CGFloat, animated : Bool = true) {
         
         guard tableView != nil && dataAdapter != nil else {
             

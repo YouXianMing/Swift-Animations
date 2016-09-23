@@ -18,7 +18,7 @@ protocol CustomHeaderFooterViewDelegate : class {
      - parameter cell:  CustomCell type class.
      - parameter event: Event data.
      */
-    func customHeaderFooterView(headerFooterView: CustomHeaderFooterView?, event: AnyObject?)
+    func customHeaderFooterView(_ headerFooterView: CustomHeaderFooterView?, event: AnyObject?)
 }
 
 class CustomHeaderFooterView: UITableViewHeaderFooterView {
@@ -61,7 +61,7 @@ class CustomHeaderFooterView: UITableViewHeaderFooterView {
      
      - parameter color: Color.
      */
-    func setHeaderFooterViewBackgroundColor(color : UIColor) {
+    func setHeaderFooterViewBackgroundColor(_ color : UIColor) {
     
         self.contentView.backgroundColor = color
     }
@@ -72,8 +72,8 @@ class CustomHeaderFooterView: UITableViewHeaderFooterView {
      - parameter tableView:           UITableView.
      - parameter cellReuseIdentifier: HeaderFooterView reuse identifier.
      */
-    class func RegisterTo(tableView: UITableView, reuseIdentifier: String? = nil) {
+    class func RegisterTo(_ tableView: UITableView, reuseIdentifier: String? = nil) {
         
-        tableView.registerClass(self.classForCoder(), forHeaderFooterViewReuseIdentifier: (reuseIdentifier != nil) ? reuseIdentifier! : String(self.classForCoder()))
+        tableView.register(self.classForCoder(), forHeaderFooterViewReuseIdentifier: (reuseIdentifier != nil) ? reuseIdentifier! : String(describing: self.classForCoder()))
     }
 }

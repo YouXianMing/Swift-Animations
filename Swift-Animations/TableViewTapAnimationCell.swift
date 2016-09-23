@@ -17,33 +17,33 @@ class TableViewTapAnimationCell: CustomCell {
     
     // MARK: Private var.
     
-    private var titleLabel : UILabel!
-    private var iconView   : UIImageView!
-    private var lineView   : UIView!
-    private var rectView   : UIView!
+    fileprivate var titleLabel : UILabel!
+    fileprivate var iconView   : UIImageView!
+    fileprivate var lineView   : UIView!
+    fileprivate var rectView   : UIView!
     
     // MARK: Override CustomCell func.
     
     override func buildSubview() {
         
-        rectView                   = UIView(frame: CGRectMake(Width() - 60, 23, 35, 35))
+        rectView                   = UIView(frame: CGRect(x: Width() - 60, y: 23, width: 35, height: 35))
         rectView.layer.borderWidth = 1
-        rectView.layer.borderColor = UIColor.grayColor().CGColor
+        rectView.layer.borderColor = UIColor.gray.cgColor
         self.addSubview(rectView)
         
-        iconView       = UIImageView(frame: CGRectMake(Width() - 62, 20, 40, 40))
+        iconView       = UIImageView(frame: CGRect(x: Width() - 62, y: 20, width: 40, height: 40))
         iconView.image = UIImage(named: "plane")
         iconView.alpha = 0
         self.addSubview(iconView)
         
-        titleLabel           = UILabel(frame: CGRectMake(30, 10, 300, 60))
+        titleLabel           = UILabel(frame: CGRect(x: 30, y: 10, width: 300, height: 60))
         titleLabel.font      = UIFont.Avenir(20)
-        titleLabel.textColor = UIColor.grayColor()
+        titleLabel.textColor = UIColor.gray
         self.addSubview(titleLabel)
         
-        lineView                 = UIView(frame: CGRectMake(30, 70, 0, 2))
+        lineView                 = UIView(frame: CGRect(x: 30, y: 70, width: 0, height: 2))
         lineView.alpha           = 0
-        lineView.backgroundColor = UIColor.redColor()
+        lineView.backgroundColor = UIColor.red
         self.addSubview(lineView)
     }
     
@@ -81,32 +81,32 @@ class TableViewTapAnimationCell: CustomCell {
 
         if let delegate = delegate {
         
-            delegate.customCell(self, event: model.name)
+            delegate.customCell(self, event: model.name as AnyObject?)
         }
     }
     
     // MARK: Private func.
     
-    private func changeToState(state : TableViewTapAnimationCellState, animated : Bool) {
+    fileprivate func changeToState(_ state : TableViewTapAnimationCellState, animated : Bool) {
         
         switch state {
             
         case .kNormalState:
             
-            UIView.animateWithDuration(animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: .CurveEaseInOut, animations: {
+            UIView.animate(withDuration: animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: UIViewAnimationOptions(), animations: {
                 
                 if animated == true {
                     
-                    self.iconView.transform = CGAffineTransformMake(0.5, 0, 0, 0.5, 0, 0)
+                    self.iconView.transform = CGAffineTransform(a: 0.5, b: 0, c: 0, d: 0.5, tx: 0, ty: 0)
                 }
                 
                 self.iconView.alpha   = 0
                 self.lineView.alpha   = 0
-                self.lineView.frame   = CGRectMake(30, 70, 0, 2)
-                self.titleLabel.frame = CGRectMake(30, 10, 300, 60)
+                self.lineView.frame   = CGRect(x: 30, y: 70, width: 0, height: 2)
+                self.titleLabel.frame = CGRect(x: 30, y: 10, width: 300, height: 60)
                 
-                self.rectView.layer.borderColor  = UIColor.grayColor().CGColor
-                self.rectView.transform          = CGAffineTransformMake(1, 0, 0, 1, 0, 0)
+                self.rectView.layer.borderColor  = UIColor.gray.cgColor
+                self.rectView.transform          = CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: 0, ty: 0)
                 self.rectView.layer.cornerRadius = 0
                 
                 }, completion: nil)
@@ -115,39 +115,39 @@ class TableViewTapAnimationCell: CustomCell {
             
             if animated == true {
                 
-                self.iconView.transform = CGAffineTransformMake(2, 0, 0, 2, 0, 0)
+                self.iconView.transform = CGAffineTransform(a: 2, b: 0, c: 0, d: 2, tx: 0, ty: 0)
             }
             
-            UIView.animateWithDuration(animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: .CurveEaseInOut, animations: {
+            UIView.animate(withDuration: animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: UIViewAnimationOptions(), animations: {
                 
-                self.iconView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0)
+                self.iconView.transform = CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: 0, ty: 0)
                 self.iconView.alpha     = 1
                 self.lineView.alpha     = 1
-                self.lineView.frame     = CGRectMake(30, 70, 200, 2)
-                self.titleLabel.frame   = CGRectMake(30 + 50, 10, 300, 60)
+                self.lineView.frame     = CGRect(x: 30, y: 70, width: 200, height: 2)
+                self.titleLabel.frame   = CGRect(x: 30 + 50, y: 10, width: 300, height: 60)
                 
-                self.rectView.layer.borderColor  = UIColor.redColor().CGColor
-                self.rectView.transform          = CGAffineTransformMake(0.8, 0, 0, 0.8, 0, 0)
+                self.rectView.layer.borderColor  = UIColor.red.cgColor
+                self.rectView.transform          = CGAffineTransform(a: 0.8, b: 0, c: 0, d: 0.8, tx: 0, ty: 0)
                 self.rectView.layer.cornerRadius = 4
                 
                 }, completion: nil)
         }
     }
     
-    private func showSelectedAnimation() {
+    fileprivate func showSelectedAnimation() {
         
-        let tempView             = UIView(frame: CGRectMake(0, 0, Width(), 80))
-        tempView.backgroundColor = UIColor.cyanColor().alpha(0.2)
+        let tempView             = UIView(frame: CGRect(x: 0, y: 0, width: Width(), height: 80))
+        tempView.backgroundColor = UIColor.cyan.alpha(0.2)
         tempView.alpha           = 0
         self.addSubview(tempView)
         
-        UIView.animateWithDuration(0.2, delay: 0, options: .CurveEaseIn, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {
             
             tempView.alpha = 0.8
             
         }) { (finished) in
             
-            UIView.animateWithDuration(0.2, delay: 0.1, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: .curveEaseOut, animations: {
                 
                 tempView.alpha = 0
                 

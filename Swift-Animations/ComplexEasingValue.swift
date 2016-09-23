@@ -23,8 +23,8 @@ class ComplexEasingValue: EasingValue {
         
         super.init()
         
-        functionA  = EasingFunction.SineEaseIn
-        functionB  = EasingFunction.SineEaseIn
+        functionA  = EasingFunction.sineEaseIn
+        functionB  = EasingFunction.sineEaseIn
         frameCount = 60
     }
     
@@ -45,7 +45,7 @@ class ComplexEasingValue: EasingValue {
     
     - returns: 关键帧值数组
     */
-    override func pointValueWith(fromPoint fromPoint : CGPoint, toPoint : CGPoint) -> [AnyObject] {
+    override func pointValueWith(fromPoint : CGPoint, toPoint : CGPoint) -> [AnyObject] {
         
         let values = NSMutableArray(capacity: frameCount)
         
@@ -57,7 +57,7 @@ class ComplexEasingValue: EasingValue {
             let x     : Double  = Double(fromPoint.x) + (functionA.value())(t) * (Double(toPoint.x) - Double(fromPoint.x))
             let y     : Double  = Double(fromPoint.y) + (functionB.value())(t) * (Double(toPoint.y) - Double(fromPoint.y))
             let point : CGPoint = CGPoint(x : x, y : y)
-            values.addObject(NSValue(CGPoint: point))
+            values.add(NSValue(cgPoint: point))
             
             t += dt
         }
@@ -73,7 +73,7 @@ class ComplexEasingValue: EasingValue {
     
     - returns: 关键帧点数组
     */
-    override func sizeValueWith(fromSize fromSize : CGSize, toSize : CGSize) -> [AnyObject] {
+    override func sizeValueWith(fromSize : CGSize, toSize : CGSize) -> [AnyObject] {
         
         let values = NSMutableArray(capacity: frameCount)
         
@@ -85,7 +85,7 @@ class ComplexEasingValue: EasingValue {
             let width  : Double = Double(fromSize.width)  + (functionA.value())(t) * (Double(toSize.width) - Double(fromSize.width))
             let height : Double = Double(fromSize.height) + (functionB.value())(t) * (Double(toSize.height) - Double(fromSize.height))
             let size   : CGSize = CGSize(width: width, height: height)
-            values.addObject(NSValue(CGSize : size))
+            values.add(NSValue(cgSize : size))
             
             t += dt
         }

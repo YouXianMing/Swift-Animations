@@ -94,13 +94,13 @@ class BackgroundLineView: UIView {
     
     // MARK: Private value & func.
     
-    private let backgroundView = LineBackground(length: 0)
+    fileprivate let backgroundView = LineBackground(length: 0)
     
-    private func setupBackgroundView() {
+    fileprivate func setupBackgroundView() {
     
         let drawLength        = sqrt(self.bounds.size.width * self.bounds.size.width + self.bounds.size.height * self.bounds.size.height)
-        backgroundView.frame  = CGRectMake(0, 0, drawLength, drawLength)
-        backgroundView.center = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0)
+        backgroundView.frame  = CGRect(x: 0, y: 0, width: drawLength, height: drawLength)
+        backgroundView.center = CGPoint(x: self.bounds.size.width / 2.0, y: self.bounds.size.height / 2.0)
         backgroundView.setNeedsDisplay()
     }
 }
@@ -109,15 +109,15 @@ class BackgroundLineView: UIView {
 
 private class LineBackground : UIView {
 
-    private var rotate    : CGFloat = 0
-    private var lineWidth : CGFloat = 5
-    private var lineGap   : CGFloat = 3
-    private var lineColor : UIColor = UIColor.grayColor()
+    fileprivate var rotate    : CGFloat = 0
+    fileprivate var lineWidth : CGFloat = 5
+    fileprivate var lineGap   : CGFloat = 3
+    fileprivate var lineColor : UIColor = UIColor.gray
     
     override init(frame: CGRect) {
         
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -127,12 +127,12 @@ private class LineBackground : UIView {
     
     convenience init(length : CGFloat) {
         
-        self.init(frame : CGRectMake(0, 0, length, length))
+        self.init(frame : CGRect(x: 0, y: 0, width: length, height: length))
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
-        super.drawRect(rect)
+        super.draw(rect)
                 
         guard self.bounds.size.width > 0 && self.bounds.size.height > 0 else {
         
@@ -153,22 +153,22 @@ private class LineBackground : UIView {
         var blue  : CGFloat = 0
         var alpha : CGFloat = 0
         
-        CGContextTranslateCTM(context, 0.5 * drawLength, 0.5 * drawLength)
-        CGContextRotateCTM(context, rotate)
-        CGContextTranslateCTM(context, -0.5 * drawLength, -0.5 * drawLength)
+        context?.translateBy(x: 0.5 * drawLength, y: 0.5 * drawLength)
+        context?.rotate(by: rotate)
+        context?.translateBy(x: -0.5 * drawLength, y: -0.5 * drawLength)
         
         lineColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        CGContextSetRGBFillColor(context, red, green, blue, alpha)
+        context?.setFillColor(red: red, green: green, blue: blue, alpha: alpha)
         
         var currentX = -outerX
         
         while currentX < drawLength {
             
-            CGContextAddRect(context, CGRectMake(currentX, -outerY, tmpLineWidth, drawLength))
+            context?.addRect(CGRect(x: currentX, y: -outerY, width: tmpLineWidth, height: drawLength))
             currentX += tmpLineWidth + tmpLineGap
         }
         
-        CGContextFillPath(context)
+        context?.fillPath()
     }
 }
 

@@ -18,7 +18,7 @@ class RootNavigationViewController: CustomNavigationController {
         lauchImageView.image = AppleSystemService.launchImage()
         view.addSubview(lauchImageView)
         
-        UIView.animateWithDuration(1, delay: 1, options: .CurveEaseInOut, animations: {
+        UIView.animate(withDuration: 1, delay: 1, options: UIViewAnimationOptions(), animations: {
             
             lauchImageView.scale = 1.3
             lauchImageView.alpha = 0
@@ -26,7 +26,7 @@ class RootNavigationViewController: CustomNavigationController {
         }) { (finished) in
             
             lauchImageView.removeFromSuperview()
-            DefaultNotificationCenter.PostMessageTo(NotificationEvent.AnimationsListViewControllerFirstTimeLoadData.Message())
+            DefaultNotificationCenter.PostMessageTo(NotificationEvent.animationsListViewControllerFirstTimeLoadData.Message())
         }
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 enum EShowTextCellType : Int {
     
-    case NormalType, ExpendType
+    case normalType, expendType
 }
 
 private let heitiSC       : UIFont = UIFont.HeitiSC(16)
@@ -18,37 +18,37 @@ private let numberOfLines : Int    = 4
 
 class ShowTextCell: CustomCell {
     
-    private var expendLabel : UILabel!
-    private var normalLabel : UILabel!
-    private var lineView    : UIView!
-    private var redView     : UIView!
+    fileprivate var expendLabel : UILabel!
+    fileprivate var normalLabel : UILabel!
+    fileprivate var lineView    : UIView!
+    fileprivate var redView     : UIView!
     
     override func buildSubview() {
         
-        normalLabel           = UILabel(frame: CGRectZero)
+        normalLabel           = UILabel(frame: CGRect.zero)
         normalLabel.font      = heitiSC
         addSubview(normalLabel)
         
-        expendLabel           = UILabel(frame: CGRectZero)
+        expendLabel           = UILabel(frame: CGRect.zero)
         expendLabel.font      = heitiSC
-        expendLabel.textColor = UIColor.grayColor().alpha(0.5)
+        expendLabel.textColor = UIColor.gray.alpha(0.5)
         addSubview(expendLabel)
         
-        redView                 = UIView(frame: CGRectMake(0, 20, 2, 14))
-        redView.backgroundColor = UIColor.redColor()
+        redView                 = UIView(frame: CGRect(x: 0, y: 20, width: 2, height: 14))
+        redView.backgroundColor = UIColor.red
         addSubview(redView)
         
-        lineView = UIView.CreateLine(CGRectMake(0, 0, Width(), 0.5), lineColor: UIColor.blackColor().alpha(0.1))
+        lineView = UIView.CreateLine(CGRect(x: 0, y: 0, width: Width(), height: 0.5), lineColor: UIColor.black.alpha(0.1))
         addSubview(lineView)
     }
     
     override func loadContent() {
         
-        indexPath?.row == 0 ? (lineView.hidden = true) : (lineView.hidden = false)
+        (indexPath as NSIndexPath?)?.row == 0 ? (lineView.isHidden = true) : (lineView.isHidden = false)
         changeStateWithCellType((dataAdapter?.cellType!)!)
     }
     
-    private func changeStateWithCellType(type : Int) {
+    fileprivate func changeStateWithCellType(_ type : Int) {
         
         let model = data as! ShowTextModel
         
@@ -60,17 +60,17 @@ class ShowTextCell: CustomCell {
         expendLabel.left = 15
         expendLabel.top  = 15
         
-        if type == EShowTextCellType.NormalType.rawValue {
+        if type == EShowTextCellType.normalType.rawValue {
             
             expendLabel.alpha       = 0
             normalLabel.alpha       = 1
-            redView.backgroundColor = UIColor.redColor()
+            redView.backgroundColor = UIColor.red
             
-        } else if type == EShowTextCellType.ExpendType.rawValue {
+        } else if type == EShowTextCellType.expendType.rawValue {
             
             expendLabel.alpha       = 1
             normalLabel.alpha       = 0
-            redView.backgroundColor = UIColor.grayColor()
+            redView.backgroundColor = UIColor.gray
         }
     }
     
@@ -78,33 +78,33 @@ class ShowTextCell: CustomCell {
         
         let model = data as! ShowTextModel
         
-        if dataAdapter?.cellType == EShowTextCellType.NormalType.rawValue {
+        if dataAdapter?.cellType == EShowTextCellType.normalType.rawValue {
             
-            self.dataAdapter?.cellType = EShowTextCellType.ExpendType.rawValue
+            self.dataAdapter?.cellType = EShowTextCellType.expendType.rawValue
             self.updateWithNewCellHeight(model.expendStringHeight!)
             
-            UIView.animateWithDuration(0.25, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 
                 self.normalLabel.alpha       = 0
                 self.expendLabel.alpha       = 1
-                self.redView.backgroundColor = UIColor.grayColor().alpha(0.5)
+                self.redView.backgroundColor = UIColor.gray.alpha(0.5)
             })
             
-        } else if dataAdapter?.cellType == EShowTextCellType.ExpendType.rawValue {
+        } else if dataAdapter?.cellType == EShowTextCellType.expendType.rawValue {
             
-            self.dataAdapter?.cellType = EShowTextCellType.NormalType.rawValue
+            self.dataAdapter?.cellType = EShowTextCellType.normalType.rawValue
             self.updateWithNewCellHeight(model.normalStringHeight!)
             
-            UIView.animateWithDuration(0.25, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 
                 self.normalLabel.alpha       = 1
                 self.expendLabel.alpha       = 0
-                self.redView.backgroundColor = UIColor.redColor()
+                self.redView.backgroundColor = UIColor.red
             })
         }
     }
     
-    override class func HeightWithData(data : AnyObject) -> CGFloat {
+    override class func HeightWithData(_ data : AnyObject) -> CGFloat {
         
         let model                = data as! ShowTextModel
         model.expendStringHeight = 15 + (model.inputString?.heightWithFont(heitiSC, fixedWidth: Width() - 30))! + 15

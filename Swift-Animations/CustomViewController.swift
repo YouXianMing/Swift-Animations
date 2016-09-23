@@ -11,16 +11,16 @@ import UIKit
 class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
 
     /// Screen's width.
-    let width  : CGFloat = UIScreen.mainScreen().bounds.size.width
+    let width  : CGFloat = UIScreen.main.bounds.size.width
     
     /// Screen's height.
-    let height : CGFloat = UIScreen.mainScreen().bounds.size.height
+    let height : CGFloat = UIScreen.main.bounds.size.height
     
     /// You can use this property when this controller is pushed by an UINavigationController.
     var enableInteractivePopGestureRecognizer : Bool? {
         
-        get { return (self.navigationController?.interactivePopGestureRecognizer?.enabled)}
-        set(newVal) { self.navigationController?.interactivePopGestureRecognizer?.enabled = newVal!}
+        get { return (self.navigationController?.interactivePopGestureRecognizer?.isEnabled)}
+        set(newVal) { self.navigationController?.interactivePopGestureRecognizer?.isEnabled = newVal!}
     }
     
     /**
@@ -29,7 +29,7 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
     func setup() {
     
         self.automaticallyAdjustsScrollViewInsets = false
-        view.backgroundColor                      = UIColor.whiteColor()
+        view.backgroundColor                      = UIColor.white
     }
     
     /**
@@ -45,9 +45,9 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
      
      - parameter animated: Animated or not.
      */
-    func popViewControllerAnimated(animated : Bool) {
+    func popViewControllerAnimated(_ animated : Bool) {
         
-        self.navigationController?.popViewControllerAnimated(animated)
+        self.navigationController?.popViewController(animated: animated)
     }
     
     /**
@@ -55,9 +55,9 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
      
      - parameter animated: Animated or not.
      */
-    func popToRootViewControllerAnimated(animated : Bool) {
+    func popToRootViewControllerAnimated(_ animated : Bool) {
         
-        self.navigationController?.popToRootViewControllerAnimated(animated)
+        self.navigationController?.popToRootViewController(animated: animated)
     }
     
     // MARK: System method && Debug message.
@@ -70,19 +70,19 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
     
     deinit {
     
-        print("[❌] '" + String(self.classForCoder) + "' is released.")
+        print("[❌] '" + String(describing: self.classForCoder) + "' is released.")
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
-        print("[➡️] enter to --> '" + String(self.classForCoder) + "'.")
+        print("[➡️] enter to --> '" + String(describing: self.classForCoder) + "'.")
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
-        print("[🕒] leave from <-- '" + String(self.classForCoder) + "'.")
+        print("[🕒] leave from <-- '" + String(describing: self.classForCoder) + "'.")
     }
 }
 

@@ -10,17 +10,17 @@ import UIKit
 
 private enum EType : Int {
     
-    case TypeOne, TypeTwo
+    case typeOne, typeTwo
 }
 
 class TransformFadeViewController: FullTitleVisualEffectViewController {
 
-    private var images              : [UIImage]!
-    private var tranformFadeViewOne : TranformFadeView!
-    private var tranformFadeViewTwo : TranformFadeView!
-    private var count               : Int       = 0
-    private var timer               : GCDTimer  = GCDTimer(inQueue: GCDQueue.mainQueue)
-    private var type                : EType     = .TypeOne
+    fileprivate var images              : [UIImage]!
+    fileprivate var tranformFadeViewOne : TranformFadeView!
+    fileprivate var tranformFadeViewTwo : TranformFadeView!
+    fileprivate var count               : Int       = 0
+//    fileprivate var timer               : GCDTimer  = GCDTimer(inQueue: GCDQueue.mainQueue)
+    fileprivate var type                : EType     = .typeOne
     
     override func setup() {
         
@@ -35,48 +35,48 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
         
         tranformFadeViewOne                      = TranformFadeView(frame: contentView!.bounds, verticalCount: 3, horizontalCount: 12,
                                                                     fadeDuradtion: 1, animationGapDuration: 0.075)
-        tranformFadeViewOne.imageContentMode     = .ScaleAspectFill
+        tranformFadeViewOne.imageContentMode     = .scaleAspectFill
         tranformFadeViewOne.image                = currentImage()
-        tranformFadeViewOne.start(animated: false, transformTo: .Show)
+        tranformFadeViewOne.start(animated: false, transformTo: .show)
         contentView!.addSubview(tranformFadeViewOne)
         
         tranformFadeViewTwo                      = TranformFadeView(frame: contentView!.bounds, verticalCount: 3, horizontalCount: 12,
                                                                     fadeDuradtion: 1, animationGapDuration: 0.075)
-        tranformFadeViewTwo.imageContentMode     = .ScaleAspectFill
+        tranformFadeViewTwo.imageContentMode     = .scaleAspectFill
         tranformFadeViewTwo.image                = currentImage()
-        tranformFadeViewTwo.start(animated: false, transformTo: .Fade)
+        tranformFadeViewTwo.start(animated: false, transformTo: .fade)
         contentView!.addSubview(tranformFadeViewTwo)
         
         weak var wself = self
-        timer.event({
-            
+//        timer.event({
+        
             wself?.timerEvent()
             
-            }, timeIntervalWithSeconds: 8.0, delayWithSeconds: 1.0)
-        timer.start()
+//            }, timeIntervalWithSeconds: 8.0, delayWithSeconds: 1.0)
+//        timer.start()
     }
     
-    private func timerEvent() {
+    fileprivate func timerEvent() {
         
-        if type == .TypeOne {
+        if type == .typeOne {
             
-            type = .TypeTwo
-            contentView?.sendSubviewToBack(tranformFadeViewTwo)
+            type = .typeTwo
+            contentView?.sendSubview(toBack: tranformFadeViewTwo)
             tranformFadeViewTwo.image = currentImage()
-            tranformFadeViewTwo.start(animated: false, transformTo: .Show)
-            tranformFadeViewOne.start(animated: true,  transformTo: .Fade)
+            tranformFadeViewTwo.start(animated: false, transformTo: .show)
+            tranformFadeViewOne.start(animated: true,  transformTo: .fade)
             
         } else {
         
-            type = .TypeOne
-            contentView?.sendSubviewToBack(tranformFadeViewOne)
+            type = .typeOne
+            contentView?.sendSubview(toBack: tranformFadeViewOne)
             tranformFadeViewOne.image = currentImage()
-            tranformFadeViewOne.start(animated: false, transformTo: .Show)
-            tranformFadeViewTwo.start(animated: true,  transformTo: .Fade)
+            tranformFadeViewOne.start(animated: false, transformTo: .show)
+            tranformFadeViewTwo.start(animated: true,  transformTo: .fade)
         }
     }
     
-    private func currentImage() -> UIImage {
+    fileprivate func currentImage() -> UIImage {
         
         count = (count + 1) % images.count
         return images[count]

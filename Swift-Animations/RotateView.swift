@@ -14,45 +14,45 @@ class RotateView: UIView {
 
     // MARK: Properties.
     
-    var rotateDuration : NSTimeInterval = 0.25
+    var rotateDuration : TimeInterval = 0.25
     
     // MARK: Animation method.
     
-    func changeToUpAnimated(animated : Bool) {
+    func changeToUpAnimated(_ animated : Bool) {
         
-        UIView.animateWithDuration((animated == true ? self.rotateDuration : 0.0)) {
+        UIView.animate(withDuration: (animated == true ? self.rotateDuration : 0.0), animations: {
             
             self.transform = self.defaultTransform
-        }
+        }) 
     }
     
-    func changeToLeftAnimated(animated : Bool) {
+    func changeToLeftAnimated(_ animated : Bool) {
         
-        UIView.animateWithDuration((animated == true ? self.rotateDuration : 0.0)) {
+        UIView.animate(withDuration: (animated == true ? self.rotateDuration : 0.0), animations: {
             
-            self.transform = CGAffineTransformRotate(self.defaultTransform, CGFloat(-M_PI_2))
-        }
+            self.transform = self.defaultTransform.rotated(by: CGFloat(-M_PI_2))
+        }) 
     }
     
-    func changeToRightAnimated(animated : Bool) {
+    func changeToRightAnimated(_ animated : Bool) {
         
-        UIView.animateWithDuration((animated == true ? self.rotateDuration : 0.0)) {
+        UIView.animate(withDuration: (animated == true ? self.rotateDuration : 0.0), animations: {
             
-            self.transform = CGAffineTransformRotate(self.defaultTransform, CGFloat(M_PI_2))
-        }
+            self.transform = self.defaultTransform.rotated(by: CGFloat(M_PI_2))
+        }) 
     }
     
-    func changeToDownAnimated(animated : Bool) {
+    func changeToDownAnimated(_ animated : Bool) {
         
-        UIView.animateWithDuration((animated == true ? self.rotateDuration : 0.0)) {
+        UIView.animate(withDuration: (animated == true ? self.rotateDuration : 0.0), animations: {
             
-            self.transform = CGAffineTransformRotate(self.defaultTransform, CGFloat(M_PI))
-        }
+            self.transform = self.defaultTransform.rotated(by: CGFloat(M_PI))
+        }) 
     }
     
     // MARK: Private value & func & system method.
     
-    private var defaultTransform : CGAffineTransform!
+    fileprivate var defaultTransform : CGAffineTransform!
     
     override init(frame: CGRect) {
         

@@ -10,8 +10,8 @@ import UIKit
 
 class TapCellAnimationController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private var tableView : UITableView!
-    private var datas     : [CellDataAdapter]!
+    fileprivate var tableView : UITableView!
+    fileprivate var datas     : [CellDataAdapter]!
     
     override func setup() {
         
@@ -22,21 +22,21 @@ class TapCellAnimationController: NormalTitleViewController, UITableViewDelegate
         tableView                = UITableView(frame: (contentView?.bounds)!)
         tableView.delegate       = self
         tableView.dataSource     = self
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         ShowTextCell.RegisterTo(tableView)
         contentView?.addSubview(tableView)
         
-        func addText(string : String) {
+        func addText(_ string : String) {
             
             let model = ShowTextModel(string)
             
             datas.append(ShowTextCell.Adapter(
                 data       : model,
                 cellHeight : ShowTextCell.HeightWithData(model),
-                type       : EShowTextCellType.NormalType.rawValue))
+                type       : EShowTextCellType.normalType.rawValue))
         }
         
-        GCDQueue.executeInMainQueue({
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             
             addText("AFNetworking is a delightful networking library for iOS and Mac OS X. It's built on top of the Foundation URL Loading System, extending the powerful high-level networking abstractions built into Cocoa. It has a modular architecture with well-designed, feature-rich APIs that are a joy to use. Perhaps the most important feature of all, however, is the amazing community of developers who use and contribute to AFNetworking every day. AFNetworking powers some of the most popular and critically-acclaimed apps on the iPhone, iPad, and Mac. Choose AFNetworking for your next project, or migrate over your existing projects—you'll be happy you did!")
             
@@ -46,39 +46,37 @@ class TapCellAnimationController: NormalTitleViewController, UITableViewDelegate
             
             addText("Two roads diverged in a yellow wood, And sorry I could not travel both And be one traveler, long I stood And looked down one as far as I could To where it bent in the undergrowth; Then took the other, as just as fair, And having perhaps the better claim, Because it was grassy and wanted wear; Though as for that the passing there Had worn them really about the same, And both that morning equally lay In leaves no step had trodden black. Oh, I kept the first for another day! Yet knowing how way leads on to way, I doubted if I should ever come back. I shall be telling this with a sigh Somewhere ages and ages hence: Two roads diverged in a wood, and I- I took the one less traveled by, And that has made all the difference.")
             
-            var indexPaths = [NSIndexPath]()
+            var indexPaths = [IndexPath]()
             for i in 0 ..< self.datas.count {
                 
-                indexPaths.append(NSIndexPath(forItem: i, inSection: 0))
+                indexPaths.append(IndexPath(item: i, section: 0))
             }
-            self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Fade)
+            self.tableView.insertRows(at: indexPaths, with: .fade)
             
-            GCDQueue.executeInMainQueue({
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 
-                let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forItem: 0, inSection: 0)) as! CustomCell
+                let cell = self.tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! CustomCell
                 cell.selectedEvent()
-                
-                }, afterDelaySeconds: 0.5)
-            
-            }, afterDelaySeconds: 0.5)
+            })
+        }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueCellAndLoadContentFromAdapter(datas[indexPath.row], indexPath: indexPath, tableView: tableView)
+        return tableView.dequeueCellAndLoadContentFromAdapter(datas[(indexPath as NSIndexPath).row], indexPath: indexPath, tableView: tableView)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return datas.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return datas[indexPath.row].cellHeight!
+        return datas[(indexPath as NSIndexPath).row].cellHeight!
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.selectedEventWithIndexPath(indexPath)
     }
