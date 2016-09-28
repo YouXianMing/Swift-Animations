@@ -12,8 +12,8 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
 
     let viewTag            : Int       = 1000
     var pictures           : [UIImage] = [UIImage]()
-    var onceLinearEquation : Math!
     var scrollView         : UIScrollView!
+    var onceLinearEquation : Math!
     
     override func setup() {
         

@@ -23,7 +23,7 @@ extension UIView {
         }
         
         UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
-        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

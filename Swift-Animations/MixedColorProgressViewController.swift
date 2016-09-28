@@ -14,7 +14,7 @@ class MixedColorProgressViewController: NormalTitleViewController {
     fileprivate var upLabel   : UILabel!
     fileprivate var downView  : UIView!
     fileprivate var downLabel : UILabel!
-//    fileprivate var timer     : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
+    fileprivate var timer     : Timer!
     
     override func setup() {
         
@@ -50,16 +50,22 @@ class MixedColorProgressViewController: NormalTitleViewController {
         upLabel.textAlignment = .center
         upView.addSubview(upLabel)
         
-        weak var wself = self
-//        timer.event({
+        // Init timer.
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MixedColorProgressViewController.timerEvent), userInfo: nil, repeats: true)
+    }
+    
+    func timerEvent() {
         
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
-                
-                wself?.upView.width = CGFloat(arc4random() % 220)
-                
-                }, completion: nil)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
             
-//            }, timeIntervalWithSeconds: 1, delayWithSeconds: 1)
-//        timer.start()
+            self.upView.width = CGFloat(arc4random() % 220)
+            
+            }, completion: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        timer.invalidate()
     }
 }

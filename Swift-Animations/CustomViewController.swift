@@ -47,7 +47,7 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
      */
     func popViewControllerAnimated(_ animated : Bool) {
         
-        self.navigationController?.popViewController(animated: animated)
+        _ = self.navigationController?.popViewController(animated: animated)
     }
     
     /**
@@ -57,7 +57,7 @@ class CustomViewController: UIViewController, UIGestureRecognizerDelegate {
      */
     func popToRootViewControllerAnimated(_ animated : Bool) {
         
-        self.navigationController?.popToRootViewController(animated: animated)
+        _ = self.navigationController?.popToRootViewController(animated: animated)
     }
     
     // MARK: System method && Debug message.

@@ -10,9 +10,9 @@ import UIKit
 
 class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var timesArray : [CellDataAdapter]!
-    var tableView  : UITableView!
-//    var timer      : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
+    fileprivate var timesArray : [CellDataAdapter]!
+    fileprivate var tableView  : UITableView!
+    fileprivate var timer      : Timer!
     
     override func setup() {
         
@@ -48,22 +48,21 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
         // Register cell.
         CountDownTimeCell.RegisterTo(tableView)
 
-        // Timer event.
-        weak var wself = self
-//        timer.event({ 
+        // Init timer.
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(CountDownTimerController.timerEvent), userInfo: nil, repeats: true)
+    }
+    
+    func timerEvent() {
         
-            for (_, dataAdapter) in wself!.timesArray.enumerated() {
-                
-                if let model = dataAdapter.data as? TimeModel {
-                
-                    model.countDown()
-                }
-            }
+        for (_, dataAdapter) in timesArray.enumerated() {
             
-            DefaultNotificationCenter.PostMessageTo(NotificationEvent.countDownTimeCellCountDown.Message())
+            if let model = dataAdapter.data as? TimeModel {
+                
+                model.countDown()
+            }
+        }
         
-//            }, timeIntervalWithSeconds: 1.0)
-//        timer.start()
+        DefaultNotificationCenter.PostMessageTo(NotificationEvent.countDownTimeCellCountDown.Message())
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,6 +83,12 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         (cell as! CustomCell).display = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        timer.invalidate()
     }
 }
 

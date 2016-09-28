@@ -18,9 +18,9 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
     fileprivate var images              : [UIImage]!
     fileprivate var tranformFadeViewOne : TranformFadeView!
     fileprivate var tranformFadeViewTwo : TranformFadeView!
-    fileprivate var count               : Int       = 0
-//    fileprivate var timer               : GCDTimer  = GCDTimer(inQueue: GCDQueue.mainQueue)
-    fileprivate var type                : EType     = .typeOne
+    fileprivate var timer               : Timer!
+    fileprivate var type                : EType = .typeOne
+    fileprivate var count               : Int   = 0
     
     override func setup() {
         
@@ -47,16 +47,13 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
         tranformFadeViewTwo.start(animated: false, transformTo: .fade)
         contentView!.addSubview(tranformFadeViewTwo)
         
-        weak var wself = self
-//        timer.event({
+        timerEvent()
         
-            wself?.timerEvent()
-            
-//            }, timeIntervalWithSeconds: 8.0, delayWithSeconds: 1.0)
-//        timer.start()
+        // Init timer.
+        timer = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(TransformFadeViewController.timerEvent), userInfo: nil, repeats: true)
     }
     
-    fileprivate func timerEvent() {
+    func timerEvent() {
         
         if type == .typeOne {
             
@@ -80,5 +77,11 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
         
         count = (count + 1) % images.count
         return images[count]
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        timer.invalidate()
     }
 }

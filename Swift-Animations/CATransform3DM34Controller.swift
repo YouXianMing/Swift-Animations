@@ -9,10 +9,10 @@
 import UIKit
 
 class CATransform3DM34Controller: NormalTitleViewController {
-
-    var layer          : CALayer!
-//    var timer          : GCDTimer = GCDTimer(inQueue: GCDQueue.mainQueue)
-    var transformState : Bool     = false
+    
+    fileprivate var timer          : Timer!
+    fileprivate var layer          : CALayer!
+    fileprivate var transformState : Bool = false
     
     override func setup() {
         
@@ -20,7 +20,8 @@ class CATransform3DM34Controller: NormalTitleViewController {
         
         initLayer()
         
-        timerEvent()
+        // Init timer.
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(CATransform3DM34Controller.timerEvent), userInfo: nil, repeats: true)
     }
     
     fileprivate func initLayer() {
@@ -35,26 +36,20 @@ class CATransform3DM34Controller: NormalTitleViewController {
         contentView?.layer.addSublayer(layer)
     }
     
-    fileprivate func timerEvent() {
+    func timerEvent() {
         
-        weak var wself = self
-//        timer.event({
-        
-            if wself?.transformState == false {
+        if transformState == false {
             
-                wself?.transformState = true
-                wself?.transformStateEvent()
-                
-            } else {
+            transformState = true
+            transformStateEvent()
             
-                wself?.transformState = false
-                wself?.normalStateEvent()
-            }
+        } else {
             
-//            }, timeIntervalWithSeconds: 2.0, delayWithSeconds: 1.0)
-//        timer.start()
+            transformState = false
+            normalStateEvent()
+        }
     }
-
+    
     fileprivate func transformStateEvent() {
         
         var perspectiveTransform = CATransform3DIdentity
@@ -73,5 +68,11 @@ class CATransform3DM34Controller: NormalTitleViewController {
         let perspectiveTransform = CATransform3DIdentity
         layer.transform          = perspectiveTransform
         layer.speed              = 0.5
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        timer.invalidate()
     }
 }

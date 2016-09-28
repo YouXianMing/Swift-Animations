@@ -10,11 +10,11 @@ import UIKit
 
 class CircleAnimationViewController: NormalTitleViewController {
     
-    var circleView1 : CircleView!
-    var circleView2 : CircleView!
-    var circleView3 : CircleView!
-    var circleView4 : CircleView!
-    var timer       : Timer!
+    fileprivate var circleView1 : CircleView!
+    fileprivate var circleView2 : CircleView!
+    fileprivate var circleView3 : CircleView!
+    fileprivate var circleView4 : CircleView!
+    fileprivate var timer       : Timer!
     
     override func setup() {
         
