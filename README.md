@@ -1,7 +1,6 @@
 # Swift-Animations
 
-> Support Swift 3
-
+Support Swift 3
 
 > Project [YoCelsius](https://github.com/YouXianMing/YoCelsius)  in [AppStore](https://itunes.apple.com/us/app/yocelsius/id967721892?l=zh&ls=1&mt=8) 
 
