@@ -53,7 +53,7 @@ class CATransform3DM34Controller: NormalTitleViewController {
     fileprivate func transformStateEvent() {
         
         var perspectiveTransform = CATransform3DIdentity
-        perspectiveTransform.m34 = -(1.0 / 500.0)
+        perspectiveTransform.m34 = -1.0 / 500.0
         perspectiveTransform     = CATransform3DTranslate(perspectiveTransform, 30, -35, 0)
         perspectiveTransform     = CATransform3DRotate(perspectiveTransform, Math.RadianFromDegree(30), 0.75, 1, -0.5)
         perspectiveTransform     = CATransform3DScale(perspectiveTransform, 0.75, 0.75, 0.75)
