@@ -22,11 +22,12 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
         notification.addNotificationName(NotificationEvent.animationsListViewControllerFirstTimeLoadData.Message())
         
         // TableView.
-        tableView                = UITableView(frame: (contentView?.bounds)!)
-        tableView.dataSource     = self
-        tableView.delegate       = self
-        tableView.separatorStyle = .none
-        tableView.rowHeight      = 50
+        tableView                              = UITableView(frame: (contentView?.bounds)!)
+        tableView.dataSource                   = self
+        tableView.delegate                     = self
+        tableView.separatorStyle               = .none
+        tableView.rowHeight                    = 50
+        tableView.showsVerticalScrollIndicator = false
         contentView?.addSubview(tableView)
         
         // Register cell.

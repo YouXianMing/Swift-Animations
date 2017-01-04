@@ -49,4 +49,15 @@ class ListItemCell: CustomCell {
         controller.title = item.name
         self.controller?.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        
+        UIView.animate(withDuration: 0.35, delay: 0, options: .beginFromCurrentState, animations: { 
+            
+            self.titlelabel.alpha = (highlighted == true ? 0.5    : 1.0)
+            self.subTitleLabel.x  = (highlighted == true ? 10 + 4 : 10)
+            self.backgroundColor  = (highlighted == true ? UIColor.Hex(0x4699D9).alpha(0.35) : UIColor.clear)
+            
+        }, completion: nil)
+    }
 }
