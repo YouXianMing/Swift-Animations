@@ -110,7 +110,7 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
                                           glowDuration: 1, hideDuration: 3, glowAnimationDuration: 2)
         }
         
-        titleView?.addSubview(BackgroundLineView(frame: titleView!.bounds, lineWidth: 4, lineGap: 4, lineColor: UIColor.black.alpha(0.015), rotate: CGFloat(M_PI_4)))
+        titleView?.addSubview(BackgroundLineView(frame: titleView!.bounds, lineWidth: 4, lineGap: 4, lineColor: UIColor.black.alpha(0.015), rotate: CGFloat(Double.pi / 4)))
         createBackgroundStringLabel()
         createForegroundStringLabel()
         

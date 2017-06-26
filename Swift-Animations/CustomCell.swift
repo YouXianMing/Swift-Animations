@@ -111,7 +111,7 @@ class CustomCell: UITableViewCell {
     func selectedEvent() {}
     
     /**
-     Calculate the cell's from data, override by subclass.
+     Calculate the cell's height from data, override by subclass.
      
      - parameter data: Data.
      

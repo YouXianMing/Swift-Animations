@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          
          Swift version Animations - https://github.com/YouXianMing/Swift-Animations
          
-         Lateast no warning version : Xcode Version 8.2.1 (8C1002)
+         Lateast no warning version : Xcode 8.3 (8E162)
          
          QQ    705786299
          Email YouXianMing1987@126.com

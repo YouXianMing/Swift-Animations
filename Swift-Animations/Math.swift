@@ -21,7 +21,7 @@ class Math: NSObject {
      */
     class func DegreeFromRadian(_ radian : CGFloat) -> CGFloat {
         
-        return ((radian) * (180.0 / CGFloat(M_PI)));
+        return ((radian) * (180.0 / CGFloat(Double.pi)));
     }
     
     /**
@@ -33,7 +33,7 @@ class Math: NSObject {
      */
     class func RadianFromDegree(_ degree : CGFloat) -> CGFloat {
         
-        return ((degree) * CGFloat(M_PI) / 180.0);
+        return ((degree) * CGFloat(Double.pi) / 180.0);
     }
     
     // MARK: Calculate radian.

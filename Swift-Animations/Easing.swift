@@ -274,17 +274,17 @@ class Easing: NSObject {
     // MARK: Sine wave easing; sin(p * PI/2)
     class func SineEaseIn(_ p : Double) -> Double {
         
-        return sin((p - 1) * M_PI_2) + 1
+        return sin((p - 1) * Double.pi / 2) + 1
     }
     
     class func SineEaseOut(_ p : Double) -> Double {
         
-        return sin(p * M_PI_2)
+        return sin(p * Double.pi / 2)
     }
     
     class func SineEaseInOut(_ p : Double) -> Double {
         
-        return 0.5 * (1 - cos(p * M_PI))
+        return 0.5 * (1 - cos(p * Double.pi))
     }
     
     // MARK: Circular easing; sqrt(1 - p^2)
@@ -341,36 +341,36 @@ class Easing: NSObject {
     // MARK: Exponentially-damped sine wave easing
     class func ElasticEaseIn(_ p : Double) -> Double {
         
-        return sin(13 * M_PI_2 * p) * pow(2, 10 * (p - 1))
+        return sin(13 * Double.pi / 2 * p) * pow(2, 10 * (p - 1))
     }
     
     class func ElasticEaseOut(_ p : Double) -> Double {
         
-        return sin(-13 * M_PI_2 * (p + 1)) * pow(2, -10 * p) + 1
+        return sin(-13 * Double.pi / 2 * (p + 1)) * pow(2, -10 * p) + 1
     }
     
     class func ElasticEaseInOut(_ p : Double) -> Double {
         
         if (p < 0.5) {
             
-            return 0.5 * sin(13 * M_PI_2 * (2 * p)) * pow(2, 10 * ((2 * p) - 1))
+            return 0.5 * sin(13 * Double.pi / 2 * (2 * p)) * pow(2, 10 * ((2 * p) - 1))
             
         } else {
             
-            return 0.5 * (sin(-13 * M_PI_2 * ((2 * p - 1) + 1)) * pow(2, -10 * (2 * p - 1)) + 2)
+            return 0.5 * (sin(-13 * Double.pi / 2 * ((2 * p - 1) + 1)) * pow(2, -10 * (2 * p - 1)) + 2)
         }
     }
     
     // MARK: Overshooting cubic easing
     class func BackEaseIn(_ p : Double) -> Double {
         
-        return p * p * p - p * sin(p * M_PI)
+        return p * p * p - p * sin(p * Double.pi)
     }
     
     class func BackEaseOut(_ p : Double) -> Double {
         
         let f : Double = (1 - p);
-        return 1 - (f * f * f - f * sin(f * M_PI))
+        return 1 - (f * f * f - f * sin(f * Double.pi))
     }
     
     class func BackEaseInOut(_ p : Double) -> Double {
@@ -378,12 +378,12 @@ class Easing: NSObject {
         if (p < 0.5) {
             
             let f : Double = 2 * p
-            return 0.5 * (f * f * f - f * sin(f * M_PI))
+            return 0.5 * (f * f * f - f * sin(f * Double.pi))
             
         } else {
             
             let f   : Double = (1 - (2*p - 1))
-            let tmp : Double = (f * f * f - f * sin(f * M_PI))
+            let tmp : Double = (f * f * f - f * sin(f * Double.pi))
             return 0.5 * (1 - tmp) + 0.5
         }
     }

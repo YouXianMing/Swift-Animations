@@ -71,7 +71,7 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     
     func customCell(_ cell: CustomCell?, event: AnyObject?) {
         
-        print("\(cell) + \(event)")
+        print("\(String(describing: cell)) + \(String(describing: event))")
     }
 }
 

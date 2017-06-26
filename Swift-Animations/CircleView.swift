@@ -198,6 +198,6 @@ class CircleView: UIView {
     
     fileprivate func radianFromDegrees(_ degrees : CGFloat) -> CGFloat {
     
-        return (CGFloat(M_PI) * degrees) / 180.0
+        return (CGFloat(Double.pi) * degrees) / 180.0
     }
 }

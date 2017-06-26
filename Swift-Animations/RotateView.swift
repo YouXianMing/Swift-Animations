@@ -30,7 +30,7 @@ class RotateView: UIView {
         
         UIView.animate(withDuration: (animated == true ? self.rotateDuration : 0.0), animations: {
             
-            self.transform = self.defaultTransform.rotated(by: CGFloat(-M_PI_2))
+            self.transform = self.defaultTransform.rotated(by: CGFloat(-Double.pi / 2))
         }) 
     }
     
@@ -38,7 +38,7 @@ class RotateView: UIView {
         
         UIView.animate(withDuration: (animated == true ? self.rotateDuration : 0.0), animations: {
             
-            self.transform = self.defaultTransform.rotated(by: CGFloat(M_PI_2))
+            self.transform = self.defaultTransform.rotated(by: CGFloat(Double.pi / 2))
         }) 
     }
     
@@ -46,7 +46,7 @@ class RotateView: UIView {
         
         UIView.animate(withDuration: (animated == true ? self.rotateDuration : 0.0), animations: {
             
-            self.transform = self.defaultTransform.rotated(by: CGFloat(M_PI))
+            self.transform = self.defaultTransform.rotated(by: CGFloat(Double.pi))
         }) 
     }
     
