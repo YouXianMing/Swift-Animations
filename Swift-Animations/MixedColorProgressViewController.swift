@@ -16,9 +16,9 @@ class MixedColorProgressViewController: NormalTitleViewController {
     fileprivate var downLabel : UILabel!
     fileprivate var timer     : Timer!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         downView                     = UIView(frame: CGRect(x: 0, y: 0, width: 220, height: 17))
         downView.center              = (contentView?.middlePoint)!

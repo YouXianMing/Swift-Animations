@@ -64,13 +64,13 @@ class ShowTextCell: CustomCell {
             
             expendLabel.alpha       = 0
             normalLabel.alpha       = 1
-            redView.backgroundColor = UIColor.red
+            redView.backgroundColor = UIColor.gray
             
         } else if type == EShowTextCellType.expendType.rawValue {
             
             expendLabel.alpha       = 1
             normalLabel.alpha       = 0
-            redView.backgroundColor = UIColor.gray
+            redView.backgroundColor = UIColor.red
         }
     }
     
@@ -87,7 +87,7 @@ class ShowTextCell: CustomCell {
                 
                 self.normalLabel.alpha       = 0
                 self.expendLabel.alpha       = 1
-                self.redView.backgroundColor = UIColor.gray.alpha(0.5)
+                self.redView.backgroundColor = UIColor.red
             })
             
         } else if dataAdapter?.cellType == EShowTextCellType.expendType.rawValue {
@@ -99,7 +99,7 @@ class ShowTextCell: CustomCell {
                 
                 self.normalLabel.alpha       = 1
                 self.expendLabel.alpha       = 0
-                self.redView.backgroundColor = UIColor.red
+                self.redView.backgroundColor = UIColor.gray.alpha(0.5)
             })
         }
     }

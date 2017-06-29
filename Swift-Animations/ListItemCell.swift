@@ -45,7 +45,7 @@ class ListItemCell: CustomCell {
     override func selectedEvent() {
         
         let item         = data as! ControllerItem
-        let controller   = (item.controllerClass as! CustomViewController.Type).init()
+        let controller   = (item.controllerClass as! BaseCustomViewController.Type).init()
         controller.title = item.name
         self.controller?.navigationController?.pushViewController(controller, animated: true)
     }

@@ -14,9 +14,9 @@ class CATransform3DM34Controller: NormalTitleViewController {
     fileprivate var layer          : CALayer!
     fileprivate var transformState : Bool = false
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         initLayer()
         

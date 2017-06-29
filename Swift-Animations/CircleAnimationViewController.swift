@@ -16,9 +16,9 @@ class CircleAnimationViewController: NormalTitleViewController {
     fileprivate var circleView4 : CircleView!
     fileprivate var timer       : Timer!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         let gapFromTop : CGFloat = 64.0 + 20.0
         let width      : CGFloat = Width()

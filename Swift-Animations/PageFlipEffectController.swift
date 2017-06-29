@@ -14,9 +14,9 @@ class PageFlipEffectController: NormalTitleViewController {
                                         (x : Width(), degree : 180))
     fileprivate var layer : CALayer!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         let image = UIImage(named: "pic_1")
         let size  = Math.ResetFromSize((image?.size)!, withFixedWidth: Width() / 2.0)

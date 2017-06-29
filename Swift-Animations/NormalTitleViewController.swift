@@ -8,12 +8,10 @@
 
 import UIKit
 
-class NormalTitleViewController: CustomNormalContentViewController {
+class NormalTitleViewController: BaseCustomViewController {
 
-    override func buildTitleView() {
-        
-        super.buildTitleView()
-        
+    override func setupSubViews() {
+     
         // Title label.
         let headlinelabel           = UILabel()
         headlinelabel.font          = UIFont.HeitiSC(20)

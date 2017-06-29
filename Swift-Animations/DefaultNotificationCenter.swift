@@ -41,6 +41,20 @@ class DefaultNotificationCenter: NSObject {
         NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: object)
     }
     
+    convenience init(delegate: DefaultNotificationCenterDelegate, notificationNames : [String]? = nil) {
+        
+        self.init()
+        self.delegate = delegate
+        
+        if notificationNames != nil {
+            
+            for name in notificationNames! {
+                
+                self.addNotificationName(name)
+            }
+        }
+    }
+    
     /**
      Add notification name.
      

@@ -15,9 +15,9 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
     var scrollView         : UIScrollView!
     var onceLinearEquation : Math!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         onceLinearEquation = Math((x : 0,                  imageViewX : -50),
                                   (x : contentView!.width, imageViewX : 270 - 80))
@@ -33,12 +33,12 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         scrollView.backgroundColor                = UIColor.black
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.bounces                        = false
-        scrollView.contentSize                    = CGSize(width: CGFloat(pictures.count) * width, height: height)
+        scrollView.contentSize                    = CGSize(width: CGFloat(pictures.count) * Width(), height: Height())
         contentView?.addSubview(scrollView)
         
         for (i, image) in pictures.enumerated() {
             
-            let showView              = MoreInfoView(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: height))
+            let showView              = MoreInfoView(frame: CGRect(x: CGFloat(i) * Width(), y: 0, width: Width(), height: Height()))
             showView.imageView.image = image
             showView.tag             = viewTag + i
             scrollView.addSubview(showView)
@@ -52,7 +52,7 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         for i in 0 ..< pictures.count {
             
             let showView = scrollView.viewWithTag(viewTag + i) as! MoreInfoView
-            showView.imageView.x = onceLinearEquation.k * (X - CGFloat(i) * width) + onceLinearEquation.b
+            showView.imageView.x = onceLinearEquation.k * (X - CGFloat(i) * Width()) + onceLinearEquation.b
         }
     }
 }

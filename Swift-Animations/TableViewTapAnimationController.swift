@@ -13,9 +13,9 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     fileprivate var adapters  : [CellDataAdapter] = [CellDataAdapter]()
     fileprivate var tableView : UITableView!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         func appendModel(_ model : TapAnimationModel, cellHeight : CGFloat = 80) {
             

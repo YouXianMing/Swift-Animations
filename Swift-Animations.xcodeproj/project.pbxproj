@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566F91D649A33008B46DE /* FullTitleViewController.swift */; };
 		100566FC1D649AB4008B46DE /* LiveImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FB1D649AB4008B46DE /* LiveImageViewController.swift */; };
 		100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100566FE1D649B09008B46DE /* LiveImageView.swift */; };
 		1018415E1D7DB6940091EDFD /* UIView+ScreensShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018415D1D7DB6940091EDFD /* UIView+ScreensShot.swift */; };
@@ -28,6 +27,10 @@
 		10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */; };
 		10628F4A1D65F3D800DEDE55 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F491D65F3D800DEDE55 /* Math.swift */; };
 		10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */; };
+		C51D3B961F049CD400192F58 /* BaseCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3B951F049CD400192F58 /* BaseCustomViewController.swift */; };
+		C51D3B981F049DC700192F58 /* ShowLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3B971F049DC700192F58 /* ShowLoadingView.swift */; };
+		C51D3B9A1F04A63D00192F58 /* ControllerBaseViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3B991F04A63D00192F58 /* ControllerBaseViewConfig.swift */; };
+		C51D3B9C1F04B6EB00192F58 /* BaseCustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3B9B1F04B6EB00192F58 /* BaseCustomNavigationController.swift */; };
 		C51F76571D698F7300DF04AE /* MixedColorProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F76561D698F7300DF04AE /* MixedColorProgressViewController.swift */; };
 		C51F853E1D67D1110013C49B /* TransformFadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F853D1D67D1110013C49B /* TransformFadeViewController.swift */; };
 		C51F85401D67D2350013C49B /* UIColor+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51F853F1D67D2350013C49B /* UIColor+Convenience.swift */; };
@@ -56,10 +59,6 @@
 		C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */; };
 		C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C7001D66F92600CC552D /* NotificationEvent.swift */; };
 		C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B094F41D6093B400EDF810 /* RotateView.swift */; };
-		C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */; };
-		C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */; };
-		C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */; };
-		C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */; };
 		C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */; };
 		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
 		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
@@ -71,7 +70,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		100566F91D649A33008B46DE /* FullTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTitleViewController.swift; sourceTree = "<group>"; };
 		100566FB1D649AB4008B46DE /* LiveImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageViewController.swift; sourceTree = "<group>"; };
 		100566FE1D649B09008B46DE /* LiveImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveImageView.swift; sourceTree = "<group>"; };
 		1018415D1D7DB6940091EDFD /* UIView+ScreensShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ScreensShot.swift"; sourceTree = "<group>"; };
@@ -92,6 +90,10 @@
 		10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollImageViewController.swift; sourceTree = "<group>"; };
 		10628F491D65F3D800DEDE55 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInfoView.swift; sourceTree = "<group>"; };
+		C51D3B951F049CD400192F58 /* BaseCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomViewController.swift; sourceTree = "<group>"; };
+		C51D3B971F049DC700192F58 /* ShowLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLoadingView.swift; sourceTree = "<group>"; };
+		C51D3B991F04A63D00192F58 /* ControllerBaseViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerBaseViewConfig.swift; sourceTree = "<group>"; };
+		C51D3B9B1F04B6EB00192F58 /* BaseCustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomNavigationController.swift; sourceTree = "<group>"; };
 		C51F76561D698F7300DF04AE /* MixedColorProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixedColorProgressViewController.swift; sourceTree = "<group>"; };
 		C51F853D1D67D1110013C49B /* TransformFadeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformFadeViewController.swift; sourceTree = "<group>"; };
 		C51F853F1D67D2350013C49B /* UIColor+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Convenience.swift"; sourceTree = "<group>"; };
@@ -122,10 +124,6 @@
 		C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationCenter.swift; sourceTree = "<group>"; };
 		C581C7001D66F92600CC552D /* NotificationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
 		C5B094F41D6093B400EDF810 /* RotateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateView.swift; sourceTree = "<group>"; };
-		C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
-		C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
-		C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNormalContentViewController.swift; sourceTree = "<group>"; };
-		C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFullContentViewController.swift; sourceTree = "<group>"; };
 		C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsListViewController.swift; sourceTree = "<group>"; };
 		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				C56BEB3E1D56C1FA003BBF11 /* NormalTitleViewController.swift */,
-				100566F91D649A33008B46DE /* FullTitleViewController.swift */,
 				10628F441D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift */,
 			);
 			name = CustomViewControllers;
@@ -453,10 +450,10 @@
 		C5B15BBC1D5426C300E24AC0 /* AbstractCustomViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C5B15BB81D5424F800E24AC0 /* CustomViewController.swift */,
-				C5B15BBD1D54294700E24AC0 /* CustomNormalContentViewController.swift */,
-				C5B15BBF1D542E5900E24AC0 /* CustomFullContentViewController.swift */,
-				C5B15BB91D5424F800E24AC0 /* CustomNavigationController.swift */,
+				C51D3B9B1F04B6EB00192F58 /* BaseCustomNavigationController.swift */,
+				C51D3B951F049CD400192F58 /* BaseCustomViewController.swift */,
+				C51D3B971F049DC700192F58 /* ShowLoadingView.swift */,
+				C51D3B991F04A63D00192F58 /* ControllerBaseViewConfig.swift */,
 			);
 			name = AbstractCustomViewControllers;
 			sourceTree = "<group>";
@@ -592,15 +589,15 @@
 				1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */,
 				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
 				1036493B1D5CBEFB00FDB05E /* AppleSystemService.swift in Sources */,
-				C5B15BC01D542E5900E24AC0 /* CustomFullContentViewController.swift in Sources */,
 				C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */,
 				C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */,
 				C51F76571D698F7300DF04AE /* MixedColorProgressViewController.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
-				C5B15BBB1D5424F800E24AC0 /* CustomNavigationController.swift in Sources */,
+				C51D3B9C1F04B6EB00192F58 /* BaseCustomNavigationController.swift in Sources */,
 				C579139F1D7BC09F003185AD /* TimeModel.swift in Sources */,
 				C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */,
+				C51D3B9A1F04A63D00192F58 /* ControllerBaseViewConfig.swift in Sources */,
 				C51F85401D67D2350013C49B /* UIColor+Convenience.swift in Sources */,
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
@@ -612,9 +609,8 @@
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */,
 				C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */,
-				C5B15BBA1D5424F800E24AC0 /* CustomViewController.swift in Sources */,
 				C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */,
-				100566FA1D649A33008B46DE /* FullTitleViewController.swift in Sources */,
+				C51D3B961F049CD400192F58 /* BaseCustomViewController.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				1018415E1D7DB6940091EDFD /* UIView+ScreensShot.swift in Sources */,
 				10628F451D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift in Sources */,
@@ -626,10 +622,10 @@
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
 				C51F85431D67D3930013C49B /* TranformFadeView.swift in Sources */,
 				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,
-				C5B15BBE1D54294700E24AC0 /* CustomNormalContentViewController.swift in Sources */,
 				C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
 				1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */,
+				C51D3B981F049DC700192F58 /* ShowLoadingView.swift in Sources */,
 				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
 				C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */,
 				1030753F1D75C4870043A858 /* TapCellAnimationController.swift in Sources */,

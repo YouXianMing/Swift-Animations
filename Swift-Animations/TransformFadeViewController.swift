@@ -22,9 +22,9 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
     fileprivate var type                : EType = .typeOne
     fileprivate var count               : Int   = 0
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         images = [UIImage]()
         images.append(UIImage(named: "5")!)

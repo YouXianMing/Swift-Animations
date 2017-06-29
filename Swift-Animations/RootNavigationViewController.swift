@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootNavigationViewController: CustomNavigationController {
+class RootNavigationViewController: BaseCustomNavigationController {
     
     override func viewDidLoad() {
         

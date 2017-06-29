@@ -13,9 +13,9 @@ class TapCellAnimationController: NormalTitleViewController, UITableViewDelegate
     fileprivate var tableView : UITableView!
     fileprivate var datas     : [CellDataAdapter]!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         datas = [CellDataAdapter]()
         

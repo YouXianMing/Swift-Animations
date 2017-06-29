@@ -8,18 +8,16 @@
 
 import UIKit
 
-class FullTitleVisualEffectViewController: CustomFullContentViewController {
+class FullTitleVisualEffectViewController: BaseCustomViewController {
 
     fileprivate var effectView         : UIVisualEffectView!
     fileprivate var vibrancyEffectView : UIVisualEffectView!
     
-    override func buildTitleView() {
-        
-        super.buildTitleView()
-
-        effectView                        = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    override func setupSubViews() {
+    
+        effectView                          = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         effectView.isUserInteractionEnabled = true
-        effectView.frame                  = (titleView?.bounds)!
+        effectView.frame                    = (titleView?.bounds)!
         titleView?.addSubview(effectView)
         
         vibrancyEffectView       = UIVisualEffectView(effect: UIVibrancyEffect(blurEffect: effectView.effect as! UIBlurEffect))
@@ -41,6 +39,12 @@ class FullTitleVisualEffectViewController: CustomFullContentViewController {
         headlineLabel.center        = (titleView?.middlePoint)!
         vibrancyEffectView.contentView.addSubview(backButton)
         vibrancyEffectView.contentView.addSubview(headlineLabel)
+    }
+    
+    override func makeViewsConfig(viewsConfig: [String : ControllerBaseViewConfig]) {
+        
+        let contentViewConfig    = viewsConfig[contentViewId];
+        contentViewConfig?.frame = CGRect(x: 0, y: 0, width: Width(), height: Height());
     }
     
     func popSelf() {

@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window.backgroundColor    = UIColor.white
             let controller            = AnimationsListViewController()
-            let rootViewController    = RootNavigationViewController(rootViewController: controller, hideTabBar: true)
+            let rootViewController    = RootNavigationViewController(rootViewController: controller, hideNavBar: true)
             window.rootViewController = rootViewController
             window.makeKey()
         }

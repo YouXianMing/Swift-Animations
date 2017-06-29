@@ -16,9 +16,9 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
     fileprivate var      tableView    : UITableView!
     fileprivate weak var tmpHeadView  : ClassHeaderView?
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         // TableView.
         tableView                     = UITableView(frame: (contentView?.bounds)!)

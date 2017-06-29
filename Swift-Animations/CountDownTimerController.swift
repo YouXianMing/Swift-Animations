@@ -14,9 +14,9 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
     fileprivate var tableView  : UITableView!
     fileprivate var timer      : Timer!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         // Create data source.
         timesArray = [CellDataAdapter]()

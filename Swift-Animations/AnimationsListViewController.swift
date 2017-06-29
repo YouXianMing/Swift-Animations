@@ -8,19 +8,19 @@
 
 import UIKit
 
-class AnimationsListViewController: CustomNormalContentViewController, UITableViewDataSource, UITableViewDelegate, DefaultNotificationCenterDelegate {
+class AnimationsListViewController: BaseCustomViewController, UITableViewDataSource, UITableViewDelegate, DefaultNotificationCenterDelegate {
     
     fileprivate var tableView    : UITableView!
-    fileprivate var notification : DefaultNotificationCenter = DefaultNotificationCenter()
-    fileprivate var adapters     : [CellDataAdapter]         = [CellDataAdapter]()
+    fileprivate var notification : DefaultNotificationCenter!
+    fileprivate var adapters     : [CellDataAdapter] = [CellDataAdapter]()
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
-        notification.delegate = self
-        notification.addNotificationName(NotificationEvent.animationsListViewControllerFirstTimeLoadData.Message())
-        
+        // Add DefaultNotificationCenter.
+        notification = DefaultNotificationCenter(delegate: self, notificationNames: [NotificationEvent.animationsListViewControllerFirstTimeLoadData.Message()])
+
         // TableView.
         tableView                              = UITableView(frame: (contentView?.bounds)!)
         tableView.dataSource                   = self
@@ -66,10 +66,8 @@ class AnimationsListViewController: CustomNormalContentViewController, UITableVi
     
     // MARK: Config TitleView.
     
-    override func buildTitleView() {
-        
-        super.buildTitleView()
-        
+    override func setupSubViews() {
+    
         func createBackgroundStringLabel() {
             
             let string    = "Animations"

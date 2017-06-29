@@ -15,9 +15,9 @@ class LiveImageViewController: NormalTitleViewController {
     fileprivate var images        : [UIImage] = [UIImage]()
     fileprivate var liveImageView : LiveImageView!
     
-    override func setup() {
+    override func viewDidLoad() {
         
-        super.setup()
+        super.viewDidLoad()
         
         // Init images.
         images = [UIImage]()
