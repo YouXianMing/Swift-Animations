@@ -104,7 +104,7 @@ class ShowTextCell: CustomCell {
         }
     }
     
-    override class func HeightWithData(_ data : AnyObject) -> CGFloat {
+    override class func HeightWithData(_ data : AnyObject?) -> CGFloat {
         
         let model                = data as! ShowTextModel
         model.expendStringHeight = 15 + (model.inputString?.heightWithFont(heitiSC, fixedWidth: Width() - 30))! + 15

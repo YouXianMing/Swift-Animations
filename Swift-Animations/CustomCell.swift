@@ -122,7 +122,7 @@ class CustomCell: UITableViewCell {
      
      - returns: Cell's height.
      */
-    class func HeightWithData(_ data : AnyObject) -> CGFloat { return 0}
+    class func HeightWithData(_ data : AnyObject? = nil) -> CGFloat { return 0}
     
     /**
      Create the CustomCell type data adapter.
