@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnimationsListViewController: BaseCustomViewController, UITableViewDataSource, UITableViewDelegate, DefaultNotificationCenterDelegate {
+class AnimationsListViewController: BaseCustomViewController, UITableViewDataSource, UITableViewDelegate, DefaultNotificationCenterDelegate, CustomCellDelegate {
     
     fileprivate var tableView    : UITableView!
     fileprivate var notification : DefaultNotificationCenter!
@@ -125,12 +125,22 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueCellAndLoadContentFromAdapter(adapters[(indexPath as NSIndexPath).row], indexPath: indexPath, controller: self)
+        return tableView.dequeueCellAndLoadContentFromAdapter(adapters[(indexPath as NSIndexPath).row], indexPath: indexPath, delegate : self)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.selectedEventWithIndexPath(indexPath)
+    }
+    
+    // MARK: CustomCell's delegate.
+    
+    func customCell(_ cell: CustomCell?, event: AnyObject?) {
+        
+        let item         = event as! ControllerItem
+        let controller   = (item.controllerClass as! BaseCustomViewController.Type).init()
+        controller.title = item.name
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: Overwrite system methods.

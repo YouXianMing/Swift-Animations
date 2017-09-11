@@ -43,11 +43,8 @@ class ListItemCell: CustomCell {
     }
     
     override func selectedEvent() {
-        
-        let item         = data as! ControllerItem
-        let controller   = (item.controllerClass as! BaseCustomViewController.Type).init()
-        controller.title = item.name
-        self.controller?.navigationController?.pushViewController(controller, animated: true)
+
+        delegate?.customCell(self, event: data)
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {

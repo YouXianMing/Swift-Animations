@@ -18,18 +18,23 @@ extension UITableView {
      - parameter adapter:    The CellDataAdapter.
      - parameter indexPath:  The indexPath.
      - parameter tableView:  The TableView.
+     - parameter delegate:   The CustomCell's delegate.
      - parameter controller: The controller.
      
      - returns: The CustomCell instance.
      */
-    func dequeueCellAndLoadContentFromAdapter(_ adapter : CellDataAdapter, indexPath : IndexPath,
-                                              tableView : UITableView? = nil, controller : UIViewController? = nil) -> CustomCell {
+    func dequeueCellAndLoadContentFromAdapter(_ adapter  : CellDataAdapter,
+                                              indexPath  : IndexPath,
+                                              tableView  : UITableView? = nil,
+                                              delegate   : CustomCellDelegate? = nil,
+                                              controller : UIViewController? = nil) -> CustomCell {
         
         let cell         = self.dequeueReusableCell(withIdentifier: adapter.cellReuseIdentifier!) as! CustomCell
         cell.indexPath   = indexPath
         cell.dataAdapter = adapter
         cell.data        = adapter.data
         cell.tableView   = tableView
+        cell.delegate    = delegate
         cell.controller  = controller
         cell.loadContent()
         
