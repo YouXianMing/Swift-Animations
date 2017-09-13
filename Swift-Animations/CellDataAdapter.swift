@@ -34,36 +34,5 @@ class CellDataAdapter: NSObject {
         self.cellHeight          = cellHeight
         self.cellType            = cellType
     }
-    
-    // MARK: convenience method
-    
-    /**
-     CellDataAdapter's convenient method, used for UITableView.
-     
-     - parameter cellReuseIdentifier: Cell's reused identifier.
-     - parameter data:                Data, can be nil.
-     - parameter cellHeight:          Cell's height.
-     - parameter cellType:            Cell's type (The same cell, but maybe have different types).
-     
-     - returns: CellDataAdapter's object.
-     */
-    class func CreateTableViewType(_ cellReuseIdentifier: String?, data: AnyObject?, cellHeight: CGFloat?, cellType: Int?) -> CellDataAdapter {
-        
-        return CellDataAdapter.init(cellReuseIdentifier: cellReuseIdentifier, data: data, cellHeight: cellHeight, cellType: cellType)
-    }
-    
-    /**
-     CellDataAdapter's convenient method, used for UICollectionView.
-     
-     - parameter cellReuseIdentifier: Cell's reused identifier.
-     - parameter data:                Data, can be nil.
-     - parameter cellType:            Cell's type (The same cell, but maybe have different types).
-     
-     - returns: CellDataAdapter's object.
-     */
-    class func CreateCollectionViewType(_ cellReuseIdentifier: String?, data: AnyObject?, cellType: Int?) -> CellDataAdapter {
-        
-        return CellDataAdapter.init(cellReuseIdentifier: cellReuseIdentifier, data: data, cellHeight: nil, cellType: cellType)
-    }
 }
 

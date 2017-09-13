@@ -60,6 +60,12 @@
 		C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C7001D66F92600CC552D /* NotificationEvent.swift */; };
 		C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B094F41D6093B400EDF810 /* RotateView.swift */; };
 		C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */; };
+		C5CAA1C41F68C42700065CC1 /* BaseMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1C31F68C42700065CC1 /* BaseMessageView.swift */; };
+		C5CAA1C61F68CF1400065CC1 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1C51F68CF1400065CC1 /* AlertViewController.swift */; };
+		C5CAA1C91F68D1E900065CC1 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1C81F68D1E900065CC1 /* CustomCollectionViewCell.swift */; };
+		C5CAA1CB1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */; };
+		C5CAA1CD1F68FE4F00065CC1 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */; };
+		C5CAA1CF1F69265F00065CC1 /* UIWindow+keyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CE1F69265F00065CC1 /* UIWindow+keyWindow.swift */; };
 		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
 		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
 		C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1A1D630B9200A71D51 /* Easing.swift */; };
@@ -125,6 +131,12 @@
 		C581C7001D66F92600CC552D /* NotificationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
 		C5B094F41D6093B400EDF810 /* RotateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateView.swift; sourceTree = "<group>"; };
 		C5B15BC31D5438DC00E24AC0 /* AnimationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsListViewController.swift; sourceTree = "<group>"; };
+		C5CAA1C31F68C42700065CC1 /* BaseMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMessageView.swift; sourceTree = "<group>"; };
+		C5CAA1C51F68CF1400065CC1 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		C5CAA1C81F68D1E900065CC1 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		C5CAA1CE1F69265F00065CC1 /* UIWindow+keyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+keyWindow.swift"; sourceTree = "<group>"; };
 		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
 		C5E2DD1A1D630B9200A71D51 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
@@ -219,6 +231,7 @@
 		C51B502F1D5B5E76006AA00A /* UI-Component */ = {
 			isa = PBXGroup;
 			children = (
+				C5CAA1D01F69286900065CC1 /* UIWindow+keyWindow */,
 				C57008091D534927003BFB5E /* UIView+extension */,
 				C5D6ED6A1D5FFB57009BB400 /* UIColor+extension */,
 				C5D6ED8F1D6023CD009BB400 /* BackgroundLineView */,
@@ -247,6 +260,7 @@
 		C51B50311D5B5EB7006AA00A /* AbsClass */ = {
 			isa = PBXGroup;
 			children = (
+				C5CAA1C21F68C3F900065CC1 /* BaseMessageView */,
 				1050B9501D5A0D2500F00B40 /* CustomHeaderView */,
 				C52315CF1D55786100B3D86E /* CustomCell */,
 				C5B15BBC1D5426C300E24AC0 /* AbstractCustomViewControllers */,
@@ -284,6 +298,7 @@
 			children = (
 				C5693C3D1D54448600070B92 /* CellDataAdapter.swift */,
 				C52315CB1D55617100B3D86E /* CustomCell.swift */,
+				C5CAA1C81F68D1E900065CC1 /* CustomCollectionViewCell.swift */,
 			);
 			name = CustomCell;
 			sourceTree = "<group>";
@@ -327,6 +342,7 @@
 				C55DD6D71D6AA0AC00F94F2B /* PageFlipEffectController */,
 				103075401D75C48C0043A858 /* TapCellAnimationController */,
 				C579139B1D7BBFCF003185AD /* CountDownTimerController */,
+				C5CAA1C71F68CF2900065CC1 /* AlertViewController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -458,6 +474,32 @@
 			name = AbstractCustomViewControllers;
 			sourceTree = "<group>";
 		};
+		C5CAA1C21F68C3F900065CC1 /* BaseMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				C5CAA1C31F68C42700065CC1 /* BaseMessageView.swift */,
+			);
+			name = BaseMessageView;
+			sourceTree = "<group>";
+		};
+		C5CAA1C71F68CF2900065CC1 /* AlertViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C5CAA1C51F68CF1400065CC1 /* AlertViewController.swift */,
+				C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */,
+				C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */,
+			);
+			name = AlertViewController;
+			sourceTree = "<group>";
+		};
+		C5CAA1D01F69286900065CC1 /* UIWindow+keyWindow */ = {
+			isa = PBXGroup;
+			children = (
+				C5CAA1CE1F69265F00065CC1 /* UIWindow+keyWindow.swift */,
+			);
+			name = "UIWindow+keyWindow";
+			sourceTree = "<group>";
+		};
 		C5D6ED6A1D5FFB57009BB400 /* UIColor+extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +627,7 @@
 				C5E2DD231D632BE600A71D51 /* CircleAnimationViewController.swift in Sources */,
 				C55DD6D61D6AA08E00F94F2B /* PageFlipEffectController.swift in Sources */,
 				100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */,
+				C5CAA1CB1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift in Sources */,
 				103075471D75CFE70043A858 /* UILabel+SizeToFit.swift in Sources */,
 				1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */,
 				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
@@ -592,6 +635,7 @@
 				C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */,
 				C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */,
 				C51F76571D698F7300DF04AE /* MixedColorProgressViewController.swift in Sources */,
+				C5CAA1CD1F68FE4F00065CC1 /* MessageView.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
 				C51D3B9C1F04B6EB00192F58 /* BaseCustomNavigationController.swift in Sources */,
@@ -623,6 +667,8 @@
 				C51F85431D67D3930013C49B /* TranformFadeView.swift in Sources */,
 				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,
 				C56BEB3D1D56BE2F003BBF11 /* ControllerItem.swift in Sources */,
+				C5CAA1C41F68C42700065CC1 /* BaseMessageView.swift in Sources */,
+				C5CAA1C61F68CF1400065CC1 /* AlertViewController.swift in Sources */,
 				C57008081D533BAF003BFB5E /* UIView+AnimationProperty.swift in Sources */,
 				1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */,
 				C51D3B981F049DC700192F58 /* ShowLoadingView.swift in Sources */,
@@ -630,8 +676,10 @@
 				C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */,
 				1030753F1D75C4870043A858 /* TapCellAnimationController.swift in Sources */,
 				103075441D75C5370043A858 /* ShowTextModel.swift in Sources */,
+				C5CAA1CF1F69265F00065CC1 /* UIWindow+keyWindow.swift in Sources */,
 				C56BEB481D56CD7B003BBF11 /* TapAnimationModel.swift in Sources */,
 				1050B95C1D5A17F700F00B40 /* StudentInfoCell.swift in Sources */,
+				C5CAA1C91F68D1E900065CC1 /* CustomCollectionViewCell.swift in Sources */,
 				C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
 				C579139D1D7BBFF4003185AD /* CountDownTimerController.swift in Sources */,

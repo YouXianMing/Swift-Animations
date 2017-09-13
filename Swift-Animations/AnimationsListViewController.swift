@@ -43,6 +43,7 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             adapters.append(ListItemCell.Adapter(data: ControllerItem(controllerClass: controllerClass, name: name)))
         }
         
+        add(AlertViewController.classForCoder(),              name: "AlertView的使用")
         add(TableViewTapAnimationController.classForCoder(),  name: "UITableView状态切换效果")
         add(HeaderViewTapAnimationController.classForCoder(), name: "UITableView展开缩放动画")
         add(CircleAnimationViewController.classForCoder(),    name: "Easing-圆环动画")
