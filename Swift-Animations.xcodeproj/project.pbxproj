@@ -66,6 +66,7 @@
 		C5CAA1CB1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */; };
 		C5CAA1CD1F68FE4F00065CC1 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */; };
 		C5CAA1CF1F69265F00065CC1 /* UIWindow+keyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CE1F69265F00065CC1 /* UIWindow+keyWindow.swift */; };
+		C5D014AA1F6A151700B30804 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D014A91F6A151700B30804 /* AlertView.swift */; };
 		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
 		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
 		C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1A1D630B9200A71D51 /* Easing.swift */; };
@@ -137,6 +138,7 @@
 		C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C5CAA1CE1F69265F00065CC1 /* UIWindow+keyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+keyWindow.swift"; sourceTree = "<group>"; };
+		C5D014A91F6A151700B30804 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
 		C5E2DD1A1D630B9200A71D51 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				C5CAA1C51F68CF1400065CC1 /* AlertViewController.swift */,
 				C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */,
 				C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */,
+				C5D014A91F6A151700B30804 /* AlertView.swift */,
 			);
 			name = AlertViewController;
 			sourceTree = "<group>";
@@ -583,8 +586,9 @@
 				TargetAttributes = {
 					C57007EF1D5330B2003BFB5E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = HT95VAK372;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -683,6 +687,7 @@
 				C56BEB4E1D56CE5B003BBF11 /* TableViewTapAnimationCell.swift in Sources */,
 				C57007F41D5330B2003BFB5E /* AppDelegate.swift in Sources */,
 				C579139D1D7BBFF4003185AD /* CountDownTimerController.swift in Sources */,
+				C5D014AA1F6A151700B30804 /* AlertView.swift in Sources */,
 				103075421D75C50C0043A858 /* ShowTextCell.swift in Sources */,
 				C56BEB3B1D56B87E003BBF11 /* UIFont+extension.swift in Sources */,
 				C52315D11D55787000B3D86E /* ListItemCell.swift in Sources */,
@@ -786,7 +791,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HT95VAK372;
 				INFOPLIST_FILE = "Swift-Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";
@@ -801,7 +807,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HT95VAK372;
 				INFOPLIST_FILE = "Swift-Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";

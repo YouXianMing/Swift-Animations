@@ -60,12 +60,12 @@ class BaseMessageView: UIView {
     
     // MARK: Init related.
     
-    override init(frame : CGRect) {
+    required override init(frame : CGRect) {
         
         super.init(frame: CGRect.zero)
     }
     
-    convenience init() {
+    required convenience init() {
         
         self.init(frame: CGRect.zero)
     }
@@ -80,24 +80,26 @@ class BaseMessageView: UIView {
         print(String(describing: self.classForCoder) + " is released.")
     }
     
-    // MARK: Useful methods.
-    
-    func setup(messageObject : AnyObject? = nil,
-               contentView : UIView? = nil,
-               delegate : BaseMessageViewDelegate? = nil,
-               contentViewUserInteractionEnabled : Bool = true,
-               autoHiden : Bool = true,
-               delayAutoHidenDuration : TimeInterval = 2.0) -> Self {
+    class func Setup(messageObject                     : AnyObject?               = nil,
+                     contentView                       : UIView?                  = nil,
+                     delegate                          : BaseMessageViewDelegate? = nil,
+                     contentViewUserInteractionEnabled : Bool                     = true,
+                     autoHiden                         : Bool                     = true,
+                     delayAutoHidenDuration            : TimeInterval             = 2.0) -> Self {
         
-        self.messageObject                     = messageObject
-        self.contentView                       = contentView
-        self.delegate                          = delegate
-        self.contentViewUserInteractionEnabled = contentViewUserInteractionEnabled
-        self.autoHiden                         = autoHiden
-        self.delayAutoHidenDuration            = delayAutoHidenDuration
+        let messageView = self.init(frame: CGRect.zero)
         
-        return self
+        messageView.messageObject                     = messageObject
+        messageView.contentView                       = contentView
+        messageView.delegate                          = delegate
+        messageView.contentViewUserInteractionEnabled = contentViewUserInteractionEnabled
+        messageView.autoHiden                         = autoHiden
+        messageView.delayAutoHidenDuration            = delayAutoHidenDuration
+        
+        return messageView
     }
+    
+    // MARK: Useful methods.
     
     /// Show the MessageView.
     final func show() {
@@ -132,7 +134,7 @@ class BaseMessageView: UIView {
         
         beforeStartShowValueConfig()
         delegate?.baseMessageViewWillAppear(self)
-        UIView.animate(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: { 
+        UIView.animate(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: {
             
             self.startShowAnimated()
             

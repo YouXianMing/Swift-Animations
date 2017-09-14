@@ -9,7 +9,7 @@
 import UIKit
 
 class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, UICollectionViewDataSource, CustomCollectionViewCellDelegate, BaseMessageViewDelegate {
-
+    
     private var collectionView : UICollectionView?
     private var layout         : UICollectionViewFlowLayout?
     private var adapters       : [CellDataAdapter] = []
@@ -34,6 +34,7 @@ class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, 
         
         // Adapters.
         adapters.append(AlertViewCollectionViewCell.Adapter(data: "MessageView" as AnyObject))
+        adapters.append(AlertViewCollectionViewCell.Adapter(data: "AlertView" as AnyObject))
     }
     
     // MARK: UICollectionViewDelegate, UICollectionViewDataSource
@@ -58,10 +59,22 @@ class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, 
     func customCollectionViewCell(_ cell: CustomCollectionViewCell?, event: AnyObject?) {
         
         if (event as? String == "MessageView") {
-         
-            MessageView.init().setup(messageObject : "If you find this post helpful, please recommend it for others to read." as AnyObject,
-                                     contentView: UIWindow.getKeyWindow(),
-                                     delegate : self).show()
+            
+            MessageView.Setup(messageObject : "If you find this post helpful, please recommend it for others to read." as AnyObject,
+                              contentView   : UIWindow.getKeyWindow(),
+                              delegate      : self).show()
+            
+        } else if (event as? String == "AlertView") {
+            
+            let messageObject = AlertViewMessageObject.init(title             : "警告",
+                                                            content           : "不要轻信陌生电话,短信;不要轻易点击信息中的链接;不要按陌生电话,短信要求转账汇款;不要安装不了解的软件.",
+                                                            buttonTitles      : ["关闭", "更多信息"],
+                                                            buttonTitlesState : [AlertViewButtonType.Black, AlertViewButtonType.Red])
+            
+            AlertView.Setup(messageObject : messageObject as AnyObject,
+                            contentView   : UIWindow.getKeyWindow(),
+                            delegate      : self,
+                            autoHiden     : false).show()
         }
     }
     
@@ -69,6 +82,10 @@ class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, 
     
     func baseMessageView(_ messageView : BaseMessageView, event : AnyObject?) {
         
+        if messageView.isKind(of: AlertView.classForCoder()) {
+            
+            print(event ?? "None")
+        }
     }
     
     func baseMessageViewWillAppear(_ messageView : BaseMessageView) {
