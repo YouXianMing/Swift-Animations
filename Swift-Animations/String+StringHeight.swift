@@ -18,7 +18,7 @@ extension String {
      
      - returns: The height.
      */
-    func heightWithStringAttributes(_ attributes : [String : AnyObject], fixedWidth : CGFloat) -> CGFloat {
+    func heightWithStringAttributes(_ attributes : [NSAttributedStringKey : Any], fixedWidth : CGFloat) -> CGFloat {
         
         guard self.characters.count > 0 && fixedWidth > 0 else {
         
@@ -49,7 +49,7 @@ extension String {
         
         let size = CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude)
         let text = self as NSString
-        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context:nil)
+        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : font], context:nil)
         
         return rect.size.height
     }
@@ -67,7 +67,7 @@ extension String {
         let string = "One"
         let size   = CGSize(width: 200, height: CGFloat.greatestFiniteMagnitude)
         let text   = string as NSString
-        let rect   = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context:nil)
+        let rect   = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : font], context:nil)
         
         return rect.size.height
     }
@@ -79,7 +79,7 @@ extension String {
      
      - returns: The width.
      */
-    func widthWithStringAttributes(_ attributes : [String : AnyObject]) -> CGFloat {
+    func widthWithStringAttributes(_ attributes : [NSAttributedStringKey : Any]) -> CGFloat {
         
         guard self.characters.count > 0 else {
             
@@ -109,7 +109,7 @@ extension String {
         
         let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: 0)
         let text = self as NSString
-        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSFontAttributeName : font], context:nil)
+        let rect = text.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : font], context:nil)
         
         return rect.size.width
     }

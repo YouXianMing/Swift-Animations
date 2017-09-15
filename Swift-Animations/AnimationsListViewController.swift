@@ -30,6 +30,11 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
         tableView.showsVerticalScrollIndicator = false
         contentView?.addSubview(tableView)
         
+        if #available(iOS 11.0, *) {
+            
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+        
         // Register cell.
         ListItemCell.RegisterTo(tableView)
     }
@@ -43,6 +48,7 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             adapters.append(ListItemCell.Adapter(data: ControllerItem(controllerClass: controllerClass, name: name)))
         }
         
+        add(SystemFontInfoController.classForCoder(),         name: "系统字体列表")
         add(AlertViewController.classForCoder(),              name: "AlertView的使用")
         add(TableViewTapAnimationController.classForCoder(),  name: "UITableView状态切换效果")
         add(HeaderViewTapAnimationController.classForCoder(), name: "UITableView展开缩放动画")
@@ -76,9 +82,9 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             let length    = string.lengthOfBytes(using: String.Encoding.utf8)
             let allColor  = UIColor.Hex(0x545454)
             let partColor = UIColor.clear
-            richText.addAttributes([NSForegroundColorAttributeName : allColor], range: NSMakeRange(0, length))
-            richText.addAttributes([NSForegroundColorAttributeName : partColor], range: NSMakeRange(1, 1))
-            richText.addAttributes([NSFontAttributeName : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedStringKey.foregroundColor : allColor], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedStringKey.foregroundColor : partColor], range: NSMakeRange(1, 1))
+            richText.addAttributes([NSAttributedStringKey.font : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
             
             // Title.
             let label            = UILabel()
@@ -95,9 +101,9 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             let length    = string.lengthOfBytes(using: String.Encoding.utf8)
             let allColor  = UIColor.clear
             let partColor = UIColor.Hex(0x4699D9)
-            richText.addAttributes([NSForegroundColorAttributeName : allColor], range: NSMakeRange(0, length))
-            richText.addAttributes([NSForegroundColorAttributeName : partColor], range: NSMakeRange(1, 1))
-            richText.addAttributes([NSFontAttributeName : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedStringKey.foregroundColor : allColor], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedStringKey.foregroundColor : partColor], range: NSMakeRange(1, 1))
+            richText.addAttributes([NSAttributedStringKey.font : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
             
             // Title.
             let label            = UILabel()

@@ -10,10 +10,10 @@ import UIKit
 
 class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollViewDelegate {
 
-    let viewTag            : Int       = 1000
-    var pictures           : [UIImage] = [UIImage]()
-    var scrollView         : UIScrollView!
-    var onceLinearEquation : Math!
+    fileprivate let viewTag            : Int       = 1000
+    fileprivate var pictures           : [UIImage] = [UIImage]()
+    fileprivate var scrollView         : UIScrollView!
+    fileprivate var onceLinearEquation : Math!
     
     override func viewDidLoad() {
         

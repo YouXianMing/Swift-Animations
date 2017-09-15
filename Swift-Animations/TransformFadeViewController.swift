@@ -53,7 +53,7 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
         timer = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(TransformFadeViewController.timerEvent), userInfo: nil, repeats: true)
     }
     
-    func timerEvent() {
+    @objc func timerEvent() {
         
         if type == .typeOne {
             

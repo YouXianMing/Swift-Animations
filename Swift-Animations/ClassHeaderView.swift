@@ -65,7 +65,7 @@ class ClassHeaderView: CustomHeaderFooterView {
         }
     }
 
-    func buttonEvent() {
+    @objc func buttonEvent() {
     
         let model = data as! ClassModel
         

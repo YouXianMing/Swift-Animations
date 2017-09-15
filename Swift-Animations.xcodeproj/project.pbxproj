@@ -55,6 +55,7 @@
 		C579139D1D7BBFF4003185AD /* CountDownTimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C579139C1D7BBFF4003185AD /* CountDownTimerController.swift */; };
 		C579139F1D7BC09F003185AD /* TimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C579139E1D7BC09F003185AD /* TimeModel.swift */; };
 		C57913A11D7BC2E5003185AD /* CountDownTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57913A01D7BC2E5003185AD /* CountDownTimeCell.swift */; };
+		C57DC8791F6BA163004EF006 /* FontFamilyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DC8781F6BA163004EF006 /* FontFamilyHeaderView.swift */; };
 		C581C6F91D66D3C300CC552D /* CATransform3DM34Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */; };
 		C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */; };
 		C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581C7001D66F92600CC552D /* NotificationEvent.swift */; };
@@ -69,6 +70,9 @@
 		C5D014AA1F6A151700B30804 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D014A91F6A151700B30804 /* AlertView.swift */; };
 		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
 		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
+		C5D9F1B41F6B613000256871 /* SystemFontInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D9F1B31F6B613000256871 /* SystemFontInfoController.swift */; };
+		C5D9F1B71F6B681000256871 /* FontFamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D9F1B61F6B681000256871 /* FontFamilyModel.swift */; };
+		C5D9F1B91F6B6BDA00256871 /* FontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D9F1B81F6B6BDA00256871 /* FontCell.swift */; };
 		C5E2DD1D1D630B9200A71D51 /* Easing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1A1D630B9200A71D51 /* Easing.swift */; };
 		C5E2DD1E1D630B9200A71D51 /* EasingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1B1D630B9200A71D51 /* EasingValue.swift */; };
 		C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2DD1C1D630B9200A71D51 /* ComplexEasingValue.swift */; };
@@ -127,6 +131,7 @@
 		C579139C1D7BBFF4003185AD /* CountDownTimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimerController.swift; sourceTree = "<group>"; };
 		C579139E1D7BC09F003185AD /* TimeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeModel.swift; sourceTree = "<group>"; };
 		C57913A01D7BC2E5003185AD /* CountDownTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownTimeCell.swift; sourceTree = "<group>"; };
+		C57DC8781F6BA163004EF006 /* FontFamilyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFamilyHeaderView.swift; sourceTree = "<group>"; };
 		C581C6F81D66D3C300CC552D /* CATransform3DM34Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3DM34Controller.swift; sourceTree = "<group>"; };
 		C581C6FE1D66E0BA00CC552D /* DefaultNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultNotificationCenter.swift; sourceTree = "<group>"; };
 		C581C7001D66F92600CC552D /* NotificationEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEvent.swift; sourceTree = "<group>"; };
@@ -141,6 +146,9 @@
 		C5D014A91F6A151700B30804 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
+		C5D9F1B31F6B613000256871 /* SystemFontInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFontInfoController.swift; sourceTree = "<group>"; };
+		C5D9F1B61F6B681000256871 /* FontFamilyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontFamilyModel.swift; sourceTree = "<group>"; };
+		C5D9F1B81F6B6BDA00256871 /* FontCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontCell.swift; sourceTree = "<group>"; };
 		C5E2DD1A1D630B9200A71D51 /* Easing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Easing.swift; sourceTree = "<group>"; };
 		C5E2DD1B1D630B9200A71D51 /* EasingValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasingValue.swift; sourceTree = "<group>"; };
 		C5E2DD1C1D630B9200A71D51 /* ComplexEasingValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexEasingValue.swift; sourceTree = "<group>"; };
@@ -345,6 +353,7 @@
 				103075401D75C48C0043A858 /* TapCellAnimationController */,
 				C579139B1D7BBFCF003185AD /* CountDownTimerController */,
 				C5CAA1C71F68CF2900065CC1 /* AlertViewController */,
+				C5D9F1B51F6B619900256871 /* SystemFontInfoController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -520,6 +529,17 @@
 			name = BackgroundLineView;
 			sourceTree = "<group>";
 		};
+		C5D9F1B51F6B619900256871 /* SystemFontInfoController */ = {
+			isa = PBXGroup;
+			children = (
+				C5D9F1B31F6B613000256871 /* SystemFontInfoController.swift */,
+				C5D9F1B61F6B681000256871 /* FontFamilyModel.swift */,
+				C57DC8781F6BA163004EF006 /* FontFamilyHeaderView.swift */,
+				C5D9F1B81F6B6BDA00256871 /* FontCell.swift */,
+			);
+			name = SystemFontInfoController;
+			sourceTree = "<group>";
+		};
 		C5E2DD181D630B7700A71D51 /* AppleSystemService */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,14 +601,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = YouXianMing;
 				TargetAttributes = {
 					C57007EF1D5330B2003BFB5E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = HT95VAK372;
-						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -631,6 +650,7 @@
 				C5E2DD231D632BE600A71D51 /* CircleAnimationViewController.swift in Sources */,
 				C55DD6D61D6AA08E00F94F2B /* PageFlipEffectController.swift in Sources */,
 				100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */,
+				C5D9F1B91F6B6BDA00256871 /* FontCell.swift in Sources */,
 				C5CAA1CB1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift in Sources */,
 				103075471D75CFE70043A858 /* UILabel+SizeToFit.swift in Sources */,
 				1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */,
@@ -647,7 +667,9 @@
 				C5E2DD1F1D630B9200A71D51 /* ComplexEasingValue.swift in Sources */,
 				C51D3B9A1F04A63D00192F58 /* ControllerBaseViewConfig.swift in Sources */,
 				C51F85401D67D2350013C49B /* UIColor+Convenience.swift in Sources */,
+				C5D9F1B71F6B681000256871 /* FontFamilyModel.swift in Sources */,
 				1050B9581D5A12CA00F00B40 /* ClassModel.swift in Sources */,
+				C5D9F1B41F6B613000256871 /* SystemFontInfoController.swift in Sources */,
 				C5693C3E1D54448600070B92 /* CellDataAdapter.swift in Sources */,
 				10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */,
 				C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */,
@@ -677,6 +699,7 @@
 				1050B95A1D5A12D100F00B40 /* StudentModel.swift in Sources */,
 				C51D3B981F049DC700192F58 /* ShowLoadingView.swift in Sources */,
 				C52315CC1D55617100B3D86E /* CustomCell.swift in Sources */,
+				C57DC8791F6BA163004EF006 /* FontFamilyHeaderView.swift in Sources */,
 				C5B094F51D6093B400EDF810 /* RotateView.swift in Sources */,
 				1030753F1D75C4870043A858 /* TapCellAnimationController.swift in Sources */,
 				103075441D75C5370043A858 /* ShowTextModel.swift in Sources */,
@@ -707,14 +730,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -754,14 +783,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -792,13 +827,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = HT95VAK372;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Swift-Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -808,13 +845,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = HT95VAK372;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Swift-Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YouXianMing.Swift-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

@@ -35,7 +35,7 @@ class NormalTitleViewController: BaseCustomViewController {
         titleView?.addSubview(UIView.CreateLine(CGRect(x: 0, y: titleView!.height - 0.5, width: Width(), height: 0.5), lineColor: UIColor.gray.alpha(0.2)))
     }
     
-    func popSelf() {
+    @objc func popSelf() {
         
         self.popViewControllerAnimated(true)
     }

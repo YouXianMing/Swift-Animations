@@ -47,7 +47,7 @@ class FullTitleVisualEffectViewController: BaseCustomViewController {
         contentViewConfig?.frame = CGRect(x: 0, y: 0, width: Width(), height: Height());
     }
     
-    func popSelf() {
+    @objc func popSelf() {
         
         self.popViewControllerAnimated(true)
     }

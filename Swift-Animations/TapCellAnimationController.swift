@@ -26,6 +26,11 @@ class TapCellAnimationController: NormalTitleViewController, UITableViewDelegate
         ShowTextCell.RegisterTo(tableView)
         contentView?.addSubview(tableView)
         
+        if #available(iOS 11.0, *) {
+            
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+        
         func addText(_ string : String) {
             
             let model = ShowTextModel(string)

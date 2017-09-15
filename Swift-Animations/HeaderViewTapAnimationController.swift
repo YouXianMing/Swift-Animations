@@ -29,6 +29,11 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         tableView.separatorStyle      = .none
         contentView?.addSubview(tableView!)
         
+        if #available(iOS 11.0, *) {
+            
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+        
         // Register.
         ClassHeaderView.RegisterTo(tableView)
         StudentInfoCell.RegisterTo(tableView)
@@ -80,7 +85,7 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
             
             self.sectionFirstLoad = true
-            self.tableView.insertSections(IndexSet(integersIn: NSMakeRange(0, self.classes.count).toRange()!), with: .fade)
+            self.tableView.insertSections(IndexSet(integersIn: Range.init(NSMakeRange(0, self.classes.count))!), with: .fade)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
                 

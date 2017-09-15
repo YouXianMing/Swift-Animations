@@ -57,6 +57,15 @@ class CustomHeaderFooterView: UITableViewHeaderFooterView {
     func loadContent() {}
     
     /**
+     Calculate the cell's height from data, override by subclass.
+     
+     - parameter data: Data.
+     
+     - returns: Cell's height.
+     */
+    class func HeightWithData(_ data : AnyObject? = nil) -> CGFloat { return 0}
+    
+    /**
      Set HeaderFooterView backgroundColor.
      
      - parameter color: Color.

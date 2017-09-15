@@ -25,9 +25,9 @@ extension UITableView {
      */
     func dequeueCellAndLoadContentFromAdapter(_ adapter  : CellDataAdapter,
                                               indexPath  : IndexPath,
-                                              tableView  : UITableView? = nil,
+                                              tableView  : UITableView?        = nil,
                                               delegate   : CustomCellDelegate? = nil,
-                                              controller : UIViewController? = nil) -> CustomCell {
+                                              controller : UIViewController?   = nil) -> CustomCell {
         
         let cell         = self.dequeueReusableCell(withIdentifier: adapter.cellReuseIdentifier!) as! CustomCell
         cell.indexPath   = indexPath
@@ -134,7 +134,10 @@ class CustomCell: UITableViewCell {
      
      - returns: The cellDataAdapter.
      */
-    class func Adapter(_ reuseIdentifier: String? = nil, data: AnyObject? = nil, cellHeight: CGFloat? = 0, type: Int? = nil) -> CellDataAdapter {
+    class func Adapter(_ reuseIdentifier: String? = nil,
+                       data: AnyObject?           = nil,
+                       cellHeight: CGFloat?       = 0,
+                       type: Int?                 = nil) -> CellDataAdapter {
         
         let identifier = (reuseIdentifier == nil ? String(describing: self.classForCoder()) : reuseIdentifier)
         
@@ -147,7 +150,8 @@ class CustomCell: UITableViewCell {
      - parameter tableView:           UITableView.
      - parameter cellReuseIdentifier: Cell reuse identifier.
      */
-    class func RegisterTo(_ tableView: UITableView, cellReuseIdentifier: String? = nil) {
+    class func RegisterTo(_ tableView         : UITableView,
+                          cellReuseIdentifier : String?      = nil) {
         
         tableView.register(self.classForCoder(), forCellReuseIdentifier: (cellReuseIdentifier != nil) ? cellReuseIdentifier! : String(describing: self.classForCoder()))
     }

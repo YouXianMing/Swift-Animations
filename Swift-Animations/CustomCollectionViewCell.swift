@@ -23,11 +23,11 @@ extension UICollectionView {
      
      - returns: The CustomCell instance.
      */
-    func dequeueCellAndLoadContentFromAdapter(_ adapter       : CellDataAdapter,
-                                              indexPath       : IndexPath,
-                                              collectionView  : UICollectionView? = nil,
-                                              delegate        : CustomCollectionViewCellDelegate? = nil,
-                                              controller      : UIViewController? = nil) -> CustomCollectionViewCell {
+    func dequeueCellAndLoadContentFromAdapter(_ adapter      : CellDataAdapter,
+                                              indexPath      : IndexPath,
+                                              collectionView : UICollectionView?                 = nil,
+                                              delegate       : CustomCollectionViewCellDelegate? = nil,
+                                              controller     : UIViewController?                 = nil) -> CustomCollectionViewCell {
         
         let cell            = self.dequeueReusableCell(withReuseIdentifier: adapter.cellReuseIdentifier!, for: indexPath) as! CustomCollectionViewCell
         cell.indexPath      = indexPath

@@ -50,10 +50,10 @@ class CircleAnimationViewController: NormalTitleViewController {
         imageView.layer.mask = self.circleView4.layer
         contentView?.addSubview(imageView)
         
-        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(CircleAnimationViewController.timerEvent), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
     }
     
-    func timerEvent() {
+    @objc func timerEvent() {
 
         let percent        = Double(arc4random() % 100) / 100.0
         let anotherPercent = Double(arc4random() % 100) / 100.0

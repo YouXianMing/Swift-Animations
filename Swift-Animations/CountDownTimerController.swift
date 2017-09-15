@@ -44,6 +44,11 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
         tableView.separatorStyle = .none
         tableView.rowHeight      = 60
         contentView?.addSubview(tableView)
+        
+        if #available(iOS 11.0, *) {
+            
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
 
         // Register cell.
         CountDownTimeCell.RegisterTo(tableView)
@@ -52,7 +57,7 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(CountDownTimerController.timerEvent), userInfo: nil, repeats: true)
     }
     
-    func timerEvent() {
+    @objc func timerEvent() {
         
         for (_, dataAdapter) in timesArray.enumerated() {
             

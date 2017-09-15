@@ -36,7 +36,7 @@ class CATransform3DM34Controller: NormalTitleViewController {
         contentView?.layer.addSublayer(layer)
     }
     
-    func timerEvent() {
+    @objc func timerEvent() {
         
         if transformState == false {
             

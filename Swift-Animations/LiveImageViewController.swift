@@ -43,7 +43,7 @@ class LiveImageViewController: NormalTitleViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(LiveImageViewController.timerEvent), userInfo: nil, repeats: true)
     }
     
-    func timerEvent() {
+    @objc func timerEvent() {
         
         let currentIndex = count % images.count
         count            = count + 1

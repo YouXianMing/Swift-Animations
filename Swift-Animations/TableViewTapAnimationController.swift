@@ -29,6 +29,11 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         tableView.separatorStyle = .none
         contentView?.addSubview(tableView!)
         
+        if #available(iOS 11.0, *) {
+            
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+        
         // Register cell.
         TableViewTapAnimationCell.RegisterTo(tableView)
         

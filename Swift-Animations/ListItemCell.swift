@@ -53,7 +53,6 @@ class ListItemCell: CustomCell {
             
             self.titlelabel.alpha = (highlighted == true ? 0.5    : 1.0)
             self.subTitleLabel.x  = (highlighted == true ? 10 + 4 : 10)
-            self.backgroundColor  = (highlighted == true ? UIColor.Hex(0x4699D9).alpha(0.35) : UIColor.clear)
             
         }, completion: nil)
     }

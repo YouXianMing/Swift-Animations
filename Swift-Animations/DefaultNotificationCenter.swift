@@ -150,7 +150,7 @@ class DefaultNotificationCenter: NSObject {
      
      - parameter obj: The NSNotification object.
      */
-    func notificationEvent(_ obj : AnyObject?) {
+    @objc func notificationEvent(_ obj : AnyObject?) {
         
         let notification = obj as! Notification
         delegate?.defaultNotificationCenter(notification.name.rawValue, object: notification.object as AnyObject?)

@@ -10,9 +10,10 @@ import UIKit
 
 class AlertViewCollectionViewCell: CustomCollectionViewCell {
 
-    private var rightLineView  : UIView!
-    private var label          : UILabel!
-    private var highlightLabel : UILabel!
+    fileprivate var rightLineView    : UIView!
+    fileprivate var labelContentView : UIView!
+    fileprivate var label            : UILabel!
+    fileprivate var highlightLabel   : UILabel!
     
     override func buildSubview() {
         
@@ -22,12 +23,15 @@ class AlertViewCollectionViewCell: CustomCollectionViewCell {
         rightLineView.isHidden = true
         self.addSubview(rightLineView!)
         
+        labelContentView = UIView.init(frame: self.bounds)
+        self.addSubview(labelContentView)
+        
         label               = UILabel.init(frame : self.bounds)
         label.textAlignment = .center
         label.font          = UIFont.HeitiSC(15)
         label.textColor     = UIColor.black
         label.angle         = CGFloat(Double.pi / 4)
-        self.addSubview(label)
+        labelContentView.addSubview(label)
         
         highlightLabel               = UILabel.init(frame : self.bounds)
         highlightLabel.textAlignment = .center
@@ -35,7 +39,7 @@ class AlertViewCollectionViewCell: CustomCollectionViewCell {
         highlightLabel.textColor     = UIColor.red
         highlightLabel.angle         = CGFloat(Double.pi / 4)
         highlightLabel.alpha         = 0
-        self.addSubview(highlightLabel)
+        labelContentView.addSubview(highlightLabel)
     }
     
     override func loadContent() {
@@ -60,9 +64,10 @@ class AlertViewCollectionViewCell: CustomCollectionViewCell {
             
             UIView.animate(withDuration: 0.25, delay: 0, options: .beginFromCurrentState, animations: {
                 
-                self.backgroundColor      = (newVal ? UIColor.lightGray.alpha(0.1) : UIColor.white)
-                self.label.alpha          = (newVal ? 0 : 1)
-                self.highlightLabel.alpha = (newVal ? 1 : 0)
+                self.backgroundColor        = (newVal ? UIColor.lightGray.alpha(0.1) : UIColor.white)
+                self.label.alpha            = (newVal ? 0 : 1)
+                self.highlightLabel.alpha   = (newVal ? 1 : 0)
+                self.labelContentView.scale = (newVal ? 0.95 : 1)
                 
             }, completion: nil)
         }

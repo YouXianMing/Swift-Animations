@@ -10,9 +10,9 @@ import UIKit
 
 class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, UICollectionViewDataSource, CustomCollectionViewCellDelegate, BaseMessageViewDelegate {
     
-    private var collectionView : UICollectionView?
-    private var layout         : UICollectionViewFlowLayout?
-    private var adapters       : [CellDataAdapter] = []
+    fileprivate var collectionView : UICollectionView?
+    fileprivate var layout         : UICollectionViewFlowLayout?
+    fileprivate var adapters       : [CellDataAdapter] = []
     
     override func viewDidLoad() {
         
@@ -31,6 +31,11 @@ class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, 
         collectionView?.dataSource      = self
         contentView?.addSubview(collectionView!)
         AlertViewCollectionViewCell.RegisterTo(collectionView!)
+        
+        if #available(iOS 11.0, *) {
+            
+            collectionView?.contentInsetAdjustmentBehavior = .never
+        }
         
         // Adapters.
         adapters.append(AlertViewCollectionViewCell.Adapter(data: "MessageView" as AnyObject))

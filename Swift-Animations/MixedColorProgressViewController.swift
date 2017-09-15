@@ -54,7 +54,7 @@ class MixedColorProgressViewController: NormalTitleViewController {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(MixedColorProgressViewController.timerEvent), userInfo: nil, repeats: true)
     }
     
-    func timerEvent() {
+    @objc func timerEvent() {
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
             
