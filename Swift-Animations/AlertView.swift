@@ -98,7 +98,7 @@ class AlertView: BaseMessageView {
         // 白色背景view
         whiteView                 = UIView.init()
         whiteView.backgroundColor = UIColor.white
-        whiteView.width           = Width() / 4 * 3
+        whiteView.width           = Screen.Width / 4 * 3
         self.addSubview(whiteView)
         
         // 标题

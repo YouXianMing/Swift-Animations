@@ -21,12 +21,12 @@ class ClassHeaderView: CustomHeaderFooterView {
     
     override func buildSubview() {
         
-        let contentView = UIView.CreateLine(CGRect(x: 0, y: 2, width: Width(), height: 26), lineColor: UIColor.gray.alpha(0.05))
+        let contentView = UIView.CreateLine(CGRect(x: 0, y: 2, width: Screen.Width, height: 26), lineColor: UIColor.gray.alpha(0.05))
         self.addSubview(contentView)
-        contentView.addSubview(UIView.CreateLine(CGRect(x: 0, y: 0, width: Width(), height: 0.5), lineColor: UIColor.gray.alpha(0.25)))
-        contentView.addSubview(UIView.CreateLine(CGRect(x: 0, y: 25.5, width: Width(), height: 0.5), lineColor: UIColor.gray.alpha(0.25)))
+        contentView.addSubview(UIView.CreateLine(CGRect(x: 0, y: 0, width: Screen.Width, height: 0.5), lineColor: UIColor.gray.alpha(0.25)))
+        contentView.addSubview(UIView.CreateLine(CGRect(x: 0, y: 25.5, width: Screen.Width, height: 0.5), lineColor: UIColor.gray.alpha(0.25)))
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: Width(), height: 30))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: Screen.Width, height: 30))
         button.addTarget(self, action: #selector(ClassHeaderView.buttonEvent), for: .touchUpInside)
         self.addSubview(button)
         
@@ -39,7 +39,7 @@ class ClassHeaderView: CustomHeaderFooterView {
         highClassNameLabel.textColor = UIColor.red
         contentView.addSubview(highClassNameLabel)
 
-        rotateView = RotateView(frame: CGRect(x: Width() - 25, y: 5, width: 20, height: 20))
+        rotateView = RotateView(frame: CGRect(x: Screen.Width - 25, y: 5, width: 20, height: 20))
         self.addSubview(rotateView)
         
         let arrowImageView    = UIImageView(frame: CGRect(x: 0, y: 0, width: 20 / 3.0, height: 36 / 3.0))

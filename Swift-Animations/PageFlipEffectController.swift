@@ -10,8 +10,8 @@ import UIKit
 
 class PageFlipEffectController: NormalTitleViewController {
     
-    fileprivate var math  : Math = Math((x : 0,       degree : 0),
-                                        (x : Width(), degree : 180))
+    fileprivate var math  : Math = Math((x : 0,            degree : 0),
+                                        (x : Screen.Width, degree : 180))
     fileprivate var layer : CALayer!
     
     override func viewDidLoad() {
@@ -19,13 +19,13 @@ class PageFlipEffectController: NormalTitleViewController {
         super.viewDidLoad()
         
         let image = UIImage(named: "pic_1")
-        let size  = Math.ResetFromSize((image?.size)!, withFixedWidth: Width() / 2.0)
+        let size  = Math.ResetFromSize((image?.size)!, withFixedWidth: Screen.Width / 2.0)
         
         layer                        = CALayer()
         layer.anchorPoint            = CGPoint(x: 1.0, y: 0.5)
-        layer.frame                  = CGRect(x: 0, y: 0, width: Width() / 2, height: size.height)
+        layer.frame                  = CGRect(x: 0, y: 0, width: Screen.Width / 2, height: size.height)
         layer.allowsEdgeAntialiasing = true
-        layer.position               = CGPoint(x: Width() / 2, y: contentView!.middleY)
+        layer.position               = CGPoint(x: Screen.Width / 2, y: contentView!.middleY)
         layer.contents               = image?.cgImage
         layer.borderColor            = UIColor.black.cgColor
         layer.borderWidth            = 3.0
@@ -53,7 +53,7 @@ class PageFlipEffectController: NormalTitleViewController {
         CATransaction.setDisableActions(true)
         layer.transform = perspectiveTransform
         
-        layer.contents = UIImage(named: x >= Width() / 2.0 ? "pic_2" : "pic_1")?.cgImage
+        layer.contents = UIImage(named: x >= Screen.Width / 2.0 ? "pic_2" : "pic_1")?.cgImage
         
         if sender.state == .ended {
             
@@ -64,7 +64,7 @@ class PageFlipEffectController: NormalTitleViewController {
             perspectiveTransform.m34 = -1.0 / 2000.0
             
             // 空间旋转
-            perspectiveTransform = CATransform3DRotate(perspectiveTransform, Math.RadianFromDegree(x >= Width() / 2.0 ? 180 : 0), 0, 1, 0)
+            perspectiveTransform = CATransform3DRotate(perspectiveTransform, Math.RadianFromDegree(x >= Screen.Width / 2.0 ? 180 : 0), 0, 1, 0)
             
             CATransaction.setDisableActions(false)
             layer.transform = perspectiveTransform

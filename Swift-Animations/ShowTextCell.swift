@@ -38,7 +38,7 @@ class ShowTextCell: CustomCell {
         redView.backgroundColor = UIColor.red
         addSubview(redView)
         
-        lineView = UIView.CreateLine(CGRect(x: 0, y: 0, width: Width(), height: 0.5), lineColor: UIColor.black.alpha(0.1))
+        lineView = UIView.CreateLine(CGRect(x: 0, y: 0, width: Screen.Width, height: 0.5), lineColor: UIColor.black.alpha(0.1))
         addSubview(lineView)
     }
     
@@ -52,11 +52,11 @@ class ShowTextCell: CustomCell {
         
         let model = data as! ShowTextModel
         
-        normalLabel.sizeToFitWithString(model.inputString!, width: Width() - 30, numberOfLines: numberOfLines)
+        normalLabel.sizeToFitWithString(model.inputString!, width: Screen.Width - 30, numberOfLines: numberOfLines)
         normalLabel.left = 15
         normalLabel.top  = 15
         
-        expendLabel.sizeToFitWithString(model.inputString!, width: Width() - 30, numberOfLines: 0)
+        expendLabel.sizeToFitWithString(model.inputString!, width: Screen.Width - 30, numberOfLines: 0)
         expendLabel.left = 15
         expendLabel.top  = 15
         
@@ -107,7 +107,7 @@ class ShowTextCell: CustomCell {
     override class func HeightWithData(_ data : AnyObject?) -> CGFloat {
         
         let model                = data as! ShowTextModel
-        model.expendStringHeight = 15 + (model.inputString?.heightWithFont(heitiSC, fixedWidth: Width() - 30))! + 15
+        model.expendStringHeight = 15 + (model.inputString?.heightWithFont(heitiSC, fixedWidth: Screen.Width - 30))! + 15
         model.normalStringHeight = 15 + String.HeightWithFont(heitiSC) * CGFloat(numberOfLines) + 15
         return model.normalStringHeight!
     }

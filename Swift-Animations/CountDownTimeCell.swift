@@ -23,12 +23,12 @@ class CountDownTimeCell: CustomCell, DefaultNotificationCenterDelegate {
     
     override func buildSubview() {
         
-        titleLabel           = UILabel(frame: CGRect(x: 15, y: 10, width: Width() - 20, height: 40))
+        titleLabel           = UILabel(frame: CGRect(x: 15, y: 10, width: Screen.Width - 20, height: 40))
         titleLabel.textColor = UIColor.gray
         titleLabel.font      = UIFont.AvenirLight(20.0)
         addSubview(titleLabel)
         
-        countdownLabel               = UILabel(frame: CGRect(x: 10, y: 10, width: Width() - 20, height: 40))
+        countdownLabel               = UILabel(frame: CGRect(x: 10, y: 10, width: Screen.Width - 20, height: 40))
         countdownLabel.textColor     = UIColor.gray
         countdownLabel.font          = UIFont.AvenirLight(15.0)
         countdownLabel.textAlignment = .right

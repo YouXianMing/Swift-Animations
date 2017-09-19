@@ -26,12 +26,12 @@ class TableViewTapAnimationCell: CustomCell {
     
     override func buildSubview() {
         
-        rectView                   = UIView(frame: CGRect(x: Width() - 60, y: 23, width: 35, height: 35))
+        rectView                   = UIView(frame: CGRect(x: Screen.Width - 60, y: 23, width: 35, height: 35))
         rectView.layer.borderWidth = 1
         rectView.layer.borderColor = UIColor.gray.cgColor
         self.addSubview(rectView)
         
-        iconView       = UIImageView(frame: CGRect(x: Width() - 62, y: 20, width: 40, height: 40))
+        iconView       = UIImageView(frame: CGRect(x: Screen.Width - 62, y: 20, width: 40, height: 40))
         iconView.image = UIImage(named: "plane")
         iconView.alpha = 0
         self.addSubview(iconView)
@@ -136,7 +136,7 @@ class TableViewTapAnimationCell: CustomCell {
     
     fileprivate func showSelectedAnimation() {
         
-        let tempView             = UIView(frame: CGRect(x: 0, y: 0, width: Width(), height: 80))
+        let tempView             = UIView(frame: CGRect(x: 0, y: 0, width: Screen.Width, height: 80))
         tempView.backgroundColor = UIColor.cyan.alpha(0.2)
         tempView.alpha           = 0
         self.addSubview(tempView)

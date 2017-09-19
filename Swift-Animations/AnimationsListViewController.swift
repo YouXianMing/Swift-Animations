@@ -30,13 +30,26 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
         tableView.showsVerticalScrollIndicator = false
         contentView?.addSubview(tableView)
         
-        if #available(iOS 11.0, *) {
-            
-            tableView.contentInsetAdjustmentBehavior = .never
-        }
+        // if #available(iOS 11.0, *) {
+        //
+        //     tableView.contentInsetAdjustmentBehavior = .never
+        // }
         
         // Register cell.
         ListItemCell.RegisterTo(tableView)
+    }
+    
+    override func makeViewsConfig(viewsConfig: [String : ControllerBaseViewConfig]) {
+        
+        /// iPhoneX
+        if Screen.CurrentScreen == Screen._375x812 {
+        
+            let titleViewConfig    = viewsConfig[titleViewId]
+            titleViewConfig?.frame = CGRect.init(x: 0, y: 0, width: Screen.Width, height: 64 + additionaliPhoneXTopSafeHeight)
+            
+            let contentViewConfig    = viewsConfig[contentViewId]
+            contentViewConfig?.frame = CGRect.init(x: 0, y: 64 + additionaliPhoneXTopSafeHeight, width: Screen.Width, height: Screen.Height - (64 + additionaliPhoneXTopSafeHeight))
+        }
     }
     
     // MARK: DefaultNotificationCenterDelegate
@@ -87,11 +100,11 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             richText.addAttributes([NSAttributedStringKey.font : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
             
             // Title.
-            let label            = UILabel()
+            let label            = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: Screen.Width, height: 64))
             label.attributedText = richText
-            label.sizeToFit()
+            label.textAlignment  = .center
+            label.bottom         = (titleView?.height)!
             titleView?.addSubview(label)
-            label.center = (titleView?.middlePoint)!
         }
         
         func createForegroundStringLabel() {
@@ -106,11 +119,11 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             richText.addAttributes([NSAttributedStringKey.font : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
             
             // Title.
-            let label            = UILabel()
+            let label            = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: Screen.Width, height: 64))
             label.attributedText = richText
-            label.sizeToFit()
+            label.textAlignment  = .center
+            label.bottom         = (titleView?.height)!
             titleView?.addSubview(label)
-            label.center = (titleView?.middlePoint)!
             label.startGlowWithGlowRadius(2, glowOpacity: 0.8, glowColor: partColor,
                                           glowDuration: 1, hideDuration: 3, glowAnimationDuration: 2)
         }
@@ -120,7 +133,7 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
         createForegroundStringLabel()
         
         // Line.
-        titleView?.addSubview(UIView.CreateLine(CGRect(x: 0, y: titleView!.height - 0.5, width: Width(), height: 0.5), lineColor: UIColor.gray.alpha(0.2)))
+        titleView?.addSubview(UIView.CreateLine(CGRect(x: 0, y: titleView!.height - 0.5, width: Screen.Width, height: 0.5), lineColor: UIColor.gray.alpha(0.2)))
     }
     
     // MARK: UITableView's delegate & dataSource.
@@ -142,7 +155,7 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
     
     // MARK: CustomCell's delegate.
     
-    func customCell(_ cell: CustomCell?, event: AnyObject?) {
+    func customCell(_ cell: CustomCell?, event: Any?) {
         
         let item         = event as! ControllerItem
         let controller   = (item.controllerClass as! BaseCustomViewController.Type).init()

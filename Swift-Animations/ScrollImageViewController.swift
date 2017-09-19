@@ -33,12 +33,12 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         scrollView.backgroundColor                = UIColor.black
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.bounces                        = false
-        scrollView.contentSize                    = CGSize(width: CGFloat(pictures.count) * Width(), height: Height())
+        scrollView.contentSize                    = CGSize(width: CGFloat(pictures.count) * Screen.Width, height: Screen.Height)
         contentView?.addSubview(scrollView)
         
         for (i, image) in pictures.enumerated() {
             
-            let showView              = MoreInfoView(frame: CGRect(x: CGFloat(i) * Width(), y: 0, width: Width(), height: Height()))
+            let showView              = MoreInfoView(frame: CGRect(x: CGFloat(i) * Screen.Width, y: 0, width: Screen.Width, height: Screen.Height))
             showView.imageView.image = image
             showView.tag             = viewTag + i
             scrollView.addSubview(showView)
@@ -52,7 +52,7 @@ class ScrollImageViewController: FullTitleVisualEffectViewController, UIScrollVi
         for i in 0 ..< pictures.count {
             
             let showView = scrollView.viewWithTag(viewTag + i) as! MoreInfoView
-            showView.imageView.x = onceLinearEquation.k * (X - CGFloat(i) * Width()) + onceLinearEquation.b
+            showView.imageView.x = onceLinearEquation.k * (X - CGFloat(i) * Screen.Width) + onceLinearEquation.b
         }
     }
 }

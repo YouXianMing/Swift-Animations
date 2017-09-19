@@ -65,7 +65,7 @@ protocol CustomCellDelegate : class {
      - parameter cell:  CustomCell type class.
      - parameter event: Event data.
      */
-    func customCell(_ cell: CustomCell?, event: AnyObject?)
+    func customCell(_ cell: CustomCell?, event: Any?)
 }
 
 // MARK: CustomCell

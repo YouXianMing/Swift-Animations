@@ -21,7 +21,7 @@ class CircleAnimationViewController: NormalTitleViewController {
         super.viewDidLoad()
         
         let gapFromTop : CGFloat = 64.0 + 20.0
-        let width      : CGFloat = Width()
+        let width      : CGFloat = Screen.Width
         let halfWidth  : CGFloat = width / 2.0
         let radius     : CGFloat = width / 3.0 + 20
         let bounds     : CGRect  = CGRect(x: 0, y: 0, width: radius, height: radius)

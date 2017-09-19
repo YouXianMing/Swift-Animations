@@ -29,11 +29,6 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         tableView.separatorStyle      = .none
         contentView?.addSubview(tableView!)
         
-        if #available(iOS 11.0, *) {
-            
-            tableView.contentInsetAdjustmentBehavior = .never
-        }
-        
         // Register.
         ClassHeaderView.RegisterTo(tableView)
         StudentInfoCell.RegisterTo(tableView)

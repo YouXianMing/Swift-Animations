@@ -8,47 +8,97 @@
 
 import UIKit
 
-/**
- UIScreen width.
- 
- - returns: Screen width.
- */
-public func Width() -> CGFloat {
-
-    return UIScreen.main.bounds.size.width
-}
-
-/**
- UIScreen height.
- 
- - returns: Screen height.
- */
-public func Height() -> CGFloat {
-
-    return UIScreen.main.bounds.size.height
+enum Screen {
+    
+    /// iPhone4 or iPhone4s
+    case _320x480
+    
+    /// iPhone5 or iPhone5s or iPhoneSE
+    case _320x568
+    
+    /// iPhone6 or iPhone6s or iPhone7 or iPhone8
+    case _375x667
+    
+    /// iPhone6Plus or iPhone6sPlus or iPhone7sPlus or iPhone8sPlus
+    case _414x736
+    
+    /// iPhoneX
+    case _375x812
+    
+    /// Unknow
+    case _unknow
+    
+    /// Get the screen type.
+    ///
+    /// - Returns: The screen type.
+    private static func getScreen() -> Screen {
+        
+        let width  = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        if width == 320 && height == 480 {
+            
+            return Screen._320x480
+            
+        } else if width == 320 && height == 568 {
+            
+            return Screen._320x568
+            
+        } else if width == 375 && height == 667 {
+            
+            return Screen._375x667
+            
+        } else if width == 414 && height == 736 {
+            
+            return Screen._414x736
+            
+        } else if width == 375 && height == 812 {
+            
+            return Screen._375x812
+            
+        } else {
+            
+            return Screen._unknow
+        }
+    }
+    
+    /// Get the current screen.
+    static let CurrentScreen = Screen.getScreen()
+    
+    /// UIScreen width.
+    static let Width  = UIScreen.main.bounds.size.width
+    
+    /// UIScreen height.
+    static let Height = UIScreen.main.bounds.size.height
 }
 
 /// Status bar height.
-public let StatusBarHeight                 : CGFloat = 20
+public let StatusBarHeight                   : CGFloat = 20
 
 /// Navigation bar height.
-public let NavigationBarHeight             : CGFloat = 44
+public let NavigationBarHeight               : CGFloat = 44
 
 /// Tabbar height.
-public let TabbarHeight                    : CGFloat = 49
+public let TabbarHeight                      : CGFloat = 49
 
 /// Status bar & navigation bar height.
-public let StatusBarAndNavigationBarHeight : CGFloat = StatusBarHeight + NavigationBarHeight
+public let StatusBarAndNavigationBarHeight   : CGFloat = StatusBarHeight + NavigationBarHeight
+
+/// iPhoneX additional top safe height.
+public let additionaliPhoneXTopSafeHeight    : CGFloat = 20
+
+/// iPhoneX additional bottom safe height.
+public let additionaliPhoneXBottomSafeHeight : CGFloat = 24
 
 extension UIView {
     
     /// viewOrigin
     var viewOrigin : CGPoint {
-    
+        
         get { return frame.origin}
         
         set(newVal) {
-        
+            
             var tmpFrame    = frame
             tmpFrame.origin = newVal
             frame           = tmpFrame
@@ -57,11 +107,11 @@ extension UIView {
     
     /// viewSize
     var viewSize : CGSize {
-    
+        
         get{ return frame.size}
         
         set(newVal) {
-        
+            
             var tmpFrame  = frame
             tmpFrame.size = newVal
             frame         = tmpFrame

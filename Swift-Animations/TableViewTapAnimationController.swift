@@ -29,11 +29,6 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
         tableView.separatorStyle = .none
         contentView?.addSubview(tableView!)
         
-        if #available(iOS 11.0, *) {
-            
-            tableView.contentInsetAdjustmentBehavior = .never
-        }
-        
         // Register cell.
         TableViewTapAnimationCell.RegisterTo(tableView)
         
@@ -74,7 +69,7 @@ class TableViewTapAnimationController: NormalTitleViewController, UITableViewDel
     
     // MARK: CustomCellDelegate.
     
-    func customCell(_ cell: CustomCell?, event: AnyObject?) {
+    func customCell(_ cell: CustomCell?, event: Any?) {
         
         print("\(String(describing: cell)) + \(String(describing: event))")
     }

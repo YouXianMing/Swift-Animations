@@ -19,21 +19,21 @@ class FontFamilyHeaderView: CustomHeaderFooterView {
     
     override func buildSubview() {
         
-        self.addSubview(BackgroundLineView(frame     : CGRect.init(x: 0, y: 0, width: Width(), height: FontFamilyHeaderView.HeightWithData()),
+        self.addSubview(BackgroundLineView(frame     : CGRect.init(x: 0, y: 0, width: Screen.Width, height: FontFamilyHeaderView.HeightWithData()),
                                            lineWidth : 4,
                                            lineGap   : 4,
                                            lineColor : UIColor.black.alpha(0.015),
                                            rotate    : CGFloat(Double.pi / 4)))
         
-        self.addSubview(UIView.CreateLine(CGRect.init(x: 0, y: 0, width: Width(), height: 0.5),
+        self.addSubview(UIView.CreateLine(CGRect.init(x: 0, y: 0, width: Screen.Width, height: 0.5),
                                           lineColor: UIColor.black.alpha(0.05)))
-        self.addSubview(UIView.CreateLine(CGRect.init(x: 0, y: FontFamilyHeaderView.HeightWithData() - 0.5, width: Width(), height: 0.5),
+        self.addSubview(UIView.CreateLine(CGRect.init(x: 0, y: FontFamilyHeaderView.HeightWithData() - 0.5, width: Screen.Width, height: 0.5),
                                           lineColor: UIColor.black.alpha(0.05)))
         
         label = UILabel.init(frame: CGRect.zero)
         self.addSubview(label)
         
-        let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: Width(), height: FontFamilyHeaderView.HeightWithData()))
+        let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: Screen.Width, height: FontFamilyHeaderView.HeightWithData()))
         button.addTarget(self, action: #selector(FontFamilyHeaderView.buttonEvent), for: .touchUpInside)
         self.addSubview(button)
         

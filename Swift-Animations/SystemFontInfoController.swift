@@ -92,7 +92,7 @@ class SystemFontInfoController: NormalTitleViewController, UITableViewDelegate, 
     
     // MARK: CustomCellDelegate
     
-    func customCell(_ cell: CustomCell?, event: AnyObject?) {
+    func customCell(_ cell: CustomCell?, event: Any?) {
         
         if event is FontModel {
             

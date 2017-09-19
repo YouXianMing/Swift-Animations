@@ -24,12 +24,12 @@ class StudentInfoCell: CustomCell {
         nameLabel.font = UIFont.AppleSDGothicNeoThin(20)
         self.addSubview(nameLabel)
         
-        ageLabel               = UILabel(frame: CGRect(x: Width() - 220, y: 0, width: 200, height: 60))
+        ageLabel               = UILabel(frame: CGRect(x: Screen.Width - 220, y: 0, width: 200, height: 60))
         ageLabel.textAlignment = .right
         ageLabel.font          = UIFont.AppleSDGothicNeoThin(20)
         self.addSubview(ageLabel)
         
-        self.addSubview(UIView.CreateLine(CGRect(x: 0, y: 59.5, width: Width(), height: 0.5), lineColor: UIColor.gray.alpha(0.1)))
+        self.addSubview(UIView.CreateLine(CGRect(x: 0, y: 59.5, width: Screen.Width, height: 0.5), lineColor: UIColor.gray.alpha(0.1)))
     }
     
     override func loadContent() {
@@ -47,7 +47,7 @@ class StudentInfoCell: CustomCell {
     
     fileprivate func showSelectedAnimation() {
         
-        let tempView             = UIView(frame: CGRect(x: 0, y: 0, width: Width(), height: 60))
+        let tempView             = UIView(frame: CGRect(x: 0, y: 0, width: Screen.Width, height: 60))
         tempView.backgroundColor = UIColor.cyan.alpha(0.2)
         tempView.alpha           = 0
         self.addSubview(tempView)

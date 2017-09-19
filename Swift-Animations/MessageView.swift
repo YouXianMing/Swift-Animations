@@ -45,7 +45,7 @@ class MessageView: BaseMessageView {
         label.font          = UIFont.HeitiSC(15)
         label.textColor     = UIColor.white
         label.text          = self.messageObject as? String
-        label.width         = Width() / 4 * 3
+        label.width         = Screen.Width / 4 * 3
         label.sizeToFit()
         blackView.addSubview(label)
         

@@ -65,7 +65,7 @@ protocol CustomCollectionViewCellDelegate : class {
      - parameter cell:  CustomCollectionViewCell type class.
      - parameter event: Event data.
      */
-    func customCollectionViewCell(_ cell: CustomCollectionViewCell?, event: AnyObject?)
+    func customCollectionViewCell(_ cell: CustomCollectionViewCell?, event: Any?)
 }
 
 class CustomCollectionViewCell: UICollectionViewCell {

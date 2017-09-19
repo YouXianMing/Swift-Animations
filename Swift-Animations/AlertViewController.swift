@@ -22,7 +22,7 @@ class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, 
         layout                          = UICollectionViewFlowLayout.init()
         layout?.minimumLineSpacing      = 0
         layout?.minimumInteritemSpacing = 0
-        layout?.itemSize                = CGSize.init(width: Width() / 2, height: Width() / 2)
+        layout?.itemSize                = CGSize.init(width: Screen.Width / 2, height: Screen.Width / 2)
         
         // CollectionView.
         collectionView                  = UICollectionView.init(frame: (contentView?.bounds)!, collectionViewLayout: layout!)
@@ -61,25 +61,30 @@ class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, 
     
     // MARK: CustomCollectionViewCellDelegate
     
-    func customCollectionViewCell(_ cell: CustomCollectionViewCell?, event: AnyObject?) {
+    func customCollectionViewCell(_ cell: CustomCollectionViewCell?, event: Any?) {
         
-        if (event as? String == "MessageView") {
+        if event is String {
             
-            MessageView.Setup(messageObject : "If you find this post helpful, please recommend it for others to read." as AnyObject,
-                              contentView   : UIWindow.getKeyWindow(),
-                              delegate      : self).show()
+            let name = event as! String
             
-        } else if (event as? String == "AlertView") {
-            
-            let messageObject = AlertViewMessageObject.init(title             : "警告",
-                                                            content           : "不要轻信陌生电话,短信;不要轻易点击信息中的链接;不要按陌生电话,短信要求转账汇款;不要安装不了解的软件.",
-                                                            buttonTitles      : ["关闭", "更多信息"],
-                                                            buttonTitlesState : [AlertViewButtonType.Black, AlertViewButtonType.Red])
-            
-            AlertView.Setup(messageObject : messageObject as AnyObject,
-                            contentView   : UIWindow.getKeyWindow(),
-                            delegate      : self,
-                            autoHiden     : false).show()
+            if name == "MessageView" {
+                
+                MessageView.Setup(messageObject : "If you find this post helpful, please recommend it for others to read." as AnyObject,
+                                  contentView   : UIWindow.getKeyWindow(),
+                                  delegate      : self).show()
+                
+            } else if name == "AlertView" {
+                
+                let messageObject = AlertViewMessageObject.init(title             : "警告",
+                                                                content           : "不要轻信陌生电话,短信;不要轻易点击信息中的链接;不要按陌生电话,短信要求转账汇款;不要安装不了解的软件.",
+                                                                buttonTitles      : ["关闭", "更多信息"],
+                                                                buttonTitlesState : [AlertViewButtonType.Black, AlertViewButtonType.Red])
+                
+                AlertView.Setup(messageObject : messageObject as AnyObject,
+                                contentView   : UIWindow.getKeyWindow(),
+                                delegate      : self,
+                                autoHiden     : false).show()
+            }
         }
     }
     
