@@ -14,7 +14,7 @@ class CircleAnimationViewController: NormalTitleViewController {
     fileprivate var circleView2 : CircleView!
     fileprivate var circleView3 : CircleView!
     fileprivate var circleView4 : CircleView!
-    fileprivate var timer       : Timer!
+    fileprivate var timer       : GCDTimer!
     
     override func viewDidLoad() {
         
@@ -50,26 +50,29 @@ class CircleAnimationViewController: NormalTitleViewController {
         imageView.layer.mask = self.circleView4.layer
         contentView?.addSubview(imageView)
         
-        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(timerEvent), userInfo: nil, repeats: true)
+        weak var weakSelf = self
+        timer = GCDTimer(in: GCDQueue.Main, delay: 0.6, interval: 1.5)
+        timer.setTimerEventHandler { _ in
+            
+            let percent        = Double(arc4random() % 100) / 100.0
+            let anotherPercent = Double(arc4random() % 100) / 100.0
+            let smallPercent   = (percent < anotherPercent ? percent : anotherPercent)
+            let largePercent   = (percent < anotherPercent ? anotherPercent : percent)
+            
+            weakSelf?.circleView1.strokeEnd(largePercent,   easingFunction: .elasticEaseInOut,     animated: true, duration: 1.0)
+            weakSelf?.circleView2.strokeEnd(largePercent,   easingFunction: .exponentialEaseInOut, animated: true, duration: 1.0)
+            weakSelf?.circleView3.strokeStart(smallPercent, easingFunction: .exponentialEaseInOut, animated: true, duration: 1.0)
+            weakSelf?.circleView3.strokeEnd(largePercent,   easingFunction: .exponentialEaseInOut, animated: true, duration: 1.0)
+            weakSelf?.circleView4.strokeEnd(largePercent,   easingFunction: .exponentialEaseOut,   animated: true, duration: 1.0)
+        }
+        
+        timer.start()
     }
     
-    @objc func timerEvent() {
-
-        let percent        = Double(arc4random() % 100) / 100.0
-        let anotherPercent = Double(arc4random() % 100) / 100.0
-        let smallPercent   = (percent < anotherPercent ? percent : anotherPercent)
-        let largePercent   = (percent < anotherPercent ? anotherPercent : percent)
-        
-        circleView1.strokeEnd(largePercent,   easingFunction: .elasticEaseInOut, animated: true, duration: 1.0)
-        circleView2.strokeEnd(largePercent,   easingFunction: .exponentialEaseInOut, animated: true, duration: 1.0)
-        circleView3.strokeStart(smallPercent, easingFunction: .exponentialEaseInOut, animated: true, duration: 1.0)
-        circleView3.strokeEnd(largePercent,   easingFunction: .exponentialEaseInOut, animated: true, duration: 1.0)
-        circleView4.strokeEnd(largePercent,   easingFunction: .exponentialEaseOut, animated: true, duration: 1.0)
-    }
     
     override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
-        timer.invalidate()
+        timer.destroy()
     }
 }

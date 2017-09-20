@@ -53,7 +53,7 @@ class TapCellAnimationController: NormalTitleViewController, UITableViewDelegate
             }
             self.tableView.insertRows(at: indexPaths, with: .fade)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            GCDQueue.Main.excuteAfterDelay(0.5, {
                 
                 let cell = self.tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as! CustomCell
                 cell.selectedEvent()

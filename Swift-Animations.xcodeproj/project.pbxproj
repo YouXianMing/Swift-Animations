@@ -27,6 +27,11 @@
 		10628F471D65F0DA00DEDE55 /* ScrollImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */; };
 		10628F4A1D65F3D800DEDE55 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F491D65F3D800DEDE55 /* Math.swift */; };
 		10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */; };
+		C509838C1F7248B400C1BDA8 /* GCDQueuePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50983871F7248B400C1BDA8 /* GCDQueuePriority.swift */; };
+		C509838D1F7248B400C1BDA8 /* GCDQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50983881F7248B400C1BDA8 /* GCDQueue.swift */; };
+		C509838E1F7248B400C1BDA8 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50983891F7248B400C1BDA8 /* GCDTimer.swift */; };
+		C509838F1F7248B400C1BDA8 /* GCDGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509838A1F7248B400C1BDA8 /* GCDGroup.swift */; };
+		C50983901F7248B400C1BDA8 /* GCDSemaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C509838B1F7248B400C1BDA8 /* GCDSemaphore.swift */; };
 		C51D3B961F049CD400192F58 /* BaseCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3B951F049CD400192F58 /* BaseCustomViewController.swift */; };
 		C51D3B981F049DC700192F58 /* ShowLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3B971F049DC700192F58 /* ShowLoadingView.swift */; };
 		C51D3B9A1F04A63D00192F58 /* ControllerBaseViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D3B991F04A63D00192F58 /* ControllerBaseViewConfig.swift */; };
@@ -101,6 +106,11 @@
 		10628F461D65F0DA00DEDE55 /* ScrollImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollImageViewController.swift; sourceTree = "<group>"; };
 		10628F491D65F3D800DEDE55 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		10628F4B1D65FAC500DEDE55 /* MoreInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInfoView.swift; sourceTree = "<group>"; };
+		C50983871F7248B400C1BDA8 /* GCDQueuePriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueuePriority.swift; sourceTree = "<group>"; };
+		C50983881F7248B400C1BDA8 /* GCDQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDQueue.swift; sourceTree = "<group>"; };
+		C50983891F7248B400C1BDA8 /* GCDTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
+		C509838A1F7248B400C1BDA8 /* GCDGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDGroup.swift; sourceTree = "<group>"; };
+		C509838B1F7248B400C1BDA8 /* GCDSemaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDSemaphore.swift; sourceTree = "<group>"; };
 		C51D3B951F049CD400192F58 /* BaseCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCustomViewController.swift; sourceTree = "<group>"; };
 		C51D3B971F049DC700192F58 /* ShowLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLoadingView.swift; sourceTree = "<group>"; };
 		C51D3B991F04A63D00192F58 /* ControllerBaseViewConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerBaseViewConfig.swift; sourceTree = "<group>"; };
@@ -238,6 +248,18 @@
 			name = ScrollImageViewController;
 			sourceTree = "<group>";
 		};
+		C509837C1F7245E400C1BDA8 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				C509838A1F7248B400C1BDA8 /* GCDGroup.swift */,
+				C50983881F7248B400C1BDA8 /* GCDQueue.swift */,
+				C50983871F7248B400C1BDA8 /* GCDQueuePriority.swift */,
+				C509838B1F7248B400C1BDA8 /* GCDSemaphore.swift */,
+				C50983891F7248B400C1BDA8 /* GCDTimer.swift */,
+			);
+			name = GCD;
+			sourceTree = "<group>";
+		};
 		C51B502F1D5B5E76006AA00A /* UI-Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +285,7 @@
 				C5E2DD191D630B8A00A71D51 /* Easing */,
 				C581C6FC1D66E08C00CC552D /* Math */,
 				C581C6FD1D66E09500CC552D /* DefaultNotificationCenter */,
+				C509837C1F7245E400C1BDA8 /* GCD */,
 			);
 			name = "General-Tools";
 			sourceTree = "<group>";
@@ -652,6 +675,7 @@
 				100566FF1D649B09008B46DE /* LiveImageView.swift in Sources */,
 				C5D9F1B91F6B6BDA00256871 /* FontCell.swift in Sources */,
 				C5CAA1CB1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift in Sources */,
+				C509838C1F7248B400C1BDA8 /* GCDQueuePriority.swift in Sources */,
 				103075471D75CFE70043A858 /* UILabel+SizeToFit.swift in Sources */,
 				1030753D1D75C4250043A858 /* String+StringHeight.swift in Sources */,
 				C5E2DD211D6310DE00A71D51 /* CircleView.swift in Sources */,
@@ -660,7 +684,9 @@
 				C581C7011D66F92600CC552D /* NotificationEvent.swift in Sources */,
 				C51F76571D698F7300DF04AE /* MixedColorProgressViewController.swift in Sources */,
 				C5CAA1CD1F68FE4F00065CC1 /* MessageView.swift in Sources */,
+				C509838F1F7248B400C1BDA8 /* GCDGroup.swift in Sources */,
 				C56BEB461D56CAFF003BBF11 /* UIView+CreateFrame.swift in Sources */,
+				C509838E1F7248B400C1BDA8 /* GCDTimer.swift in Sources */,
 				1050B9541D5A0D4700F00B40 /* CustomHeaderFooterView.swift in Sources */,
 				C51D3B9C1F04B6EB00192F58 /* BaseCustomNavigationController.swift in Sources */,
 				C579139F1D7BC09F003185AD /* TimeModel.swift in Sources */,
@@ -684,11 +710,13 @@
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
 				1018415E1D7DB6940091EDFD /* UIView+ScreensShot.swift in Sources */,
 				10628F451D65EE3D00DEDE55 /* FullTitleVisualEffectViewController.swift in Sources */,
+				C509838D1F7248B400C1BDA8 /* GCDQueue.swift in Sources */,
 				C5B15BC41D5438DC00E24AC0 /* AnimationsListViewController.swift in Sources */,
 				1036493D1D5CC35E00FDB05E /* RootNavigationViewController.swift in Sources */,
 				C5E2DD1E1D630B9200A71D51 /* EasingValue.swift in Sources */,
 				10628F4A1D65F3D800DEDE55 /* Math.swift in Sources */,
 				1050B9561D5A12AF00F00B40 /* ClassHeaderView.swift in Sources */,
+				C50983901F7248B400C1BDA8 /* GCDSemaphore.swift in Sources */,
 				C56BEB411D56C406003BBF11 /* TableViewTapAnimationController.swift in Sources */,
 				C51F85431D67D3930013C49B /* TranformFadeView.swift in Sources */,
 				1050B94F1D5A0C4100F00B40 /* HeaderViewTapAnimationController.swift in Sources */,
@@ -766,7 +794,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -813,7 +841,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

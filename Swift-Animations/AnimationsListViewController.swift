@@ -61,8 +61,6 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             adapters.append(ListItemCell.Adapter(data: ControllerItem(controllerClass: controllerClass, name: name)))
         }
         
-        add(SystemFontInfoController.classForCoder(),         name: "系统字体列表")
-        add(AlertViewController.classForCoder(),              name: "AlertView的使用")
         add(TableViewTapAnimationController.classForCoder(),  name: "UITableView状态切换效果")
         add(HeaderViewTapAnimationController.classForCoder(), name: "UITableView展开缩放动画")
         add(CircleAnimationViewController.classForCoder(),    name: "Easing-圆环动画")
@@ -74,6 +72,8 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
         add(PageFlipEffectController.classForCoder(),         name: "翻页效果")
         add(TapCellAnimationController.classForCoder(),       name: "Cell点击动画")
         add(CountDownTimerController.classForCoder(),         name: "UITableView显示倒计时")
+        add(AlertViewController.classForCoder(),              name: "AlertView的使用")
+        add(SystemFontInfoController.classForCoder(),         name: "系统字体列表")
         
         var indexPaths = [IndexPath]()
         for i in 0 ..< self.adapters.count {

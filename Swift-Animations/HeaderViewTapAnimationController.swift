@@ -76,20 +76,20 @@ class HeaderViewTapAnimationController: NormalTitleViewController, UITableViewDe
         classes.append(Dione)
         classes.append(Adanos)
         
-        // DispatchQueue delay.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+        // GCDQueue delay.
+        GCDQueue.Main.excuteAfterDelay(0.3) {
             
             self.sectionFirstLoad = true
             self.tableView.insertSections(IndexSet(integersIn: Range.init(NSMakeRange(0, self.classes.count))!), with: .fade)
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
+            GCDQueue.Main.excuteAfterDelay(0.4, {
                 
                 if let headView = self.tmpHeadView {
                     
                     headView.buttonEvent()
                 }
             })
-        })
+        }
     }
     
     // MARK: UITableView's delegate & dataSource.

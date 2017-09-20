@@ -215,11 +215,11 @@ extension UIView {
         }
     }
     
-    fileprivate var dispatchSource : DispatchSource? {
+    fileprivate var dispatchSource : DispatchSourceTimer? {
     
         get {
         
-            if let tmpValue = objc_getAssociatedObject(self, &dispatchSourceKey) as? DispatchSource {
+            if let tmpValue = objc_getAssociatedObject(self, &dispatchSourceKey) as? DispatchSourceTimer {
                 
                 return tmpValue
                 
@@ -286,7 +286,7 @@ extension UIView {
      
      - parameter animated: 是否执行动画
      */
-    func glowToshowAnimated(_ animated : Bool) {
+    func glowToShowAnimated(_ animated : Bool) {
 
         self.glowLayer?.shadowColor  = self.glowColor?.cgColor
         self.glowLayer?.shadowRadius = self.glowRadius!
@@ -338,25 +338,25 @@ extension UIView {
      */
     func startGlowLoop() {
         
-//        if self.dispatchSource == nil {
-//            
-//            let seconds      = self.glowAnimationDuration! * 2 + TimeInterval(self.glowDuration!) + TimeInterval(self.hideDuration!)
-//            let delaySeconds = self.glowAnimationDuration! + TimeInterval(self.glowDuration!)
-//            
-//            weak var weakSelf = self
-//            self.dispatchSource = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(rawValue: UInt(0)), queue: DispatchQueue.main) /*Migrator FIXME: Use DispatchSourceTimer to avoid the cast*/ as! DispatchSource
-//            self.dispatchSource!.setTimer(start: DispatchTime.now() + Double(0) / Double(NSEC_PER_SEC), interval: UInt64(Double(NSEC_PER_SEC) * seconds), leeway: 0)
-//            self.dispatchSource!.setEventHandler(handler: {
-//                
-//                weakSelf!.glowToshowAnimated(true)
-//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(Double(NSEC_PER_SEC) * delaySeconds)) / Double(NSEC_PER_SEC), execute: { 
-//                    
-//                    weakSelf!.glowToHideAnimated(true)
-//                })
-//            })
-//            
-//            self.dispatchSource!.resume()
-//        }
+        if self.dispatchSource == nil {
+            
+            let seconds      = self.glowAnimationDuration! * 2 + TimeInterval(self.glowDuration!) + TimeInterval(self.hideDuration!)
+            let delaySeconds = self.glowAnimationDuration! + TimeInterval(self.glowDuration!)
+            
+            weak var weakSelf = self
+            self.dispatchSource = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.main)
+            self.dispatchSource?.schedule(deadline: .now(), repeating: .milliseconds(Int(seconds * 1000)))
+            self.dispatchSource?.setEventHandler(handler: {
+                
+                weakSelf!.glowToShowAnimated(true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(Int(delaySeconds * 1000)), execute: {
+                    
+                    weakSelf!.glowToHideAnimated(true)
+                })
+            })
+            
+            self.dispatchSource!.resume()
+        }
     }
     
     // MARK: 便利操作

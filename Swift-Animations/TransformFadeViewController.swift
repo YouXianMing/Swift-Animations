@@ -18,9 +18,9 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
     fileprivate var images              : [UIImage]!
     fileprivate var tranformFadeViewOne : TranformFadeView!
     fileprivate var tranformFadeViewTwo : TranformFadeView!
-    fileprivate var timer               : Timer!
     fileprivate var type                : EType = .typeOne
     fileprivate var count               : Int   = 0
+    fileprivate var gcdTimer            : GCDTimer!
     
     override func viewDidLoad() {
         
@@ -47,30 +47,29 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
         tranformFadeViewTwo.start(animated: false, transformTo: .fade)
         contentView!.addSubview(tranformFadeViewTwo)
         
-        timerEvent()
-        
-        // Init timer.
-        timer = Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(TransformFadeViewController.timerEvent), userInfo: nil, repeats: true)
-    }
-    
-    @objc func timerEvent() {
-        
-        if type == .typeOne {
+        gcdTimer          = GCDTimer(in: GCDQueue.Main, delay: 1.0, interval: 8.0)
+        weak var weakSelf = self
+        gcdTimer.setTimerEventHandler { _ in
             
-            type = .typeTwo
-            contentView?.sendSubview(toBack: tranformFadeViewTwo)
-            tranformFadeViewTwo.image = currentImage()
-            tranformFadeViewTwo.start(animated: false, transformTo: .show)
-            tranformFadeViewOne.start(animated: true,  transformTo: .fade)
-            
-        } else {
-        
-            type = .typeOne
-            contentView?.sendSubview(toBack: tranformFadeViewOne)
-            tranformFadeViewOne.image = currentImage()
-            tranformFadeViewOne.start(animated: false, transformTo: .show)
-            tranformFadeViewTwo.start(animated: true,  transformTo: .fade)
+            if weakSelf?.type == .typeOne {
+                
+                weakSelf?.type = .typeTwo
+                weakSelf?.contentView?.sendSubview(toBack: (weakSelf?.tranformFadeViewTwo)!)
+                weakSelf?.tranformFadeViewTwo.image = weakSelf?.currentImage()
+                weakSelf?.tranformFadeViewTwo.start(animated: false, transformTo: .show)
+                weakSelf?.tranformFadeViewOne.start(animated: true,  transformTo: .fade)
+                
+            } else {
+                
+                weakSelf?.type = .typeOne
+                weakSelf?.contentView?.sendSubview(toBack: (weakSelf?.tranformFadeViewOne)!)
+                weakSelf?.tranformFadeViewOne.image = weakSelf?.currentImage()
+                weakSelf?.tranformFadeViewOne.start(animated: false, transformTo: .show)
+                weakSelf?.tranformFadeViewTwo.start(animated: true,  transformTo: .fade)
+            }
         }
+        
+        gcdTimer.start()
     }
     
     fileprivate func currentImage() -> UIImage {
@@ -82,6 +81,6 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
     override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
-        timer.invalidate()
+        gcdTimer.destroy()
     }
 }
