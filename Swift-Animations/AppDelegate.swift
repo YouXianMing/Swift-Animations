@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          Video    : http://my.jikexueyuan.com/YouXianMing/record/
          
          */
-        print(Screen.Width)
+
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if let window = window {

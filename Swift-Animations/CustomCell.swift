@@ -172,8 +172,15 @@ class CustomCell: UITableViewCell {
         if animated {
             
             dataAdapter?.cellHeight = height
-            tableView?.beginUpdates()
-            tableView?.endUpdates()
+            if #available(iOS 11.0, *) {
+                
+                tableView?.performBatchUpdates(nil, completion: nil)
+                
+            } else {
+                
+                tableView?.beginUpdates()
+                tableView?.endUpdates()
+            }
             
         } else {
             

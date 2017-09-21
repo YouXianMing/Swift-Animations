@@ -80,7 +80,7 @@ class ClassHeaderView: CustomHeaderFooterView {
 
                 indexPaths.append(IndexPath(item: i, section: section!))
             }
-            tableView?.deleteRows(at: indexPaths, with: .fade)
+            tableView?.deleteRows(at: indexPaths, with: .automatic)
             
         } else {
             
@@ -93,7 +93,7 @@ class ClassHeaderView: CustomHeaderFooterView {
                 
                 indexPaths.append(IndexPath(item: i, section: section!))
             }
-            tableView?.insertRows(at: indexPaths, with: .fade)
+            tableView?.insertRows(at: indexPaths, with: .automatic)
         }
     }
     
