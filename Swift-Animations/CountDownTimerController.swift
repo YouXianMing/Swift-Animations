@@ -67,7 +67,7 @@ class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, 
             }
         }
         
-        DefaultNotificationCenter.PostMessageTo(NotificationEvent.countDownTimeCellCountDown.Message())
+        DefaultNotificationCenter.PostMessageTo(NotificationEvent.countDownTimeCellCountDown.notificationName)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

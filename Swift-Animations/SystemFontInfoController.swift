@@ -27,10 +27,10 @@ class SystemFontInfoController: NormalTitleViewController, UITableViewDelegate, 
         tableView.sectionHeaderHeight = FontFamilyHeaderView.HeightWithData()
         contentView!.addSubview(tableView)
         
-        if #available(iOS 11.0, *) {
-            
-            tableView.contentInsetAdjustmentBehavior = .never
-        }
+        //  if #available(iOS 11.0, *) {
+        //
+        //      tableView.contentInsetAdjustmentBehavior = .never
+        // }
         
         FontCell.RegisterTo(tableView)
         FontFamilyHeaderView.RegisterTo(tableView)

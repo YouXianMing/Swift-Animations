@@ -41,9 +41,6 @@ class BaseMessageView: UIView {
     }
     private weak var private_ContentView : UIView?
     
-    /// The contentView's UserInteractionEnabled, default is YES, if you set it to NO, you should manage the value by yourself.
-    var contentViewUserInteractionEnabled : Bool = true
-    
     /// Auto hiden or not, default is YES.
     var autoHiden : Bool = true
     
@@ -83,7 +80,6 @@ class BaseMessageView: UIView {
     class func Setup(messageObject                     : AnyObject?               = nil,
                      contentView                       : UIView?                  = nil,
                      delegate                          : BaseMessageViewDelegate? = nil,
-                     contentViewUserInteractionEnabled : Bool                     = true,
                      autoHiden                         : Bool                     = true,
                      delayAutoHidenDuration            : TimeInterval             = 2.0) -> Self {
         
@@ -92,7 +88,6 @@ class BaseMessageView: UIView {
         messageView.messageObject                     = messageObject
         messageView.contentView                       = contentView
         messageView.delegate                          = delegate
-        messageView.contentViewUserInteractionEnabled = contentViewUserInteractionEnabled
         messageView.autoHiden                         = autoHiden
         messageView.delayAutoHidenDuration            = delayAutoHidenDuration
         

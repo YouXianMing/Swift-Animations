@@ -251,11 +251,11 @@
 		C509837C1F7245E400C1BDA8 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
-				C509838A1F7248B400C1BDA8 /* GCDGroup.swift */,
 				C50983881F7248B400C1BDA8 /* GCDQueue.swift */,
-				C50983871F7248B400C1BDA8 /* GCDQueuePriority.swift */,
-				C509838B1F7248B400C1BDA8 /* GCDSemaphore.swift */,
+				C509838A1F7248B400C1BDA8 /* GCDGroup.swift */,
 				C50983891F7248B400C1BDA8 /* GCDTimer.swift */,
+				C509838B1F7248B400C1BDA8 /* GCDSemaphore.swift */,
+				C50983871F7248B400C1BDA8 /* GCDQueuePriority.swift */,
 			);
 			name = GCD;
 			sourceTree = "<group>";

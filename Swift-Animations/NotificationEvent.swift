@@ -8,21 +8,13 @@
 
 import Foundation
 
-enum NotificationEvent : Int {
+enum NotificationEvent : String {
     
-    case animationsListViewControllerFirstTimeLoadData
+    case animationsListViewControllerFirstTimeLoadData = "animationsListViewControllerFirstTimeLoadData"
+    case countDownTimeCellCountDown                    = "countDownTimeCellCountDown"
     
-    case countDownTimeCellCountDown
-    
-    func Message() -> String {
+    var notificationName : String {
         
-        switch self {
-            
-        case .animationsListViewControllerFirstTimeLoadData:
-            return "AnimationsListViewControllerFirstTimeLoadData"
-            
-        case .countDownTimeCellCountDown:
-            return "CountDownTimeCellCountDown"
-        }
+        get { return self.rawValue}
     }
 }

@@ -19,7 +19,7 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
         super.viewDidLoad()
         
         // Add DefaultNotificationCenter.
-        notification = DefaultNotificationCenter(delegate: self, notificationNames: [NotificationEvent.animationsListViewControllerFirstTimeLoadData.Message()])
+        notification = DefaultNotificationCenter(delegate: self, notificationNames: [NotificationEvent.animationsListViewControllerFirstTimeLoadData.notificationName])
 
         // TableView.
         tableView                              = UITableView(frame: (contentView?.bounds)!)

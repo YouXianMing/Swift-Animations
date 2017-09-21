@@ -17,7 +17,7 @@ class CountDownTimeCell: CustomCell, DefaultNotificationCenterDelegate {
     override func setupCell() {
         
         super.setupCell()
-        notificationCenter.addNotificationName(NotificationEvent.countDownTimeCellCountDown.Message())
+        notificationCenter.addNotificationName(NotificationEvent.countDownTimeCellCountDown.notificationName)
         notificationCenter.delegate = self
     }
     
@@ -46,7 +46,7 @@ class CountDownTimeCell: CustomCell, DefaultNotificationCenterDelegate {
     
     func defaultNotificationCenter(_ notificationName: String, object: AnyObject?) {
         
-        if display == true && notificationName == NotificationEvent.countDownTimeCellCountDown.Message() {
+        if display == true && notificationName == NotificationEvent.countDownTimeCellCountDown.notificationName {
             
             loadContent()
         }
