@@ -139,9 +139,10 @@ class CustomCell: UITableViewCell {
                        cellHeight: CGFloat?       = 0,
                        type: Int?                 = nil) -> CellDataAdapter {
         
-        let identifier = (reuseIdentifier == nil ? String(describing: self.classForCoder()) : reuseIdentifier)
-        
-        return CellDataAdapter.init(cellReuseIdentifier: identifier, data: data, cellHeight: cellHeight, cellType: type)
+        return CellDataAdapter.init(cellReuseIdentifier: reuseIdentifier ?? "\(self.classForCoder())",
+                                    data: data,
+                                    cellHeight: cellHeight,
+                                    cellType: type)
     }
     
     /**
@@ -153,7 +154,7 @@ class CustomCell: UITableViewCell {
     class func RegisterTo(_ tableView         : UITableView,
                           cellReuseIdentifier : String?      = nil) {
         
-        tableView.register(self.classForCoder(), forCellReuseIdentifier: (cellReuseIdentifier != nil) ? cellReuseIdentifier! : String(describing: self.classForCoder()))
+        tableView.register(self.classForCoder(), forCellReuseIdentifier: cellReuseIdentifier ?? "\(self.classForCoder())")
     }
     
     /**

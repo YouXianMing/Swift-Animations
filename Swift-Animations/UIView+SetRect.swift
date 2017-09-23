@@ -36,30 +36,27 @@ enum Screen {
         let width  = UIScreen.main.bounds.size.width
         let height = UIScreen.main.bounds.size.height
         
-        if width == 320 && height == 480 {
+        var screen : Screen
+        
+        switch (width, height) {
             
-            return Screen._320x480
+        case (320, 480):
+            screen = Screen._320x480
+
+        case (320, 568):
+            screen = Screen._320x568
             
-        } else if width == 320 && height == 568 {
+        case (414, 736):
+            screen = Screen._414x736
+
+        case (375, 812):
+            screen = Screen._375x812
             
-            return Screen._320x568
-            
-        } else if width == 375 && height == 667 {
-            
-            return Screen._375x667
-            
-        } else if width == 414 && height == 736 {
-            
-            return Screen._414x736
-            
-        } else if width == 375 && height == 812 {
-            
-            return Screen._375x812
-            
-        } else {
-            
-            return Screen._unknow
+        default:
+            screen = Screen._unknow
         }
+        
+        return screen
     }
     
     /// Get the current screen.

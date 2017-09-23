@@ -118,7 +118,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
      */
     class func RegisterTo(_ collectionView: UICollectionView, cellReuseIdentifier: String? = nil) {
         
-        collectionView.register(self.classForCoder(), forCellWithReuseIdentifier: (cellReuseIdentifier != nil) ? cellReuseIdentifier! : String(describing: self.classForCoder()))
+        collectionView.register(self.classForCoder(),
+                                forCellWithReuseIdentifier: cellReuseIdentifier ?? "\(self.classForCoder())")
     }
     
     /**
@@ -132,8 +133,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
      */
     class func Adapter(_ reuseIdentifier: String? = nil, data: AnyObject? = nil, type: Int? = nil) -> CellDataAdapter {
         
-        let identifier = (reuseIdentifier == nil ? String(describing: self.classForCoder()) : reuseIdentifier)
-        
-        return CellDataAdapter.init(cellReuseIdentifier: identifier, data: data, cellHeight: 0, cellType: type)
+        return CellDataAdapter.init(cellReuseIdentifier: reuseIdentifier ?? "\(self.classForCoder())",
+            data: data,
+            cellHeight: 0, cellType: type)
     }
 }
