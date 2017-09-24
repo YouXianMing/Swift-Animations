@@ -13,18 +13,18 @@ import UIKit
 class ComplexEasingValue: EasingValue {
 
     /// 点A的动画函数（如果是 size，则点 A 表示 width；如果是 point，则点 A 表示 x）
-    var functionA  : EasingFunction!
+    var easingA  : EasingFunction!
     
     /// 点B的动画函数（如果是 size，则点 B 表示 height；如果是 point，则点 B 表示 y）
-    var functionB  : EasingFunction!
+    var easingB  : EasingFunction!
     
     // MARK: init
     override init() {
         
         super.init()
         
-        functionA  = EasingFunction.sineEaseIn
-        functionB  = EasingFunction.sineEaseIn
+        easingA  = EasingFunction.sineEaseIn
+        easingB  = EasingFunction.sineEaseIn
         frameCount = 60
     }
     
@@ -32,8 +32,8 @@ class ComplexEasingValue: EasingValue {
         
         super.init()
         
-        functionA       = withFunctionA
-        functionB       = FunctionB
+        easingA         = withFunctionA
+        easingB         = FunctionB
         self.frameCount = frameCount
     }
     
@@ -54,8 +54,8 @@ class ComplexEasingValue: EasingValue {
         
         for _ in 0 ..< frameCount {
             
-            let x     : Double  = Double(fromPoint.x) + (functionA.value())(t) * (Double(toPoint.x) - Double(fromPoint.x))
-            let y     : Double  = Double(fromPoint.y) + (functionB.value())(t) * (Double(toPoint.y) - Double(fromPoint.y))
+            let x     : Double  = Double(fromPoint.x) + easingA.function(t) * (Double(toPoint.x) - Double(fromPoint.x))
+            let y     : Double  = Double(fromPoint.y) + easingB.function(t) * (Double(toPoint.y) - Double(fromPoint.y))
             let point : CGPoint = CGPoint(x : x, y : y)
             values.add(NSValue(cgPoint: point))
             
@@ -82,8 +82,8 @@ class ComplexEasingValue: EasingValue {
         
         for _ in 0 ..< frameCount {
             
-            let width  : Double = Double(fromSize.width)  + (functionA.value())(t) * (Double(toSize.width) - Double(fromSize.width))
-            let height : Double = Double(fromSize.height) + (functionB.value())(t) * (Double(toSize.height) - Double(fromSize.height))
+            let width  : Double = Double(fromSize.width)  + easingA.function(t) * (Double(toSize.width) - Double(fromSize.width))
+            let height : Double = Double(fromSize.height) + easingB.function(t) * (Double(toSize.height) - Double(fromSize.height))
             let size   : CGSize = CGSize(width: width, height: height)
             values.add(NSValue(cgSize : size))
             

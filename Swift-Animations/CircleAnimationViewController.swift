@@ -69,7 +69,6 @@ class CircleAnimationViewController: NormalTitleViewController {
         timer.start()
     }
     
-    
     override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)

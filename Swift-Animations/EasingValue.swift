@@ -15,7 +15,7 @@ class EasingValue: NSObject {
     // MARK: var
     
     /// 动画函数
-    var function   : EasingFunction!
+    var easing     : EasingFunction!
     
     /// 关键帧点数
     var frameCount : size_t!
@@ -25,7 +25,7 @@ class EasingValue: NSObject {
         
         super.init()
         
-        function   = EasingFunction.sineEaseIn
+        easing     = EasingFunction.sineEaseIn
         frameCount = 60
     }
     
@@ -33,7 +33,7 @@ class EasingValue: NSObject {
         
         super.init()
         
-        self.function   = withFunction
+        self.easing     = withFunction
         self.frameCount = frameCount
     }
     
@@ -56,7 +56,7 @@ class EasingValue: NSObject {
         
         for _ in 0 ..< frameCount {
             
-            let value = fromValue + (function.value())(t) * (toValue - fromValue)
+            let value = fromValue + easing.function(t) * (toValue - fromValue)
             values.add(value)
             
             t += dt
@@ -82,8 +82,8 @@ class EasingValue: NSObject {
         
         for _ in 0 ..< frameCount {
             
-            let x     : Double  = Double(fromPoint.x) + (function.value())(t) * (Double(toPoint.x) - Double(fromPoint.x))
-            let y     : Double  = Double(fromPoint.y) + (function.value())(t) * (Double(toPoint.y) - Double(fromPoint.y))
+            let x     : Double  = Double(fromPoint.x) + easing.function(t) * (Double(toPoint.x) - Double(fromPoint.x))
+            let y     : Double  = Double(fromPoint.y) + easing.function(t) * (Double(toPoint.y) - Double(fromPoint.y))
             let point : CGPoint = CGPoint(x : x, y : y)
             values.add(NSValue(cgPoint: point))
             
@@ -110,8 +110,8 @@ class EasingValue: NSObject {
         
         for _ in 0 ..< frameCount {
             
-            let width  : Double = Double(fromSize.width)  + (function.value())(t) * (Double(toSize.width) - Double(fromSize.width))
-            let height : Double = Double(fromSize.height) + (function.value())(t) * (Double(toSize.height) - Double(fromSize.height))
+            let width  : Double = Double(fromSize.width)  + easing.function(t) * (Double(toSize.width) - Double(fromSize.width))
+            let height : Double = Double(fromSize.height) + easing.function(t) * (Double(toSize.height) - Double(fromSize.height))
             let size   : CGSize = CGSize(width: width, height: height)
             values.add(NSValue(cgSize : size))
             

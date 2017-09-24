@@ -65,102 +65,105 @@ enum EasingFunction: Int {
     bounceEaseOut,
     bounceEaseInOut
     
-    func value() -> ((Double) -> Double) {
+    var function : (Double) -> Double {
         
-        switch self {
+        get {
             
-        case .linearInterpolation:
-            return Easing.LinearInterpolation
-            
-        case .quadraticEaseIn:
-            return Easing.QuadraticEaseIn
-            
-        case .quadraticEaseOut:
-            return Easing.QuadraticEaseOut
-            
-        case .quadraticEaseInOut:
-            return Easing.QuadraticEaseInOut
-            
-        case .cubicEaseIn:
-            return Easing.CubicEaseIn
-            
-        case .cubicEaseOut:
-            return Easing.CubicEaseOut
-            
-        case .cubicEaseInOut:
-            return Easing.CubicEaseInOut
-            
-        case .quarticEaseIn:
-            return Easing.QuarticEaseIn
-            
-        case .quarticEaseOut:
-            return Easing.QuarticEaseOut
-            
-        case .quarticEaseInOut:
-            return Easing.QuarticEaseInOut
-            
-        case .quinticEaseIn:
-            return Easing.QuinticEaseIn
-            
-        case .quinticEaseOut:
-            return Easing.QuinticEaseOut
-            
-        case .quinticEaseInOut:
-            return Easing.QuinticEaseInOut
-            
-        case .sineEaseIn:
-            return Easing.SineEaseIn
-            
-        case .sineEaseOut:
-            return Easing.SineEaseOut
-            
-        case .sineEaseInOut:
-            return Easing.SineEaseInOut
-            
-        case .circularEaseIn:
-            return Easing.CircularEaseIn
-            
-        case .circularEaseOut:
-            return Easing.CircularEaseOut
-            
-        case .circularEaseInOut:
-            return Easing.CircularEaseInOut
-            
-        case .exponentialEaseIn:
-            return Easing.ExponentialEaseIn
-            
-        case .exponentialEaseOut:
-            return Easing.ExponentialEaseOut
-            
-        case .exponentialEaseInOut:
-            return Easing.ExponentialEaseInOut
-            
-        case .elasticEaseIn:
-            return Easing.ElasticEaseIn
-            
-        case .elasticEaseOut:
-            return Easing.ElasticEaseOut
-            
-        case .elasticEaseInOut:
-            return Easing.ElasticEaseInOut
-            
-        case .backEaseIn:
-            return Easing.BackEaseIn
-            
-        case .backEaseOut:
-            return Easing.BackEaseOut
-            
-        case .backEaseInOut:
-            return Easing.BackEaseInOut
-            
-        case .bounceEaseIn:
-            return Easing.BounceEaseIn
-            
-        case .bounceEaseOut:
-            return Easing.BounceEaseOut
-            
-        case .bounceEaseInOut:
-            return Easing.BounceEaseInOut
+            switch self {
+                
+            case .linearInterpolation:
+                return Easing.LinearInterpolation
+                
+            case .quadraticEaseIn:
+                return Easing.QuadraticEaseIn
+                
+            case .quadraticEaseOut:
+                return Easing.QuadraticEaseOut
+                
+            case .quadraticEaseInOut:
+                return Easing.QuadraticEaseInOut
+                
+            case .cubicEaseIn:
+                return Easing.CubicEaseIn
+                
+            case .cubicEaseOut:
+                return Easing.CubicEaseOut
+                
+            case .cubicEaseInOut:
+                return Easing.CubicEaseInOut
+                
+            case .quarticEaseIn:
+                return Easing.QuarticEaseIn
+                
+            case .quarticEaseOut:
+                return Easing.QuarticEaseOut
+                
+            case .quarticEaseInOut:
+                return Easing.QuarticEaseInOut
+                
+            case .quinticEaseIn:
+                return Easing.QuinticEaseIn
+                
+            case .quinticEaseOut:
+                return Easing.QuinticEaseOut
+                
+            case .quinticEaseInOut:
+                return Easing.QuinticEaseInOut
+                
+            case .sineEaseIn:
+                return Easing.SineEaseIn
+                
+            case .sineEaseOut:
+                return Easing.SineEaseOut
+                
+            case .sineEaseInOut:
+                return Easing.SineEaseInOut
+                
+            case .circularEaseIn:
+                return Easing.CircularEaseIn
+                
+            case .circularEaseOut:
+                return Easing.CircularEaseOut
+                
+            case .circularEaseInOut:
+                return Easing.CircularEaseInOut
+                
+            case .exponentialEaseIn:
+                return Easing.ExponentialEaseIn
+                
+            case .exponentialEaseOut:
+                return Easing.ExponentialEaseOut
+                
+            case .exponentialEaseInOut:
+                return Easing.ExponentialEaseInOut
+                
+            case .elasticEaseIn:
+                return Easing.ElasticEaseIn
+                
+            case .elasticEaseOut:
+                return Easing.ElasticEaseOut
+                
+            case .elasticEaseInOut:
+                return Easing.ElasticEaseInOut
+                
+            case .backEaseIn:
+                return Easing.BackEaseIn
+                
+            case .backEaseOut:
+                return Easing.BackEaseOut
+                
+            case .backEaseInOut:
+                return Easing.BackEaseInOut
+                
+            case .bounceEaseIn:
+                return Easing.BounceEaseIn
+                
+            case .bounceEaseOut:
+                return Easing.BounceEaseOut
+                
+            case .bounceEaseInOut:
+                return Easing.BounceEaseInOut
+            }
         }
     }
 }
