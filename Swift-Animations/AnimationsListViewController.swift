@@ -157,9 +157,9 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
     
     func customCell(_ cell: CustomCell?, event: Any?) {
         
-        let item         = event as! ControllerItem
-        let controller   = (item.controllerClass as! BaseCustomViewController.Type).init()
-        controller.title = item.name
+        let item       = event as! ControllerItem
+        let metaType   = item.controllerClass.self as! BaseCustomViewController.Type
+        let controller = metaType.init(title : item.name)
         navigationController?.pushViewController(controller, animated: true)
     }
     

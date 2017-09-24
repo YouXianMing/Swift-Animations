@@ -10,10 +10,10 @@
 
 import UIKit
 
-enum EasingFunction: Int {
+enum EasingFunction {
     
     case
-    linearInterpolation = 1,
+    linearInterpolation,
     
     // Quadratic easing; p^2
     quadraticEaseIn,

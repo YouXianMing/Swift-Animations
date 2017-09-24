@@ -34,6 +34,24 @@ class BaseCustomViewController: UIViewController, UIGestureRecognizerDelegate {
         setupSubViews()
     }
     
+    ///  Designated initializer.
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    ///  Designated initializer.
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
+    
+    required convenience init(title : String? = nil) {
+        
+        self.init()
+        self.title = title
+    }
+    
     /// You can use this property when this controller is pushed by an UINavigationController.
     var enableInteractivePopGestureRecognizer : Bool? {
         
