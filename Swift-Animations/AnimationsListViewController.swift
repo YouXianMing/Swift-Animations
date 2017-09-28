@@ -145,7 +145,7 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueCellAndLoadContentFromAdapter(adapters[(indexPath as NSIndexPath).row], indexPath: indexPath, delegate : self)
+        return tableView.dequeueCellAndLoadContentFromAdapter(adapters[indexPath.row], indexPath: indexPath, delegate : self)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

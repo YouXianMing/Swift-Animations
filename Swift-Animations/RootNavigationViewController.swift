@@ -15,7 +15,7 @@ class RootNavigationViewController: BaseCustomNavigationController {
         super.viewDidLoad()
         
         let lauchImageView   = UIImageView(frame: self.view.bounds)
-        lauchImageView.image = AppleSystemService.launchImage()
+        lauchImageView.image = AppleSystemService.LaunchImage
         view.addSubview(lauchImageView)
         
         UIView.animate(withDuration: 1, delay: 1, options: UIViewAnimationOptions(), animations: {
@@ -23,7 +23,7 @@ class RootNavigationViewController: BaseCustomNavigationController {
             lauchImageView.scale = 1.3
             lauchImageView.alpha = 0
             
-        }) { (finished) in
+        }) { _ in
             
             lauchImageView.removeFromSuperview()
             DefaultNotificationCenter.PostMessageTo(NotificationEvent.animationsListViewControllerFirstTimeLoadData.notificationName)
