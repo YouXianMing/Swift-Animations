@@ -72,6 +72,7 @@
 		C5CAA1CB1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */; };
 		C5CAA1CD1F68FE4F00065CC1 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */; };
 		C5CAA1CF1F69265F00065CC1 /* UIWindow+keyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CAA1CE1F69265F00065CC1 /* UIWindow+keyWindow.swift */; };
+		C5CE720B1F8B548D00F78945 /* StoredValueTypeIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE720A1F8B548D00F78945 /* StoredValueTypeIs.swift */; };
 		C5D014AA1F6A151700B30804 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D014A91F6A151700B30804 /* AlertView.swift */; };
 		C5D6ED691D5FF2E2009BB400 /* UIColor+HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */; };
 		C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */; };
@@ -153,6 +154,7 @@
 		C5CAA1CA1F68D52E00065CC1 /* AlertViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5CAA1CC1F68FE4F00065CC1 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		C5CAA1CE1F69265F00065CC1 /* UIWindow+keyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+keyWindow.swift"; sourceTree = "<group>"; };
+		C5CE720A1F8B548D00F78945 /* StoredValueTypeIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoredValueTypeIs.swift; sourceTree = "<group>"; };
 		C5D014A91F6A151700B30804 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C5D6ED681D5FF2E2009BB400 /* UIColor+HexColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HexColor.swift"; sourceTree = "<group>"; };
 		C5D6ED8D1D6023CA009BB400 /* BackgroundLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundLineView.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		C51B50301D5B5E94006AA00A /* General-Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C5CE72091F8B545800F78945 /* NSUserDefault */,
 				103075451D75CFD30043A858 /* UILabel+extension */,
 				1030753B1D75C4130043A858 /* String+extension */,
 				C56BEB391D56B823003BBF11 /* UIFont+extension */,
@@ -535,6 +538,14 @@
 			name = "UIWindow+keyWindow";
 			sourceTree = "<group>";
 		};
+		C5CE72091F8B545800F78945 /* NSUserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				C5CE720A1F8B548D00F78945 /* StoredValueTypeIs.swift */,
+			);
+			name = NSUserDefault;
+			sourceTree = "<group>";
+		};
 		C5D6ED6A1D5FFB57009BB400 /* UIColor+extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,6 +716,7 @@
 				C56BEB3F1D56C1FA003BBF11 /* NormalTitleViewController.swift in Sources */,
 				10628F4C1D65FAC500DEDE55 /* MoreInfoView.swift in Sources */,
 				C581C6FF1D66E0BA00CC552D /* DefaultNotificationCenter.swift in Sources */,
+				C5CE720B1F8B548D00F78945 /* StoredValueTypeIs.swift in Sources */,
 				C5D6ED8E1D6023CA009BB400 /* BackgroundLineView.swift in Sources */,
 				C51D3B961F049CD400192F58 /* BaseCustomViewController.swift in Sources */,
 				C56BEB531D5700FF003BBF11 /* UIView+Glow.swift in Sources */,
