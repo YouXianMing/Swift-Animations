@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let controller            = AnimationsListViewController()
             let rootViewController    = RootNavigationViewController(rootViewController: controller, hideNavBar: true)
             window.rootViewController = rootViewController
-            window.makeKey()
+            window.makeKeyAndVisible()
         }
         
         return true
