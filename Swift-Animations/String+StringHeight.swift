@@ -20,7 +20,7 @@ extension String {
      */
     func heightWithStringAttributes(_ attributes : [NSAttributedStringKey : Any], fixedWidth : CGFloat) -> CGFloat {
         
-        guard self.characters.count > 0 && fixedWidth > 0 else {
+        guard self.count > 0 && fixedWidth > 0 else {
         
             return 0
         }
@@ -42,7 +42,7 @@ extension String {
      */
     func heightWithFont(_ font : UIFont = UIFont.systemFont(ofSize: 18), fixedWidth : CGFloat) -> CGFloat {
         
-        guard self.characters.count > 0 && fixedWidth > 0 else {
+        guard self.count > 0 && fixedWidth > 0 else {
             
             return 0
         }
@@ -81,7 +81,7 @@ extension String {
      */
     func widthWithStringAttributes(_ attributes : [NSAttributedStringKey : Any]) -> CGFloat {
         
-        guard self.characters.count > 0 else {
+        guard self.count > 0 else {
             
             return 0
         }
@@ -102,7 +102,7 @@ extension String {
      */
     func widthWithFont(_ font : UIFont = UIFont.systemFont(ofSize: 18)) -> CGFloat {
         
-        guard self.characters.count > 0 else {
+        guard self.count > 0 else {
             
             return 0
         }

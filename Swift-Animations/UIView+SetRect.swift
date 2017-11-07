@@ -82,10 +82,10 @@ public let TabbarHeight                      : CGFloat = 49
 public let StatusBarAndNavigationBarHeight   : CGFloat = StatusBarHeight + NavigationBarHeight
 
 /// iPhoneX additional top safe height.
-public let additionaliPhoneXTopSafeHeight    : CGFloat = 20
+public let additionaliPhoneXTopSafeHeight    : CGFloat = 34
 
 /// iPhoneX additional bottom safe height.
-public let additionaliPhoneXBottomSafeHeight : CGFloat = 24
+public let additionaliPhoneXBottomSafeHeight : CGFloat = 44
 
 extension UIView {
     
