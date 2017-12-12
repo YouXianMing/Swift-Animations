@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         /*
-         Lateast no warning version : Xcode 9.1 (9B55)
+         Lateast no warning version : Xcode 9.2 (9C40b)
          
          QQ    705786299
          Email YouXianMing1987@126.com
