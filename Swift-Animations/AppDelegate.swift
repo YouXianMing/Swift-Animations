@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         /*
-         Lateast no warning version : Xcode 9.3 (9E145)
+         Lateast no warning version : Xcode 9.4.1 (9F2000)
          
          QQ    705786299
          Email YouXianMing1987@126.com
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          https://github.com/YouXianMing/YoCelsius
          https://github.com/YouXianMing/Animations
          
-         独立开发作品 (感兴趣的朋友支持一下^_^) : https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1390862464&mt=8
+         独立开发作品 (感兴趣的朋友支持一下^_^) : https://itunes.apple.com/cn/app/美记/id1390862464
          */
 
         window = UIWindow(frame: UIScreen.main.bounds)
