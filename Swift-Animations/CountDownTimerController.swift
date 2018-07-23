@@ -10,16 +10,13 @@ import UIKit
 
 class CountDownTimerController: NormalTitleViewController, UITableViewDelegate, UITableViewDataSource {
 
-    fileprivate var timesArray : [CellDataAdapter]!
+    fileprivate var timesArray : [CellDataAdapter] = [CellDataAdapter]()
     fileprivate var tableView  : UITableView!
     fileprivate var timer      : Timer!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        // Create data source.
-        timesArray = [CellDataAdapter]()
         
         func add(title : String, countdownTime : Int) {
         

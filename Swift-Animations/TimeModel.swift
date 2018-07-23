@@ -8,42 +8,32 @@
 
 import UIKit
 
-fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
-}
-
-fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l <= r
-  default:
-    return !(rhs < lhs)
-  }
-}
-
 class TimeModel: NSObject {
     
     var title         : String? = ""
     var countdownTime : Int?    = 0
     
-    var currentTimeString : String {
+    var currentTimeString : String? {
     
         get {
         
-            if countdownTime <= 0 {
+            if let val = countdownTime {
                 
-                return "00:00:00"
+                if val <= 0 {
+                
+                    return "00:00:00"
+                    
+                } else {
+                    
+                    return String(format:"%02.f:%02.f:%02.f",
+                                  CGFloat(val) / 3600,
+                                  CGFloat(val).truncatingRemainder(dividingBy: 3600) / 60,
+                                  CGFloat(val).truncatingRemainder(dividingBy: 60))
+                }
                 
             } else {
-            
-                return String(format:"%02.f:%02.f:%02.f", CGFloat(countdownTime!) / 3600, CGFloat(countdownTime!).truncatingRemainder(dividingBy: 3600) / 60, CGFloat(countdownTime!).truncatingRemainder(dividingBy: 60))
+                
+                return Optional.none
             }
         }
     }

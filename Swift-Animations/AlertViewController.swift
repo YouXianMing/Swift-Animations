@@ -10,8 +10,8 @@ import UIKit
 
 class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, UICollectionViewDataSource, CustomCollectionViewCellDelegate, BaseMessageViewDelegate {
     
-    fileprivate var collectionView : UICollectionView?
-    fileprivate var layout         : UICollectionViewFlowLayout?
+    fileprivate var collectionView : UICollectionView!
+    fileprivate var layout         : UICollectionViewFlowLayout!
     fileprivate var adapters       : [CellDataAdapter] = []
     
     override func viewDidLoad() {
@@ -20,15 +20,15 @@ class AlertViewController: NormalTitleViewController, UICollectionViewDelegate, 
         
         // Layout.
         layout                          = UICollectionViewFlowLayout.init()
-        layout?.minimumLineSpacing      = 0
-        layout?.minimumInteritemSpacing = 0
-        layout?.itemSize                = CGSize.init(width: Screen.Width / 2, height: Screen.Width / 2)
+        layout.minimumLineSpacing      = 0
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize                = CGSize.init(width: Screen.Width / 2, height: Screen.Width / 2)
         
         // CollectionView.
         collectionView                  = UICollectionView.init(frame: (contentView?.bounds)!, collectionViewLayout: layout!)
-        collectionView?.backgroundColor = UIColor.clear
-        collectionView?.delegate        = self
-        collectionView?.dataSource      = self
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.delegate        = self
+        collectionView.dataSource      = self
         contentView?.addSubview(collectionView!)
         AlertViewCollectionViewCell.RegisterTo(collectionView!)
         
