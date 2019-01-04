@@ -18,15 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /*
          Lateast no warning version : Xcode 9.4.1 (9F2000)
-         
-         QQ    705786299
-         Email YouXianMing1987@126.com
-         
-         http://www.cnblogs.com/YouXianMing/
-         https://github.com/YouXianMing/YoCelsius
-         https://github.com/YouXianMing/Animations
-         
-         独立开发作品 (感兴趣的朋友支持一下^_^) : https://itunes.apple.com/cn/app/美记/id1390862464
          */
 
         window = UIWindow(frame: UIScreen.main.bounds)
