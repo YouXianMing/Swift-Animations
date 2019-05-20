@@ -95,9 +95,9 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             let length    = string.lengthOfBytes(using: String.Encoding.utf8)
             let allColor  = UIColor.Hex(0x545454)
             let partColor = UIColor.clear
-            richText.addAttributes([NSAttributedStringKey.foregroundColor : allColor], range: NSMakeRange(0, length))
-            richText.addAttributes([NSAttributedStringKey.foregroundColor : partColor], range: NSMakeRange(1, 1))
-            richText.addAttributes([NSAttributedStringKey.font : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedString.Key.foregroundColor : allColor], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedString.Key.foregroundColor : partColor], range: NSMakeRange(1, 1))
+            richText.addAttributes([NSAttributedString.Key.font : UIFont.AvenirLight(28) as Any], range: NSMakeRange(0, length))
             
             // Title.
             let label            = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: Screen.Width, height: 64))
@@ -114,9 +114,9 @@ class AnimationsListViewController: BaseCustomViewController, UITableViewDataSou
             let length    = string.lengthOfBytes(using: String.Encoding.utf8)
             let allColor  = UIColor.clear
             let partColor = UIColor.Hex(0x4699D9)
-            richText.addAttributes([NSAttributedStringKey.foregroundColor : allColor], range: NSMakeRange(0, length))
-            richText.addAttributes([NSAttributedStringKey.foregroundColor : partColor], range: NSMakeRange(1, 1))
-            richText.addAttributes([NSAttributedStringKey.font : UIFont.AvenirLight(28)], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedString.Key.foregroundColor : allColor], range: NSMakeRange(0, length))
+            richText.addAttributes([NSAttributedString.Key.foregroundColor : partColor], range: NSMakeRange(1, 1))
+            richText.addAttributes([NSAttributedString.Key.font : UIFont.AvenirLight(28) as Any], range: NSMakeRange(0, length))
             
             // Title.
             let label            = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: Screen.Width, height: 64))

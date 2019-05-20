@@ -54,7 +54,7 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
             if weakSelf?.type == .typeOne {
                 
                 weakSelf?.type = .typeTwo
-                weakSelf?.contentView?.sendSubview(toBack: (weakSelf?.tranformFadeViewTwo)!)
+                weakSelf?.contentView?.sendSubviewToBack((weakSelf?.tranformFadeViewTwo)!)
                 weakSelf?.tranformFadeViewTwo.image = weakSelf?.currentImage()
                 weakSelf?.tranformFadeViewTwo.start(animated: false, transformTo: .show)
                 weakSelf?.tranformFadeViewOne.start(animated: true,  transformTo: .fade)
@@ -62,7 +62,7 @@ class TransformFadeViewController: FullTitleVisualEffectViewController {
             } else {
                 
                 weakSelf?.type = .typeOne
-                weakSelf?.contentView?.sendSubview(toBack: (weakSelf?.tranformFadeViewOne)!)
+                weakSelf?.contentView?.sendSubviewToBack((weakSelf?.tranformFadeViewOne)!)
                 weakSelf?.tranformFadeViewOne.image = weakSelf?.currentImage()
                 weakSelf?.tranformFadeViewOne.start(animated: false, transformTo: .show)
                 weakSelf?.tranformFadeViewTwo.start(animated: true,  transformTo: .fade)

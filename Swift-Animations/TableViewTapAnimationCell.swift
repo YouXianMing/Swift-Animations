@@ -93,7 +93,7 @@ class TableViewTapAnimationCell: CustomCell {
             
         case .kNormalState:
             
-            UIView.animate(withDuration: animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: UIViewAnimationOptions(), animations: {
+            UIView.animate(withDuration: animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: UIView.AnimationOptions(), animations: {
                 
                 if animated == true {
                     
@@ -118,7 +118,7 @@ class TableViewTapAnimationCell: CustomCell {
                 self.iconView.transform = CGAffineTransform(a: 2, b: 0, c: 0, d: 2, tx: 0, ty: 0)
             }
             
-            UIView.animate(withDuration: animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: UIViewAnimationOptions(), animations: {
+            UIView.animate(withDuration: animated == false ? 0 : 0.5, delay: 0, usingSpringWithDamping: 7, initialSpringVelocity: 4, options: UIView.AnimationOptions(), animations: {
                 
                 self.iconView.transform = CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: 0, ty: 0)
                 self.iconView.alpha     = 1

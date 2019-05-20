@@ -56,7 +56,7 @@ class MixedColorProgressViewController: NormalTitleViewController {
     
     @objc func timerEvent() {
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 3, initialSpringVelocity: 0, options: UIView.AnimationOptions(), animations: {
             
             self.upView.width = CGFloat(arc4random() % 220)
             

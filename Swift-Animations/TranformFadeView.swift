@@ -39,7 +39,7 @@ class TranformFadeView: UIView {
     }
     
     /// The content imageView's contentMode.
-    var imageContentMode: UIViewContentMode {
+    var imageContentMode: UIView.ContentMode {
         
         get { return imageView.contentMode}
         set(newVal) { imageView.contentMode = newVal}

@@ -38,7 +38,7 @@ class NormalTitleViewController: BaseCustomViewController {
         let button                    = UIButton(frame : CGRect(x: 0, y: 0, width: 100, height: 64))
         button.center                 = CGPoint(x: 20, y: headlinelabel.centerY)
         button.imageView?.contentMode = .center
-        button.setImage(UIImage(named: "backIcon"),     for: UIControlState())
+        button.setImage(UIImage(named: "backIcon"),     for: UIControl.State())
         button.setImage(UIImage(named: "backIcon_pre"), for: .highlighted)
         self.titleView?.addSubview(button)
         button.addTarget(self, action: #selector(NormalTitleViewController.popSelf), for: .touchUpInside)

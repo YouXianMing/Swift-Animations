@@ -80,7 +80,7 @@ class CustomCell: UITableViewCell {
     weak var controller  : UIViewController?
     var      display     : Bool?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupCell()

@@ -32,7 +32,7 @@ class AppleSystemService : NSObject {
             let imagesInfoArray = Bundle.main.infoDictionary!["UILaunchImages"]
             for dict : Dictionary <String, String> in imagesInfoArray as! Array {
                 
-                let imageSize = CGSizeFromString(dict["UILaunchImageSize"]!)
+                let imageSize = NSCoder.cgSize(for: dict["UILaunchImageSize"]!)
                 if imageSize.equalTo(viewSize) && viewOrientation == dict["UILaunchImageOrientation"]! as String {
                     
                     lauchImage = UIImage(named: dict["UILaunchImageName"]!)
